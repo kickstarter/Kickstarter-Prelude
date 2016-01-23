@@ -45,4 +45,13 @@ class VectorTypeTest : XCTestCase {
     XCTAssertEqualWithAccuracy(3.0, lerp(0.0, 4.0)(0.75), accuracy: 0.0)
     XCTAssertEqualWithAccuracy(4.0, lerp(0.0, 4.0)(1.00), accuracy: 0.0)
   }
+
+  func testOperatorPrecedence() {
+
+    func naiveTimesTwoPlusOne <A: NumericType> (x: A) -> A {
+      return x * A.one() + A.one() + A.one()
+    }
+
+    XCTAssertEqualWithAccuracy(4.0, naiveTimesTwoPlusOne(2.0), accuracy: 0.0)
+  }
 }
