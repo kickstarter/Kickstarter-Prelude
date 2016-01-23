@@ -84,14 +84,20 @@ truths.filter(id)
 In fact, anytime you find yourself writing a closure of the form `{ x in x }` or `{ $0 }` you
 can simply use `id`.
 
-The `const` function is a curried function such that `const(x)` returns a new function for which
-no matter what you plug into it, it will simply return `x`.
+Many times in stream processing one wants to convert a stream of unimportant values into a stream 
+of constant values, e.g. a stream of click events on a "Increment" button would be converted to
+a stream of `1`'s. This would typically look like:
 */
 
-Array(1...10)
-  .map(incr • square)
-  .filter(isPrime)
-  .map(const("doge"))
+let clicks = [(), (), (), (), ()]
+let increments = clicks.map { _ in 1}
+
+/*:
+A better way is to use the `const` function, which is a curried function such that `const(x)` returns 
+a new function for which no matter what you plug into it, it will simply return `x`. We can now do:
+*/
+
+let newIncrements = clicks.map(const(1))
 
 /*:
 Anytime you find yourself writing a closure of the form `{ _ in value }` you could instead compose
@@ -100,25 +106,18 @@ with `const(value)`.
 ## Point-free programming
 
 When one properly prompotes functional composition one can begin transforming streams of data without
-ever explicitly mentioning values in the stream. This is called [point-free programming](https://en.wikipedia.org/wiki/Tacit_programming). Indeed, consider the example from the previous section:
+ever explicitly mentioning values in the stream. This is called [point-free programming](https://en.wikipedia.org/wiki/Tacit_programming). 
+Consider the following:
 */
 
-Array(1...10)
+Array(1...100)
   .map(incr • square)
   .filter(isPrime)
-  .map(const("doge"))
 
 /*:
-This expresses an entire stream processing pipeline without ever mentioning a single value that goes
-through the pipeline. This style programming is very expressive and forces one to think in terms of
-small atomic units and pure functions, the benefits of which are immense.
+This finds all the prime numbers of the form `n^2 + 1` for `n = 1...100`. The entire stream processing 
+pipeline is expressed without ever mentioning a single value that goes through the pipeline. This style 
+of programming is very expressive and forces one to think in terms of small atomic units and pure 
+functions, the benefits of which are immense.
 */
-
-
-
-
-
-
-
-
 
