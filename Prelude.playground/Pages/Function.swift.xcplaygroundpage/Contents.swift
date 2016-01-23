@@ -52,7 +52,9 @@ Note that `|>` is left-associative, so the above is equivalent to:
 
 /*:
 Alternatively we could have also composed the functions first and then piped a value through.
-However, composition works seemingly backwards: `(g • f)(x) == g(f(x))`.
+Function composition is done via the `•` operator, which can be entered on a keyboard via the
+shortcut `alt+8`. An important property of function composition is that it is expressed 
+backwards: `(g • f)(x) == g(f(x))`.
 */
 
 5 |> (isPrime • incr • square)
