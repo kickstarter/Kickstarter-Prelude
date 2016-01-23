@@ -5,6 +5,8 @@ import Prelude
 
 ### Functional composition operators
 
+---
+
 The operators `|>` and `•` can be used for function application and composition in a
 more expressive manner. Let’s define some simple, pure functions:
 */

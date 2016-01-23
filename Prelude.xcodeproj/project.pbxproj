@@ -105,15 +105,15 @@
 		CA0923FA1BB6291900C9EC88 /* Prelude */ = {
 			isa = PBXGroup;
 			children = (
+				CA0923FB1BB6291900C9EC88 /* Prelude.h */,
+				CA0923FD1BB6291900C9EC88 /* Info.plist */,
 				CAC0795C1BBDBF8F00AFDBF0 /* Array.swift */,
 				A7F7ADE71C53D27300E39792 /* Comparable.swift */,
 				A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */,
 				A75EFFE31C0E7BF40002C7D2 /* Empty.swift */,
 				CA0924361BB629BC00C9EC88 /* Function.swift */,
-				CA0923FD1BB6291900C9EC88 /* Info.plist */,
 				A7EFE1511C28B46900F4CFEB /* NumericType.swift */,
 				CAC0795E1BBDC00200AFDBF0 /* Optional.swift */,
-				CA0923FB1BB6291900C9EC88 /* Prelude.h */,
 				CA3DFCD21BDFFB8000D30C27 /* Tuple.swift */,
 				A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */,
 				A7EFE1531C28B53D00F4CFEB /* VectorType.swift */,
@@ -124,11 +124,11 @@
 		CA0924061BB6291900C9EC88 /* PreludeTests */ = {
 			isa = PBXGroup;
 			children = (
+				CA0924091BB6291900C9EC88 /* Info.plist */,
 				A7C510851C273D4700C59136 /* ArrayTest.swift */,
 				A7F7ADE91C53D43400E39792 /* ComparableTests.swift */,
 				A7C510871C273FA600C59136 /* DictionaryTest.swift */,
 				CA0924071BB6291900C9EC88 /* FunctionTest.swift */,
-				CA0924091BB6291900C9EC88 /* Info.plist */,
 				A753B5601C2EEA1400FDB616 /* OptionalTests.swift */,
 				A753B55E1C2EE86700FDB616 /* TupleTests.swift */,
 				A753B55C1C2EE80B00FDB616 /* UnitTests.swift */,
