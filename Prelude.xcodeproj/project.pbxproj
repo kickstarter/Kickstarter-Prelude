@@ -18,6 +18,8 @@
 		A7C510881C273FA600C59136 /* DictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510871C273FA600C59136 /* DictionaryTest.swift */; };
 		A7EFE1521C28B46900F4CFEB /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1511C28B46900F4CFEB /* NumericType.swift */; };
 		A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1531C28B53D00F4CFEB /* VectorType.swift */; };
+		A7F7ADE81C53D27300E39792 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F7ADE71C53D27300E39792 /* Comparable.swift */; };
+		A7F7ADEA1C53D43400E39792 /* ComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F7ADE91C53D43400E39792 /* ComparableTests.swift */; };
 		CA0923FC1BB6291900C9EC88 /* Prelude.h in Headers */ = {isa = PBXBuildFile; fileRef = CA0923FB1BB6291900C9EC88 /* Prelude.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA0924031BB6291900C9EC88 /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0923F81BB6291900C9EC88 /* Prelude.framework */; };
 		CA0924081BB6291900C9EC88 /* FunctionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0924071BB6291900C9EC88 /* FunctionTest.swift */; };
@@ -49,6 +51,8 @@
 		A7C510871C273FA600C59136 /* DictionaryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTest.swift; sourceTree = "<group>"; };
 		A7EFE1511C28B46900F4CFEB /* NumericType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericType.swift; sourceTree = "<group>"; };
 		A7EFE1531C28B53D00F4CFEB /* VectorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorType.swift; sourceTree = "<group>"; };
+		A7F7ADE71C53D27300E39792 /* Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
+		A7F7ADE91C53D43400E39792 /* ComparableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparableTests.swift; sourceTree = "<group>"; };
 		CA0923F81BB6291900C9EC88 /* Prelude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0923FB1BB6291900C9EC88 /* Prelude.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prelude.h; sourceTree = "<group>"; };
 		CA0923FD1BB6291900C9EC88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,14 +105,15 @@
 		CA0923FA1BB6291900C9EC88 /* Prelude */ = {
 			isa = PBXGroup;
 			children = (
-				CA0923FB1BB6291900C9EC88 /* Prelude.h */,
-				CA0923FD1BB6291900C9EC88 /* Info.plist */,
 				CAC0795C1BBDBF8F00AFDBF0 /* Array.swift */,
+				A7F7ADE71C53D27300E39792 /* Comparable.swift */,
 				A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */,
 				A75EFFE31C0E7BF40002C7D2 /* Empty.swift */,
 				CA0924361BB629BC00C9EC88 /* Function.swift */,
+				CA0923FD1BB6291900C9EC88 /* Info.plist */,
 				A7EFE1511C28B46900F4CFEB /* NumericType.swift */,
 				CAC0795E1BBDC00200AFDBF0 /* Optional.swift */,
+				CA0923FB1BB6291900C9EC88 /* Prelude.h */,
 				CA3DFCD21BDFFB8000D30C27 /* Tuple.swift */,
 				A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */,
 				A7EFE1531C28B53D00F4CFEB /* VectorType.swift */,
@@ -119,10 +124,11 @@
 		CA0924061BB6291900C9EC88 /* PreludeTests */ = {
 			isa = PBXGroup;
 			children = (
-				CA0924091BB6291900C9EC88 /* Info.plist */,
 				A7C510851C273D4700C59136 /* ArrayTest.swift */,
+				A7F7ADE91C53D43400E39792 /* ComparableTests.swift */,
 				A7C510871C273FA600C59136 /* DictionaryTest.swift */,
 				CA0924071BB6291900C9EC88 /* FunctionTest.swift */,
+				CA0924091BB6291900C9EC88 /* Info.plist */,
 				A753B5601C2EEA1400FDB616 /* OptionalTests.swift */,
 				A753B55E1C2EE86700FDB616 /* TupleTests.swift */,
 				A753B55C1C2EE80B00FDB616 /* UnitTests.swift */,
@@ -242,6 +248,7 @@
 				CAC0795D1BBDBF8F00AFDBF0 /* Array.swift in Sources */,
 				CA0924371BB629BC00C9EC88 /* Function.swift in Sources */,
 				A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */,
+				A7F7ADE81C53D27300E39792 /* Comparable.swift in Sources */,
 				A75EFFE21C0E7B8E0002C7D2 /* Unit.swift in Sources */,
 				CAC0795F1BBDC00200AFDBF0 /* Optional.swift in Sources */,
 				A75EFFE41C0E7BF40002C7D2 /* Empty.swift in Sources */,
@@ -256,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A753B55F1C2EE86700FDB616 /* TupleTests.swift in Sources */,
+				A7F7ADEA1C53D43400E39792 /* ComparableTests.swift in Sources */,
 				A76DDD531C29AEF60073B888 /* VectorTypeTest.swift in Sources */,
 				CA0924081BB6291900C9EC88 /* FunctionTest.swift in Sources */,
 				A7C510881C273FA600C59136 /* DictionaryTest.swift in Sources */,
