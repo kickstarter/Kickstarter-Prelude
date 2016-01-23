@@ -1,6 +1,6 @@
 /// A `VectorType` instance is something that behaves like a linear vector does, i.e. it can be
 /// scaled with numeric values and added to other vectors.
-public protocol VectorType {
+public protocol VectorType: Equatable {
   typealias Scalar: NumericType
   
   func scale(c: Scalar) -> Self
@@ -25,6 +25,22 @@ public func * <V: VectorType> (v: V, c: V.Scalar) -> V {
 
 public func + <V: VectorType> (v: V, w: V) -> V {
   return v.add(w)
+}
+
+extension Double : VectorType {
+  public typealias Scalar = Double
+
+  public func scale(c: Double) -> Double {
+    return self * c
+  }
+
+  public func add(v: Double) -> Double {
+    return self + v
+  }
+
+  public func zero() -> Double {
+    return 0.0
+  }
 }
 
 extension CGFloat : VectorType {
