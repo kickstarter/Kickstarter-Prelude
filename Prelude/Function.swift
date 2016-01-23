@@ -21,13 +21,3 @@ public func id <A> (x: A) -> A {
 public func const <A, B> (b: B) -> A -> B {
   return { _ in b }
 }
-
-/// Clamps a value to a max and min.
-public func clamp <T: Comparable> (min: T, _ max: T)(_ value: T) -> T {
-  return Swift.max(min, Swift.min(max, value))
-}
-
-/// Linearly interpolate between two vectors.
-public func lerp <V: VectorType> (a: V, _ b: V)(_ t: V.Scalar) -> V {
-  return a * (V.Scalar.one() - t) + b * t
-}
