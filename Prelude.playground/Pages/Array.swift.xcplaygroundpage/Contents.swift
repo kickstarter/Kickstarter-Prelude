@@ -1,9 +1,9 @@
 import Prelude
 
 /*:
-## Array.swift
+# Array.swift
 
-### Additions to `Array`
+## Additions to `Array`
 
 ---
 

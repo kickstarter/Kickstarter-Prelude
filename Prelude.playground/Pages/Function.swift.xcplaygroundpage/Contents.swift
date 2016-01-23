@@ -1,11 +1,11 @@
 import Prelude
 
 /*:
-## Function.swift
-
-### Functional composition operators
+# Function.swift
 
 ---
+
+## Functional composition operators
 
 The operators `|>` and `•` can be used for function application and composition in a
 more expressive manner. Let’s define some simple, pure functions:
@@ -95,7 +95,7 @@ Array(1...10)
 Anytime you find yourself writing a closure of the form `{ _ in value }` you could instead compose
 with `const(value)`.
 
-### Point-free programming
+## Point-free programming
 
 When one properly prompotes functional composition one can begin transforming streams of data without
 ever explicitly mentioning values in the stream. This is called [point-free programming](https://en.wikipedia.org/wiki/Tacit_programming). Indeed, consider the example from the previous section:
