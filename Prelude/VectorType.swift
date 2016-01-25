@@ -1,6 +1,6 @@
 /// A `VectorType` instance is something that behaves like a linear vector does, i.e. it can be
 /// scaled with numeric values and added to other vectors.
-public protocol VectorType {
+public protocol VectorType: Equatable {
   typealias Scalar: NumericType
 
   func scale(c: Scalar) -> Self
@@ -11,6 +11,17 @@ public protocol VectorType {
 }
 
 public extension VectorType {
+  /**
+   Linearly interpolate between two vectors.
+
+   - parameter b: Another vector to interpolate to.
+
+   - returns: A function that interpolates between `self` and `b` as `t` varies from `0` to `1`.
+   */
+  public func lerp(b: Self)(_ t: Self.Scalar) -> Self {
+    return self * (Self.Scalar.one() - t) + b * t
+  }
+
   public func subtract(v: Self) -> Self {
     return self.add(v.negateVector())
   }
@@ -19,12 +30,40 @@ public extension VectorType {
   }
 }
 
+/**
+ Linearly interpolate between two vectors. This is a free-function version of `VectorType.lerp`.
+
+ - parameter a: A vector to interpolate from.
+ - parameter b: A vector to interpolate to.
+
+ - returns: A function that interpolates between `a` and `b` as `t` varies from `0` to `1`.
+ */
+public func lerp <V: VectorType> (a: V, _ b: V)(_ t: V.Scalar) -> V {
+  return a * (V.Scalar.one() - t) + b * t
+}
+
 public func * <V: VectorType> (v: V, c: V.Scalar) -> V {
   return v.scale(c)
 }
 
 public func + <V: VectorType> (v: V, w: V) -> V {
   return v.add(w)
+}
+
+extension Double : VectorType {
+  public typealias Scalar = Double
+
+  public func scale(c: Double) -> Double {
+    return self * c
+  }
+
+  public func add(v: Double) -> Double {
+    return self + v
+  }
+
+  public func zero() -> Double {
+    return 0.0
+  }
 }
 
 extension CGFloat : VectorType {

@@ -25,16 +25,16 @@ final class OptionalTests: XCTestCase {
     func isEven(x: Int) -> Bool { return x % 2 == 0 }
 
     let x: Int? = 1
-    XCTAssertEqual(x.optionalFilter(isEven), nil)
+    XCTAssertEqual(nil, x.optionalFilter(isEven))
     let y: Int? = 2
-    XCTAssertEqual(y.optionalFilter(isEven), 2)
+    XCTAssertEqual(2, y.optionalFilter(isEven))
   }
 
   func testCoalesceWith() {
     let x: Int? = 1
-    XCTAssertEqual(x.coalesceWith(2), 1)
+    XCTAssertEqual(1, x.coalesceWith(2))
     let y: Int? = nil
-    XCTAssertEqual(y.coalesceWith(2), 2)
+    XCTAssertEqual(2, y.coalesceWith(2))
   }
 
   func testForceUnwrap() {
