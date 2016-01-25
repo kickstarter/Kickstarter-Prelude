@@ -26,18 +26,4 @@ class FunctionTest : XCTestCase {
     XCTAssertEqual(2, const(2)(3))
     XCTAssertEqual(2, const(2)("doge"))
   }
-
-  func testClamp() {
-    XCTAssertEqualWithAccuracy(0.0, clamp(0.0, 1.0)(-1.0), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(0.5, clamp(0.0, 1.0)(0.5), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(1.0, clamp(0.0, 1.0)(2.0), accuracy: 0.0)
-  }
-
-  func testLerp() {
-    XCTAssertEqualWithAccuracy(0.0, lerp(0.0, 4.0)(0.00), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(1.0, lerp(0.0, 4.0)(0.25), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(2.0, lerp(0.0, 4.0)(0.50), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(3.0, lerp(0.0, 4.0)(0.75), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(4.0, lerp(0.0, 4.0)(1.00), accuracy: 0.0)
-  }
 }

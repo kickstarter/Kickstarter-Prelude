@@ -11,12 +11,35 @@ public protocol VectorType: Equatable {
 }
 
 public extension VectorType {
+  /**
+   Linearly interpolate between two vectors.
+
+   - parameter b: Another vector to interpolate to.
+
+   - returns: A function that interpolates between `self` and `b` as `t` varies from `0` to `1`.
+   */
+  public func lerp(b: Self)(_ t: Self.Scalar) -> Self {
+    return self * (Self.Scalar.one() - t) + b * t
+  }
+
   public func subtract(v: Self) -> Self {
     return self.add(v.negateVector())
   }
   public func negateVector() -> Self {
     return self.scale(Self.Scalar.one().negate())
   }
+}
+
+/**
+ Linearly interpolate between two vectors. This is a free-function version of `VectorType.lerp`.
+
+ - parameter a: A vector to interpolate from.
+ - parameter b: A vector to interpolate to.
+
+ - returns: A function that interpolates between `a` and `b` as `t` varies from `0` to `1`.
+ */
+public func lerp <V: VectorType> (a: V, _ b: V)(_ t: V.Scalar) -> V {
+  return a * (V.Scalar.one() - t) + b * t
 }
 
 public func * <V: VectorType> (v: V, c: V.Scalar) -> V {
