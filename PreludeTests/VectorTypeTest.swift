@@ -1,7 +1,7 @@
 import XCTest
 @testable import Prelude
 
-class VectorTypeTest : XCTestCase {
+class VectorTypeTest: XCTestCase {
 
   func testCGFloat() {
     let f1 = CGFloat(2.0)

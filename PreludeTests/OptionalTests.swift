@@ -1,7 +1,7 @@
 import XCTest
 @testable import Prelude
 
-final class OptionalTests : XCTestCase {
+final class OptionalTests: XCTestCase {
 
   func testIsNil() {
     let x: Int? = 1

@@ -2,7 +2,7 @@
 /// scaled with numeric values and added to other vectors.
 public protocol VectorType: Equatable {
   typealias Scalar: NumericType
-  
+
   func scale(c: Scalar) -> Self
   func add(v: Self) -> Self
   func subtract(v: Self) -> Self
@@ -90,7 +90,7 @@ extension CGPoint : VectorType {
   }
 
   public static func zero() -> CGPoint {
-    return CGPointZero
+    return CGPoint.zero
   }
 }
 
@@ -116,6 +116,6 @@ extension CGRect : VectorType {
   }
 
   public static func zero() -> CGRect {
-    return CGRectZero
+    return CGRect.zero
   }
 }

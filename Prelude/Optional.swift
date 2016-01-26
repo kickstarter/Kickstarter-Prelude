@@ -27,8 +27,11 @@ extension Optional {
   }
 
   /**
-   If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil` is returned.
-  */
+   - parameter predicate: A predicate that determines if the wrapped value should be kept or not.
+
+   - returns: If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil`
+              is returned.
+   */
   public func optionalFilter(predicate: Wrapped -> Bool) -> Optional {
     if let value = self where predicate(value) {
       return value
@@ -37,8 +40,12 @@ extension Optional {
   }
 
   /**
-   Coalesces `self` into an unwrapped value. This is a functional equivalent of the `??` operator.
-  */
+    Coalesces `self` into an unwrapped value. This is a functional equivalent of the `??` operator.
+
+   - parameter value:
+
+   - returns:
+   */
   public func coalesceWith(value: Wrapped) -> Wrapped {
     return self ?? value
   }

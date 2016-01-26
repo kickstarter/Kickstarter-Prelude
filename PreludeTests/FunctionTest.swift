@@ -1,7 +1,7 @@
 import XCTest
 @testable import Prelude
 
-class FunctionTest : XCTestCase {
+class FunctionTest: XCTestCase {
 
   func testPipeForward() {
     func square(x: Int) -> Int { return x * x }

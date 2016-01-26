@@ -1,7 +1,7 @@
 import XCTest
 @testable import Prelude
 
-final class TupleTests : XCTestCase {
+final class TupleTests: XCTestCase {
 
   func testTupleEquality() {
     XCTAssert((1, 2) == (1, 2))
