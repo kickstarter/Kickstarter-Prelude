@@ -3,9 +3,10 @@ machine:
     version: 7.2
 test:
   override:
-    - xctool
-      -reporter pretty
-      -reporter junit:$CIRCLE_TEST_REPORTS/xcode/results.xml
-      -reporter plain:$CIRCLE_ARTIFACTS/xctool.log
-      -destination 'platform=tvOS Simulator,OS=9.1,name=Apple TV 1080p'
-      -scheme Prelude
+    - set -o pipefail &&
+      xcodebuild
+        -destination 'platform=tvOS Simulator,OS=9.1,name=Apple TV 1080p'
+        -scheme Prelude
+        clean build test |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      xcpretty
