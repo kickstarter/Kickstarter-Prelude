@@ -8,4 +8,14 @@ class ArrayTest: XCTestCase {
 
     XCTAssertEqual([1, 2, 3, 4], xs.compact())
   }
+
+  func testRandomElement() {
+    let xs = [1, 2, 3, 4, 5]
+    (0..<10).forEach { _ in
+      XCTAssertNotNil(xs.randomElement)
+    }
+
+    let ys = [Int]()
+    XCTAssertNil(ys.randomElement)
+  }
 }
