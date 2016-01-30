@@ -2,14 +2,28 @@ import Foundation
 
 infix operator |> {associativity left precedence 140}
 
-/// Pipe an element into a function
+/**
+Pipe a value into a function.
+
+- parameter x: A value.
+- parameter f: A function
+
+- returns: The value from apply `f` to `x`.
+*/
 public func |> <A, B> (x: A, f: A -> B) -> B {
   return f(x)
 }
 
 infix operator • {associativity left precedence 150}
 
-/// Compose two functions with an infix operator
+/**
+ Compose two functions
+
+ - parameter g: A function.
+ - parameter f: A function.
+
+ - returns: The composition function of `f` and `g`.
+*/
 public func • <A, B, C> (g: B -> C, f: A -> B) -> A -> C {
   return { x in g(f(x)) }
 }

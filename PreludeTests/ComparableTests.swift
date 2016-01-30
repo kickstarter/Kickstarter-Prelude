@@ -1,7 +1,7 @@
 import XCTest
 @testable import Prelude
 
-class ComparableTests : XCTestCase {
+class ComparableTests: XCTestCase {
 
   func testClamp() {
     XCTAssertEqualWithAccuracy(0.0, 0.0.clamp(1.0)(-1.0), accuracy: 0.0)

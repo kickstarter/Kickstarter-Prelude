@@ -53,7 +53,7 @@ Note that `|>` is left-associative, so the above is equivalent to:
 /*:
 Alternatively we could have also composed the functions first and then piped a value through.
 Function composition is done via the `•` operator, which can be entered on a keyboard via the
-shortcut `alt+8`. An important property of function composition is that it is expressed 
+shortcut `alt+8`. An important property of function composition is that it is expressed
 backwards: `(g • f)(x) == g(f(x))`.
 */
 
@@ -84,7 +84,7 @@ truths.filter(id)
 In fact, anytime you find yourself writing a closure of the form `{ x in x }` or `{ $0 }` you
 can simply use `id`.
 
-Many times in stream processing one wants to convert a stream of unimportant values into a stream 
+Many times in stream processing one wants to convert a stream of unimportant values into a stream
 of constant values, e.g. a stream of click events on a "Increment" button would be converted to
 a stream of `1`'s. This would typically look like:
 */
@@ -93,7 +93,7 @@ let clicks = [(), (), (), (), ()]
 let increments = clicks.map { _ in 1}
 
 /*:
-A better way is to use the `const` function, which is a curried function such that `const(x)` returns 
+A better way is to use the `const` function, which is a curried function such that `const(x)` returns
 a new function for which no matter what you plug into it, it will simply return `x`. We can now do:
 */
 
@@ -106,8 +106,8 @@ with `const(value)`.
 ## Point-free programming
 
 When one properly prompotes functional composition one can begin transforming streams of data without
-ever explicitly mentioning values in the stream. This is called [point-free programming](https://en.wikipedia.org/wiki/Tacit_programming). 
-Consider the following:
+ever explicitly mentioning values in the stream. This is called
+[point-free programming](https://en.wikipedia.org/wiki/Tacit_programming). Consider the following:
 */
 
 Array(1...100)
@@ -115,9 +115,8 @@ Array(1...100)
   .filter(isPrime)
 
 /*:
-This finds all the prime numbers of the form `n^2 + 1` for `n = 1...100`. The entire stream processing 
-pipeline is expressed without ever mentioning a single value that goes through the pipeline. This style 
-of programming is very expressive and forces one to think in terms of small atomic units and pure 
+This finds all the prime numbers of the form `n^2 + 1` for `n = 1...100`. The entire stream processing
+pipeline is expressed without ever mentioning a single value that goes through the pipeline. This style
+of programming is very expressive and forces one to think in terms of small atomic units and pure
 functions, the benefits of which are immense.
 */
-
