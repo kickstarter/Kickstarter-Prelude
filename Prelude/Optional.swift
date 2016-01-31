@@ -58,3 +58,31 @@ public func isNil <A> (x: A?) -> Bool {
 public func isNotNil <A> (x: A?) -> Bool {
   return x != nil
 }
+
+/**
+ An equality operator on arrays of equatable optionals.
+
+ - parameter lhs: An array of equatable optionals.
+ - parameter rhs: An array of equatable optionals.
+
+ - returns: A boolean if the elements in both arrays are pairwise equal.
+ */
+public func == <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
+  guard lhs.count == rhs.count else { return false }
+
+  return zip(lhs, rhs).reduce(true) { (accum, lr) in
+    return accum && lr.0 == lr.1
+  }
+}
+
+/**
+ An inequality operator on arrays of equatable optionals.
+
+ - parameter lhs: An array of equatable optionals.
+ - parameter rhs: An array of equatable optionals.
+
+ - returns: A boolean if the elements in both arrays are not pairwise equal.
+ */
+public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
+  return !(lhs == rhs)
+}

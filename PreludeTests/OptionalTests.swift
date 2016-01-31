@@ -41,4 +41,19 @@ final class OptionalTests: XCTestCase {
     let x: Int? = 1
     XCTAssertEqual(1, x.forceUnwrap())
   }
+
+  func testArrayEquality() {
+    let xs: [Int?] = [1, nil, 2, nil, 3]
+    let ys: [Int?] = [nil, nil, nil, nil, nil]
+    let zs: [Int?] = [1, 2, 3]
+
+    XCTAssertTrue(xs == xs)
+    XCTAssertTrue(xs != ys)
+    XCTAssertTrue(xs != zs)
+
+    XCTAssertTrue(ys == ys)
+    XCTAssertTrue(xs != zs)
+
+    XCTAssertTrue(zs == zs)
+  }
 }
