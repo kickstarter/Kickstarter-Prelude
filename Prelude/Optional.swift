@@ -13,9 +13,9 @@ extension Optional: OptionalType {
   }
 }
 
-extension Optional {
+extension OptionalType {
   public var isNil: Bool {
-    return self == nil
+    return self.optional == nil
   }
 
   public var isSome: Bool {
@@ -23,7 +23,7 @@ extension Optional {
   }
 
   public func forceUnwrap() -> Wrapped {
-    return self!
+    return self.optional!
   }
 
   /**
@@ -32,8 +32,8 @@ extension Optional {
    - returns: If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil`
               is returned.
    */
-  public func optionalFilter(predicate: Wrapped -> Bool) -> Optional {
-    if let value = self where predicate(value) {
+  public func optionalFilter(predicate: Wrapped -> Bool) -> Wrapped? {
+    if let value = self.optional where predicate(value) {
       return value
     }
     return nil
@@ -47,8 +47,20 @@ extension Optional {
    - returns:
    */
   public func coalesceWith(value: Wrapped) -> Wrapped {
-    return self ?? value
+    return self.optional ?? value
   }
+}
+
+/**
+ Flattens a doubly nested optional.
+
+ - parameter x: An optional.
+
+ - returns: An optional.
+ */
+public func flatten <A> (x: A??) -> A? {
+  if let x = x { return x }
+  return nil
 }
 
 public func isNil <A> (x: A?) -> Bool {
