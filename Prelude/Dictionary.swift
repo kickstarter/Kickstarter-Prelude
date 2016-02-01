@@ -13,3 +13,24 @@ public extension Dictionary where Value: Prelude.OptionalType {
     return ret
   }
 }
+
+public extension Dictionary {
+
+  /**
+   Merges `self` with `other`, but all values from `other` trump the values in `self`.
+
+   - parameter other: Another dictionary.
+
+   - returns: A merged dictionary.
+   */
+  public func withAllValuesFrom(other: Dictionary) -> Dictionary {
+
+    var result = self
+
+    for (key, value) in other {
+      result[key] = value
+    }
+
+    return result
+  }
+}
