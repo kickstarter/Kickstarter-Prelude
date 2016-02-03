@@ -3,3 +3,10 @@ public struct SomeError: ErrorType {
   public init() {
   }
 }
+
+extension SomeError: Equatable {
+}
+
+public func == (lhs: SomeError, rhs: SomeError) -> Bool {
+  return true
+}
