@@ -57,11 +57,11 @@ final class OptionalTests: XCTestCase {
     XCTAssertTrue(zs == zs)
   }
 
-  func testFlatten() {
+  func testFlattenOptional() {
     let x = Optional<Optional<Int>>.Some(1)
     let y = Optional<Optional<Int>>.None
 
-    XCTAssertEqual(flatten(x), Optional<Int>.Some(1))
-    XCTAssertEqual(flatten(y), Optional<Int>.None)
+    XCTAssertEqual(flattenOptional(x), Optional<Int>.Some(1))
+    XCTAssertEqual(flattenOptional(y), Optional<Int>.None)
   }
 }
