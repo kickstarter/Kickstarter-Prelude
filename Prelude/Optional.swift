@@ -58,7 +58,7 @@ extension OptionalType {
 
  - returns: An optional.
  */
-public func flatten <A> (x: A??) -> A? {
+public func flattenOptional <A> (x: A??) -> A? {
   if let x = x { return x }
   return nil
 }
