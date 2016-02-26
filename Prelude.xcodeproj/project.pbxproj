@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7378CC61C80958000F0A562 /* Prelude.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Prelude.playground; sourceTree = "<group>"; };
 		A753B55C1C2EE80B00FDB616 /* UnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		A753B55E1C2EE86700FDB616 /* TupleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TupleTests.swift; sourceTree = "<group>"; };
 		A753B5601C2EEA1400FDB616 /* OptionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalTests.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		CA0923EE1BB6291800C9EC88 = {
 			isa = PBXGroup;
 			children = (
+				A7378CC61C80958000F0A562 /* Prelude.playground */,
 				CA0923FA1BB6291900C9EC88 /* Prelude */,
 				CA0924061BB6291900C9EC88 /* PreludeTests */,
 				CA0923F91BB6291900C9EC88 /* Products */,

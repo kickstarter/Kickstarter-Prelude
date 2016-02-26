@@ -20,7 +20,7 @@ xs.compact()
 xs.compact().reduce(0, combine: +)
 
 /*:
-The following will not compile because `+` does not know how to operator on optional integers:
+The following will not compile because `+` does not know how to operate on optional integers:
 */
 
 // xs.reduce(0, combine: +)
