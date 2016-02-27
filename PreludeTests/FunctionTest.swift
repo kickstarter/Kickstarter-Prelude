@@ -17,6 +17,14 @@ class FunctionTest: XCTestCase {
     XCTAssertEqual(10, (incr • square)(3))
   }
 
+  func testMonoidCompose() {
+    func square(x: Int) -> Int { return x * x }
+    func incr(x: Int) -> Int { return x + 1 }
+
+    XCTAssertEqual(10, (square <> incr)(3))
+    XCTAssertEqual(16, (incr <> square)(3))
+  }
+
   func testId() {
     XCTAssertEqual(2, id(2))
     XCTAssertEqual("doge", id("doge"))
