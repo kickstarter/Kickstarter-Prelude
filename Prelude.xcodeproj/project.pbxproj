@@ -21,6 +21,27 @@
 		A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1531C28B53D00F4CFEB /* VectorType.swift */; };
 		A7F7ADE81C53D27300E39792 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F7ADE71C53D27300E39792 /* Comparable.swift */; };
 		A7F7ADEA1C53D43400E39792 /* ComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F7ADE91C53D43400E39792 /* ComparableTests.swift */; };
+		A7FD084E1C81E1DA00332CCB /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0795C1BBDBF8F00AFDBF0 /* Array.swift */; };
+		A7FD084F1C81E1DA00332CCB /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0924361BB629BC00C9EC88 /* Function.swift */; };
+		A7FD08501C81E1DA00332CCB /* SomeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBFCF21C5EB661002150A1 /* SomeError.swift */; };
+		A7FD08511C81E1DA00332CCB /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1531C28B53D00F4CFEB /* VectorType.swift */; };
+		A7FD08521C81E1DA00332CCB /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F7ADE71C53D27300E39792 /* Comparable.swift */; };
+		A7FD08531C81E1DA00332CCB /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */; };
+		A7FD08541C81E1DA00332CCB /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0795E1BBDC00200AFDBF0 /* Optional.swift */; };
+		A7FD08551C81E1DA00332CCB /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EFFE31C0E7BF40002C7D2 /* Empty.swift */; };
+		A7FD08561C81E1DA00332CCB /* Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFCD21BDFFB8000D30C27 /* Tuple.swift */; };
+		A7FD08571C81E1DA00332CCB /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1511C28B46900F4CFEB /* NumericType.swift */; };
+		A7FD08581C81E1DA00332CCB /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */; };
+		A7FD085B1C81E1DA00332CCB /* Prelude.h in Headers */ = {isa = PBXBuildFile; fileRef = CA0923FB1BB6291900C9EC88 /* Prelude.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7FD086A1C81E24A00332CCB /* TupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B55E1C2EE86700FDB616 /* TupleTests.swift */; };
+		A7FD086B1C81E24A00332CCB /* ComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F7ADE91C53D43400E39792 /* ComparableTests.swift */; };
+		A7FD086C1C81E24A00332CCB /* VectorTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DDD521C29AEF60073B888 /* VectorTypeTest.swift */; };
+		A7FD086D1C81E24A00332CCB /* FunctionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0924071BB6291900C9EC88 /* FunctionTest.swift */; };
+		A7FD086E1C81E24A00332CCB /* DictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510871C273FA600C59136 /* DictionaryTest.swift */; };
+		A7FD086F1C81E24A00332CCB /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B55C1C2EE80B00FDB616 /* UnitTests.swift */; };
+		A7FD08701C81E24A00332CCB /* OptionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B5601C2EEA1400FDB616 /* OptionalTests.swift */; };
+		A7FD08711C81E24A00332CCB /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510851C273D4700C59136 /* ArrayTest.swift */; };
+		A7FD08731C81E24A00332CCB /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0923F81BB6291900C9EC88 /* Prelude.framework */; };
 		CA0923FC1BB6291900C9EC88 /* Prelude.h in Headers */ = {isa = PBXBuildFile; fileRef = CA0923FB1BB6291900C9EC88 /* Prelude.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA0924031BB6291900C9EC88 /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0923F81BB6291900C9EC88 /* Prelude.framework */; };
 		CA0924081BB6291900C9EC88 /* FunctionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0924071BB6291900C9EC88 /* FunctionTest.swift */; };
@@ -31,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A7FD087D1C81E27800332CCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA0923EF1BB6291800C9EC88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7FD084C1C81E1DA00332CCB;
+			remoteInfo = "Prelude-iOS";
+		};
 		CA0924041BB6291900C9EC88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA0923EF1BB6291800C9EC88 /* Project object */;
@@ -56,10 +84,12 @@
 		A7EFE1531C28B53D00F4CFEB /* VectorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorType.swift; sourceTree = "<group>"; };
 		A7F7ADE71C53D27300E39792 /* Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		A7F7ADE91C53D43400E39792 /* ComparableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparableTests.swift; sourceTree = "<group>"; };
+		A7FD08641C81E1DA00332CCB /* .framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = .framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7FD087B1C81E24A00332CCB /* Prelude-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0923F81BB6291900C9EC88 /* Prelude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0923FB1BB6291900C9EC88 /* Prelude.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prelude.h; sourceTree = "<group>"; };
 		CA0923FD1BB6291900C9EC88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA0924021BB6291900C9EC88 /* PreludeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreludeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA0924021BB6291900C9EC88 /* Prelude-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0924071BB6291900C9EC88 /* FunctionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionTest.swift; sourceTree = "<group>"; };
 		CA0924091BB6291900C9EC88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA0924361BB629BC00C9EC88 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
@@ -69,6 +99,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A7FD08591C81E1DA00332CCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7FD08721C81E24A00332CCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7FD08731C81E24A00332CCB /* Prelude.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA0923F41BB6291900C9EC88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,7 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				CA0923F81BB6291900C9EC88 /* Prelude.framework */,
-				CA0924021BB6291900C9EC88 /* PreludeTests.xctest */,
+				CA0924021BB6291900C9EC88 /* Prelude-tvOSTests.xctest */,
+				A7FD08641C81E1DA00332CCB /* .framework */,
+				A7FD087B1C81E24A00332CCB /* Prelude-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +192,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		A7FD085A1C81E1DA00332CCB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7FD085B1C81E1DA00332CCB /* Prelude.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA0923F51BB6291900C9EC88 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,9 +211,46 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CA0923F71BB6291900C9EC88 /* Prelude */ = {
+		A7FD084C1C81E1DA00332CCB /* Prelude-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA09240C1BB6291900C9EC88 /* Build configuration list for PBXNativeTarget "Prelude" */;
+			buildConfigurationList = A7FD085E1C81E1DA00332CCB /* Build configuration list for PBXNativeTarget "Prelude-iOS" */;
+			buildPhases = (
+				A7FD084D1C81E1DA00332CCB /* Sources */,
+				A7FD08591C81E1DA00332CCB /* Frameworks */,
+				A7FD085A1C81E1DA00332CCB /* Headers */,
+				A7FD085C1C81E1DA00332CCB /* Resources */,
+				A7FD085D1C81E1DA00332CCB /* swiftlint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Prelude-iOS";
+			productName = Prelude;
+			productReference = A7FD08641C81E1DA00332CCB /* .framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A7FD08661C81E24A00332CCB /* Prelude-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7FD08751C81E24A00332CCB /* Build configuration list for PBXNativeTarget "Prelude-iOSTests" */;
+			buildPhases = (
+				A7FD08691C81E24A00332CCB /* Sources */,
+				A7FD08721C81E24A00332CCB /* Frameworks */,
+				A7FD08741C81E24A00332CCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7FD087E1C81E27800332CCB /* PBXTargetDependency */,
+			);
+			name = "Prelude-iOSTests";
+			productName = PreludeTests;
+			productReference = A7FD087B1C81E24A00332CCB /* Prelude-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA0923F71BB6291900C9EC88 /* Prelude-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA09240C1BB6291900C9EC88 /* Build configuration list for PBXNativeTarget "Prelude-tvOS" */;
 			buildPhases = (
 				CA0923F31BB6291900C9EC88 /* Sources */,
 				CA0923F41BB6291900C9EC88 /* Frameworks */,
@@ -170,14 +262,14 @@
 			);
 			dependencies = (
 			);
-			name = Prelude;
+			name = "Prelude-tvOS";
 			productName = Prelude;
 			productReference = CA0923F81BB6291900C9EC88 /* Prelude.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CA0924011BB6291900C9EC88 /* PreludeTests */ = {
+		CA0924011BB6291900C9EC88 /* Prelude-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA09240F1BB6291900C9EC88 /* Build configuration list for PBXNativeTarget "PreludeTests" */;
+			buildConfigurationList = CA09240F1BB6291900C9EC88 /* Build configuration list for PBXNativeTarget "Prelude-tvOSTests" */;
 			buildPhases = (
 				CA0923FE1BB6291900C9EC88 /* Sources */,
 				CA0923FF1BB6291900C9EC88 /* Frameworks */,
@@ -188,9 +280,9 @@
 			dependencies = (
 				CA0924051BB6291900C9EC88 /* PBXTargetDependency */,
 			);
-			name = PreludeTests;
+			name = "Prelude-tvOSTests";
 			productName = PreludeTests;
-			productReference = CA0924021BB6291900C9EC88 /* PreludeTests.xctest */;
+			productReference = CA0924021BB6291900C9EC88 /* Prelude-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -223,13 +315,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CA0923F71BB6291900C9EC88 /* Prelude */,
-				CA0924011BB6291900C9EC88 /* PreludeTests */,
+				A7FD084C1C81E1DA00332CCB /* Prelude-iOS */,
+				A7FD08661C81E24A00332CCB /* Prelude-iOSTests */,
+				CA0923F71BB6291900C9EC88 /* Prelude-tvOS */,
+				CA0924011BB6291900C9EC88 /* Prelude-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A7FD085C1C81E1DA00332CCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7FD08741C81E24A00332CCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA0923F61BB6291900C9EC88 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,9 +369,56 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		A7FD085D1C81E1DA00332CCB /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A7FD084D1C81E1DA00332CCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7FD084E1C81E1DA00332CCB /* Array.swift in Sources */,
+				A7FD084F1C81E1DA00332CCB /* Function.swift in Sources */,
+				A7FD08501C81E1DA00332CCB /* SomeError.swift in Sources */,
+				A7FD08511C81E1DA00332CCB /* VectorType.swift in Sources */,
+				A7FD08521C81E1DA00332CCB /* Comparable.swift in Sources */,
+				A7FD08531C81E1DA00332CCB /* Unit.swift in Sources */,
+				A7FD08541C81E1DA00332CCB /* Optional.swift in Sources */,
+				A7FD08551C81E1DA00332CCB /* Empty.swift in Sources */,
+				A7FD08561C81E1DA00332CCB /* Tuple.swift in Sources */,
+				A7FD08571C81E1DA00332CCB /* NumericType.swift in Sources */,
+				A7FD08581C81E1DA00332CCB /* Dictionary.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7FD08691C81E24A00332CCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7FD086A1C81E24A00332CCB /* TupleTests.swift in Sources */,
+				A7FD086B1C81E24A00332CCB /* ComparableTests.swift in Sources */,
+				A7FD086C1C81E24A00332CCB /* VectorTypeTest.swift in Sources */,
+				A7FD086D1C81E24A00332CCB /* FunctionTest.swift in Sources */,
+				A7FD086E1C81E24A00332CCB /* DictionaryTest.swift in Sources */,
+				A7FD086F1C81E24A00332CCB /* UnitTests.swift in Sources */,
+				A7FD08701C81E24A00332CCB /* OptionalTests.swift in Sources */,
+				A7FD08711C81E24A00332CCB /* ArrayTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA0923F31BB6291900C9EC88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,14 +455,173 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A7FD087E1C81E27800332CCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7FD084C1C81E1DA00332CCB /* Prelude-iOS */;
+			targetProxy = A7FD087D1C81E27800332CCB /* PBXContainerItemProxy */;
+		};
 		CA0924051BB6291900C9EC88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CA0923F71BB6291900C9EC88 /* Prelude */;
+			target = CA0923F71BB6291900C9EC88 /* Prelude-tvOS */;
 			targetProxy = CA0924041BB6291900C9EC88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A7FD085F1C81E1DA00332CCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Prelude/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7FD08601C81E1DA00332CCB /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Prelude/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Development;
+		};
+		A7FD08611C81E1DA00332CCB /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Prelude/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Beta;
+		};
+		A7FD08621C81E1DA00332CCB /* Alpha */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Prelude/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Alpha;
+		};
+		A7FD08631C81E1DA00332CCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Prelude/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A7FD08761C81E24A00332CCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PreludeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7FD08771C81E24A00332CCB /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PreludeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Development;
+		};
+		A7FD08781C81E24A00332CCB /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PreludeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Beta;
+		};
+		A7FD08791C81E24A00332CCB /* Alpha */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PreludeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Alpha;
+		};
+		A7FD087A1C81E24A00332CCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PreludeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CA09240A1BB6291900C9EC88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -348,6 +662,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
+				PRODUCT_NAME = Prelude;
 				SDKROOT = appletvos;
 				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -391,6 +706,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
+				PRODUCT_NAME = Prelude;
 				SDKROOT = appletvos;
 				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -413,7 +729,6 @@
 				INFOPLIST_FILE = Prelude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -431,7 +746,6 @@
 				INFOPLIST_FILE = Prelude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -496,6 +810,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
+				PRODUCT_NAME = Prelude;
 				SDKROOT = appletvos;
 				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -518,7 +833,6 @@
 				INFOPLIST_FILE = Prelude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -574,6 +888,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
+				PRODUCT_NAME = Prelude;
 				SDKROOT = appletvos;
 				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -596,7 +911,6 @@
 				INFOPLIST_FILE = Prelude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -652,6 +966,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
+				PRODUCT_NAME = Prelude;
 				SDKROOT = appletvos;
 				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -674,7 +989,6 @@
 				INFOPLIST_FILE = Prelude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -693,6 +1007,30 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A7FD085E1C81E1DA00332CCB /* Build configuration list for PBXNativeTarget "Prelude-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7FD085F1C81E1DA00332CCB /* Debug */,
+				A7FD08601C81E1DA00332CCB /* Development */,
+				A7FD08611C81E1DA00332CCB /* Beta */,
+				A7FD08621C81E1DA00332CCB /* Alpha */,
+				A7FD08631C81E1DA00332CCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7FD08751C81E24A00332CCB /* Build configuration list for PBXNativeTarget "Prelude-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7FD08761C81E24A00332CCB /* Debug */,
+				A7FD08771C81E24A00332CCB /* Development */,
+				A7FD08781C81E24A00332CCB /* Beta */,
+				A7FD08791C81E24A00332CCB /* Alpha */,
+				A7FD087A1C81E24A00332CCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CA0923F21BB6291800C9EC88 /* Build configuration list for PBXProject "Prelude" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -705,7 +1043,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA09240C1BB6291900C9EC88 /* Build configuration list for PBXNativeTarget "Prelude" */ = {
+		CA09240C1BB6291900C9EC88 /* Build configuration list for PBXNativeTarget "Prelude-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA09240D1BB6291900C9EC88 /* Debug */,
@@ -717,7 +1055,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA09240F1BB6291900C9EC88 /* Build configuration list for PBXNativeTarget "PreludeTests" */ = {
+		CA09240F1BB6291900C9EC88 /* Build configuration list for PBXNativeTarget "Prelude-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA0924101BB6291900C9EC88 /* Debug */,

@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA0923F71BB6291900C9EC88"
                BuildableName = "Prelude.framework"
-               BlueprintName = "Prelude"
+               BlueprintName = "Prelude-tvOS"
                ReferencedContainer = "container:Prelude.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA0924011BB6291900C9EC88"
-               BuildableName = "PreludeTests.xctest"
-               BlueprintName = "PreludeTests"
+               BuildableName = "Prelude-tvOSTests.xctest"
+               BlueprintName = "Prelude-tvOSTests"
                ReferencedContainer = "container:Prelude.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CA0923F71BB6291900C9EC88"
             BuildableName = "Prelude.framework"
-            BlueprintName = "Prelude"
+            BlueprintName = "Prelude-tvOS"
             ReferencedContainer = "container:Prelude.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CA0923F71BB6291900C9EC88"
             BuildableName = "Prelude.framework"
-            BlueprintName = "Prelude"
+            BlueprintName = "Prelude-tvOS"
             ReferencedContainer = "container:Prelude.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,7 +85,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CA0923F71BB6291900C9EC88"
             BuildableName = "Prelude.framework"
-            BlueprintName = "Prelude"
+            BlueprintName = "Prelude-tvOS"
             ReferencedContainer = "container:Prelude.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
