@@ -3,4 +3,5 @@ machine:
     version: 7.2
 test:
   override:
-    - bin/test
+    - bin/test iOS
+    - bin/test tvOS
