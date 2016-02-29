@@ -3,10 +3,4 @@ machine:
     version: 7.2
 test:
   override:
-    - set -o pipefail &&
-      xcodebuild
-        -destination 'platform=tvOS Simulator,OS=9.1,name=Apple TV 1080p'
-        -scheme Prelude
-        clean build test |
-      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
-      xcpretty
+    - bin/test
