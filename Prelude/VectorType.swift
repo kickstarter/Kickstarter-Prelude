@@ -1,7 +1,7 @@
 /// A `VectorType` instance is something that behaves like a linear vector does, i.e. it can be
 /// scaled with numeric values and added to other vectors.
 public protocol VectorType: Equatable {
-  typealias Scalar: NumericType
+  associatedtype Scalar: NumericType
 
   func scale(c: Scalar) -> Self
   func add(v: Self) -> Self
@@ -18,8 +18,8 @@ public extension VectorType {
 
    - returns: A function that interpolates between `self` and `b` as `t` varies from `0` to `1`.
    */
-  public func lerp(b: Self)(_ t: Self.Scalar) -> Self {
-    return self * (Self.Scalar.one() - t) + b * t
+  public func lerp(b: Self) -> (Self.Scalar -> Self) {
+    return { t in self * (Self.Scalar.one() - t) + b * t }
   }
 
   public func subtract(v: Self) -> Self {
@@ -38,8 +38,8 @@ public extension VectorType {
 
  - returns: A function that interpolates between `a` and `b` as `t` varies from `0` to `1`.
  */
-public func lerp <V: VectorType> (a: V, _ b: V)(_ t: V.Scalar) -> V {
-  return a * (V.Scalar.one() - t) + b * t
+public func lerp <V: VectorType> (a: V, _ b: V) -> (V.Scalar -> V) {
+  return { t in a * (V.Scalar.one() - t) + b * t }
 }
 
 public func * <V: VectorType> (v: V, c: V.Scalar) -> V {
