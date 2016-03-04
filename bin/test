@@ -8,9 +8,9 @@ if [ $# -eq 0 ]; then
 fi
 
 if [ "$1" == "iOS" ]; then
-  DESTINATION='platform=iOS Simulator,OS=9.2,name=iPhone 6'
+  DESTINATION='platform=iOS Simulator,name=iPhone 6'
 else
-  DESTINATION='platform=tvOS Simulator,OS=9.1,name=Apple TV 1080p'
+  DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 fi
 
 xcodebuild \
