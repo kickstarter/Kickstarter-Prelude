@@ -46,8 +46,8 @@ extension OptionalType {
 
    - returns:
    */
-  public func coalesceWith(value: Wrapped) -> Wrapped {
-    return self.optional ?? value
+  public func coalesceWith(@autoclosure value: () -> Wrapped) -> Wrapped {
+    return self.optional ?? value()
   }
 }
 
