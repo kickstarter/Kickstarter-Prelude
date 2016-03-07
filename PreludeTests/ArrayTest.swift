@@ -18,4 +18,14 @@ class ArrayTest: XCTestCase {
     let ys = [Int]()
     XCTAssertNil(ys.randomElement)
   }
+
+  func testDistinct() {
+    let xs = [1, 2, 3, 1, 2, 3]
+    XCTAssertEqual([1, 2, 3], xs.distincts())
+    XCTAssertEqual([1, 2, 3], xs.distincts(==))
+
+    let ys: [Int] = []
+    XCTAssertEqual([], ys.distincts())
+    XCTAssertEqual([], ys.distincts(==))
+  }
 }
