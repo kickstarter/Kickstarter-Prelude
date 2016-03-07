@@ -19,4 +19,33 @@ public extension Array {
     let idx = Int(arc4random_uniform(UInt32(self.count)))
     return self[idx]
   }
+
+  /**
+   Remove repeated elements from an array.
+
+   - parameter eq: A function to determine equality of two elements.
+
+   - returns: An array of distinct values in the array without changing the order.
+   */
+  public func distincts(@noescape eq: (Element, Element) -> Bool) -> Array {
+    var result = Array()
+    forEach { x in
+      if !result.contains({ eq(x, $0) }) {
+        result.append(x)
+      }
+    }
+    return result
+  }
+}
+
+public extension Array where Element: Equatable {
+
+  /**
+   Remove repeated elements from an array.
+
+   - returns: An array of distinct values in the array without changing the order.
+   */
+  public func distincts() -> Array {
+    return self.distincts(==)
+  }
 }
