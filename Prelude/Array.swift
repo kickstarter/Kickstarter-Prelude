@@ -21,7 +21,8 @@ public extension Array {
   }
 
   /**
-   Remove repeated elements from an array.
+   Remove repeated elements from an array. This is an O(n^2) implementation based
+   on Array.contains.
 
    - parameter eq: A function to determine equality of two elements.
 
@@ -41,7 +42,8 @@ public extension Array {
 public extension Array where Element: Equatable {
 
   /**
-   Remove repeated elements from an array.
+   Remove repeated elements from an array. This is an O(n^2) implementation based
+   on Array.contains.
 
    - returns: An array of distinct values in the array without changing the order.
    */
