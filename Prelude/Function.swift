@@ -1,5 +1,3 @@
-import Foundation
-
 infix operator |> {associativity left precedence 140}
 
 /**
