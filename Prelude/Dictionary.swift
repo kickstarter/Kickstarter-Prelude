@@ -24,13 +24,49 @@ public extension Dictionary {
    - returns: A merged dictionary.
    */
   public func withAllValuesFrom(other: Dictionary) -> Dictionary {
-
     var result = self
-
-    for (key, value) in other {
-      result[key] = value
-    }
-
+    other.forEach { result[$0] = $1 }
     return result
+  }
+
+  /**
+   Constructs a dictionary from an array of key-value pairs. If the array contains duplicate keys, the
+   last instance of the key will trump all previous values.
+
+   - parameter pairs: An array of key-value pairs.
+
+   - returns: A dictionary.
+   */
+  public static func keyValuePairs(pairs: [(Key, Value)]) -> Dictionary {
+    var result = Dictionary()
+    pairs.forEach { result[$0] = $1 }
+    return result
+  }
+
+  /**
+   Constructs a new dictionary by transforming all keys by `f` and leaving values unchanged. If `f` is not
+   one-to-one (i.e. there are two `a` and `b` for which `f(a) == f(b)`) then the resulting dictionary will
+   contain fewer key-value pairs than the original.
+
+   - parameter f: A key transformation.
+
+   - returns: A new dictionary with keys transformed.
+   */
+  public func transformedKeys(f: Key -> Key) -> Dictionary {
+    return Dictionary.keyValuePairs(self.map { (f($0), $1) })
+  }
+}
+
+extension Dictionary where Key: Semigroup {
+
+  /**
+   Use the semigroup operation on Key to prefix keys with a value.
+
+   - parameter prefix: A prefix value.
+
+   - returns: A new dictionary.
+   */
+  func prefixedKeys(prefix: Key) -> Dictionary {
+    return transformedKeys(prefix<>)
   }
 }

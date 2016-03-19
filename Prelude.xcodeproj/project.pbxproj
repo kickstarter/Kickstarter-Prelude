@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A74B3C0A1C9DCC7600F938C4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C091C9DCC7600F938C4 /* String.swift */; };
+		A74B3C0B1C9DCC7600F938C4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C091C9DCC7600F938C4 /* String.swift */; };
+		A74B3C0D1C9DCD9A00F938C4 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */; };
+		A74B3C0E1C9DCD9A00F938C4 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */; };
+		A74B3C101C9DD06400F938C4 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C0F1C9DD06400F938C4 /* StringTests.swift */; };
+		A74B3C111C9DD06400F938C4 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C0F1C9DD06400F938C4 /* StringTests.swift */; };
 		A753B55D1C2EE80B00FDB616 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B55C1C2EE80B00FDB616 /* UnitTests.swift */; };
 		A753B55F1C2EE86700FDB616 /* TupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B55E1C2EE86700FDB616 /* TupleTests.swift */; };
 		A753B5611C2EEA1400FDB616 /* OptionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B5601C2EEA1400FDB616 /* OptionalTests.swift */; };
 		A75EFFE21C0E7B8E0002C7D2 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */; };
 		A75EFFE41C0E7BF40002C7D2 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EFFE31C0E7BF40002C7D2 /* Empty.swift */; };
 		A76DDD531C29AEF60073B888 /* VectorTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DDD521C29AEF60073B888 /* VectorTypeTest.swift */; };
+		A7AD8BC01C9DCBC200016122 /* Semigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */; };
+		A7AD8BC11C9DCBC200016122 /* Semigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */; };
 		A7B60BE91BFBF44000B7B7ED /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */; };
 		A7C510861C273D4700C59136 /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510851C273D4700C59136 /* ArrayTest.swift */; };
 		A7C510881C273FA600C59136 /* DictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510871C273FA600C59136 /* DictionaryTest.swift */; };
@@ -70,12 +78,16 @@
 
 /* Begin PBXFileReference section */
 		A7378CC61C80958000F0A562 /* Prelude.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Prelude.playground; sourceTree = "<group>"; };
+		A74B3C091C9DCC7600F938C4 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		A74B3C0F1C9DD06400F938C4 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		A753B55C1C2EE80B00FDB616 /* UnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		A753B55E1C2EE86700FDB616 /* TupleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TupleTests.swift; sourceTree = "<group>"; };
 		A753B5601C2EEA1400FDB616 /* OptionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalTests.swift; sourceTree = "<group>"; };
 		A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		A75EFFE31C0E7BF40002C7D2 /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		A76DDD521C29AEF60073B888 /* VectorTypeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTypeTest.swift; sourceTree = "<group>"; };
+		A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semigroup.swift; sourceTree = "<group>"; };
 		A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		A7C510851C273D4700C59136 /* ArrayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTest.swift; sourceTree = "<group>"; };
 		A7C510871C273FA600C59136 /* DictionaryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTest.swift; sourceTree = "<group>"; };
@@ -164,8 +176,11 @@
 				A75EFFE31C0E7BF40002C7D2 /* Empty.swift */,
 				CA0924361BB629BC00C9EC88 /* Function.swift */,
 				A7EFE1511C28B46900F4CFEB /* NumericType.swift */,
+				A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */,
 				CAC0795E1BBDC00200AFDBF0 /* Optional.swift */,
+				A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */,
 				A7DBFCF21C5EB661002150A1 /* SomeError.swift */,
+				A74B3C091C9DCC7600F938C4 /* String.swift */,
 				CA3DFCD21BDFFB8000D30C27 /* Tuple.swift */,
 				A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */,
 				A7EFE1531C28B53D00F4CFEB /* VectorType.swift */,
@@ -182,6 +197,7 @@
 				A7C510871C273FA600C59136 /* DictionaryTest.swift */,
 				CA0924071BB6291900C9EC88 /* FunctionTest.swift */,
 				A753B5601C2EEA1400FDB616 /* OptionalTests.swift */,
+				A74B3C0F1C9DD06400F938C4 /* StringTests.swift */,
 				A753B55E1C2EE86700FDB616 /* TupleTests.swift */,
 				A753B55C1C2EE80B00FDB616 /* UnitTests.swift */,
 				A76DDD521C29AEF60073B888 /* VectorTypeTest.swift */,
@@ -391,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7FD084E1C81E1DA00332CCB /* Array.swift in Sources */,
+				A74B3C0A1C9DCC7600F938C4 /* String.swift in Sources */,
 				A7FD084F1C81E1DA00332CCB /* Function.swift in Sources */,
 				A7FD08501C81E1DA00332CCB /* SomeError.swift in Sources */,
 				A7FD08511C81E1DA00332CCB /* VectorType.swift in Sources */,
@@ -398,7 +415,9 @@
 				A7FD08531C81E1DA00332CCB /* Unit.swift in Sources */,
 				A7FD08541C81E1DA00332CCB /* Optional.swift in Sources */,
 				A7FD08551C81E1DA00332CCB /* Empty.swift in Sources */,
+				A74B3C0D1C9DCD9A00F938C4 /* Operators.swift in Sources */,
 				A7FD08561C81E1DA00332CCB /* Tuple.swift in Sources */,
+				A7AD8BC01C9DCBC200016122 /* Semigroup.swift in Sources */,
 				A7FD08571C81E1DA00332CCB /* NumericType.swift in Sources */,
 				A7FD08581C81E1DA00332CCB /* Dictionary.swift in Sources */,
 			);
@@ -415,6 +434,7 @@
 				A7FD086E1C81E24A00332CCB /* DictionaryTest.swift in Sources */,
 				A7FD086F1C81E24A00332CCB /* UnitTests.swift in Sources */,
 				A7FD08701C81E24A00332CCB /* OptionalTests.swift in Sources */,
+				A74B3C101C9DD06400F938C4 /* StringTests.swift in Sources */,
 				A7FD08711C81E24A00332CCB /* ArrayTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC0795D1BBDBF8F00AFDBF0 /* Array.swift in Sources */,
+				A74B3C0B1C9DCC7600F938C4 /* String.swift in Sources */,
 				CA0924371BB629BC00C9EC88 /* Function.swift in Sources */,
 				A7DBFCF31C5EB661002150A1 /* SomeError.swift in Sources */,
 				A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */,
@@ -431,7 +452,9 @@
 				A75EFFE21C0E7B8E0002C7D2 /* Unit.swift in Sources */,
 				CAC0795F1BBDC00200AFDBF0 /* Optional.swift in Sources */,
 				A75EFFE41C0E7BF40002C7D2 /* Empty.swift in Sources */,
+				A74B3C0E1C9DCD9A00F938C4 /* Operators.swift in Sources */,
 				CA3DFCD31BDFFB8000D30C27 /* Tuple.swift in Sources */,
+				A7AD8BC11C9DCBC200016122 /* Semigroup.swift in Sources */,
 				A7EFE1521C28B46900F4CFEB /* NumericType.swift in Sources */,
 				A7B60BE91BFBF44000B7B7ED /* Dictionary.swift in Sources */,
 			);
@@ -448,6 +471,7 @@
 				A7C510881C273FA600C59136 /* DictionaryTest.swift in Sources */,
 				A753B55D1C2EE80B00FDB616 /* UnitTests.swift in Sources */,
 				A753B5611C2EEA1400FDB616 /* OptionalTests.swift in Sources */,
+				A74B3C111C9DD06400F938C4 /* StringTests.swift in Sources */,
 				A7C510861C273D4700C59136 /* ArrayTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

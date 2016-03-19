@@ -1,5 +1,3 @@
-infix operator |> {associativity left precedence 140}
-
 /**
  Pipe a value into a function.
 
@@ -12,8 +10,6 @@ public func |> <A, B> (x: A, f: A -> B) -> B {
   return f(x)
 }
 
-infix operator • {associativity left precedence 150}
-
 /**
  Composes two functions in right-to-left order, i.e. (g • f)(x) = g(f(x)
 
@@ -25,8 +21,6 @@ infix operator • {associativity left precedence 150}
 public func • <A, B, C> (g: B -> C, f: A -> B) -> (A -> C) {
   return { x in g(f(x)) }
 }
-
-infix operator <> {associativity left precedence 60}
 
 /**
  Compose two endomorphisms in left-to-right order, i.e. (f <> g)(x) = g(f(x)) = x |> f |> g. Note that this
