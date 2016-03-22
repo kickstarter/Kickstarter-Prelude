@@ -6,9 +6,9 @@ extension Comparable {
 
    - returns: A function that takes a value and returns the value clamped to [self, max].
    */
-  public func clamp(max: Self)(_ value: Self) -> Self {
+  public func clamp(max: Self) -> (Self -> Self) {
     assert(self < max)
-    return value < self ? self : value > max ? max : value
+    return { value in value < self ? self : value > max ? max : value }
   }
 }
 
@@ -20,6 +20,6 @@ extension Comparable {
 
  - returns: A function that takes a value and returns the value clamped to [min, max].
  */
-public func clamp <T: Comparable> (min: T, _ max: T)(_ value: T) -> T {
-  return value |> min.clamp(max)
+public func clamp <T: Comparable> (min: T, _ max: T) -> (T -> T) {
+  return { value in value |> min.clamp(max) }
 }
