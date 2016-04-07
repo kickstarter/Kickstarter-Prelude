@@ -17,7 +17,7 @@ class FunctionTest: XCTestCase {
     XCTAssertEqual(10, (incr • square)(3))
   }
 
-  func testMonoidCompose() {
+  func testSemigroupOperation() {
     func square(x: Int) -> Int { return x * x }
     func incr(x: Int) -> Int { return x + 1 }
 

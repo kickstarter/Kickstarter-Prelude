@@ -9,6 +9,10 @@ class ArrayTest: XCTestCase {
     XCTAssertEqual([1, 2, 3, 4], xs.compact())
   }
 
+  func testSemigroupConcat() {
+    XCTAssert("hello world" == ["hello", " ", "world"].sconcat(""))
+  }
+
   func testRandomElement() {
     let xs = [1, 2, 3, 4, 5]
     (0..<10).forEach { _ in
@@ -27,5 +31,11 @@ class ArrayTest: XCTestCase {
     let ys: [Int] = []
     XCTAssertEqual([], ys.distincts())
     XCTAssertEqual([], ys.distincts(==))
+  }
+
+  func testSemigroupOperation() {
+    XCTAssertEqual([1, 2, 3, 4], [1, 2].op([3, 4]))
+    XCTAssert([1, 2, 3, 4] == ([1, 2] <> [3, 4]))
+    XCTAssert([1, 2].op([3, 4].op([5, 6])) == [1, 2].op([3, 4]).op([5, 6]), "Associativity")
   }
 }
