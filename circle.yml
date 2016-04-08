@@ -5,3 +5,8 @@ test:
   override:
     - bin/test iOS
     - bin/test tvOS
+experimental:
+  notify:
+    branches:
+      only:
+        - master
