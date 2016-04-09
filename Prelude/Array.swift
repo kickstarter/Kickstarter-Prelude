@@ -70,3 +70,16 @@ extension Array: Semigroup {
     return self + other
   }
 }
+
+extension Array {
+  /**
+   Safely accesses an element of `self` by checking the bounds.
+
+   - parameter index: Index of an element to try to get.
+
+   - returns: An element if `index` is within bounds and `nil` otherwise.
+   */
+  public subscript(safe index: Int) -> Element? {
+    return index >= 0 && index < self.count ? self[index] : nil
+  }
+}
