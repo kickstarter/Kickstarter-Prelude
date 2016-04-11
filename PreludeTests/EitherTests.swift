@@ -86,7 +86,7 @@ final class EitherTests: XCTest {
     XCTAssertEqual([1, 2], lefts(xs))
   }
 
-  func testLefts() {
+  func testRights() {
     let xs: [Either<Int, String>] = [.left(1), .right("a"), .left(2), .right("b")]
     XCTAssertEqual(["a", "b"], rights(xs))
   }
