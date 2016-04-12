@@ -17,8 +17,8 @@ import Prelude
  never use `Either` in this fashion, but it’s nice to see those connections.
 
  A direct sibling to `Either<A, B>` is the tuple `(A, B)`, and Swift provides first class support for that type.
- Just as we often need to combine two pieces of data together to handle them together as a single unit, it can
- be useful to handle two exlcusive choices of data as a single unit.
+ Just as we often need to combine two pieces of data to handle them together as a single unit, it can be useful 
+ to handle two exlcusive choices of data as a single unit.
 
  The rules that guide our usage of `(A, B)` apply equally well to `Either<A, B>`.
 
@@ -29,16 +29,14 @@ import Prelude
    left and right branches.
  * We stop the abstraction of exclusive OR at two parameters. If you ever find yourself reaching for a generic
    triple of exlusive OR types, e.g.
-
- ```swift
- enum ExclusiveTripe <A, B, C> {
-   case Left(A)
-   case Middle(B)
-   case Right(C)
- }
- ```
-
- You should create a custom type that better describes what you are try model.
+   ```swift
+   enum ExclusiveTripe <A, B, C> {
+     case Left(A)
+     case Middle(B)
+     case Right(C)
+   }
+   ```
+   You should create a custom type that better describes what you are try model.
  */
 
 /*:
