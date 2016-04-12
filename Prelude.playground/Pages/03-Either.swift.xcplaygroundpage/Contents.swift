@@ -30,7 +30,7 @@ import Prelude
  * We stop the abstraction of exclusive OR at two parameters. If you ever find yourself reaching for a generic
    triple of exlusive OR types, e.g.
    ```swift
-   enum ExclusiveTripe <A, B, C> {
+   enum ExclusiveTriple <A, B, C> {
      case Left(A)
      case Middle(B)
      case Right(C)
