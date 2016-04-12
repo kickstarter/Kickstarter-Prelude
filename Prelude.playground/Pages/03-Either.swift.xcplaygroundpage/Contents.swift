@@ -36,7 +36,7 @@ import Prelude
      case Right(C)
    }
    ```
-   You should create a custom type that better describes what you are try model.
+   You should create a custom type that better describes what you are trying model.
  */
 
 /*:
