@@ -74,4 +74,3 @@ let freshUser = userOrId.ifLeft(requestUser(user:), ifRight: requestUser(id:))
 
 freshUser.id
 freshUser.name
-
