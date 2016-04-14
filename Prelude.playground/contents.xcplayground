@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='tvos' display-mode='raw' executeOnSourceChanges='false'>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
     <pages>
-        <page name='Introduction'/>
-        <page name='Array.swift'/>
-        <page name='Function.swift'/>
+        <page name='00-Introduction'/>
+        <page name='01-Array.swift'/>
+        <page name='02-Function.swift'/>
+        <page name='03-Either.swift'/>
     </pages>
 </playground>
