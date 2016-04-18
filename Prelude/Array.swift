@@ -50,6 +50,26 @@ public extension Array {
     }
     return result
   }
+
+  /**
+   Groups elements into a dictionary.
+
+   - parameter grouping: A function that maps elements into a `Hashable` type.
+
+   - returns: A dictionary where each key contains all the elements of `self` that are mapped to the key
+              via the `grouping` function.
+   */
+  public func groupBy <K: Hashable> (grouping: Element -> K) -> [K:[Element]] {
+    var result: [K:[Element]] = [:]
+
+    for value in self {
+      let key = grouping(value)
+      result[key] = result[key] ?? []
+      result[key]?.append(value)
+    }
+
+    return result
+  }
 }
 
 public extension Array where Element: Equatable {
