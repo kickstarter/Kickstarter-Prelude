@@ -36,3 +36,7 @@ public func • <A, B, C> (lhs: Lens<A, B>, rhs: Lens<B, C>) -> Lens<A, C> {
 public func %~ <L: LensType> (lens: L, f: L.Part -> L.Part) -> L.Whole -> L.Whole {
   return lens.over(f)
 }
+
+public func <>~ <L: LensType where L.Part: Semigroup> (lens: L, a: L.Part) -> L.Whole -> L.Whole {
+  return lens.over(<>a)
+}
