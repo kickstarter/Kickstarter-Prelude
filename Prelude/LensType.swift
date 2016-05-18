@@ -15,8 +15,19 @@ public extension LensType {
 
   public func compose <RLens: LensType where RLens.Whole == Part>(rhs: RLens) -> Lens<Whole, RLens.Part> {
     return Lens(
-      view: { a in rhs.view(self.view(a)) },
+      view: rhs.view • self.view,
       set: { (c, a) in self.set(rhs.set(c, self.view(a)), a) }
+    )
+  }
+}
+
+extension LensType where Part: OptionalType {
+  public func compose <RLens: LensType
+    where RLens.Whole == Part.Wrapped, RLens.Part: OptionalType>(rhs: RLens) -> Lens<Whole, RLens.Part> {
+
+    return Lens(
+      view: { a in flattenOptional(self.view(a).map(rhs.view)) },
+      set: { (c, a)  in self.set(Part(wrapped: self.view(a).map { rhs.set(c, $0) }), a) }
     )
   }
 }
