@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A711FCDD1CECB53A00659DB4 /* Unpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FCDC1CECB53A00659DB4 /* Unpack.swift */; };
+		A711FCDE1CECB53A00659DB4 /* Unpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FCDC1CECB53A00659DB4 /* Unpack.swift */; };
 		A74B3C0A1C9DCC7600F938C4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C091C9DCC7600F938C4 /* String.swift */; };
 		A74B3C0B1C9DCC7600F938C4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C091C9DCC7600F938C4 /* String.swift */; };
 		A74B3C0D1C9DCD9A00F938C4 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */; };
@@ -85,6 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A711FCDC1CECB53A00659DB4 /* Unpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unpack.swift; sourceTree = "<group>"; };
 		A7378CC61C80958000F0A562 /* Prelude.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Prelude.playground; sourceTree = "<group>"; };
 		A74B3C091C9DCC7600F938C4 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 				A74B3C091C9DCC7600F938C4 /* String.swift */,
 				CA3DFCD21BDFFB8000D30C27 /* Tuple.swift */,
 				A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */,
+				A711FCDC1CECB53A00659DB4 /* Unpack.swift */,
 				A7EFE1531C28B53D00F4CFEB /* VectorType.swift */,
 			);
 			path = Prelude;
@@ -427,6 +431,7 @@
 				A7FD084F1C81E1DA00332CCB /* Function.swift in Sources */,
 				A7FD08501C81E1DA00332CCB /* SomeError.swift in Sources */,
 				A78323AD1CB9615D000B094C /* Either.swift in Sources */,
+				A711FCDD1CECB53A00659DB4 /* Unpack.swift in Sources */,
 				A7FD08511C81E1DA00332CCB /* VectorType.swift in Sources */,
 				A7FD08521C81E1DA00332CCB /* Comparable.swift in Sources */,
 				A7FD08531C81E1DA00332CCB /* Unit.swift in Sources */,
@@ -468,6 +473,7 @@
 				CA0924371BB629BC00C9EC88 /* Function.swift in Sources */,
 				A7DBFCF31C5EB661002150A1 /* SomeError.swift in Sources */,
 				A78323AE1CB9615D000B094C /* Either.swift in Sources */,
+				A711FCDE1CECB53A00659DB4 /* Unpack.swift in Sources */,
 				A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */,
 				A7F7ADE81C53D27300E39792 /* Comparable.swift in Sources */,
 				A75EFFE21C0E7B8E0002C7D2 /* Unit.swift in Sources */,
