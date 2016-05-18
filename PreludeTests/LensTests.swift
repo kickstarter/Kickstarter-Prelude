@@ -6,7 +6,7 @@ private let add: Int -> Int -> Int = { lhs in { lhs + $0 } }
 private let incr: Int -> Int = add(1)
 
 final class LensTests: XCTestCase {
-  private let user = User(id: 1, location: Location(id: 2, city: City(id: 3)))
+  private let user = User(id: 1, location: Location(id: 2, city: City(id: 3)), name: "blob")
 
   func testLensComposition() {
     XCTAssertEqual(2, User._location.compose(Location._id).view(user))
@@ -47,12 +47,13 @@ final class LensTests: XCTestCase {
   }
 
   func testOperatorPrecedences() {
-    XCTAssertEqual(User(id: 11, location: Location(id: 12, city: City(id: 13))),
+    XCTAssertEqual(User(id: 11, location: Location(id: 12, city: City(id: 13)), name: "brando"),
       user
         |> User._id %~ add(10)
         <> User._location • Location._id %~ square
         <> User._location • Location._id %~ add(8)
         <> User._location • Location._city • City._id *~ 13
+        <> User._name *~ "brando"
     )
 
     XCTAssertEqual(13,
@@ -64,20 +65,30 @@ final class LensTests: XCTestCase {
         ^* User._location • Location._city • City._id
     )
   }
+
+  func testSemigroupOperator() {
+    XCTAssertEqual(user.name + "!", (user |> User._name <>~ "!").name)
+  }
 }
 
 private struct User: Equatable {
   let id: Int
   let location: Location
+  let name: String
 
   static let _id = Lens<User, Int>(
     view: { $0.id },
-    set: { User(id: $0, location: $1.location) }
+    set: { User(id: $0, location: $1.location, name: $1.name) }
   )
 
   static let _location = Lens<User, Location>(
     view: { $0.location },
-    set: { User(id: $1.id, location: $0) }
+    set: { User(id: $1.id, location: $0, name: $1.name) }
+  )
+
+  static let _name = Lens<User, String>(
+    view: { $0.name },
+    set: { User(id: $1.id, location: $1.location, name: $0) }
   )
 }
 
