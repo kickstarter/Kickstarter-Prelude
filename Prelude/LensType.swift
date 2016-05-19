@@ -27,7 +27,18 @@ extension LensType where Part: OptionalType {
 
     return Lens(
       view: { a in flattenOptional(self.view(a).map(rhs.view)) },
-      set: { (c, a)  in self.set(Part(wrapped: self.view(a).map { rhs.set(c, $0) }), a) }
+      set: { (c, a) in self.set(Part(wrapped: self.view(a).map { rhs.set(c, $0) }), a) }
+    )
+  }
+
+  public func compose <RLens: LensType
+    where RLens.Whole == Part.Wrapped>(rhs: RLens) -> Lens<Whole, RLens.Part?> {
+
+    let composed = self.compose(rhs)
+
+    return Lens(
+      view: { a in composed.view(a) },
+      set: { (c, a) in composed.set(c, a) }
     )
   }
 }
