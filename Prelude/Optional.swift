@@ -70,10 +70,6 @@ public func flattenOptional <A> (x: A??) -> A? {
   return nil
 }
 
-public func flattenOptional <A: OptionalType where A.Wrapped: OptionalType> (x: A) -> A.Wrapped {
-  return flattenOptional(x.optional)
-}
-
 public func isNil <A> (x: A?) -> Bool {
   return x == nil
 }
@@ -108,4 +104,19 @@ public func == <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
  */
 public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
   return !(lhs == rhs)
+}
+
+public enum OptionalPrisms<Wrapped> {
+  public static var some: Prism<Wrapped?, Wrapped> {
+    return .init(
+      preview: { $0 },
+      review: { $0 }
+    )
+  }
+}
+
+extension Optional {
+  public static var prism: OptionalPrisms<Wrapped>.Type {
+    return OptionalPrisms<Wrapped>.self
+  }
 }
