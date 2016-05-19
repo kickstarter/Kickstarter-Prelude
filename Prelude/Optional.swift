@@ -105,18 +105,3 @@ public func == <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
 public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
   return !(lhs == rhs)
 }
-
-public enum OptionalPrisms<Wrapped> {
-  public static var some: Prism<Wrapped?, Wrapped> {
-    return .init(
-      preview: { $0 },
-      review: { $0 }
-    )
-  }
-}
-
-extension Optional {
-  public static var prism: OptionalPrisms<Wrapped>.Type {
-    return OptionalPrisms<Wrapped>.self
-  }
-}
