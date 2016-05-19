@@ -238,7 +238,7 @@ p7.creator.name
 p7.creator.location.name
 
 /*:
- What if don't want to just set a field in a value but instead apply a transformation to a 
+ What if don't want to just set a field in a value but instead apply a transformation to a
  field. This can be done easily with the `%~` (read as “over”):
  */
 
@@ -248,10 +248,14 @@ p8.name
 /*:
  There are a lot of ways in which we can evolve lenses, and this is just the beginning. The
  next big piece of work will be building a tool to do the code generation of models for us.
+*/
 
+// swiftlint:disable line_length
+/*
  ### See also
 
  * [Brandon Williams - Lenses in Swift](https://www.youtube.com/watch?v=ofjehH9f-CU)
  * [Chris Eidhof - Lenses in Swift](http://chris.eidhof.nl/post/lenses-in-swift/)
- * [A Little Lens Tutorial](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/a-little-lens-starter-tutorial)
+ * [A Little Lens Tutorial](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/
+ a-little-lens-starter-tutorial)
  */

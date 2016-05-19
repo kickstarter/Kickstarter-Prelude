@@ -5,18 +5,11 @@ public protocol OptionalType {
 
   /// Extracts an optional from the receiver.
   var optional: Wrapped? { get }
-
-  func map <U> (@noescape f: (Wrapped) throws -> U) rethrows -> U?
-  init(wrapped: Wrapped?)
 }
 
 extension Optional: OptionalType {
   public var optional: Wrapped? {
     return self
-  }
-
-  public init(wrapped: Wrapped?) {
-    self = wrapped
   }
 }
 
