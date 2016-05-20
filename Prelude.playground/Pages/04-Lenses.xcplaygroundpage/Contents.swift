@@ -221,10 +221,8 @@ extension LensType where Whole == Project, Part == Location {
 }
 
 /*:
- We can also change multiple fields at once. Recall that apply the `*~` operator to a lens creates a
- function `Project -> Project`. Such functions can be composed with the `<>` (this is because functions
- `A -> A` form a semigroup under composition, and `<>` is the generic operator for semigroup operations).
- Know this we can now do:
+ We can also change multiple fields at once. Recall that applying the `*~` operator to a lens creates a
+ function `Project -> Project`. Such functions can be composed with the `<>` operator, so now we can do:
  */
 
 let p7 = project
@@ -251,7 +249,7 @@ p8.name
 /*:
  ## Operators
 
- The use of operators in lenses is critical because it allows us tomanipulate objects like algebraic
+ The use of operators in lenses is critical because it allows us to manipulate objects like algebraic
  structures, much like how we prefer `a + b` instead of `a.add(b)`. For example, the above example could be
  written without any operators:
  */
