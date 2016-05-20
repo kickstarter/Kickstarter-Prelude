@@ -80,7 +80,7 @@ p1.creator.name
 
 /*:
  That's a bit of a pain and can get more complicated with more fields, especially when those
- fields also have fields, etc. Lenses solve this nicely. Let's create two: one for `Project.creator` 
+ fields also have fields, etc. Lenses solve this nicely. Let's create two: one for `Project.creator`
  and the other for `User.name`:
  */
 
