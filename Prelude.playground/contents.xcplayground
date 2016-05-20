@@ -5,5 +5,6 @@
         <page name='01-Array.swift'/>
         <page name='02-Function.swift'/>
         <page name='03-Either.swift'/>
+        <page name='04-Lenses'/>
     </pages>
 </playground>
