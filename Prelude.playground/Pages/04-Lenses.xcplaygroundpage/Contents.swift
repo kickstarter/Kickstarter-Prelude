@@ -250,8 +250,8 @@ p8.name
 
 /*:
  ## Operators
- 
- The use of operators in lenses is critical because it allows us to manipulate objects like algebraic 
+
+ The use of operators in lenses is critical because it allows us tomanipulate objects like algebraic
  structures, much like how we prefer `a + b` instead of `a.add(b)`. For example, the above example could be
  written without any operators:
  */
@@ -264,8 +264,8 @@ p9.creator.name
 p9.creator.location.name
 
 /*:
- This has caused the data-flow expression to become muddled and put the subject of the data flow at the 
- end. By embracing operators we get to model the data-flow more directly, and every piece of the 
+ This has caused the data-flow expression to become muddled and put the subject of the data flow at the
+ end. By embracing operators we get to model the data-flow more directly, and every piece of the
  composition can be assigned to a variable and used anywhere. For example:
  */
 
