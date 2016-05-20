@@ -1,3 +1,4 @@
+// swiftlint:disable type_name
 import Prelude
 
 /*:
@@ -131,16 +132,15 @@ let p4 = project |> creatorLens • nameLens *~ "BLOB"
 p4.creator.name
 
 /*:
- We can improve this even more. First, ever immutable value type should expose a lens
+ We can improve this even more. First, every immutable value type should expose a lens
  for each of its fields. We do this by exposing a static var on the type `Project.lens`
  which acts a namespace for all of its lenses. For example, this is how we would expose
  the `creator` and `name` lenses:
  */
 
 extension Project {
-  static let lens = Lens.self
-  enum Lens {
-    static let creator = Prelude.Lens<Project, User>(
+  enum lens {
+    static let creator = Lens<Project, User>(
       view: { $0.creator },
       set: { Project(creator: $0, id: $1.id, name: $1.name) }
     )
@@ -148,9 +148,8 @@ extension Project {
 }
 
 extension User {
-  static let lens = Lens.self
-  enum Lens {
-    static let name = Prelude.Lens<User, String>(
+  enum lens {
+    static let name = Lens<User, String>(
       view: { $0.name },
       set: { User(id: $1.id, location: $1.location, name: $0) }
     )
@@ -171,7 +170,7 @@ p5.creator.name
 
 extension LensType where Whole == Project, Part == User {
   var name: Lens<Project, String> {
-    return Project.lens.creator • User.Lens.name
+    return Project.lens.creator • User.lens.name
   }
 }
 
@@ -186,24 +185,23 @@ p6.creator.name
  Let's implement a few more lenses on our value types:
  */
 
-extension Project.Lens {
-  static let name = Prelude.Lens<Project, String>(
+extension Project.lens {
+  static let name = Lens<Project, String>(
     view: { $0.name },
     set: { Project(creator: $1.creator, id: $1.id, name: $0) }
   )
 }
 
-extension User.Lens {
-  static let location = Prelude.Lens<User, Location>(
+extension User.lens {
+  static let location = Lens<User, Location>(
     view: { $0.location },
     set: { User(id: $1.id, location: $0, name: $1.name) }
   )
 }
 
 extension Location {
-  static let lens = Lens.self
-  enum Lens {
-    static let name = Prelude.Lens<Location, String>(
+  enum lens {
+    static let name = Lens<Location, String>(
       view: { $0.name },
       set: { Location(id: $1.id, name: $0) }
     )
@@ -212,7 +210,7 @@ extension Location {
 
 extension LensType where Whole == Project, Part == User {
   var location: Lens<Project, Location> {
-    return Project.lens.creator • User.Lens.location
+    return Project.lens.creator • User.lens.location
   }
 }
 
