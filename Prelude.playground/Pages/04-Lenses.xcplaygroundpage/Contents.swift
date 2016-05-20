@@ -6,7 +6,7 @@ import Prelude
 
  ---
 
- ### Introduction
+ ## Introduction
 
  A large part of our code base is built around immutable value types, which has given us a
  lot of stability and clarity in our code. Typically these models are just handed to us
@@ -23,7 +23,7 @@ import Prelude
  Getting is easy enough: just return the value in some field. Setters require constructing
  a whole new value with one part replaced.
 
- ### An example
+ ## An example
 
  Let's first start with some immutable value types:
  */
@@ -248,12 +248,51 @@ p8.name
  next big piece of work will be building a tool to do the code generation of models for us.
 */
 
+/*:
+ ## Operators
+ 
+ The use of operators in lenses is critical because it allows us to manipulate objects like algebraic 
+ structures, much like how we prefer `a + b` instead of `a.add(b)`. For example, the above example could be
+ written without any operators:
+ */
+
+let p9 = Project.lens.name.set("Mural in Brooklyn",
+                               Project.lens.creator.name.set("Saunders",
+                                Project.lens.creator.location.name.set("Greenpoint", project)))
+p9.name
+p9.creator.name
+p9.creator.location.name
+
+/*:
+ This has caused the data-flow expression to become muddled and put the subject of the data flow at the 
+ end. By embracing operators we get to model the data-flow more directly, and every piece of the 
+ composition can be assigned to a variable and used anywhere. For example:
+ */
+
+let changeCreatorToSaunders = Project.lens.creator.name *~ "Saunders"
+let moveCreatorToGreenpoint = Project.lens.creator.location.name *~ "Greenpoint"
+
+let p10 = project
+  |> Project.lens.name *~ "Mural in Brooklyn"
+  <> changeCreatorToSaunders
+  <> moveCreatorToGreenpoint
+p10.name
+p10.creator.name
+p10.creator.location.name
+
+/*:
+ This allows one to build up free data-flows that can be applied anywhere, not just to a particular value
+ that we have access to at a moment.
+
+ */
+
+
 // swiftlint:disable line_length
-/*
- ### See also
+
+/*:
+ ## See also
 
  * [Brandon Williams - Lenses in Swift](https://www.youtube.com/watch?v=ofjehH9f-CU)
  * [Chris Eidhof - Lenses in Swift](http://chris.eidhof.nl/post/lenses-in-swift/)
- * [A Little Lens Tutorial](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/
- a-little-lens-starter-tutorial)
+ * [A Little Lens Tutorial](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/a-little-lens-starter-tutorial)
  */
