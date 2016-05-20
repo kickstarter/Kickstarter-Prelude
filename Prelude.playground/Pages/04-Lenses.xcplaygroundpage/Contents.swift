@@ -123,9 +123,9 @@ creatorLens • nameLens
 creatorLens • nameLens *~ "BLOB"
 
 /*:
- The above is now a function `Project -> Project`. Feeding a function into it will focus
- on the creator's name and switch it to `"BLOB"`. Finally, we pipe our project through
- this pipeline to get the transformed project:
+ The above is now a function `Project -> Project` that will will focus on the creator's
+ name and switch it to `"BLOB"`. Finally, we pipe our project through this pipeline to
+ get the transformed project:
  */
 
 let p4 = project |> creatorLens • nameLens *~ "BLOB"
