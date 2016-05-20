@@ -218,7 +218,7 @@ extension LensType where Whole == Project, Part == User {
 
 extension LensType where Whole == Project, Part == Location {
   var name: Lens<Project, String> {
-    return Project.lens.creator • User.lens.location • Location.lens.name
+    return Project.lens.creator.location • Location.lens.name
   }
 }
 
