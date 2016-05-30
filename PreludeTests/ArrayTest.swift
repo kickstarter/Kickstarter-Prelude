@@ -41,7 +41,7 @@ class ArrayTest: XCTestCase {
 
   func testGroupBy() {
     let xs = Array(1...10)
-    let grouped = xs.groupBy { $0 % 2 == 0 }
+    let grouped = xs.groupedBy { $0 % 2 == 0 }
 
     XCTAssertEqual([false: [1, 3, 5, 7, 9], true: [2, 4, 6, 8, 10]], grouped)
   }
