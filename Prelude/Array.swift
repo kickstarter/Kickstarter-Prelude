@@ -59,7 +59,7 @@ public extension Array {
    - returns: A dictionary where each key contains all the elements of `self` that are mapped to the key
               via the `grouping` function.
    */
-  public func groupBy <K: Hashable> (grouping: Element -> K) -> [K:[Element]] {
+  public func groupedBy <K: Hashable> (grouping: Element -> K) -> [K:[Element]] {
     var result: [K:[Element]] = [:]
 
     for value in self {
@@ -109,5 +109,11 @@ extension Array where Element: EitherType {
    */
   func rights() -> [Element.B] {
     return Prelude.rights(self)
+  }
+}
+
+extension Array {
+  public func sorted(ordering: (Element, Element) -> Ordering) -> Array {
+    return self.sort { ordering($0, $1) == .eq }
   }
 }

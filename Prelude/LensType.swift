@@ -118,3 +118,13 @@ public func %~ <L: LensType> (lens: L, f: L.Part -> L.Part) -> (L.Whole -> L.Who
 public func <>~ <L: LensType where L.Part: Semigroup> (lens: L, a: L.Part) -> (L.Whole -> L.Whole) {
   return lens.over(<>a)
 }
+
+extension LensType where Part: Comparable {
+
+}
+
+extension Optional {
+  public enum lens {
+
+  }
+}
