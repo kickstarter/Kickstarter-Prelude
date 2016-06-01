@@ -38,4 +38,11 @@ class ArrayTest: XCTestCase {
     XCTAssert([1, 2, 3, 4] == ([1, 2] <> [3, 4]))
     XCTAssert([1, 2].op([3, 4].op([5, 6])) == [1, 2].op([3, 4]).op([5, 6]), "Associativity")
   }
+
+  func testGroupBy() {
+    let xs = Array(1...10)
+    let grouped = xs.groupedBy { $0 % 2 == 0 }
+
+    XCTAssertEqual([false: [1, 3, 5, 7, 9], true: [2, 4, 6, 8, 10]], grouped)
+  }
 }
