@@ -19,11 +19,11 @@ final class LensTests: XCTestCase {
   }
 
   func testLensSetOperator() {
-    XCTAssertEqual(4, (User._id *~ 4)(user).id)
+    XCTAssertEqual(4, (User._id .~ 4)(user).id)
   }
 
   func testLensSetAndCompositionOperatorPrecedence() {
-    XCTAssertEqual(4, (User._location • Location._id *~ 4)(user).location.id)
+    XCTAssertEqual(4, (User._location • Location._id .~ 4)(user).location.id)
   }
 
   func testLensViewOperator() {
@@ -52,8 +52,8 @@ final class LensTests: XCTestCase {
         |> User._id %~ add(10)
         <> User._location • Location._id %~ square
         <> User._location • Location._id %~ add(8)
-        <> User._location • Location._city • City._id *~ 13
-        <> User._name *~ "brando"
+        <> User._location • Location._city • City._id .~ 13
+        <> User._name .~ "brando"
     )
 
     XCTAssertEqual(13,
@@ -61,7 +61,7 @@ final class LensTests: XCTestCase {
         |> User._id %~ add(10)
         <> User._location • Location._id %~ square
         <> User._location • Location._id %~ add(8)
-        <> User._location • Location._city • City._id *~ 13
+        <> User._location • Location._city • City._id .~ 13
         ^* User._location • Location._city • City._id
     )
   }

@@ -17,7 +17,7 @@ postfix operator <> {}
 infix operator ^* {associativity left precedence 70}
 
 /// Lens set
-infix operator *~ {associativity left precedence 90}
+infix operator .~ {associativity left precedence 90}
 
 /// Lens over
 infix operator %~ {associativity left precedence 90}
