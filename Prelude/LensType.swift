@@ -51,7 +51,7 @@ public extension LensType {
 
  - returns: A function that transforms a whole into a new whole with a part replaced.
  */
-public func *~ <L: LensType> (lens: L, part: L.Part) -> (L.Whole -> L.Whole) {
+public func .~ <L: LensType> (lens: L, part: L.Part) -> (L.Whole -> L.Whole) {
   return { whole in lens.set(part, whole) }
 }
 
