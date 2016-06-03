@@ -106,7 +106,7 @@ p2.creator.name
  We can also some operators to make this more expressive:
  */
 
-let p3 = project |> creatorLens • nameLens *~ "BLOB"
+let p3 = project |> creatorLens • nameLens .~ "BLOB"
 p3.creator.name
 
 /*:
@@ -117,10 +117,10 @@ creatorLens • nameLens
 
 /*:
  The above is a lens from `Project` to `String` which focuses on the creator's name.
- Next, the `*~` operator is an infix operator version of `set`:
+ Next, the `.~` operator is an infix operator version of `set`:
  */
 
-creatorLens • nameLens *~ "BLOB"
+creatorLens • nameLens .~ "BLOB"
 
 /*:
  The above is now a function `Project -> Project` that will will focus on the creator's
@@ -128,7 +128,7 @@ creatorLens • nameLens *~ "BLOB"
  get the transformed project:
  */
 
-let p4 = project |> creatorLens • nameLens *~ "BLOB"
+let p4 = project |> creatorLens • nameLens .~ "BLOB"
 p4.creator.name
 
 /*:
@@ -160,7 +160,7 @@ extension User {
  Now we can do:
  */
 
-let p5 = project |> Project.lens.creator • User.lens.name *~ "BLORG"
+let p5 = project |> Project.lens.creator • User.lens.name .~ "BLORG"
 p5.creator.name
 
 /*:
@@ -178,7 +178,7 @@ extension LensType where Whole == Project, Part == User {
  And we can use it like this:
  */
 
-let p6 = project |> Project.lens.creator.name *~ "GLORP"
+let p6 = project |> Project.lens.creator.name .~ "GLORP"
 p6.creator.name
 
 /*:
@@ -221,14 +221,14 @@ extension LensType where Whole == Project, Part == Location {
 }
 
 /*:
- We can also change multiple fields at once. Recall that applying the `*~` operator to a lens creates a
+ We can also change multiple fields at once. Recall that applying the `.~` operator to a lens creates a
  function `Project -> Project`. Such functions can be composed with the `<>` operator, so now we can do:
  */
 
 let p7 = project
-  |> Project.lens.name *~ "Mural in Brooklyn"
-  <> Project.lens.creator.name *~ "Saunders"
-  <> Project.lens.creator.location.name *~ "Greenpoint"
+  |> Project.lens.name .~ "Mural in Brooklyn"
+  <> Project.lens.creator.name .~ "Saunders"
+  <> Project.lens.creator.location.name .~ "Greenpoint"
 p7.name
 p7.creator.name
 p7.creator.location.name
@@ -267,11 +267,11 @@ p9.creator.location.name
  composition can be assigned to a variable and used anywhere. For example:
  */
 
-let changeCreatorToSaunders = Project.lens.creator.name *~ "Saunders"
-let moveCreatorToGreenpoint = Project.lens.creator.location.name *~ "Greenpoint"
+let changeCreatorToSaunders = Project.lens.creator.name .~ "Saunders"
+let moveCreatorToGreenpoint = Project.lens.creator.location.name .~ "Greenpoint"
 
 let p10 = project
-  |> Project.lens.name *~ "Mural in Brooklyn"
+  |> Project.lens.name .~ "Mural in Brooklyn"
   <> changeCreatorToSaunders
   <> moveCreatorToGreenpoint
 p10.name
