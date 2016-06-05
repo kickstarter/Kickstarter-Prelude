@@ -2,7 +2,7 @@
 infix operator |> {associativity left precedence 70}
 
 /// Composition
-infix operator • {associativity left precedence 150}
+infix operator • {associativity left precedence 80}
 
 /// Semigroup binary operation
 infix operator <> {associativity left precedence 80}
