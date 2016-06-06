@@ -1,3 +1,4 @@
+import CoreGraphics
 import Prelude
 import UIKit
 
@@ -13,13 +14,12 @@ func createLabel() -> UILabel {
 }
 
 let titleStyle = UILabel.lens.textAlignment .~ .Center
-  • UILabel.lens.font .~ .preferredFontForTextStyle(UIFontTextStyleTitle1)
+  <> UILabel.lens.font .~ .preferredFontForTextStyle(UIFontTextStyleTitle1)
 
-let baseStyle = UIView.lens.frame.size .~ .init(width: 160.0, height: 48.0)
-  • UIView.lens.backgroundColor .~ .redColor()
-  • UILabel.lens.textColor .~ .whiteColor()
-  • rounded(6.0)
-  • titleStyle
+let baseStyle = UILabel.lens.frame.size .~ .init(width: 160.0, height: 48.0)
+  <> UILabel.lens.backgroundColor .~ .redColor()
+  <> UILabel.lens.textColor .~ .whiteColor()
+  <> rounded(6.0)
 
 // Create some labels and style them.
 let labels = ["Hello", "UIKit", "Lenses"]
@@ -27,43 +27,33 @@ let labels = ["Hello", "UIKit", "Lenses"]
     createLabel()
       |> UILabel.lens.text .~ $0
       |> baseStyle
+      |> titleStyle
 }
 
 labels
 
-
-
-
 func negate <B: BooleanType> (b: B) -> Bool {
   return !b.boolValue
+}
+
+func add(lhs: CGFloat) -> (CGFloat) -> (CGFloat) {
+  return { lhs + $0 }
 }
 
 let button = UIButton()
   |> UIButton.lens.titleText(.Normal) .~ "To lens"
   |> UIButton.lens.titleColor(.Normal) .~ .whiteColor()
   |> UIButton.lens.titleText(.Disabled) .~ "Or not to lens"
-  |> UIButton.lens.titleColor(.Disabled) .~ .blackColor()
+  |> UIButton.lens.titleColor(.Disabled) .~ .init(white: 1.0, alpha: 0.5)
   |> UIButton.lens.titleLabel.font .~ .preferredFontForTextStyle(UIFontTextStyleHeadline)
   |> UIButton.lens.backgroundColor .~ .redColor()
-  |> UIButton.lens.frame .~ CGRect(x: 0, y: 0, width: 200, height: 40)
+  |> UIButton.lens.frame.size .~ .init(width: 200, height: 40)
   |> UIButton.lens.contentHorizontalAlignment .~ .Left
   |> UIButton.lens.contentEdgeInsets .~ UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
   |> rounded(6.0)
 
 button
 
-button |> UIButton.lens.enabled %~ negate
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+button
+  |> UIButton.lens.enabled %~ negate
+  |> UIButton.lens.frame.size.width %~ add(50.0)
