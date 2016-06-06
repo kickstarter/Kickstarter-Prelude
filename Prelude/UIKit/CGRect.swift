@@ -30,12 +30,12 @@ extension LensType where Whole == CGRect, Part == CGPoint {
   }
 }
 
-private let _width = CGRect.lens.size • CGSize.lens.width
+//private let _width =
 private let _height = CGRect.lens.size • CGSize.lens.height
 
 extension LensType where Whole == CGRect, Part == CGSize {
   public static var width: Lens<CGRect, CGFloat> {
-    return _width
+    return CGRect.lens.size • CGSize.lens.width
   }
   public static var height: Lens<CGRect, CGFloat> {
     return _height
