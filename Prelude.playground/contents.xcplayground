@@ -6,6 +6,5 @@
         <page name='02-Function.swift'/>
         <page name='03-Either.swift'/>
         <page name='04-Lenses'/>
-        <page name='05-UIKit-Lenses'/>
     </pages>
 </playground>

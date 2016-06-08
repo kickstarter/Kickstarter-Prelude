@@ -1,7 +1,9 @@
 // swiftlint:disable type_name
+import Prelude
 import UIKit
 
 public protocol UIButtonProtocol: UIViewProtocol {
+  func setBackgroundColor(backgroundColor: UIColor, forState state: UIControlState)
   var contentEdgeInsets: UIEdgeInsets { get set }
   func setTitle(title: String?, forState: UIControlState)
   func setTitleColor(color: UIColor?, forState: UIControlState)
@@ -14,6 +16,14 @@ public protocol UIButtonProtocol: UIViewProtocol {
 extension UIButton: UIButtonProtocol {}
 
 public extension LensHolder where Object: UIButtonProtocol {
+
+  public func backgroundColor(forState state: UIControlState) -> Lens<Object, UIColor> {
+    return Lens(
+      view: { _ in .clearColor() },
+      set: { $1.setBackgroundColor($0, forState: state); return $1 }
+    )
+  }
+
   public var contentEdgeInsets: Lens<Object, UIEdgeInsets> {
     return Lens(
       view: { $0.contentEdgeInsets },

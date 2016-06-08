@@ -1,3 +1,4 @@
+import Prelude
 import UIKit
 
 public protocol UILabelProtocol: UIViewProtocol {

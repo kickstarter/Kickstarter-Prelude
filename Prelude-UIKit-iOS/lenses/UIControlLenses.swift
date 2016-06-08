@@ -1,4 +1,5 @@
 // swiftlint:disable type_name
+import Prelude
 import UIKit
 
 public protocol UIControlProtocol: UIViewProtocol {

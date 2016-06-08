@@ -1,3 +1,4 @@
+import Prelude
 import UIKit
 
 public protocol UIViewProtocol: NSObjectProtocol, LensObject {

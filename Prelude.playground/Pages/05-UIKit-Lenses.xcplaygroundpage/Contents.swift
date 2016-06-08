@@ -1,5 +1,6 @@
 import CoreGraphics
 import Prelude
+import Prelude_UIKit
 import UIKit
 
 func rounded <A: UIViewProtocol> (radius: CGFloat) -> (A -> A) {
@@ -46,10 +47,11 @@ let button = UIButton()
   |> UIButton.lens.titleText(.Disabled) .~ "Or not to lens"
   |> UIButton.lens.titleColor(.Disabled) .~ .init(white: 1.0, alpha: 0.5)
   |> UIButton.lens.titleLabel.font .~ .preferredFontForTextStyle(UIFontTextStyleHeadline)
-  |> UIButton.lens.backgroundColor .~ .redColor()
   |> UIButton.lens.frame.size .~ .init(width: 200, height: 40)
   |> UIButton.lens.contentHorizontalAlignment .~ .Left
   |> UIButton.lens.contentEdgeInsets .~ UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+  |> UIButton.lens.backgroundColor(forState: .Normal) .~ .blueColor()
+  |> UIButton.lens.backgroundColor(forState: .Disabled) .~ .grayColor()
   |> rounded(6.0)
 
 button
