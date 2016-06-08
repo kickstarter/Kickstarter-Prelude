@@ -765,7 +765,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Prelude-UIKit-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-iOS";
 				PRODUCT_NAME = Prelude_UIKit;
@@ -786,7 +785,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Prelude-UIKit-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-iOS";
 				PRODUCT_NAME = Prelude_UIKit;
@@ -1048,6 +1046,7 @@
 				A727E0341D0796D700D8FE43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A727E0381D0796D700D8FE43 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1056,6 +1055,7 @@
 				A727E0361D0796D700D8FE43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7FD085E1C81E1DA00332CCB /* Build configuration list for PBXNativeTarget "Prelude-iOS" */ = {
 			isa = XCConfigurationList;

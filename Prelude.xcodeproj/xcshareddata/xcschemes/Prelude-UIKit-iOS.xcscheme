@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A727E0211D0796D600D8FE43"
-               BuildableName = "Prelude-UIKit-iOS.framework"
+               BuildableName = "Prelude_UIKit.framework"
                BlueprintName = "Prelude-UIKit-iOS"
                ReferencedContainer = "container:Prelude.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A727E0211D0796D600D8FE43"
-            BuildableName = "Prelude-UIKit-iOS.framework"
+            BuildableName = "Prelude_UIKit.framework"
             BlueprintName = "Prelude-UIKit-iOS"
             ReferencedContainer = "container:Prelude.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A727E0211D0796D600D8FE43"
-            BuildableName = "Prelude-UIKit-iOS.framework"
+            BuildableName = "Prelude_UIKit.framework"
             BlueprintName = "Prelude-UIKit-iOS"
             ReferencedContainer = "container:Prelude.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A727E0211D0796D600D8FE43"
-            BuildableName = "Prelude-UIKit-iOS.framework"
+            BuildableName = "Prelude_UIKit.framework"
             BlueprintName = "Prelude-UIKit-iOS"
             ReferencedContainer = "container:Prelude.xcodeproj">
          </BuildableReference>
