@@ -59,3 +59,5 @@ button
 button
   |> UIButton.lens.enabled %~ negate
   |> UIButton.lens.frame.size.width %~ add(50.0)
+
+UITextField() |> UITextField.lens.returnKeyType .~ .Go

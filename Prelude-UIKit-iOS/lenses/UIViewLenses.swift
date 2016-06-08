@@ -9,7 +9,7 @@ public protocol UIViewProtocol: NSObjectProtocol, LensObject {
 
 extension UIView: UIViewProtocol {}
 
-extension LensHolder where Object: UIViewProtocol {
+public extension LensHolder where Object: UIViewProtocol {
   public var backgroundColor: Lens<Object, UIColor> {
     return Lens(
       view: { $0.backgroundColor ?? .clearColor() },
@@ -32,7 +32,7 @@ extension LensHolder where Object: UIViewProtocol {
   }
 }
 
-extension LensType where Whole: UIViewProtocol, Part == CGRect {
+public extension LensType where Whole: UIViewProtocol, Part == CGRect {
   public var origin: Lens<Whole, CGPoint> {
     return Whole.lens.frame • CGRect.lens.origin
   }
@@ -41,7 +41,7 @@ extension LensType where Whole: UIViewProtocol, Part == CGRect {
   }
 }
 
-extension LensType where Whole: UIViewProtocol, Part == CGPoint {
+public extension LensType where Whole: UIViewProtocol, Part == CGPoint {
   public var x: Lens<Whole, CGFloat> {
     return Whole.lens.frame.origin • CGPoint.lens.x
   }
@@ -51,7 +51,7 @@ extension LensType where Whole: UIViewProtocol, Part == CGPoint {
 }
 
 
-extension LensType where Whole: UIViewProtocol, Part == CGSize {
+public extension LensType where Whole: UIViewProtocol, Part == CGSize {
   public var width: Lens<Whole, CGFloat> {
     return Whole.lens.frame.size • CGSize.lens.width
   }
@@ -60,7 +60,15 @@ extension LensType where Whole: UIViewProtocol, Part == CGSize {
   }
 }
 
-extension LensType where Whole: UIViewProtocol, Part == CALayer {
+public extension LensType where Whole: UIViewProtocol, Part == CALayer {
+  public var borderColor: Lens<Whole, CGColorRef?> {
+    return Whole.lens.layer • Part.lens.borderColor
+  }
+
+  public var borderWidth: Lens<Whole, CGFloat> {
+    return Whole.lens.layer • Part.lens.borderWidth
+  }
+
   public var cornerRadius: Lens<Whole, CGFloat> {
     return Whole.lens.layer • Part.lens.cornerRadius
   }
