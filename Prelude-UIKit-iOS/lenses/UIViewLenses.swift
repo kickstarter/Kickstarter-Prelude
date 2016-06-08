@@ -5,6 +5,7 @@ public protocol UIViewProtocol: NSObjectProtocol, LensObject {
   var backgroundColor: UIColor? { get set }
   var frame: CGRect { get set }
   var layer: CALayer { get }
+  var layoutMargins: UIEdgeInsets { get set }
 }
 
 extension UIView: UIViewProtocol {}
@@ -28,6 +29,13 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.layer },
       set: { _, view in view }
+    )
+  }
+
+  public var layoutMargins: Lens<Object, UIEdgeInsets> {
+    return Lens(
+      view: { $0.layoutMargins },
+      set: { $1.layoutMargins = $0; return $1 }
     )
   }
 }
