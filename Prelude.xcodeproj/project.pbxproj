@@ -50,6 +50,7 @@
 		A77480BC1D08333F00774DEC /* UITextFieldLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */; };
 		A77480BE1D083BC000774DEC /* UITextInputTraitsLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */; };
 		A77480C01D0855C800774DEC /* UIStackViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */; };
+		A77480C21D089AF100774DEC /* UIViewControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */; };
 		A77D7A901CB980210077586B /* EitherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D7A8F1CB980210077586B /* EitherTests.swift */; };
 		A77D7A911CB980210077586B /* EitherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D7A8F1CB980210077586B /* EitherTests.swift */; };
 		A78323AD1CB9615D000B094C /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78323AC1CB9615D000B094C /* Either.swift */; };
@@ -164,6 +165,7 @@
 		A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldLenses.swift; sourceTree = "<group>"; };
 		A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextInputTraitsLenses.swift; sourceTree = "<group>"; };
 		A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewLenses.swift; sourceTree = "<group>"; };
+		A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerLenses.swift; sourceTree = "<group>"; };
 		A77D7A8F1CB980210077586B /* EitherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EitherTests.swift; sourceTree = "<group>"; };
 		A78323AC1CB9615D000B094C /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semigroup.swift; sourceTree = "<group>"; };
@@ -271,10 +273,11 @@
 				A727E03F1D07972F00D8FE43 /* UIControlLenses.swift */,
 				A727E0401D07972F00D8FE43 /* UIEdgeInsetsLenses.swift */,
 				A727E0411D07972F00D8FE43 /* UILabelLenses.swift */,
+				A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */,
 				A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */,
 				A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */,
+				A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */,
 				A727E0421D07972F00D8FE43 /* UIViewLenses.swift */,
-				A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */,
 			);
 			path = lenses;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				A727E0451D07972F00D8FE43 /* CGRectLenses.swift in Sources */,
 				A77480BC1D08333F00774DEC /* UITextFieldLenses.swift in Sources */,
 				A727E0471D07972F00D8FE43 /* UIButtonLenses.swift in Sources */,
+				A77480C21D089AF100774DEC /* UIViewControllerLenses.swift in Sources */,
 				A727E0521D07984500D8FE43 /* UIButton.swift in Sources */,
 				A727E04A1D07972F00D8FE43 /* UILabelLenses.swift in Sources */,
 				A727E0481D07972F00D8FE43 /* UIControlLenses.swift in Sources */,
