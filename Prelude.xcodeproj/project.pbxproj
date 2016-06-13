@@ -15,7 +15,6 @@
 		A711FD751CECF7A300659DB4 /* LensType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FD711CECF7A300659DB4 /* LensType.swift */; };
 		A711FD781CECF7DF00659DB4 /* LensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FD761CECF7DF00659DB4 /* LensTests.swift */; };
 		A711FD791CECF7DF00659DB4 /* LensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FD761CECF7DF00659DB4 /* LensTests.swift */; };
-		A727E0251D0796D600D8FE43 /* Prelude-UIKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A727E0241D0796D600D8FE43 /* Prelude-UIKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A727E02C1D0796D700D8FE43 /* Prelude_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A727E0221D0796D600D8FE43 /* Prelude_UIKit.framework */; };
 		A727E0431D07972F00D8FE43 /* CALayerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E03A1D07972F00D8FE43 /* CALayerLenses.swift */; };
 		A727E0441D07972F00D8FE43 /* CGPointLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E03B1D07972F00D8FE43 /* CGPointLenses.swift */; };
@@ -132,7 +131,6 @@
 		A711FD711CECF7A300659DB4 /* LensType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensType.swift; sourceTree = "<group>"; };
 		A711FD761CECF7DF00659DB4 /* LensTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensTests.swift; sourceTree = "<group>"; };
 		A727E0221D0796D600D8FE43 /* Prelude_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A727E0241D0796D600D8FE43 /* Prelude-UIKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prelude-UIKit-iOS.h"; sourceTree = "<group>"; };
 		A727E0261D0796D600D8FE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A727E02B1D0796D600D8FE43 /* Prelude-UIKit-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-UIKit-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A727E0321D0796D700D8FE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 		A727E0231D0796D600D8FE43 /* Prelude-UIKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A727E0241D0796D600D8FE43 /* Prelude-UIKit-iOS.h */,
 				A727E0261D0796D600D8FE43 /* Info.plist */,
 				A733794B1D0E417300C91445 /* LensHolder.swift */,
 				A727E0511D07984500D8FE43 /* UIButton.swift */,
@@ -362,7 +359,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A727E0251D0796D600D8FE43 /* Prelude-UIKit-iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
