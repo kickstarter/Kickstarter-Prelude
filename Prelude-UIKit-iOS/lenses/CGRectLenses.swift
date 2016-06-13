@@ -8,12 +8,12 @@ extension CGRect {
   public enum lens {
     public static let origin = Lens<CGRect, CGPoint>(
       view: { $0.origin },
-      set: { CGRect(origin: $0, size: $1.size) }
+      set: { .init(origin: $0, size: $1.size) }
     )
 
     public static let size = Lens<CGRect, CGSize>(
       view: { $0.size },
-      set: { CGRect(origin: $1.origin, size: $0) }
+      set: { .init(origin: $1.origin, size: $0) }
     )
   }
 }
