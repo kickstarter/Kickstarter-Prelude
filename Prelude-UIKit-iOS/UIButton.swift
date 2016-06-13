@@ -8,7 +8,6 @@ extension UIButton {
    - parameter state:           The state for the color to take affect.
    */
   public func setBackgroundColor(backgroundColor: UIColor, forState state: UIControlState) {
-    self.setBackgroundImage(UIImage.pixel(ofColor: backgroundColor),
-                            forState: state)
+    self.setBackgroundImage(.pixel(ofColor: backgroundColor), forState: state)
   }
 }
