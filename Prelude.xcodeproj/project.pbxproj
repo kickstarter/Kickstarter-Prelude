@@ -28,7 +28,6 @@
 		A727E04E1D07974800D8FE43 /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FD08641C81E1DA00332CCB /* Prelude.framework */; };
 		A727E0501D0797EB00D8FE43 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E04F1D0797EB00D8FE43 /* UIImage.swift */; };
 		A727E0521D07984500D8FE43 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E0511D07984500D8FE43 /* UIButton.swift */; };
-		A733794A1D0E408600C91445 /* UIKitLensPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B520E1D0507BB005B2AB0 /* UIKitLensPerformance.swift */; };
 		A733794C1D0E417300C91445 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A733794B1D0E417300C91445 /* LensHolder.swift */; };
 		A74B3C0A1C9DCC7600F938C4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C091C9DCC7600F938C4 /* String.swift */; };
 		A74B3C0B1C9DCC7600F938C4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C091C9DCC7600F938C4 /* String.swift */; };
@@ -131,9 +130,7 @@
 		A711FD711CECF7A300659DB4 /* LensType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensType.swift; sourceTree = "<group>"; };
 		A711FD761CECF7DF00659DB4 /* LensTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensTests.swift; sourceTree = "<group>"; };
 		A727E0221D0796D600D8FE43 /* Prelude_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A727E0261D0796D600D8FE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A727E02B1D0796D600D8FE43 /* Prelude-UIKit-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-UIKit-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A727E0321D0796D700D8FE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A727E03A1D07972F00D8FE43 /* CALayerLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerLenses.swift; sourceTree = "<group>"; };
 		A727E03B1D07972F00D8FE43 /* CGPointLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointLenses.swift; sourceTree = "<group>"; };
 		A727E03C1D07972F00D8FE43 /* CGRectLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectLenses.swift; sourceTree = "<group>"; };
@@ -157,7 +154,6 @@
 		A75EC8171CCBEB65009BEC10 /* BooleanTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooleanTypeTests.swift; sourceTree = "<group>"; };
 		A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		A75EFFE31C0E7BF40002C7D2 /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
-		A76B520E1D0507BB005B2AB0 /* UIKitLensPerformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitLensPerformance.swift; sourceTree = "<group>"; };
 		A76DDD521C29AEF60073B888 /* VectorTypeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTypeTest.swift; sourceTree = "<group>"; };
 		A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldLenses.swift; sourceTree = "<group>"; };
 		A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextInputTraitsLenses.swift; sourceTree = "<group>"; };
@@ -241,7 +237,6 @@
 		A727E0231D0796D600D8FE43 /* Prelude-UIKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A727E0261D0796D600D8FE43 /* Info.plist */,
 				A733794B1D0E417300C91445 /* LensHolder.swift */,
 				A727E0511D07984500D8FE43 /* UIButton.swift */,
 				A727E04F1D0797EB00D8FE43 /* UIImage.swift */,
@@ -253,7 +248,6 @@
 		A727E02F1D0796D700D8FE43 /* Prelude-UIKit-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				A727E0321D0796D700D8FE43 /* Info.plist */,
 			);
 			path = "Prelude-UIKit-iOSTests";
 			sourceTree = "<group>";
@@ -347,7 +341,6 @@
 				A753B55E1C2EE86700FDB616 /* TupleTests.swift */,
 				A753B55C1C2EE80B00FDB616 /* UnitTests.swift */,
 				A76DDD521C29AEF60073B888 /* VectorTypeTest.swift */,
-				A76B520E1D0507BB005B2AB0 /* UIKitLensPerformance.swift */,
 			);
 			path = PreludeTests;
 			sourceTree = "<group>";
@@ -642,7 +635,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A733794A1D0E408600C91445 /* UIKitLensPerformance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,7 +763,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Prelude-UIKit-iOS/Info.plist";
+				INFOPLIST_FILE = Prelude/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-iOS";
@@ -791,7 +783,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Prelude-UIKit-iOS/Info.plist";
+				INFOPLIST_FILE = Prelude/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-iOS";
@@ -807,7 +799,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "Prelude-UIKit-iOSTests/Info.plist";
+				INFOPLIST_FILE = Prelude/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-iOSTests";
@@ -821,7 +813,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "Prelude-UIKit-iOSTests/Info.plist";
+				INFOPLIST_FILE = Prelude/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-iOSTests";
