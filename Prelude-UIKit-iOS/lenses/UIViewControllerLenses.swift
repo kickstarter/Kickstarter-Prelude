@@ -1,4 +1,4 @@
-@testable import Prelude
+import Prelude
 import UIKit
 
 public protocol UIViewControllerProtocol: NSObjectProtocol, LensObject {
