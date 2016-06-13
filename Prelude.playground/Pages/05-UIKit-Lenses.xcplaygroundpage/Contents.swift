@@ -33,19 +33,11 @@ let labels = ["Hello", "UIKit", "Lenses"]
 
 labels
 
-func negate <B: BooleanType> (b: B) -> Bool {
-  return !b.boolValue
-}
-
-func add(lhs: CGFloat) -> (CGFloat) -> (CGFloat) {
-  return { lhs + $0 }
-}
-
 let button = UIButton()
-  |> UIButton.lens.titleText(.Normal) .~ "To lens"
-  |> UIButton.lens.titleColor(.Normal) .~ .whiteColor()
-  |> UIButton.lens.titleText(.Disabled) .~ "Or not to lens"
-  |> UIButton.lens.titleColor(.Disabled) .~ .init(white: 1.0, alpha: 0.5)
+  |> UIButton.lens.titleText(forState: .Normal) .~ "To lens"
+  |> UIButton.lens.titleColor(forState: .Normal) .~ .whiteColor()
+  |> UIButton.lens.titleText(forState: .Disabled) .~ "Or not to lens"
+  |> UIButton.lens.titleColor(forState: .Disabled) .~ .init(white: 1.0, alpha: 0.5)
   |> UIButton.lens.titleLabel.font .~ .preferredFontForTextStyle(UIFontTextStyleHeadline)
   |> UIButton.lens.frame.size .~ .init(width: 200, height: 40)
   |> UIButton.lens.contentHorizontalAlignment .~ .Left
@@ -58,6 +50,4 @@ button
 
 button
   |> UIButton.lens.enabled %~ negate
-  |> UIButton.lens.frame.size.width %~ add(50.0)
-
-UITextField() |> UITextField.lens.returnKeyType .~ .Go
+  |> UIButton.lens.frame.size.width %~ { $0 + 50.0 }

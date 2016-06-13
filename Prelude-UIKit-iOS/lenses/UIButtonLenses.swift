@@ -80,10 +80,8 @@ extension LensType where Whole: UIButtonProtocol, Part == UILabel {
   public var font: Lens<Whole, UIFont> {
     return Whole.lens.titleLabel • Part.lens.font
   }
+
   public var textAlignment: Lens<Whole, NSTextAlignment> {
     return Whole.lens.titleLabel • Part.lens.textAlignment
-  }
-  public var textColor: Lens<Whole, UIColor> {
-    return Whole.lens.titleLabel • Part.lens.textColor
   }
 }
