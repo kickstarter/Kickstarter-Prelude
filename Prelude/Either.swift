@@ -93,10 +93,8 @@ public func == <E: EitherType where E.A: Equatable, E.B: Equatable> (lhs: E, rhs
  An implementation of `EitherType` that is functorial and monadic in the right-side type.
  */
 public enum Either <A, B>: EitherType {
-  // swiftlint:disable type_name
   case left(A)
   case right(B)
-  // swiftlint:enable type_name
 
   public init(left: A) {
     self = .left(left)
