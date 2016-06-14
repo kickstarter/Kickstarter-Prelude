@@ -3,6 +3,7 @@ machine:
     version: 7.3
 dependencies:
   pre:
+    - brew update
     - brew install swiftlint
 test:
   override:
@@ -10,7 +11,6 @@ test:
       swiftlint lint --strict --reporter json |
       tee $CIRCLE_ARTIFACTS/swiftlint-report.json
     - bin/test iOS
-    - bin/test tvOS
 experimental:
   notify:
     branches:
