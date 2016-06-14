@@ -6,6 +6,8 @@ public protocol UIViewProtocol: NSObjectProtocol, LensObject {
   var frame: CGRect { get set }
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
+  var preservesSuperviewLayoutMargins: Bool { get set }
+  var translatesAutoresizingMaskIntoConstraints: Bool { get set }
 }
 
 extension UIView: UIViewProtocol {}
@@ -36,6 +38,20 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.layoutMargins },
       set: { $1.layoutMargins = $0; return $1 }
+    )
+  }
+
+  public var preservesSuperviewLayoutMargins: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.preservesSuperviewLayoutMargins },
+      set: { $1.preservesSuperviewLayoutMargins = $0; return $1 }
+    )
+  }
+
+  public var translatesAutoresizingMaskIntoConstraints: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.translatesAutoresizingMaskIntoConstraints },
+      set: { $1.translatesAutoresizingMaskIntoConstraints = $0; return $1 }
     )
   }
 }
