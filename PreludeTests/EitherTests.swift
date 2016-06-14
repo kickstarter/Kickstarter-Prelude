@@ -17,13 +17,13 @@ final class EitherTests: XCTest {
   }
 
   func testMap() {
-    let double: String -> String = { $0 + $0 }
+    let double: (String) -> String = { $0 + $0 }
 
     XCTAssertTrue(Either<Int, String>.right("hello").map(double) == .right("hellohello"))
   }
 
   func testFlatMap() {
-    let failOnGoodBye: String -> Either<Int, String> = { string in
+    let failOnGoodBye: (String) -> Either<Int, String> = { string in
       return string == "goodbye" ? .left(-1) : .right(string)
     }
 
@@ -32,13 +32,13 @@ final class EitherTests: XCTest {
   }
 
   func testMapLeft() {
-    let square: Int -> Int = { $0 * $0 }
+    let square: (Int) -> Int = { $0 * $0 }
 
     XCTAssertTrue(Either<Int, String>.left(2).mapLeft(square) == .left(4))
   }
 
   func testFlatMapLeft() {
-    let failOnNegative: Int -> Either<Int, String> = { x in
+    let failOnNegative: (Int) -> Either<Int, String> = { x in
       return x < 0 ? .right("failure") : .left(x * x)
     }
 
@@ -57,8 +57,8 @@ final class EitherTests: XCTest {
   }
 
   func testIfLeftIfRight() {
-    let square: Int -> Int = { $0 * $0 }
-    let length: String -> Int = { $0.characters.count }
+    let square: (Int) -> Int = { $0 * $0 }
+    let length: (String) -> Int = { $0.characters.count }
 
     XCTAssertEqual(4, Either.left(1).ifLeft(square, ifRight: length))
     XCTAssertEqual(5, Either.right("hello").ifLeft(square, ifRight: length))
@@ -67,8 +67,8 @@ final class EitherTests: XCTest {
   func testEitherCaseAnalysis() {
 
 
-    let square: Int -> Int = { $0 * $0 }
-    let length: String -> Int = { $0.characters.count }
+    let square: (Int) -> Int = { $0 * $0 }
+    let length: (String) -> Int = { $0.characters.count }
 
     XCTAssertEqual(4, .left(1) |> either(ifLeft: square, ifRight: length))
     XCTAssertEqual(5, .right("hello") |> either(ifLeft: square, ifRight: length))

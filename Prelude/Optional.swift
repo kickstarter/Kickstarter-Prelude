@@ -32,7 +32,7 @@ extension OptionalType {
    - returns: If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil`
               is returned.
    */
-  public func optionalFilter(predicate: Wrapped -> Bool) -> Wrapped? {
+  public func optionalFilter(_ predicate: (Wrapped) -> Bool) -> Wrapped? {
     if let value = self.optional where predicate(value) {
       return value
     }
@@ -46,7 +46,7 @@ extension OptionalType {
 
    - returns:
    */
-  public func coalesceWith(@autoclosure value: () -> Wrapped) -> Wrapped {
+  public func coalesceWith(_ value: @autoclosure () -> Wrapped) -> Wrapped {
     return self.optional ?? value()
   }
 }
@@ -58,16 +58,16 @@ extension OptionalType {
 
  - returns: An optional.
  */
-public func flattenOptional <A> (x: A??) -> A? {
+public func flattenOptional <A> (_ x: A??) -> A? {
   if let x = x { return x }
   return nil
 }
 
-public func isNil <A> (x: A?) -> Bool {
+public func isNil <A> (_ x: A?) -> Bool {
   return x == nil
 }
 
-public func isNotNil <A> (x: A?) -> Bool {
+public func isNotNil <A> (_ x: A?) -> Bool {
   return x != nil
 }
 

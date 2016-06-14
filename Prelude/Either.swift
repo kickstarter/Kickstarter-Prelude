@@ -139,7 +139,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A new either value.
    */
-  public func map <C> (@noescape f: B -> C) -> Either<A, C> {
+  public func map <C> (_ f: @noescape (B) -> C) -> Either<A, C> {
     switch self {
     case let .left(a):
       return .left(a)
@@ -155,7 +155,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A new either value.
    */
-  public func flatMap <C> (@noescape f: B -> Either<A, C>) -> Either<A, C> {
+  public func flatMap <C> (_ f: @noescape (B) -> Either<A, C>) -> Either<A, C> {
     return self.map(f).flatten()
   }
 
@@ -166,7 +166,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A new either value.
    */
-  public func mapLeft <C> (@noescape f: A -> C) -> Either<C, B> {
+  public func mapLeft <C> (_ f: @noescape (A) -> C) -> Either<C, B> {
     switch self {
     case let .left(a):
       return .left(f(a))
@@ -182,7 +182,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A new either value.
    */
-  public func flatMapLeft <C> (@noescape f: A -> Either<C, B>) -> Either<C, B> {
+  public func flatMapLeft <C> (_ f: @noescape (A) -> Either<C, B>) -> Either<C, B> {
     return self.mapLeft(f).flattenLeft()
   }
 
@@ -194,7 +194,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A value.
    */
-  public func ifLeft <C> (@noescape ifLeft: A -> C, @noescape ifRight: B -> C) -> C {
+  public func ifLeft <C> (_ ifLeft: @noescape (A) -> C, ifRight: @noescape (B) -> C) -> C {
     switch self {
     case let .left(left):
       return ifLeft(left)
@@ -247,7 +247,7 @@ extension Either where A: EitherType, A.B == B {
 
  - returns: A function that performs case analysis on an `Either` value.
  */
-public func either <A, B, C> (ifLeft ifLeft: A -> C, ifRight: B -> C) -> (Either<A, B> -> C) {
+public func either <A, B, C> (ifLeft: (A) -> C, ifRight: (B) -> C) -> ((Either<A, B>) -> C) {
   return { either in either.ifLeft(ifLeft, ifRight: ifRight) }
 }
 
@@ -258,7 +258,7 @@ public func either <A, B, C> (ifLeft ifLeft: A -> C, ifRight: B -> C) -> (Either
 
  - returns: A `Bool` value.
  */
-public func isLeft <E: EitherType> (either: E) -> Bool {
+public func isLeft <E: EitherType> (_ either: E) -> Bool {
   return either.isLeft
 }
 
@@ -269,7 +269,7 @@ public func isLeft <E: EitherType> (either: E) -> Bool {
 
  - returns: A `Bool` value.
  */
-public func isRight <E: EitherType> (either: E) -> Bool {
+public func isRight <E: EitherType> (_ either: E) -> Bool {
   return either.isRight
 }
 
@@ -280,7 +280,7 @@ public func isRight <E: EitherType> (either: E) -> Bool {
 
  - returns: An array of left values.
  */
-public func lefts <E: EitherType> (eithers: [E]) -> [E.A] {
+public func lefts <E: EitherType> (_ eithers: [E]) -> [E.A] {
   return eithers.map { $0.left }.compact()
 }
 
@@ -291,6 +291,6 @@ public func lefts <E: EitherType> (eithers: [E]) -> [E.A] {
 
  - returns: An array of right values.
  */
-public func rights <E: EitherType> (eithers: [E]) -> [E.B] {
+public func rights <E: EitherType> (_ eithers: [E]) -> [E.B] {
   return eithers.map { $0.right }.compact()
 }

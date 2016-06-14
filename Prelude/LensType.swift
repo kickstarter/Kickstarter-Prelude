@@ -2,9 +2,9 @@ public protocol LensType {
   associatedtype Whole
   associatedtype Part
 
-  init(view: Whole -> Part, set: (Part, Whole) -> Whole)
+  init(view: (Whole) -> Part, set: (Part, Whole) -> Whole)
 
-  var view: Whole -> Part { get }
+  var view: (Whole) -> Part { get }
   var set: (Part, Whole) -> Whole { get }
 }
 
@@ -16,7 +16,7 @@ public extension LensType {
 
    - returns: A function that takes wholes to wholes by applying the function to a subpart.
    */
-  public func over(f: Part -> Part) -> (Whole -> Whole) {
+  public func over(_ f: (Part) -> Part) -> ((Whole) -> Whole) {
     return { whole in
       let part = self.view(whole)
       return self.set(f(part), whole)
@@ -31,7 +31,7 @@ public extension LensType {
 
    - returns: A composed lens.
    */
-  public func compose <RLens: LensType where RLens.Whole == Part>(rhs: RLens) -> Lens<Whole, RLens.Part> {
+  public func compose <RLens: LensType where RLens.Whole == Part>(_ rhs: RLens) -> Lens<Whole, RLens.Part> {
     return Lens(
       view: rhs.view • self.view,
       set: { subPart, whole in
@@ -51,7 +51,7 @@ public extension LensType {
 
  - returns: A function that transforms a whole into a new whole with a part replaced.
  */
-public func .~ <L: LensType> (lens: L, part: L.Part) -> (L.Whole -> L.Whole) {
+public func .~ <L: LensType> (lens: L, part: L.Part) -> ((L.Whole) -> L.Whole) {
   return { whole in lens.set(part, whole) }
 }
 
@@ -103,7 +103,7 @@ public func >•> <A, B, C> (lhs: Lens<A, B?>, rhs: Lens<B, C?>) -> Lens<A, C?> 
 
  - returns: A function that transforms a whole into a new whole with its part transformed by `f`.
  */
-public func %~ <L: LensType> (lens: L, f: L.Part -> L.Part) -> (L.Whole -> L.Whole) {
+public func %~ <L: LensType> (lens: L, f: (L.Part) -> L.Part) -> ((L.Whole) -> L.Whole) {
   return lens.over(f)
 }
 
@@ -115,6 +115,6 @@ public func %~ <L: LensType> (lens: L, f: L.Part -> L.Part) -> (L.Whole -> L.Who
 
  - returns: A function that transform a whole into a new whole with its part concatenated to `a`.
  */
-public func <>~ <L: LensType where L.Part: Semigroup> (lens: L, a: L.Part) -> (L.Whole -> L.Whole) {
+public func <>~ <L: LensType where L.Part: Semigroup> (lens: L, a: L.Part) -> ((L.Whole) -> L.Whole) {
   return lens.over(<>a)
 }
