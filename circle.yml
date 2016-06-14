@@ -4,9 +4,7 @@ machine:
 dependencies:
   pre:
     - brew update
-    - brew unlink swiftlint
     - brew install swiftlint
-    - brew link swiftlint
 test:
   override:
     - set -o pipefail &&
