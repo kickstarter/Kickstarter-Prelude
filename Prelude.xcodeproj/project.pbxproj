@@ -85,6 +85,7 @@
 		A7FD08701C81E24A00332CCB /* OptionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B5601C2EEA1400FDB616 /* OptionalTests.swift */; };
 		A7FD08711C81E24A00332CCB /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510851C273D4700C59136 /* ArrayTest.swift */; };
 		A7FD08731C81E24A00332CCB /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0923F81BB6291900C9EC88 /* Prelude.framework */; };
+		A7FD55A11D104199007F976D /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD55A01D104199007F976D /* UIEdgeInsets.swift */; };
 		CA0923FC1BB6291900C9EC88 /* Prelude.h in Headers */ = {isa = PBXBuildFile; fileRef = CA0923FB1BB6291900C9EC88 /* Prelude.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA0924031BB6291900C9EC88 /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0923F81BB6291900C9EC88 /* Prelude.framework */; };
 		CA0924081BB6291900C9EC88 /* FunctionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0924071BB6291900C9EC88 /* FunctionTest.swift */; };
@@ -174,6 +175,7 @@
 		A7F7ADE91C53D43400E39792 /* ComparableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparableTests.swift; sourceTree = "<group>"; };
 		A7FD08641C81E1DA00332CCB /* Prelude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7FD087B1C81E24A00332CCB /* Prelude-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7FD55A01D104199007F976D /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		CA0923F81BB6291900C9EC88 /* Prelude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0923FB1BB6291900C9EC88 /* Prelude.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prelude.h; sourceTree = "<group>"; };
 		CA0923FD1BB6291900C9EC88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				A727E0511D07984500D8FE43 /* UIButton.swift */,
 				A727E04F1D0797EB00D8FE43 /* UIImage.swift */,
 				A727E0391D07972F00D8FE43 /* lenses */,
+				A7FD55A01D104199007F976D /* UIEdgeInsets.swift */,
 			);
 			path = "Prelude-UIKit-iOS";
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				A727E0451D07972F00D8FE43 /* CGRectLenses.swift in Sources */,
 				A77480BC1D08333F00774DEC /* UITextFieldLenses.swift in Sources */,
 				A727E0471D07972F00D8FE43 /* UIButtonLenses.swift in Sources */,
+				A7FD55A11D104199007F976D /* UIEdgeInsets.swift in Sources */,
 				A733794C1D0E417300C91445 /* LensHolder.swift in Sources */,
 				A77480C21D089AF100774DEC /* UIViewControllerLenses.swift in Sources */,
 				A727E0521D07984500D8FE43 /* UIButton.swift in Sources */,
