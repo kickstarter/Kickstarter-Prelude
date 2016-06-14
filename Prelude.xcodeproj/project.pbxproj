@@ -58,6 +58,7 @@
 		A7B60BE91BFBF44000B7B7ED /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */; };
 		A7C510861C273D4700C59136 /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510851C273D4700C59136 /* ArrayTest.swift */; };
 		A7C510881C273FA600C59136 /* DictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510871C273FA600C59136 /* DictionaryTest.swift */; };
+		A7CEAA071D0F9D8C00CE3D8B /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */; };
 		A7DBFCF31C5EB661002150A1 /* SomeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBFCF21C5EB661002150A1 /* SomeError.swift */; };
 		A7EFE1521C28B46900F4CFEB /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1511C28B46900F4CFEB /* NumericType.swift */; };
 		A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1531C28B53D00F4CFEB /* VectorType.swift */; };
@@ -165,6 +166,7 @@
 		A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		A7C510851C273D4700C59136 /* ArrayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTest.swift; sourceTree = "<group>"; };
 		A7C510871C273FA600C59136 /* DictionaryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTest.swift; sourceTree = "<group>"; };
+		A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTests.swift; sourceTree = "<group>"; };
 		A7DBFCF21C5EB661002150A1 /* SomeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeError.swift; sourceTree = "<group>"; };
 		A7EFE1511C28B46900F4CFEB /* NumericType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericType.swift; sourceTree = "<group>"; };
 		A7EFE1531C28B53D00F4CFEB /* VectorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorType.swift; sourceTree = "<group>"; };
@@ -245,13 +247,6 @@
 			path = "Prelude-UIKit-iOS";
 			sourceTree = "<group>";
 		};
-		A727E02F1D0796D700D8FE43 /* Prelude-UIKit-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Prelude-UIKit-iOSTests";
-			sourceTree = "<group>";
-		};
 		A727E0391D07972F00D8FE43 /* lenses */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,14 +267,22 @@
 			path = lenses;
 			sourceTree = "<group>";
 		};
+		A7CEAA051D0F9D7100CE3D8B /* Prelude-UIKit-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */,
+			);
+			path = "Prelude-UIKit-iOSTests";
+			sourceTree = "<group>";
+		};
 		CA0923EE1BB6291800C9EC88 = {
 			isa = PBXGroup;
 			children = (
 				A7378CC61C80958000F0A562 /* Prelude.playground */,
 				CA0923FA1BB6291900C9EC88 /* Prelude */,
-				CA0924061BB6291900C9EC88 /* PreludeTests */,
 				A727E0231D0796D600D8FE43 /* Prelude-UIKit-iOS */,
-				A727E02F1D0796D700D8FE43 /* Prelude-UIKit-iOSTests */,
+				A7CEAA051D0F9D7100CE3D8B /* Prelude-UIKit-iOSTests */,
+				CA0924061BB6291900C9EC88 /* PreludeTests */,
 				CA0923F91BB6291900C9EC88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7CEAA071D0F9D8C00CE3D8B /* UIButtonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +803,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Prelude/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -806,6 +811,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -814,6 +820,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Prelude/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
