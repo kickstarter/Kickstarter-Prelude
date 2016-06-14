@@ -3,7 +3,9 @@ import Prelude
 import UIKit
 
 public protocol UIStackViewProtocol: UIViewProtocol {
+  func addArrangedSubview(view: UIView)
   var alignment: UIStackViewAlignment { get set }
+  var arrangedSubviews: [UIView] { get }
   var axis: UILayoutConstraintAxis { get set }
   var baselineRelativeArrangement: Bool { get set }
   var distribution: UIStackViewDistribution { get set }
@@ -18,6 +20,17 @@ public extension LensHolder where Object: UIStackViewProtocol {
     return Lens(
       view: { $0.alignment },
       set: { $1.alignment = $0; return $1 }
+    )
+  }
+
+  public var arrangedSubviews: Lens<Object, [UIView]> {
+    return Lens(
+      view: { $0.arrangedSubviews },
+      set: {
+        $1.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        $0.forEach($1.addArrangedSubview)
+        return $1
+      }
     )
   }
 
