@@ -22,3 +22,19 @@ public func first<A, B>(t: (A, B)) -> A {
 public func second<A, B>(t: (A, B)) -> B {
   return t.1
 }
+
+/**
+ - parameter t: A 3-tuple.
+ - returns: The first value of a 3-tuple.
+ */
+public func first<A, B, C>(t: (A, B, C)) -> A {
+  return t.0
+}
+
+/**
+ - parameter t: A 3-tuple.
+ - returns: The second value of a 3-tuple.
+ */
+public func second<A, B, C>(t: (A, B, C)) -> B {
+  return t.1
+}

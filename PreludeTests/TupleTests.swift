@@ -12,10 +12,16 @@ final class TupleTests: XCTestCase {
   func testFirst() {
     XCTAssertEqual(1, first((1, 2)))
     XCTAssertEqual(2, first((2, 3)))
+
+    XCTAssertEqual(1, first((1, 2, 3)))
+    XCTAssertEqual(2, first((2, 3, 4)))
   }
 
   func testSecond() {
     XCTAssertEqual(2, second((1, 2)))
     XCTAssertEqual(3, second((2, 3)))
+
+    XCTAssertEqual(2, second((1, 2, 3)))
+    XCTAssertEqual(3, second((2, 3, 4)))
   }
 }
