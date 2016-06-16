@@ -1,7 +1,7 @@
 import XCTest
 @testable import Prelude
 
-class ArrayTest: XCTestCase {
+class ArrayTests: XCTestCase {
 
   func testCompact() {
     let xs: [Int?] = [nil, 1, 2, nil, 3, nil, 4, nil, nil]
