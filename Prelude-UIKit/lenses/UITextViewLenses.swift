@@ -1,7 +1,7 @@
 import Prelude
 import UIKit
 
-public protocol UITextViewProtocol: NSObjectProtocol, UITextInputTraitsProtocol {
+public protocol UITextViewProtocol: UIViewProtocol, UITextInputTraitsProtocol {
   var dataDetectorTypes: UIDataDetectorTypes { get set }
   var font: UIFont? { get set }
   var textAlignment: NSTextAlignment { get set }
