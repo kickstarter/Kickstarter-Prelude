@@ -3,6 +3,7 @@ import UIKit
 
 public protocol UIViewProtocol: NSObjectProtocol, LensObject {
   var backgroundColor: UIColor? { get set }
+  var contentMode: UIViewContentMode { get set }
   var frame: CGRect { get set }
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
@@ -17,6 +18,13 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.backgroundColor ?? .clearColor() },
       set: { $1.backgroundColor = $0; return $1 }
+    )
+  }
+
+  public var contentMode: Lens<Object, UIViewContentMode> {
+    return Lens(
+      view: { $0.contentMode },
+      set: { $1.contentMode = $0; return $1 }
     )
   }
 
