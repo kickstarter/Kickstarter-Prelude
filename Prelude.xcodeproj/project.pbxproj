@@ -79,6 +79,10 @@
 		A7C510861C273D4700C59136 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510851C273D4700C59136 /* ArrayTests.swift */; };
 		A7C510881C273FA600C59136 /* DictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C510871C273FA600C59136 /* DictionaryTest.swift */; };
 		A7CEAA071D0F9D8C00CE3D8B /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */; };
+		A7D11FC71D14927400F364FD /* UITableViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC61D14927400F364FD /* UITableViewLenses.swift */; };
+		A7D11FC81D14927400F364FD /* UITableViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC61D14927400F364FD /* UITableViewLenses.swift */; };
+		A7D11FCA1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */; };
+		A7D11FCB1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */; };
 		A7DBFCF31C5EB661002150A1 /* SomeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBFCF21C5EB661002150A1 /* SomeError.swift */; };
 		A7EFE1521C28B46900F4CFEB /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1511C28B46900F4CFEB /* NumericType.swift */; };
 		A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1531C28B53D00F4CFEB /* VectorType.swift */; };
@@ -204,6 +208,8 @@
 		A7C510851C273D4700C59136 /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 		A7C510871C273FA600C59136 /* DictionaryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTest.swift; sourceTree = "<group>"; };
 		A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTests.swift; sourceTree = "<group>"; };
+		A7D11FC61D14927400F364FD /* UITableViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewLenses.swift; sourceTree = "<group>"; };
+		A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewControllerLenses.swift; sourceTree = "<group>"; };
 		A7DBFCF21C5EB661002150A1 /* SomeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeError.swift; sourceTree = "<group>"; };
 		A7EFE1511C28B46900F4CFEB /* NumericType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericType.swift; sourceTree = "<group>"; };
 		A7EFE1531C28B53D00F4CFEB /* VectorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorType.swift; sourceTree = "<group>"; };
@@ -318,6 +324,8 @@
 				A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */,
 				A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */,
 				A727E0421D07972F00D8FE43 /* UIViewLenses.swift */,
+				A7D11FC61D14927400F364FD /* UITableViewLenses.swift */,
+				A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */,
 			);
 			path = lenses;
 			sourceTree = "<group>";
@@ -739,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70969241D1437B200DB39D3 /* CGPointLenses.swift in Sources */,
+				A7D11FC81D14927400F364FD /* UITableViewLenses.swift in Sources */,
 				A70969251D1437B200DB39D3 /* CGRectLenses.swift in Sources */,
 				A709692B1D1437B200DB39D3 /* UIStackViewLenses.swift in Sources */,
 				A709691F1D1437AD00DB39D3 /* LensHolder.swift in Sources */,
@@ -755,6 +764,7 @@
 				A70969211D1437AD00DB39D3 /* UIEdgeInsets.swift in Sources */,
 				A709692E1D1437B200DB39D3 /* UIViewControllerLenses.swift in Sources */,
 				A70969231D1437B200DB39D3 /* CALayerLenses.swift in Sources */,
+				A7D11FCB1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +781,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A727E0491D07972F00D8FE43 /* UIEdgeInsetsLenses.swift in Sources */,
+				A7D11FC71D14927400F364FD /* UITableViewLenses.swift in Sources */,
 				A727E04B1D07972F00D8FE43 /* UIViewLenses.swift in Sources */,
 				A727E0461D07972F00D8FE43 /* CGSizeLenses.swift in Sources */,
 				A727E0441D07972F00D8FE43 /* CGPointLenses.swift in Sources */,
@@ -787,6 +798,7 @@
 				A727E0521D07984500D8FE43 /* UIButton.swift in Sources */,
 				A727E04A1D07972F00D8FE43 /* UILabelLenses.swift in Sources */,
 				A727E0481D07972F00D8FE43 /* UIControlLenses.swift in Sources */,
+				A7D11FCA1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
