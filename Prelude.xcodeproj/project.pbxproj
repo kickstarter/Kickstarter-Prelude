@@ -938,7 +938,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOS";
 				PRODUCT_NAME = Prelude_UIKit;
 				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Debug;
 		};
@@ -956,7 +955,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOS";
 				PRODUCT_NAME = Prelude_UIKit;
 				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Release;
 		};
@@ -1281,6 +1279,7 @@
 				A709691A1D14373400DB39D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A709691E1D14373400DB39D3 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1289,6 +1288,7 @@
 				A709691C1D14373400DB39D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A727E0371D0796D700D8FE43 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-iOS" */ = {
 			isa = XCConfigurationList;
