@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8094255B1D1463A00021DEEE /* UITextViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094255A1D1463A00021DEEE /* UITextViewLenses.swift */; };
 		A70969121D14373400DB39D3 /* Prelude_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70969081D14373400DB39D3 /* Prelude_UIKit.framework */; };
 		A709691F1D1437AD00DB39D3 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A733794B1D0E417300C91445 /* LensHolder.swift */; };
 		A70969201D1437AD00DB39D3 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E0511D07984500D8FE43 /* UIButton.swift */; };
@@ -165,6 +166,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8094255A1D1463A00021DEEE /* UITextViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewLenses.swift; sourceTree = "<group>"; };
 		A70969081D14373400DB39D3 /* Prelude_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70969111D14373400DB39D3 /* Prelude-UIKit-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-UIKit-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A711FCDC1CECB53A00659DB4 /* Unpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unpack.swift; sourceTree = "<group>"; };
@@ -320,12 +322,13 @@
 				A727E0401D07972F00D8FE43 /* UIEdgeInsetsLenses.swift */,
 				A727E0411D07972F00D8FE43 /* UILabelLenses.swift */,
 				A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */,
+				A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */,
+				A7D11FC61D14927400F364FD /* UITableViewLenses.swift */,
 				A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */,
 				A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */,
+				8094255A1D1463A00021DEEE /* UITextViewLenses.swift */,
 				A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */,
 				A727E0421D07972F00D8FE43 /* UIViewLenses.swift */,
-				A7D11FC61D14927400F364FD /* UITableViewLenses.swift */,
-				A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */,
 			);
 			path = lenses;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A727E0491D07972F00D8FE43 /* UIEdgeInsetsLenses.swift in Sources */,
+				8094255B1D1463A00021DEEE /* UITextViewLenses.swift in Sources */,
 				A7D11FC71D14927400F364FD /* UITableViewLenses.swift in Sources */,
 				A727E04B1D07972F00D8FE43 /* UIViewLenses.swift in Sources */,
 				A727E0461D07972F00D8FE43 /* CGSizeLenses.swift in Sources */,
