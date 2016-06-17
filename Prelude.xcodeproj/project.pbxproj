@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70969121D14373400DB39D3 /* Prelude_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70969081D14373400DB39D3 /* Prelude_UIKit.framework */; };
+		A709691F1D1437AD00DB39D3 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A733794B1D0E417300C91445 /* LensHolder.swift */; };
+		A70969201D1437AD00DB39D3 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E0511D07984500D8FE43 /* UIButton.swift */; };
+		A70969211D1437AD00DB39D3 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD55A01D104199007F976D /* UIEdgeInsets.swift */; };
+		A70969221D1437AD00DB39D3 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E04F1D0797EB00D8FE43 /* UIImage.swift */; };
+		A70969231D1437B200DB39D3 /* CALayerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E03A1D07972F00D8FE43 /* CALayerLenses.swift */; };
+		A70969241D1437B200DB39D3 /* CGPointLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E03B1D07972F00D8FE43 /* CGPointLenses.swift */; };
+		A70969251D1437B200DB39D3 /* CGRectLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E03C1D07972F00D8FE43 /* CGRectLenses.swift */; };
+		A70969261D1437B200DB39D3 /* CGSizeLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E03D1D07972F00D8FE43 /* CGSizeLenses.swift */; };
+		A70969271D1437B200DB39D3 /* UIButtonLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E03E1D07972F00D8FE43 /* UIButtonLenses.swift */; };
+		A70969281D1437B200DB39D3 /* UIControlLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E03F1D07972F00D8FE43 /* UIControlLenses.swift */; };
+		A70969291D1437B200DB39D3 /* UIEdgeInsetsLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E0401D07972F00D8FE43 /* UIEdgeInsetsLenses.swift */; };
+		A709692A1D1437B200DB39D3 /* UILabelLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E0411D07972F00D8FE43 /* UILabelLenses.swift */; };
+		A709692B1D1437B200DB39D3 /* UIStackViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */; };
+		A709692C1D1437B200DB39D3 /* UITextFieldLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */; };
+		A709692D1D1437B200DB39D3 /* UITextInputTraitsLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */; };
+		A709692E1D1437B200DB39D3 /* UIViewControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */; };
+		A709692F1D1437B200DB39D3 /* UIViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727E0421D07972F00D8FE43 /* UIViewLenses.swift */; };
+		A70969301D1437B700DB39D3 /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */; };
+		A70969331D14383A00DB39D3 /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0923F81BB6291900C9EC88 /* Prelude.framework */; };
 		A711FCDD1CECB53A00659DB4 /* Unpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FCDC1CECB53A00659DB4 /* Unpack.swift */; };
 		A711FCDE1CECB53A00659DB4 /* Unpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FCDC1CECB53A00659DB4 /* Unpack.swift */; };
 		A711FD721CECF7A300659DB4 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FD701CECF7A300659DB4 /* Lens.swift */; };
@@ -96,6 +116,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A70969131D14373400DB39D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA0923EF1BB6291800C9EC88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A70969071D14373400DB39D3;
+			remoteInfo = "Prelude-UIKit-tvOS";
+		};
+		A70969311D14383400DB39D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA0923EF1BB6291800C9EC88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA0923F71BB6291900C9EC88;
+			remoteInfo = "Prelude-tvOS";
+		};
 		A727E02D1D0796D700D8FE43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA0923EF1BB6291800C9EC88 /* Project object */;
@@ -127,6 +161,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A70969081D14373400DB39D3 /* Prelude_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70969111D14373400DB39D3 /* Prelude-UIKit-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-UIKit-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A711FCDC1CECB53A00659DB4 /* Unpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unpack.swift; sourceTree = "<group>"; };
 		A711FD701CECF7A300659DB4 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
 		A711FD711CECF7A300659DB4 /* LensType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensType.swift; sourceTree = "<group>"; };
@@ -189,6 +225,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A70969041D14373400DB39D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70969331D14383A00DB39D3 /* Prelude.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A709690E1D14373400DB39D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70969121D14373400DB39D3 /* Prelude_UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A727E01E1D0796D600D8FE43 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,16 +290,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A727E0231D0796D600D8FE43 /* Prelude-UIKit-iOS */ = {
+		A727E0231D0796D600D8FE43 /* Prelude-UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				A733794B1D0E417300C91445 /* LensHolder.swift */,
 				A727E0511D07984500D8FE43 /* UIButton.swift */,
+				A7FD55A01D104199007F976D /* UIEdgeInsets.swift */,
 				A727E04F1D0797EB00D8FE43 /* UIImage.swift */,
 				A727E0391D07972F00D8FE43 /* lenses */,
-				A7FD55A01D104199007F976D /* UIEdgeInsets.swift */,
 			);
-			path = "Prelude-UIKit-iOS";
+			path = "Prelude-UIKit";
 			sourceTree = "<group>";
 		};
 		A727E0391D07972F00D8FE43 /* lenses */ = {
@@ -270,12 +322,12 @@
 			path = lenses;
 			sourceTree = "<group>";
 		};
-		A7CEAA051D0F9D7100CE3D8B /* Prelude-UIKit-iOSTests */ = {
+		A7CEAA051D0F9D7100CE3D8B /* Prelude-UIKitTests */ = {
 			isa = PBXGroup;
 			children = (
 				A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */,
 			);
-			path = "Prelude-UIKit-iOSTests";
+			path = "Prelude-UIKitTests";
 			sourceTree = "<group>";
 		};
 		CA0923EE1BB6291800C9EC88 = {
@@ -283,8 +335,8 @@
 			children = (
 				A7378CC61C80958000F0A562 /* Prelude.playground */,
 				CA0923FA1BB6291900C9EC88 /* Prelude */,
-				A727E0231D0796D600D8FE43 /* Prelude-UIKit-iOS */,
-				A7CEAA051D0F9D7100CE3D8B /* Prelude-UIKit-iOSTests */,
+				A727E0231D0796D600D8FE43 /* Prelude-UIKit */,
+				A7CEAA051D0F9D7100CE3D8B /* Prelude-UIKitTests */,
 				CA0924061BB6291900C9EC88 /* PreludeTests */,
 				CA0923F91BB6291900C9EC88 /* Products */,
 			);
@@ -299,6 +351,8 @@
 				A7FD087B1C81E24A00332CCB /* Prelude-iOSTests.xctest */,
 				A727E0221D0796D600D8FE43 /* Prelude_UIKit.framework */,
 				A727E02B1D0796D600D8FE43 /* Prelude-UIKit-iOSTests.xctest */,
+				A70969081D14373400DB39D3 /* Prelude_UIKit.framework */,
+				A70969111D14373400DB39D3 /* Prelude-UIKit-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +408,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		A70969051D14373400DB39D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A727E01F1D0796D600D8FE43 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,6 +441,43 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A70969071D14373400DB39D3 /* Prelude-UIKit-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A709691D1D14373400DB39D3 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-tvOS" */;
+			buildPhases = (
+				A70969031D14373400DB39D3 /* Sources */,
+				A70969041D14373400DB39D3 /* Frameworks */,
+				A70969051D14373400DB39D3 /* Headers */,
+				A70969061D14373400DB39D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A70969321D14383400DB39D3 /* PBXTargetDependency */,
+			);
+			name = "Prelude-UIKit-tvOS";
+			productName = "Prelude-UIKit-tvOS";
+			productReference = A70969081D14373400DB39D3 /* Prelude_UIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A70969101D14373400DB39D3 /* Prelude-UIKit-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A709691E1D14373400DB39D3 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-tvOSTests" */;
+			buildPhases = (
+				A709690D1D14373400DB39D3 /* Sources */,
+				A709690E1D14373400DB39D3 /* Frameworks */,
+				A709690F1D14373400DB39D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A70969141D14373400DB39D3 /* PBXTargetDependency */,
+			);
+			name = "Prelude-UIKit-tvOSTests";
+			productName = "Prelude-UIKit-tvOSTests";
+			productReference = A70969111D14373400DB39D3 /* Prelude-UIKit-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A727E0211D0796D600D8FE43 /* Prelude-UIKit-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A727E0371D0796D700D8FE43 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-iOS" */;
@@ -501,6 +599,12 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Kickstarter;
 				TargetAttributes = {
+					A70969071D14373400DB39D3 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					A70969101D14373400DB39D3 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					A727E0211D0796D600D8FE43 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -533,11 +637,27 @@
 				CA0924011BB6291900C9EC88 /* Prelude-tvOSTests */,
 				A727E0211D0796D600D8FE43 /* Prelude-UIKit-iOS */,
 				A727E02A1D0796D600D8FE43 /* Prelude-UIKit-iOSTests */,
+				A70969071D14373400DB39D3 /* Prelude-UIKit-tvOS */,
+				A70969101D14373400DB39D3 /* Prelude-UIKit-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A70969061D14373400DB39D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A709690F1D14373400DB39D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A727E0201D0796D600D8FE43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -614,6 +734,38 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A70969031D14373400DB39D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70969241D1437B200DB39D3 /* CGPointLenses.swift in Sources */,
+				A70969251D1437B200DB39D3 /* CGRectLenses.swift in Sources */,
+				A709692B1D1437B200DB39D3 /* UIStackViewLenses.swift in Sources */,
+				A709691F1D1437AD00DB39D3 /* LensHolder.swift in Sources */,
+				A70969291D1437B200DB39D3 /* UIEdgeInsetsLenses.swift in Sources */,
+				A70969221D1437AD00DB39D3 /* UIImage.swift in Sources */,
+				A70969271D1437B200DB39D3 /* UIButtonLenses.swift in Sources */,
+				A709692C1D1437B200DB39D3 /* UITextFieldLenses.swift in Sources */,
+				A709692A1D1437B200DB39D3 /* UILabelLenses.swift in Sources */,
+				A70969281D1437B200DB39D3 /* UIControlLenses.swift in Sources */,
+				A709692D1D1437B200DB39D3 /* UITextInputTraitsLenses.swift in Sources */,
+				A70969261D1437B200DB39D3 /* CGSizeLenses.swift in Sources */,
+				A70969201D1437AD00DB39D3 /* UIButton.swift in Sources */,
+				A709692F1D1437B200DB39D3 /* UIViewLenses.swift in Sources */,
+				A70969211D1437AD00DB39D3 /* UIEdgeInsets.swift in Sources */,
+				A709692E1D1437B200DB39D3 /* UIViewControllerLenses.swift in Sources */,
+				A70969231D1437B200DB39D3 /* CALayerLenses.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A709690D1D14373400DB39D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70969301D1437B700DB39D3 /* UIButtonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A727E01D1D0796D600D8FE43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -739,6 +891,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A70969141D14373400DB39D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A70969071D14373400DB39D3 /* Prelude-UIKit-tvOS */;
+			targetProxy = A70969131D14373400DB39D3 /* PBXContainerItemProxy */;
+		};
+		A70969321D14383400DB39D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA0923F71BB6291900C9EC88 /* Prelude-tvOS */;
+			targetProxy = A70969311D14383400DB39D3 /* PBXContainerItemProxy */;
+		};
 		A727E02E1D0796D700D8FE43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A727E0211D0796D600D8FE43 /* Prelude-UIKit-iOS */;
@@ -762,6 +924,66 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A70969191D14373400DB39D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Prelude/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOS";
+				PRODUCT_NAME = Prelude_UIKit;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		A709691A1D14373400DB39D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Prelude/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOS";
+				PRODUCT_NAME = Prelude_UIKit;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		A709691B1D14373400DB39D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = Prelude/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		A709691C1D14373400DB39D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = Prelude/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
 		A727E0331D0796D700D8FE43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1052,6 +1274,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A709691D1D14373400DB39D3 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70969191D14373400DB39D3 /* Debug */,
+				A709691A1D14373400DB39D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A709691E1D14373400DB39D3 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A709691B1D14373400DB39D3 /* Debug */,
+				A709691C1D14373400DB39D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A727E0371D0796D700D8FE43 /* Build configuration list for PBXNativeTarget "Prelude-UIKit-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
