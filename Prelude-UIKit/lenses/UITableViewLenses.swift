@@ -4,7 +4,9 @@ import UIKit
 public protocol UITableViewProtocol: UIViewProtocol {
   var estimatedRowHeight: CGFloat { get set }
   var rowHeight: CGFloat { get set }
+  #if os(iOS)
   var separatorStyle: UITableViewCellSeparatorStyle { get set }
+  #endif
 }
 
 extension UITableView: UITableViewProtocol {}
@@ -25,11 +27,12 @@ public extension LensHolder where Object: UITableViewProtocol {
     )
   }
 
+  #if os(iOS)
   public var separatorStyle: Lens<Object, UITableViewCellSeparatorStyle> {
     return Lens(
       view: { $0.separatorStyle },
       set: { $1.separatorStyle = $0; return $1 }
     )
   }
-
+  #endif
 }

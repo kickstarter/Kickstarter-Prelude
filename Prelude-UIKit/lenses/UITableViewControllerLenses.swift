@@ -27,7 +27,9 @@ extension LensType where Whole: UITableViewControllerProtocol, Part == UITableVi
     return Whole.lens.tableView • Part.lens.estimatedRowHeight
   }
 
+  #if os(iOS)
   public var separatorStyle: Lens<Whole, UITableViewCellSeparatorStyle> {
     return Whole.lens.tableView • Part.lens.separatorStyle
   }
+  #endif
 }
