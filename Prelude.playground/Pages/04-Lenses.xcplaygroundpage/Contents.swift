@@ -106,7 +106,7 @@ p2.creator.name
  We can also some operators to make this more expressive:
  */
 
-let p3 = project |> creatorLens • nameLens .~ "BLOB"
+let p3 = project |> (creatorLens • nameLens) .~ "BLOB"
 p3.creator.name
 
 /*:
@@ -120,7 +120,7 @@ creatorLens • nameLens
  Next, the `.~` operator is an infix operator version of `set`:
  */
 
-creatorLens • nameLens .~ "BLOB"
+(creatorLens • nameLens) .~ "BLOB"
 
 /*:
  The above is now a function `Project -> Project` that will will focus on the creator's
@@ -128,7 +128,7 @@ creatorLens • nameLens .~ "BLOB"
  get the transformed project:
  */
 
-let p4 = project |> creatorLens • nameLens .~ "BLOB"
+let p4 = project |> (creatorLens • nameLens) .~ "BLOB"
 p4.creator.name
 
 /*:
@@ -160,7 +160,7 @@ extension User {
  Now we can do:
  */
 
-let p5 = project |> Project.lens.creator • User.lens.name .~ "BLORG"
+let p5 = project |> (Project.lens.creator • User.lens.name) .~ "BLORG"
 p5.creator.name
 
 /*:
