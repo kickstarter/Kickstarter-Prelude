@@ -3,19 +3,19 @@ import UIKit
 
 public protocol UIViewProtocol: NSObjectProtocol, LensObject {
   var backgroundColor: UIColor? { get set }
+  func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
+  func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   var contentMode: UIViewContentMode { get set }
   var frame: CGRect { get set }
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
-  var translatesAutoresizingMaskIntoConstraints: Bool { get set }
-
-  func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
-  func setContentHuggingPriority(priority: UILayoutPriority,
-                                 forAxis axis: UILayoutConstraintAxis)
-  func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   func setContentCompressionResistancePriority(priority: UILayoutPriority,
                                                forAxis axis: UILayoutConstraintAxis)
+  func setContentHuggingPriority(priority: UILayoutPriority,
+                                 forAxis axis: UILayoutConstraintAxis)
+  var tintColor: UIColor! { get set }
+  var translatesAutoresizingMaskIntoConstraints: Bool { get set }
 }
 
 extension UIView: UIViewProtocol {}
@@ -76,6 +76,13 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.preservesSuperviewLayoutMargins },
       set: { $1.preservesSuperviewLayoutMargins = $0; return $1 }
+    )
+  }
+
+  public var tintColor: Lens<Object, UIColor> {
+    return Lens(
+      view: { $0.tintColor },
+      set: { $1.tintColor = $0; return $1 }
     )
   }
 
