@@ -84,6 +84,8 @@
 		A7D11FC81D14927400F364FD /* UITableViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC61D14927400F364FD /* UITableViewLenses.swift */; };
 		A7D11FCA1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */; };
 		A7D11FCB1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */; };
+		A7D120231D158A2700F364FD /* UITableViewCellLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D120221D158A2700F364FD /* UITableViewCellLenses.swift */; };
+		A7D120241D158A2700F364FD /* UITableViewCellLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D120221D158A2700F364FD /* UITableViewCellLenses.swift */; };
 		A7DBFCF31C5EB661002150A1 /* SomeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DBFCF21C5EB661002150A1 /* SomeError.swift */; };
 		A7EFE1521C28B46900F4CFEB /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1511C28B46900F4CFEB /* NumericType.swift */; };
 		A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFE1531C28B53D00F4CFEB /* VectorType.swift */; };
@@ -212,6 +214,7 @@
 		A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTests.swift; sourceTree = "<group>"; };
 		A7D11FC61D14927400F364FD /* UITableViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewLenses.swift; sourceTree = "<group>"; };
 		A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewControllerLenses.swift; sourceTree = "<group>"; };
+		A7D120221D158A2700F364FD /* UITableViewCellLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellLenses.swift; sourceTree = "<group>"; };
 		A7DBFCF21C5EB661002150A1 /* SomeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeError.swift; sourceTree = "<group>"; };
 		A7EFE1511C28B46900F4CFEB /* NumericType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericType.swift; sourceTree = "<group>"; };
 		A7EFE1531C28B53D00F4CFEB /* VectorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorType.swift; sourceTree = "<group>"; };
@@ -322,6 +325,7 @@
 				A727E0401D07972F00D8FE43 /* UIEdgeInsetsLenses.swift */,
 				A727E0411D07972F00D8FE43 /* UILabelLenses.swift */,
 				A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */,
+				A7D120221D158A2700F364FD /* UITableViewCellLenses.swift */,
 				A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */,
 				A7D11FC61D14927400F364FD /* UITableViewLenses.swift */,
 				A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */,
@@ -753,6 +757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70969241D1437B200DB39D3 /* CGPointLenses.swift in Sources */,
+				A7D120241D158A2700F364FD /* UITableViewCellLenses.swift in Sources */,
 				A7D11FC81D14927400F364FD /* UITableViewLenses.swift in Sources */,
 				A70969251D1437B200DB39D3 /* CGRectLenses.swift in Sources */,
 				A709692B1D1437B200DB39D3 /* UIStackViewLenses.swift in Sources */,
@@ -803,6 +808,7 @@
 				A733794C1D0E417300C91445 /* LensHolder.swift in Sources */,
 				A77480C21D089AF100774DEC /* UIViewControllerLenses.swift in Sources */,
 				A727E0521D07984500D8FE43 /* UIButton.swift in Sources */,
+				A7D120231D158A2700F364FD /* UITableViewCellLenses.swift in Sources */,
 				A727E04A1D07972F00D8FE43 /* UILabelLenses.swift in Sources */,
 				A727E0481D07972F00D8FE43 /* UIControlLenses.swift in Sources */,
 				A7D11FCA1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */,
