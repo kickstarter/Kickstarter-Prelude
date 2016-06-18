@@ -9,6 +9,13 @@ public protocol UIViewProtocol: NSObjectProtocol, LensObject {
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
   var translatesAutoresizingMaskIntoConstraints: Bool { get set }
+
+  func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
+  func setContentHuggingPriority(priority: UILayoutPriority,
+                                 forAxis axis: UILayoutConstraintAxis)
+  func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
+  func setContentCompressionResistancePriority(priority: UILayoutPriority,
+                                               forAxis axis: UILayoutConstraintAxis)
 }
 
 extension UIView: UIViewProtocol {}
@@ -18,6 +25,22 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.backgroundColor ?? .clearColor() },
       set: { $1.backgroundColor = $0; return $1 }
+    )
+  }
+
+  public func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis)
+    -> Lens<Object, UILayoutPriority> {
+
+    return Lens(
+      view: { $0.contentCompressionResistancePriorityForAxis(axis) },
+      set: { $1.setContentCompressionResistancePriority($0, forAxis: axis); return $1 }
+    )
+  }
+
+  public func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> Lens<Object, UILayoutPriority> {
+    return Lens(
+      view: { $0.contentHuggingPriorityForAxis(axis) },
+      set: { $1.setContentHuggingPriority($0, forAxis: axis); return $1 }
     )
   }
 

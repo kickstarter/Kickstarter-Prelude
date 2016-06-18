@@ -23,3 +23,9 @@ public extension LensHolder where Object: UITableViewCellProtocol {
     )
   }
 }
+
+extension LensType where Whole: UITableViewCellProtocol, Part == UIView {
+  public var layoutMargins: Lens<Whole, UIEdgeInsets> {
+    return Whole.lens.contentView • Part.lens.layoutMargins
+  }
+}
