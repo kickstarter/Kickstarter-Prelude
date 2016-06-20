@@ -3,11 +3,18 @@ import UIKit
 
 public protocol UIViewProtocol: NSObjectProtocol, LensObject {
   var backgroundColor: UIColor? { get set }
+  func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
+  func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   var contentMode: UIViewContentMode { get set }
   var frame: CGRect { get set }
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
+  func setContentCompressionResistancePriority(priority: UILayoutPriority,
+                                               forAxis axis: UILayoutConstraintAxis)
+  func setContentHuggingPriority(priority: UILayoutPriority,
+                                 forAxis axis: UILayoutConstraintAxis)
+  var tintColor: UIColor! { get set }
   var translatesAutoresizingMaskIntoConstraints: Bool { get set }
 }
 
@@ -18,6 +25,22 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.backgroundColor ?? .clearColor() },
       set: { $1.backgroundColor = $0; return $1 }
+    )
+  }
+
+  public func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis)
+    -> Lens<Object, UILayoutPriority> {
+
+    return Lens(
+      view: { $0.contentCompressionResistancePriorityForAxis(axis) },
+      set: { $1.setContentCompressionResistancePriority($0, forAxis: axis); return $1 }
+    )
+  }
+
+  public func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> Lens<Object, UILayoutPriority> {
+    return Lens(
+      view: { $0.contentHuggingPriorityForAxis(axis) },
+      set: { $1.setContentHuggingPriority($0, forAxis: axis); return $1 }
     )
   }
 
@@ -53,6 +76,13 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.preservesSuperviewLayoutMargins },
       set: { $1.preservesSuperviewLayoutMargins = $0; return $1 }
+    )
+  }
+
+  public var tintColor: Lens<Object, UIColor> {
+    return Lens(
+      view: { $0.tintColor },
+      set: { $1.tintColor = $0; return $1 }
     )
   }
 
