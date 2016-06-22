@@ -3,6 +3,7 @@ import UIKit
 
 public protocol UILabelProtocol: UIViewProtocol {
   var font: UIFont! { get set }
+  var numberOfLines: Int { get set }
   var text: String? { get set }
   var textAlignment: NSTextAlignment { get set }
   var textColor: UIColor! { get set }
@@ -15,6 +16,13 @@ public extension LensHolder where Object: UILabelProtocol {
     return Lens(
       view: { $0.font },
       set: { $1.font = $0; return $1; }
+    )
+  }
+
+  public var numberOfLines: Lens<Object, Int> {
+    return Lens(
+      view: { $0.numberOfLines },
+      set: { $1.numberOfLines = $0; return $1; }
     )
   }
 
