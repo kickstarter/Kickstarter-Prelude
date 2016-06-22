@@ -59,6 +59,8 @@
 		A753B55D1C2EE80B00FDB616 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B55C1C2EE80B00FDB616 /* UnitTests.swift */; };
 		A753B55F1C2EE86700FDB616 /* TupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B55E1C2EE86700FDB616 /* TupleTests.swift */; };
 		A753B5611C2EEA1400FDB616 /* OptionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753B5601C2EEA1400FDB616 /* OptionalTests.swift */; };
+		A757EBED1D1B134B00A5C978 /* UIImageViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EBEC1D1B134B00A5C978 /* UIImageViewLenses.swift */; };
+		A757EBEE1D1B134B00A5C978 /* UIImageViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EBEC1D1B134B00A5C978 /* UIImageViewLenses.swift */; };
 		A75EC8151CCBEB4F009BEC10 /* BooleanType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EC8141CCBEB4F009BEC10 /* BooleanType.swift */; };
 		A75EC8161CCBEB4F009BEC10 /* BooleanType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EC8141CCBEB4F009BEC10 /* BooleanType.swift */; };
 		A75EC8181CCBEB65009BEC10 /* BooleanTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EC8171CCBEB65009BEC10 /* BooleanTypeTests.swift */; };
@@ -196,6 +198,7 @@
 		A753B55C1C2EE80B00FDB616 /* UnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		A753B55E1C2EE86700FDB616 /* TupleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TupleTests.swift; sourceTree = "<group>"; };
 		A753B5601C2EEA1400FDB616 /* OptionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalTests.swift; sourceTree = "<group>"; };
+		A757EBEC1D1B134B00A5C978 /* UIImageViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewLenses.swift; sourceTree = "<group>"; };
 		A75EC8141CCBEB4F009BEC10 /* BooleanType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooleanType.swift; sourceTree = "<group>"; };
 		A75EC8171CCBEB65009BEC10 /* BooleanTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooleanTypeTests.swift; sourceTree = "<group>"; };
 		A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -323,6 +326,7 @@
 				A727E03E1D07972F00D8FE43 /* UIButtonLenses.swift */,
 				A727E03F1D07972F00D8FE43 /* UIControlLenses.swift */,
 				A727E0401D07972F00D8FE43 /* UIEdgeInsetsLenses.swift */,
+				A757EBEC1D1B134B00A5C978 /* UIImageViewLenses.swift */,
 				A727E0411D07972F00D8FE43 /* UILabelLenses.swift */,
 				A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */,
 				A7D120221D158A2700F364FD /* UITableViewCellLenses.swift */,
@@ -765,6 +769,7 @@
 				A70969291D1437B200DB39D3 /* UIEdgeInsetsLenses.swift in Sources */,
 				A70969221D1437AD00DB39D3 /* UIImage.swift in Sources */,
 				A70969271D1437B200DB39D3 /* UIButtonLenses.swift in Sources */,
+				A757EBEE1D1B134B00A5C978 /* UIImageViewLenses.swift in Sources */,
 				A709692C1D1437B200DB39D3 /* UITextFieldLenses.swift in Sources */,
 				A709692A1D1437B200DB39D3 /* UILabelLenses.swift in Sources */,
 				A70969281D1437B200DB39D3 /* UIControlLenses.swift in Sources */,
@@ -795,6 +800,7 @@
 				8094255B1D1463A00021DEEE /* UITextViewLenses.swift in Sources */,
 				A7D11FC71D14927400F364FD /* UITableViewLenses.swift in Sources */,
 				A727E04B1D07972F00D8FE43 /* UIViewLenses.swift in Sources */,
+				A757EBED1D1B134B00A5C978 /* UIImageViewLenses.swift in Sources */,
 				A727E0461D07972F00D8FE43 /* CGSizeLenses.swift in Sources */,
 				A727E0441D07972F00D8FE43 /* CGPointLenses.swift in Sources */,
 				A77480BE1D083BC000774DEC /* UITextInputTraitsLenses.swift in Sources */,
