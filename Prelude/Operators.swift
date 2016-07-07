@@ -22,6 +22,9 @@ infix operator .~ {associativity left precedence 90}
 /// Lens over
 infix operator %~ {associativity left precedence 90}
 
+/// Lens over with both part and whole.
+infix operator %~~ {associativity left precedence 90}
+
 /// Lens semigroup
 infix operator <>~ {associativity left precedence 90}
 
