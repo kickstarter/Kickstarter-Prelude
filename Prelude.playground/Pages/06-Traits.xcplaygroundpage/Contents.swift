@@ -16,17 +16,20 @@ import XCPlayground
  order to set content edge insets, font and corner radius:
  */
 
-let buttonStyle = UIButton.userInterfaceIdiom {
-  switch $0 {
-  case .Phone:
-    return UIButton.lens.contentEdgeInsets .~ .init(all: 8)
-      <> UIButton.lens.titleLabel.font .~ .preferredFontForTextStyle(UIFontTextStyleCallout)
-      <> UIButton.lens.layer.cornerRadius .~ 3.0
-  default:
-    return UIButton.lens.contentEdgeInsets .~ .init(all: 16)
-      <> UIButton.lens.titleLabel.font .~ .preferredFontForTextStyle(UIFontTextStyleTitle2)
-      <> UIButton.lens.layer.cornerRadius .~ 8.0
-  }
+let buttonStyle =
+  UIButton.lens.contentEdgeInsets %~~ {
+      $1.traitCollection.userInterfaceIdiom == .Phone ? .init(all: 8) : .init(all: 16)
+    }
+    <> UIButton.lens.titleLabel.font %~~ {
+      $1.traitCollection.userInterfaceIdiom == .Phone ?
+        .preferredFontForTextStyle(UIFontTextStyleCallout) :
+        .preferredFontForTextStyle(UIFontTextStyleTitle2)
+    }
+    <> UIButton.lens.layer.cornerRadius %~~ {
+      if $1.traitCollection.userInterfaceIdiom == .Phone {
+        return 3.0
+      }
+      return 8.0
 }
 
 /*:
@@ -34,7 +37,7 @@ let buttonStyle = UIButton.userInterfaceIdiom {
  function called `traitsController` that creates a parent and child controller with a specified set
  of traits. We can then create a button and add it to the child controller's view:
  */
-let (parent, child) = traitsController(.init(userInterfaceIdiom: .Pad))
+let (parent, child) = traitsController(.init(userInterfaceIdiom: .Phone))
 XCPlaygroundPage.currentPage.liveView = parent
 let button = UIButton()
 child.view.addSubview(button)
