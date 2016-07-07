@@ -12,7 +12,7 @@ import XCPlayground
  static function takes a closure that maps the trait attribute to a view transformation. It is inside
  that closure that you would switch on the trait in order to figure out what styles to apply.
 
- For example, here is a transformation of `UIButton`s that that uses the button's interface idiom in 
+ For example, here is a transformation of `UIButton`s that that uses the button's interface idiom in
  order to set content edge insets, font and corner radius:
  */
 
@@ -34,7 +34,7 @@ let buttonStyle = UIButton.userInterfaceIdiom {
  function called `traitsController` that creates a parent and child controller with a specified set
  of traits. We can then create a button and add it to the child controller's view:
  */
-let (parent, child) = traitsController(.init(userInterfaceIdiom: .Phone))
+let (parent, child) = traitsController(.init(userInterfaceIdiom: .Pad))
 XCPlaygroundPage.currentPage.liveView = parent
 let button = UIButton()
 child.view.addSubview(button)
