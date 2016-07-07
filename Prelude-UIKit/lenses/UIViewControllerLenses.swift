@@ -1,7 +1,7 @@
 import Prelude
 import UIKit
 
-public protocol UIViewControllerProtocol: NSObjectProtocol, LensObject {
+public protocol UIViewControllerProtocol: NSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
   var title: String? { get set }
   var view: UIView! { get set }
 }

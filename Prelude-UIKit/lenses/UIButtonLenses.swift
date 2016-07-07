@@ -18,7 +18,6 @@ public protocol UIButtonProtocol: UIViewProtocol {
 extension UIButton: UIButtonProtocol {}
 
 public extension LensHolder where Object: UIButtonProtocol {
-
   public var adjustsImageWhenDisabled: Lens<Object, Bool> {
     return Lens(
       view: { $0.adjustsImageWhenDisabled },

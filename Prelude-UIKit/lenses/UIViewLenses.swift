@@ -1,12 +1,13 @@
 import Prelude
 import UIKit
 
-public protocol UIViewProtocol: NSObjectProtocol, LensObject {
+public protocol UIViewProtocol: NSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
   var backgroundColor: UIColor? { get set }
   func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   var contentMode: UIViewContentMode { get set }
   var frame: CGRect { get set }
+  var hidden: Bool { get set }
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
@@ -55,6 +56,13 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.frame },
       set: { $1.frame = $0; return $1 }
+    )
+  }
+
+  public var hidden: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.hidden },
+      set: { $1.hidden = $0; return $1 }
     )
   }
 

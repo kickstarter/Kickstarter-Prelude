@@ -12,9 +12,3 @@ public extension LensObject {
     return LensHolder()
   }
 }
-
-public extension LensHolder where Object: NSObjectProtocol {
-  public var reflect: Lens<Object, Object> {
-    return Lens(view: { $0 }, set: { part, _ in part })
-  }
-}
