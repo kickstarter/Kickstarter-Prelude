@@ -7,7 +7,7 @@ import XCPlayground
  The prelude provides special functions for tapping into a UI transformation pipeline and providing
  custom styling based on `UITraitCollection` attributes. For example, one can provide different values
  of margins depending on whether the interface idiom is iPhone or iPad.
- 
+
  The way you tap into the transformation pipeline is to use a new variation of the `%~` operator. It
  takes a closure that takes both the whole and part being operated on, which allows you to inspect
  the current traits in order to provide custom styling.
