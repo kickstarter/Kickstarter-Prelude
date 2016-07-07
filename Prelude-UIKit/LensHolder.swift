@@ -1,5 +1,4 @@
 import Foundation
-import Prelude
 
 public protocol LensObject: class {}
 
