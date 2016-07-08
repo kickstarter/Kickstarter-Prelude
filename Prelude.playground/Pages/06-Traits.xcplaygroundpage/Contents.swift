@@ -37,8 +37,7 @@ let buttonStyle =
  function called `traitsController` that creates a parent and child controller with a specified set
  of traits. We can then create a button and add it to the child controller's view:
  */
-let (parent, child) = traitsController(.init(userInterfaceIdiom: .Phone))
-XCPlaygroundPage.currentPage.liveView = parent
+let (parent, child) = playgroundControllers(device: .phone4inch, orientation: .landscape)
 let button = UIButton()
 child.view.addSubview(button)
 
@@ -53,3 +52,8 @@ button
   |> UIButton.lens.layer.masksToBounds .~ true
   |> buttonStyle
 button.sizeToFit()
+
+
+let frame = parent.view.frame
+XCPlaygroundPage.currentPage.liveView = parent
+parent.view.frame = frame
