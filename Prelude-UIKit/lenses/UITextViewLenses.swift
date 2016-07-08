@@ -6,6 +6,7 @@ public protocol UITextViewProtocol: UIViewProtocol, UITextInputTraitsProtocol {
   var dataDetectorTypes: UIDataDetectorTypes { get set }
   #endif
   var font: UIFont? { get set }
+  var text: String! { get set }
   var textAlignment: NSTextAlignment { get set }
   var textColor: UIColor? { get set }
   var textContainerInset: UIEdgeInsets { get set }
@@ -28,6 +29,13 @@ public extension LensHolder where Object: UITextViewProtocol {
     return Lens(
       view: { $0.font },
       set: { $1.font = $0; return $1 }
+    )
+  }
+
+  public var text: Lens<Object, String> {
+    return Lens(
+      view: { $0.text ?? "" },
+      set: { $1.text = $0; return $1 }
     )
   }
 
