@@ -25,20 +25,13 @@ let buttonStyle =
         .preferredFontForTextStyle(UIFontTextStyleCallout) :
         .preferredFontForTextStyle(UIFontTextStyleTitle2)
     }
-    <> UIButton.lens.layer.cornerRadius %~~ {
-      if $1.traitCollection.userInterfaceIdiom == .Phone {
-        return 3.0
-      }
-      return 8.0
-}
 
 /*:
  In order to use that we need to set up a view controller with some specified traits. We have a helper
  function called `traitsController` that creates a parent and child controller with a specified set
  of traits. We can then create a button and add it to the child controller's view:
  */
-let (parent, child) = traitsController(.init(userInterfaceIdiom: .Phone))
-XCPlaygroundPage.currentPage.liveView = parent
+let (parent, child) = playgroundControllers(device: .pad, orientation: .landscape)
 let button = UIButton()
 child.view.addSubview(button)
 
@@ -53,3 +46,8 @@ button
   |> UIButton.lens.layer.masksToBounds .~ true
   |> buttonStyle
 button.sizeToFit()
+
+
+let frame = parent.view.frame
+XCPlaygroundPage.currentPage.liveView = parent
+parent.view.frame = frame
