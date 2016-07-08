@@ -1,42 +1,5 @@
 import UIKit
 
-/**
- Creates a controller with a specified trait collection.
-
- - parameter traits: The traits to use for the controller.
-
- - returns: Two controllers: a root controller that can be set to the playground's live view, and a content
- controller which should have UI elements added to it
- */
-public func traitsController(traits: UITraitCollection)
-  -> (root: UIViewController, content: UIViewController) {
-
-    let parent = UIViewController()
-    let child = UIViewController()
-
-    parent.addChildViewController(child)
-    parent.view.addSubview(child.view)
-
-    child.view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-
-    switch traits.userInterfaceIdiom {
-    case .Phone:
-      parent.view.frame = .init(x: 0, y: 0, width: 375, height: 667)
-    case .Pad:
-      parent.view.frame = .init(x: 0, y: 0, width: 768, height: 1024)
-    default:
-      parent.view.frame = .zero
-    }
-    child.view.frame = parent.view.frame
-
-    parent.view.backgroundColor = .whiteColor()
-    child.view.backgroundColor = .whiteColor()
-
-    parent.setOverrideTraitCollection(traits, forChildViewController: child)
-
-    return (parent, child)
-}
-
 public enum Device {
   case phone4inch
   case phone4_7inch
@@ -49,6 +12,19 @@ public enum Orientation {
   case landscape
 }
 
+/**
+ Creates a controller that represents a specific device, orientation with specific traits.
+
+ - parameter device:           The device the controller should represent.
+ - parameter orientation:      The orientation of the device.
+ - parameter child:            An optional controller to put inside the parent controller. If omitted
+                               a blank controller will be used.
+ - parameter additionalTraits: An optional set of traits that will also be applied. Traits in this collection
+                               will trump any traits derived from the device/orientation comboe specified.
+
+ - returns: Two controllers: a root controller that can be set to the playground's live view, and a content
+ controller which should have UI elements added to it
+ */
 public func playgroundControllers(device device: Device = .phone4_7inch,
                                          orientation: Orientation = .portrait,
                                          child: UIViewController = UIViewController(),
