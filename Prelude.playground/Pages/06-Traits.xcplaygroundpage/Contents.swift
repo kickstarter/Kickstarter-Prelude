@@ -25,6 +25,12 @@ let buttonStyle =
         .preferredFontForTextStyle(UIFontTextStyleCallout) :
         .preferredFontForTextStyle(UIFontTextStyleTitle2)
     }
+    <> UIButton.lens.layer.cornerRadius %~~ {
+      if $1.traitCollection.userInterfaceIdiom == .Phone {
+        return 3.0
+      }
+      return 8.0
+}
 
 /*:
  In order to use that we need to set up a view controller with some specified traits. We have a helper
