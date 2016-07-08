@@ -1,5 +1,7 @@
 import UIKit
 
+// swiftlint:disable function_body_length
+
 public enum Device {
   case phone4inch
   case phone4_7inch
