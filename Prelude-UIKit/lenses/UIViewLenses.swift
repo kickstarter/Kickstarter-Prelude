@@ -17,6 +17,7 @@ public protocol UIViewProtocol: NSObjectProtocol, UITraitEnvironmentProtocol, Le
                                  forAxis axis: UILayoutConstraintAxis)
   var tintColor: UIColor! { get set }
   var translatesAutoresizingMaskIntoConstraints: Bool { get set }
+  var userInteractionEnabled: Bool { get set }
 }
 
 extension UIView: UIViewProtocol {}
@@ -98,6 +99,13 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.translatesAutoresizingMaskIntoConstraints },
       set: { $1.translatesAutoresizingMaskIntoConstraints = $0; return $1 }
+    )
+  }
+
+  public var userInteractionEnabled: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.userInteractionEnabled },
+      set: { $1.userInteractionEnabled = $0; return $1 }
     )
   }
 }
