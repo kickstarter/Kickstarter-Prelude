@@ -5,7 +5,15 @@ import UIKit
 public protocol UIButtonProtocol: UIViewProtocol {
   var adjustsImageWhenDisabled: Bool { get set }
   var adjustsImageWhenHighlighted: Bool { get set }
+
+  func attributedTitleForState(state: UIControlState) -> NSAttributedString?
+
+
+
+
   var contentEdgeInsets: UIEdgeInsets { get set }
+  func setAttributedTitle(title: NSAttributedString?,
+                          forState state: UIControlState)
   func setBackgroundColor(backgroundColor: UIColor, forState state: UIControlState)
   func setTitle(title: String?, forState: UIControlState)
   func setTitleColor(color: UIColor?, forState: UIControlState)
@@ -29,6 +37,13 @@ public extension LensHolder where Object: UIButtonProtocol {
     return Lens(
       view: { $0.adjustsImageWhenHighlighted },
       set: { $1.adjustsImageWhenHighlighted = $0; return $1 }
+    )
+  }
+
+  public func attributedTitle(forState state: UIControlState) -> Lens<Object, NSAttributedString> {
+    return Lens(
+      view: { $0.attributedTitleForState(state) ?? NSAttributedString(string: "") },
+      set: { $1.setAttributedTitle($0, forState: state); return $1 }
     )
   }
 
