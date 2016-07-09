@@ -5,12 +5,7 @@ import UIKit
 public protocol UIButtonProtocol: UIViewProtocol {
   var adjustsImageWhenDisabled: Bool { get set }
   var adjustsImageWhenHighlighted: Bool { get set }
-
   func attributedTitleForState(state: UIControlState) -> NSAttributedString?
-
-
-
-
   var contentEdgeInsets: UIEdgeInsets { get set }
   func setAttributedTitle(title: NSAttributedString?,
                           forState state: UIControlState)
