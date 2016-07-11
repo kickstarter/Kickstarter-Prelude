@@ -334,9 +334,10 @@
 				A727E03B1D07972F00D8FE43 /* CGPointLenses.swift */,
 				A727E03C1D07972F00D8FE43 /* CGRectLenses.swift */,
 				A727E03D1D07972F00D8FE43 /* CGSizeLenses.swift */,
-				A727E03E1D07972F00D8FE43 /* UIButtonLenses.swift */,
+				A7A882F11D31826F00E9046E /* NSMutableParagraphStyleLenses.swift */,
 				804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */,
 				804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */,
+				A727E03E1D07972F00D8FE43 /* UIButtonLenses.swift */,
 				A727E03F1D07972F00D8FE43 /* UIControlLenses.swift */,
 				A727E0401D07972F00D8FE43 /* UIEdgeInsetsLenses.swift */,
 				A757EBEC1D1B134B00A5C978 /* UIImageViewLenses.swift */,
@@ -351,7 +352,6 @@
 				A78011DD1D2DBF090027396E /* UITraitEnvironment.swift */,
 				A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */,
 				A727E0421D07972F00D8FE43 /* UIViewLenses.swift */,
-				A7A882F11D31826F00E9046E /* NSMutableParagraphStyleLenses.swift */,
 			);
 			path = lenses;
 			sourceTree = "<group>";
