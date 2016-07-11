@@ -61,6 +61,13 @@ backwards: `(g • f)(x) == g(f(x))`.
 6 |> (isPrime • incr • square)
 
 /*:
+ It can also be useful to pipe a whole collection of values into a pipeline, and get the 
+ resulting collection of transformed values back:
+ */
+
+[5, 6, 7, 8, 9, 10] ||> (isPrime • incr • square)
+
+/*:
 There are two global functions in Function.swift that at first might not seem very useful:
 `id` and `const`. Our goal is to to promote functions and composition above all else, and
 these functions help us do that.
