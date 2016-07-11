@@ -61,7 +61,7 @@ backwards: `(g • f)(x) == g(f(x))`.
 6 |> (isPrime • incr • square)
 
 /*:
- It can also be useful to pipe a whole collection of values into a pipeline, and get the 
+ It can also be useful to pipe a whole collection of values into a pipeline, and get the
  resulting collection of transformed values back:
  */
 
