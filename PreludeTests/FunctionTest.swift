@@ -9,6 +9,12 @@ class FunctionTest: XCTestCase {
     XCTAssertEqual(4, 2 |> square)
   }
 
+  func testArrayPipeForward() {
+    func square(x: Int) -> Int { return x * x }
+
+    XCTAssertEqual([4, 9, 16], [2, 3, 4] ||> square)
+  }
+
   func testCompose() {
     func square(x: Int) -> Int { return x * x }
     func incr(x: Int) -> Int { return x + 1 }
