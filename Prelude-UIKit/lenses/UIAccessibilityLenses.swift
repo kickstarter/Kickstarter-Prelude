@@ -2,6 +2,7 @@
 import Prelude
 import UIKit
 
+// UIAccessibility
 public extension LensHolder where Object: NSObject {
   public var isAccessibilityElement: Lens<Object, Bool> {
     return Lens(
@@ -56,6 +57,16 @@ public extension LensHolder where Object: NSObject {
     return Lens(
       view: { $0.accessibilityNavigationStyle },
       set: { $1.accessibilityNavigationStyle = $0; return $1 }
+    )
+  }
+}
+
+// UIAccessibilityContainer
+public extension LensHolder where Object: NSObject {
+  public var accessibilityElements: Lens<Object, [AnyObject]?> {
+    return Lens(
+      view: { $0.accessibilityElements },
+      set: { $1.accessibilityElements = $0; return $1 }
     )
   }
 }
