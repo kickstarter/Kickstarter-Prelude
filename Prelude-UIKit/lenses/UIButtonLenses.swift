@@ -2,7 +2,7 @@
 import Prelude
 import UIKit
 
-public protocol UIButtonProtocol: UIViewProtocol {
+public protocol UIButtonProtocol: UIControlProtocol {
   var adjustsImageWhenDisabled: Bool { get set }
   var adjustsImageWhenHighlighted: Bool { get set }
   func attributedTitleForState(state: UIControlState) -> NSAttributedString?

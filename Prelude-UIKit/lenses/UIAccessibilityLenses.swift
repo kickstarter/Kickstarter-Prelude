@@ -3,7 +3,7 @@ import Prelude
 import UIKit
 
 // UIAccessibility
-public extension LensHolder where Object: NSObject {
+public extension LensHolder where Object: KSObjectProtocol {
   public var isAccessibilityElement: Lens<Object, Bool> {
     return Lens(
       view: { $0.isAccessibilityElement },

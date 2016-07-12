@@ -54,6 +54,8 @@
 		A733794C1D0E417300C91445 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A733794B1D0E417300C91445 /* LensHolder.swift */; };
 		A743813A1D33D49600040A95 /* UIAccessibilityLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */; };
 		A743813B1D33D49600040A95 /* UIAccessibilityLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */; };
+		A747D8E11D353A17004B612D /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747D8E01D353A17004B612D /* NSObject.swift */; };
+		A747D8E21D353A17004B612D /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747D8E01D353A17004B612D /* NSObject.swift */; };
 		A74B3C0A1C9DCC7600F938C4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C091C9DCC7600F938C4 /* String.swift */; };
 		A74B3C0B1C9DCC7600F938C4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C091C9DCC7600F938C4 /* String.swift */; };
 		A74B3C0D1C9DCD9A00F938C4 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */; };
@@ -204,6 +206,7 @@
 		A733794B1D0E417300C91445 /* LensHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensHolder.swift; sourceTree = "<group>"; };
 		A7378CC61C80958000F0A562 /* Prelude.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Prelude.playground; sourceTree = "<group>"; };
 		A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAccessibilityLenses.swift; sourceTree = "<group>"; };
+		A747D8E01D353A17004B612D /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		A74B3C091C9DCC7600F938C4 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		A74B3C0F1C9DD06400F938C4 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 				A727E03C1D07972F00D8FE43 /* CGRectLenses.swift */,
 				A727E03D1D07972F00D8FE43 /* CGSizeLenses.swift */,
 				A7A882F11D31826F00E9046E /* NSMutableParagraphStyleLenses.swift */,
+				A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */,
 				804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */,
 				804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */,
 				A727E03E1D07972F00D8FE43 /* UIButtonLenses.swift */,
@@ -355,7 +359,7 @@
 				A78011DD1D2DBF090027396E /* UITraitEnvironment.swift */,
 				A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */,
 				A727E0421D07972F00D8FE43 /* UIViewLenses.swift */,
-				A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */,
+				A747D8E01D353A17004B612D /* NSObject.swift */,
 			);
 			path = lenses;
 			sourceTree = "<group>";
@@ -767,6 +771,7 @@
 				A70969201D1437AD00DB39D3 /* UIButton.swift in Sources */,
 				A709692F1D1437B200DB39D3 /* UIViewLenses.swift in Sources */,
 				A70969211D1437AD00DB39D3 /* UIEdgeInsets.swift in Sources */,
+				A747D8E21D353A17004B612D /* NSObject.swift in Sources */,
 				A709692E1D1437B200DB39D3 /* UIViewControllerLenses.swift in Sources */,
 				A70969231D1437B200DB39D3 /* CALayerLenses.swift in Sources */,
 				A743813B1D33D49600040A95 /* UIAccessibilityLenses.swift in Sources */,
@@ -803,6 +808,7 @@
 				A727E0451D07972F00D8FE43 /* CGRectLenses.swift in Sources */,
 				A77480BC1D08333F00774DEC /* UITextFieldLenses.swift in Sources */,
 				A727E0471D07972F00D8FE43 /* UIButtonLenses.swift in Sources */,
+				A747D8E11D353A17004B612D /* NSObject.swift in Sources */,
 				A78011DE1D2DBF090027396E /* UITraitEnvironment.swift in Sources */,
 				A7FD55A11D104199007F976D /* UIEdgeInsets.swift in Sources */,
 				A733794C1D0E417300C91445 /* LensHolder.swift in Sources */,
