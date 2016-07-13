@@ -2,17 +2,36 @@
 import Prelude
 import UIKit
 
+public typealias TargetSelectorControlEvent = (NSObject, Selector, UIControlEvents)
+
 public protocol UIControlProtocol: UIViewProtocol {
+  func actionsForTarget(target: AnyObject?, forControlEvent controlEvent: UIControlEvents) -> [String]?
+  func addTarget(target: AnyObject?, action: Selector, forControlEvents controlEvents: UIControlEvents)
+  func allControlEvents() -> UIControlEvents
+  func allTargets() -> Set<NSObject>
   var contentHorizontalAlignment: UIControlContentHorizontalAlignment { get set }
   var contentVerticalAlignment: UIControlContentVerticalAlignment { get set }
   var enabled: Bool { get set }
   var highlighted: Bool { get set }
+  func removeTarget(target: AnyObject?, action: Selector, forControlEvents controlEvents: UIControlEvents)
   var selected: Bool { get set }
 }
 
 extension UIControl: UIControlProtocol {}
 
 public extension LensHolder where Object: UIControlProtocol {
+
+  public var targets: Lens<Object, [TargetSelectorControlEvent]> {
+    return Lens(
+      view: allTargetsSelectorsAndEvents(forControl:),
+      set: { targets, control in
+        control.removeTarget(nil, action: nil, forControlEvents: .AllEvents)
+        targets.forEach(control.addTarget(_:action:forControlEvents:))
+        return control
+      }
+    )
+  }
+
   public var contentHorizontalAlignment: Lens<Object, UIControlContentHorizontalAlignment> {
     return Lens(
       view: { $0.contentHorizontalAlignment },
@@ -46,5 +65,40 @@ public extension LensHolder where Object: UIControlProtocol {
       view: { $0.selected },
       set: { $1.selected = $0; return $1 }
     )
+  }
+}
+
+/**
+ Recovers a full list of targets, actions and events for a control.
+
+ - parameter control: The control.
+
+ - returns: An array of a tuple of target, selector and event.
+ */
+private func allTargetsSelectorsAndEvents(forControl control: UIControlProtocol)
+  -> [TargetSelectorControlEvent] {
+
+    return control.allControlEvents().rawValue.bitComponents()
+      .map(UIControlEvents.init(rawValue:))
+      .flatMap { event in
+        control.allTargets()
+          .flatMap { target in
+            (control.actionsForTarget(target, forControlEvent: event) ?? [])
+              .map { action in
+                return (target, Selector(action), event)
+            }
+        }
+    }
+}
+
+extension UInt {
+  /**
+   - returns: An array of bitmask values for an integer.
+   */
+  private func bitComponents() -> [UInt] {
+    let range: Range<UInt> = 0 ..< UInt(8 * sizeof(UInt))
+    return range
+      .map { 1 << $0 }
+      .filter { self & $0 != 0 }
   }
 }

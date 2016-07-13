@@ -1,7 +1,7 @@
 import Prelude
 import UIKit
 
-public protocol UIViewProtocol: NSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
+public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
   var backgroundColor: UIColor? { get set }
   func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
@@ -15,6 +15,7 @@ public protocol UIViewProtocol: NSObjectProtocol, UITraitEnvironmentProtocol, Le
                                                forAxis axis: UILayoutConstraintAxis)
   func setContentHuggingPriority(priority: UILayoutPriority,
                                  forAxis axis: UILayoutConstraintAxis)
+  var tag: Int { get set }
   var tintColor: UIColor! { get set }
   var translatesAutoresizingMaskIntoConstraints: Bool { get set }
   var userInteractionEnabled: Bool { get set }
@@ -85,6 +86,13 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.preservesSuperviewLayoutMargins },
       set: { $1.preservesSuperviewLayoutMargins = $0; return $1 }
+    )
+  }
+
+  public var tag: Lens<Object, Int> {
+    return Lens(
+      view: { $0.tag },
+      set: { $1.tag = $0; return $1 }
     )
   }
 
