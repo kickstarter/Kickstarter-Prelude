@@ -2,6 +2,7 @@ import Prelude
 import UIKit
 
 public protocol UIViewProtocol: NSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
+  var alpha: CGFloat { get set }
   var backgroundColor: UIColor? { get set }
   func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
@@ -23,6 +24,13 @@ public protocol UIViewProtocol: NSObjectProtocol, UITraitEnvironmentProtocol, Le
 extension UIView: UIViewProtocol {}
 
 public extension LensHolder where Object: UIViewProtocol {
+  public var alpha: Lens<Object, CGFloat> {
+    return Lens(
+      view: { $0.alpha },
+      set: { $1.alpha = $0; return $1 }
+    )
+  }
+
   public var backgroundColor: Lens<Object, UIColor> {
     return Lens(
       view: { $0.backgroundColor ?? .clearColor() },
