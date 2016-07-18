@@ -73,7 +73,7 @@ public extension LensHolder where Object: UIButtonProtocol {
   public var titleLabel: Lens<Object, UILabel> {
     return Lens(
       view: { $0.titleLabel! },
-      set: { _, button in button }
+      set: { $1 }
     )
   }
 
