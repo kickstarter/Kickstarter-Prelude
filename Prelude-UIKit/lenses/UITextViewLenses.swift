@@ -9,6 +9,7 @@ public protocol UITextViewProtocol: UIViewProtocol, UITextInputTraitsProtocol {
   var text: String! { get set }
   var textAlignment: NSTextAlignment { get set }
   var textColor: UIColor? { get set }
+  var textContainer: NSTextContainer { get }
   var textContainerInset: UIEdgeInsets { get set }
 }
 
@@ -53,10 +54,23 @@ public extension LensHolder where Object: UITextViewProtocol {
     )
   }
 
+  public var textContainer: Lens<Object, NSTextContainer> {
+    return Lens(
+      view: { $0.textContainer },
+      set: { $1 }
+    )
+  }
+
   public var textContainerInset: Lens<Object, UIEdgeInsets> {
     return Lens(
       view: { $0.textContainerInset },
       set: { $1.textContainerInset = $0; return $1 }
     )
+  }
+}
+
+extension LensType where Whole: UITextViewProtocol, Part == NSTextContainer {
+  public var lineFragmentPadding: Lens<Whole, CGFloat> {
+    return Whole.lens.textContainer • Part.lens.lineFragmentPadding
   }
 }
