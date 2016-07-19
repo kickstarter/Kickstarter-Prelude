@@ -6,10 +6,14 @@ public protocol UIButtonProtocol: UIControlProtocol {
   var adjustsImageWhenDisabled: Bool { get set }
   var adjustsImageWhenHighlighted: Bool { get set }
   func attributedTitleForState(state: UIControlState) -> NSAttributedString?
+  func backgroundImageForState(state: UIControlState) -> UIImage?
   var contentEdgeInsets: UIEdgeInsets { get set }
+  func imageForState(state: UIControlState) -> UIImage?
   func setAttributedTitle(title: NSAttributedString?,
                           forState state: UIControlState)
   func setBackgroundColor(backgroundColor: UIColor, forState state: UIControlState)
+  func setBackgroundImage(backgroundImage: UIImage?, forState state: UIControlState)
+  func setImage(image: UIImage?, forState: UIControlState)
   func setTitle(title: String?, forState: UIControlState)
   func setTitleColor(color: UIColor?, forState: UIControlState)
   func titleColorForState(state: UIControlState) -> UIColor?
@@ -49,10 +53,24 @@ public extension LensHolder where Object: UIButtonProtocol {
     )
   }
 
+  public func backgroundImage(forState state: UIControlState) -> Lens<Object, UIImage?> {
+    return Lens(
+      view: { $0.backgroundImageForState(state) },
+      set: { $1.setBackgroundImage($0, forState: state); return $1 }
+    )
+  }
+
   public var contentEdgeInsets: Lens<Object, UIEdgeInsets> {
     return Lens(
       view: { $0.contentEdgeInsets },
       set: { $1.contentEdgeInsets = $0; return $1 }
+    )
+  }
+
+  public func image(forState state: UIControlState) -> Lens<Object, UIImage?> {
+    return Lens(
+      view: { $0.imageForState(state) },
+      set: { $1.setImage($0, forState: state); return $1 }
     )
   }
 
@@ -77,7 +95,7 @@ public extension LensHolder where Object: UIButtonProtocol {
     )
   }
 
-  public func titleText(forState state: UIControlState) -> Lens<Object, String> {
+  public func title(forState state: UIControlState) -> Lens<Object, String> {
     return Lens(
       view: { $0.titleForState(state) ?? "" },
       set: { $1.setTitle($0, forState: state); return $1 }
