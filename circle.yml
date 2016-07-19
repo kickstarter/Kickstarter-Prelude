@@ -1,7 +1,6 @@
 machine:
   xcode:
     version: 7.3
-dependencies:
 test:
   override:
     - bin/test iOS
