@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */; };
 		804FA7041D2EF7A2001876A7 /* UIBarButtonItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */; };
+		8051B93B1D402DF900F653A7 /* UINavigationItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051B93A1D402DF900F653A7 /* UINavigationItemLenses.swift */; };
+		8051B93D1D402EBD00F653A7 /* UINavigationBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051B93C1D402EBD00F653A7 /* UINavigationBarLenses.swift */; };
 		80904E761D3D461300B897F0 /* NSTextContainerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80904E751D3D461300B897F0 /* NSTextContainerLenses.swift */; };
 		80904E771D3D48F200B897F0 /* NSTextContainerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80904E751D3D461300B897F0 /* NSTextContainerLenses.swift */; };
 		8094255B1D1463A00021DEEE /* UITextViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094255A1D1463A00021DEEE /* UITextViewLenses.swift */; };
@@ -187,6 +189,8 @@
 /* Begin PBXFileReference section */
 		804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemLenses.swift; sourceTree = "<group>"; };
 		804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarItemLenses.swift; sourceTree = "<group>"; };
+		8051B93A1D402DF900F653A7 /* UINavigationItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationItemLenses.swift; sourceTree = "<group>"; };
+		8051B93C1D402EBD00F653A7 /* UINavigationBarLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarLenses.swift; sourceTree = "<group>"; };
 		80904E751D3D461300B897F0 /* NSTextContainerLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextContainerLenses.swift; sourceTree = "<group>"; };
 		8094255A1D1463A00021DEEE /* UITextViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewLenses.swift; sourceTree = "<group>"; };
 		A70969081D14373400DB39D3 /* Prelude_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,6 +361,8 @@
 				A727E0401D07972F00D8FE43 /* UIEdgeInsetsLenses.swift */,
 				A757EBEC1D1B134B00A5C978 /* UIImageViewLenses.swift */,
 				A727E0411D07972F00D8FE43 /* UILabelLenses.swift */,
+				8051B93C1D402EBD00F653A7 /* UINavigationBarLenses.swift */,
+				8051B93A1D402DF900F653A7 /* UINavigationItemLenses.swift */,
 				A747D9371D35654D004B612D /* UIScrollViewLenses.swift */,
 				A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */,
 				A7D120221D158A2700F364FD /* UITableViewCellLenses.swift */,
@@ -804,6 +810,7 @@
 				A747D9381D35654D004B612D /* UIScrollViewLenses.swift in Sources */,
 				A727E0491D07972F00D8FE43 /* UIEdgeInsetsLenses.swift in Sources */,
 				8094255B1D1463A00021DEEE /* UITextViewLenses.swift in Sources */,
+				8051B93D1D402EBD00F653A7 /* UINavigationBarLenses.swift in Sources */,
 				A7D11FC71D14927400F364FD /* UITableViewLenses.swift in Sources */,
 				A727E04B1D07972F00D8FE43 /* UIViewLenses.swift in Sources */,
 				A757EBED1D1B134B00A5C978 /* UIImageViewLenses.swift in Sources */,
@@ -812,6 +819,7 @@
 				A727E0441D07972F00D8FE43 /* CGPointLenses.swift in Sources */,
 				A77480BE1D083BC000774DEC /* UITextInputTraitsLenses.swift in Sources */,
 				A77480C01D0855C800774DEC /* UIStackViewLenses.swift in Sources */,
+				8051B93B1D402DF900F653A7 /* UINavigationItemLenses.swift in Sources */,
 				A727E0431D07972F00D8FE43 /* CALayerLenses.swift in Sources */,
 				A727E0501D0797EB00D8FE43 /* UIImage.swift in Sources */,
 				804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */,

@@ -23,6 +23,18 @@ public func ||> <A, B> (xs: [A], f: A -> B) -> [B] {
 }
 
 /**
+ Pipe an optional value into a function, i.e. a flipped-infix operator for `map`.
+
+ - parameter x: An optional value.
+ - parameter f: A function
+
+ - returns: The value from apply `f` to `x`.
+ */
+public func ?|> <A, B> (x: A?, f: A -> B) -> B? {
+  return x.map(f)
+}
+
+/**
  Composes two functions in right-to-left order, i.e. (g • f)(x) = g(f(x)
 
  - parameter g: A function.
