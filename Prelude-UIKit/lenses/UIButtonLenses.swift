@@ -99,8 +99,8 @@ public extension LensHolder where Object: UIButtonProtocol {
 
   public var titleEdgeInsets: Lens<Object, UIEdgeInsets> {
     return Lens(
-      view: { $0.contentEdgeInsets },
-      set: { $1.contentEdgeInsets = $0; return $1 }
+      view: { $0.titleEdgeInsets },
+      set: { $1.titleEdgeInsets = $0; return $1 }
     )
   }
 
