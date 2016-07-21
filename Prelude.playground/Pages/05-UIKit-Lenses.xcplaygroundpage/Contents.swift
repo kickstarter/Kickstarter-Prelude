@@ -34,9 +34,9 @@ let labels = ["Hello", "UIKit", "Lenses"]
 labels
 
 let button = UIButton()
-  |> UIButton.lens.titleText(forState: .Normal) .~ "To lens"
+  |> UIButton.lens.title(forState: .Normal) .~ "To lens"
   |> UIButton.lens.titleColor(forState: .Normal) .~ .whiteColor()
-  |> UIButton.lens.titleText(forState: .Disabled) .~ "Or not to lens"
+  |> UIButton.lens.title(forState: .Disabled) .~ "Or not to lens"
   |> UIButton.lens.titleColor(forState: .Disabled) .~ .init(white: 1.0, alpha: 0.5)
   |> UIButton.lens.titleLabel.font .~ .preferredFontForTextStyle(UIFontTextStyleHeadline)
   |> UIButton.lens.frame.size .~ .init(width: 200, height: 40)

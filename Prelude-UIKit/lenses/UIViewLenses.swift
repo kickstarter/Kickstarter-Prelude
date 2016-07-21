@@ -79,7 +79,7 @@ public extension LensHolder where Object: UIViewProtocol {
   public var layer: Lens<Object, CALayer> {
     return Lens(
       view: { $0.layer },
-      set: { _, view in view }
+      set: { $1 }
     )
   }
 
