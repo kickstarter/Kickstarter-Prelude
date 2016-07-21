@@ -111,7 +111,7 @@ public extension LensHolder where Object: UIButtonProtocol {
     )
   }
 
-  public func titleText(forState state: UIControlState) -> Lens<Object, String> {
+  public func title(forState state: UIControlState) -> Lens<Object, String> {
     return Lens(
       view: { $0.titleForState(state) ?? "" },
       set: { $1.setTitle($0, forState: state); return $1 }
