@@ -26,9 +26,9 @@ public func ||> <A, B> (xs: [A], f: A -> B) -> [B] {
  Pipe an optional value into a function, i.e. a flipped-infix operator for `map`.
 
  - parameter x: An optional value.
- - parameter f: A function
+ - parameter f: A transformation.
 
- - returns: The value from apply `f` to `x`.
+ - returns: An optional transformed value.
  */
 public func ?|> <A, B> (x: A?, f: A -> B) -> B? {
   return x.map(f)

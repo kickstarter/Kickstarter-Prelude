@@ -1,10 +1,10 @@
 /// Pipe forward function application.
 infix operator |> {associativity left precedence 70}
 
-/// Infix, flipped version of fmap, i.e. `xs ||> f := f <^> xs`
+/// Infix, flipped version of fmap (for arrays), i.e. `xs ||> f := f <^> xs`
 infix operator ||> {associativity left precedence 70}
 
-/// Infix, flipped version of fmap, i.e. `xs ?|> f := f <^> xs`
+/// Infix, flipped version of fmap (for optionals), i.e. `xs ||> f := f <^> xs`
 infix operator ?|> {associativity left precedence 70}
 
 /// Composition
