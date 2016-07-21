@@ -2,6 +2,7 @@ import Prelude
 import UIKit
 
 public protocol UITableViewProtocol: UIViewProtocol {
+  var backgroundView: UIView? { get set }
   var estimatedRowHeight: CGFloat { get set }
   var rowHeight: CGFloat { get set }
   #if os(iOS)
@@ -12,6 +13,12 @@ public protocol UITableViewProtocol: UIViewProtocol {
 extension UITableView: UITableViewProtocol {}
 
 public extension LensHolder where Object: UITableViewProtocol {
+  public var backgroundView: Lens<Object, UIView?> {
+    return Lens(
+      view: { $0.backgroundView },
+      set: { $1.backgroundView = $0; return $1 }
+    )
+  }
 
   public var estimatedRowHeight: Lens<Object, CGFloat> {
     return Lens(
