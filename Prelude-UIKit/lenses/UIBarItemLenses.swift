@@ -2,7 +2,7 @@
 import Prelude
 import UIKit
 
-public protocol UIBarItemProtocol: NSObjectProtocol {
+public protocol UIBarItemProtocol: KSObjectProtocol {
   var enabled: Bool { get set }
   var title: String? { get set }
   var image: UIImage? { get set }
