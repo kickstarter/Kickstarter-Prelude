@@ -15,6 +15,13 @@ class FunctionTest: XCTestCase {
     XCTAssertEqual([4, 9, 16], [2, 3, 4] ||> square)
   }
 
+  func testOptionalPipeForward() {
+    func square(x: Int) -> Int { return x * x }
+
+    XCTAssertEqual(4, 2 ?|> square)
+    XCTAssertNil(nil ?|> square)
+  }
+
   func testCompose() {
     func square(x: Int) -> Int { return x * x }
     func incr(x: Int) -> Int { return x + 1 }
