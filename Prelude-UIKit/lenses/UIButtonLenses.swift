@@ -6,10 +6,16 @@ public protocol UIButtonProtocol: UIControlProtocol {
   var adjustsImageWhenDisabled: Bool { get set }
   var adjustsImageWhenHighlighted: Bool { get set }
   func attributedTitleForState(state: UIControlState) -> NSAttributedString?
+  func backgroundImageForState(state: UIControlState) -> UIImage?
   var contentEdgeInsets: UIEdgeInsets { get set }
+  var imageEdgeInsets: UIEdgeInsets { get set }
+  func imageForState(state: UIControlState) -> UIImage?
+  var imageView: UIImageView? { get }
   func setAttributedTitle(title: NSAttributedString?,
                           forState state: UIControlState)
   func setBackgroundColor(backgroundColor: UIColor, forState state: UIControlState)
+  func setBackgroundImage(backgroundImage: UIImage?, forState state: UIControlState)
+  func setImage(image: UIImage?, forState: UIControlState)
   func setTitle(title: String?, forState: UIControlState)
   func setTitleColor(color: UIColor?, forState: UIControlState)
   func titleColorForState(state: UIControlState) -> UIColor?
@@ -49,10 +55,38 @@ public extension LensHolder where Object: UIButtonProtocol {
     )
   }
 
+  public func backgroundImage(forState state: UIControlState) -> Lens<Object, UIImage?> {
+    return Lens(
+      view: { $0.backgroundImageForState(state) },
+      set: { $1.setBackgroundImage($0, forState: state); return $1 }
+    )
+  }
+
   public var contentEdgeInsets: Lens<Object, UIEdgeInsets> {
     return Lens(
       view: { $0.contentEdgeInsets },
       set: { $1.contentEdgeInsets = $0; return $1 }
+    )
+  }
+
+  public var imageEdgeInsets: Lens<Object, UIEdgeInsets> {
+    return Lens(
+      view: { $0.imageEdgeInsets },
+      set: { $1.imageEdgeInsets = $0; return $1 }
+    )
+  }
+
+  public func image(forState state: UIControlState) -> Lens<Object, UIImage?> {
+    return Lens(
+      view: { $0.imageForState(state) },
+      set: { $1.setImage($0, forState: state); return $1 }
+    )
+  }
+
+  public var imageView: Lens<Object, UIImageView?> {
+    return Lens(
+      view: { $0.imageView },
+      set: { $1 }
     )
   }
 
