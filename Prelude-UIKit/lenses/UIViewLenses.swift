@@ -8,6 +8,7 @@ public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, Le
   var bottomAnchor: NSLayoutYAxisAnchor { get }
   var centerXAnchor: NSLayoutXAxisAnchor { get }
   var centerYAnchor: NSLayoutYAxisAnchor { get }
+  var clipsToBounds: Bool { get set }
   var constraints: [NSLayoutConstraint] { get }
   func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
@@ -72,6 +73,13 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.centerYAnchor },
       set: { $1 }
+    )
+  }
+
+  public var clipsToBounds: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.clipsToBounds },
+      set: { $1.clipsToBounds = $0; return $1 }
     )
   }
 
