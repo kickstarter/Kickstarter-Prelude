@@ -1,12 +1,18 @@
 public struct Comparator<A> {
   public let compare: (A, A) -> Ordering
 
-  /// Compare if two elements of the same type are ordered.
+  /**
+   Compare if two elements of the same type are ordered.
+
+   - returns: A bool value.
+   */
   public var isOrdered: (A, A) -> Bool {
     return { lhs, rhs in self.compare(lhs, rhs) != .gt }
   }
 
-  /// Reverses the order of a comporator.
+  /**
+   Reverses the order of a comporator.
+   */
   public var reversed: Comparator {
     return Comparator { lhs, rhs in self.compare(lhs, rhs).reversed }
   }
