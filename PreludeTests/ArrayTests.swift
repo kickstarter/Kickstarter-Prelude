@@ -45,4 +45,10 @@ class ArrayTests: XCTestCase {
 
     XCTAssertEqual([false: [1, 3, 5, 7, 9], true: [2, 4, 6, 8, 10]], grouped)
   }
+
+  func testSortedByComparator() {
+    let xs = [3, 6, 1, 2]
+    let sorted = xs.sorted(comparator: Comparator { $0 < $1 ? .lt : $0 == $1 ? .eq : .gt })
+    XCTAssertEqual([1, 2, 3, 6], sorted)
+  }
 }
