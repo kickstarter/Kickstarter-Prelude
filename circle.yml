@@ -3,14 +3,17 @@ machine:
     version: 7.3
 dependencies:
   pre:
+    - brew update || brew update
     - brew install swiftlint
 test:
+  pre:
+    - xcrun instruments -w '547B1B63-3F66-4E5B-8001-F78F2F1CDEA7' || true
+    - sleep 15
   override:
     - set -o pipefail &&
       swiftlint lint --strict --reporter json |
       tee $CIRCLE_ARTIFACTS/swiftlint-report.json
     - bin/test iOS
-    - bin/test tvOS
 experimental:
   notify:
     branches:

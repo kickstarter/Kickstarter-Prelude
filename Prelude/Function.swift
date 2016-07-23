@@ -11,6 +11,30 @@ public func |> <A, B> (x: A, f: (A) -> B) -> B {
 }
 
 /**
+ Pipe a collection of values into a function, i.e. a flipped-infix operator for `map`.
+
+ - parameter xs: An array of values.
+ - parameter f:  A transformation.
+
+ - returns: An array of transformed values.
+ */
+public func ||> <A, B> (xs: [A], f: (A) -> B) -> [B] {
+  return xs.map(f)
+}
+
+/**
+ Pipe an optional value into a function, i.e. a flipped-infix operator for `map`.
+
+ - parameter x: An optional value.
+ - parameter f: A transformation.
+
+ - returns: An array of transformed values.
+ */
+public func ?|> <A, B> (x: A?, f: (A) -> B) -> B? {
+  return x.map(f)
+}
+
+/**
  Composes two functions in right-to-left order, i.e. (g • f)(x) = g(f(x)
 
  - parameter g: A function.

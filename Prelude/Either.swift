@@ -54,7 +54,7 @@ extension EitherType {
 
    - returns: A value of type `A` if `e` is a left either, `nil` otherwise.
    */
-  public static func left(e: Self) -> A? {
+  public static func left(_ e: Self) -> A? {
     return e.left
   }
 
@@ -65,7 +65,7 @@ extension EitherType {
 
    - returns: A value of type `B` if `e` is a right either, `nil` otherwise.
    */
-  public static func right(e: Self) -> B? {
+  public static func right(_ e: Self) -> B? {
     return e.right
   }
 
@@ -93,10 +93,8 @@ public func == <E: EitherType where E.A: Equatable, E.B: Equatable> (lhs: E, rhs
  An implementation of `EitherType` that is functorial and monadic in the right-side type.
  */
 public enum Either <A, B>: EitherType {
-  // swiftlint:disable type_name
   case left(A)
   case right(B)
-  // swiftlint:enable type_name
 
   public init(left: A) {
     self = .left(left)

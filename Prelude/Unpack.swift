@@ -6,7 +6,7 @@
 
  - returns: A flattened 3-tuple.
  */
-public func unpack <A, B, C> (ab: (A, B), c: C) -> (A, B, C) {
+public func unpack <A, B, C> (_ ab: (A, B), c: C) -> (A, B, C) {
   return (ab.0, ab.1, c)
 }
 
@@ -18,6 +18,6 @@ public func unpack <A, B, C> (ab: (A, B), c: C) -> (A, B, C) {
 
  - returns: A flattened 3-tuple.
  */
-public func unpack <A, B, C> (a: A, bc: (B, C)) -> (A, B, C) {
+public func unpack <A, B, C> (_ a: A, bc: (B, C)) -> (A, B, C) {
   return (a, bc.0, bc.1)
 }

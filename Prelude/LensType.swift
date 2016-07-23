@@ -108,6 +108,21 @@ public func %~ <L: LensType> (lens: L, f: (L.Part) -> L.Part) -> ((L.Whole) -> L
 }
 
 /**
+ Variation of the infix operator %~.
+
+ - parameter lens: A lens.
+ - parameter f:    A function for transforming a part and whole into a new part.
+
+ - returns: A function that transforms a whole into a new whole with its part transformed by `f`.
+ */
+public func %~~ <L: LensType> (lens: L, f: (L.Part, L.Whole) -> L.Part) -> ((L.Whole) -> L.Whole) {
+  return { whole in
+    let part = lens.view(whole)
+    return lens.set(f(part, whole), whole)
+  }
+}
+
+/**
  Infix operator to transform a part of a whole with a semigroup operation.
 
  - parameter lens: A lens whose part is a semigroup.

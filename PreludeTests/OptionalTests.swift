@@ -22,7 +22,7 @@ final class OptionalTests: XCTestCase {
   }
 
   func testOptionalFilter() {
-    func isEven(x: Int) -> Bool { return x % 2 == 0 }
+    func isEven(_ x: Int) -> Bool { return x % 2 == 0 }
 
     let x: Int? = 1
     XCTAssertEqual(nil, x.optionalFilter(isEven))
