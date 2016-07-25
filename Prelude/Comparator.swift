@@ -11,7 +11,7 @@ public struct Comparator<A> {
   }
 
   /**
-   Reverses the order of a comporator.
+   Reverses the order of a comparator.
    */
   public var reversed: Comparator {
     return Comparator { lhs, rhs in self.compare(lhs, rhs).reversed }
