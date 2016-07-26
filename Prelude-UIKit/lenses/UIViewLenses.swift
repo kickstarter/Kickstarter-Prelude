@@ -5,37 +5,25 @@ public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, Le
   func addConstraints(constraints: [NSLayoutConstraint])
   var alpha: CGFloat { get set }
   var backgroundColor: UIColor? { get set }
-  var bottomAnchor: NSLayoutYAxisAnchor { get }
-  var centerXAnchor: NSLayoutXAxisAnchor { get }
-  var centerYAnchor: NSLayoutYAxisAnchor { get }
   var clipsToBounds: Bool { get set }
   var constraints: [NSLayoutConstraint] { get }
   func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   var contentMode: UIViewContentMode { get set }
-  var firstBaselineAnchor: NSLayoutYAxisAnchor { get }
   var frame: CGRect { get set }
   var hidden: Bool { get set }
-  var heightAnchor: NSLayoutDimension { get }
-  var lastBaselineAnchor: NSLayoutYAxisAnchor { get }
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
-  var leadingAnchor: NSLayoutXAxisAnchor { get }
-  var leftAnchor: NSLayoutXAxisAnchor { get }
   var preservesSuperviewLayoutMargins: Bool { get set }
   func removeConstraints(constraints: [NSLayoutConstraint])
-  var rightAnchor: NSLayoutXAxisAnchor { get }
   func setContentCompressionResistancePriority(priority: UILayoutPriority,
                                                forAxis axis: UILayoutConstraintAxis)
   func setContentHuggingPriority(priority: UILayoutPriority,
                                  forAxis axis: UILayoutConstraintAxis)
   var tag: Int { get set }
   var tintColor: UIColor! { get set }
-  var topAnchor: NSLayoutYAxisAnchor { get }
-  var trailingAnchor: NSLayoutXAxisAnchor { get }
   var translatesAutoresizingMaskIntoConstraints: Bool { get set }
   var userInteractionEnabled: Bool { get set }
-  var widthAnchor: NSLayoutDimension { get }
 }
 
 extension UIView: UIViewProtocol {}
@@ -52,27 +40,6 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.backgroundColor ?? .clearColor() },
       set: { $1.backgroundColor = $0; return $1 }
-    )
-  }
-
-  public var bottomAnchor: Lens<Object, NSLayoutYAxisAnchor> {
-    return Lens(
-      view: { $0.bottomAnchor },
-      set: { $1 }
-    )
-  }
-
-  public var centerXAnchor: Lens<Object, NSLayoutXAxisAnchor> {
-    return Lens(
-      view: { $0.centerXAnchor },
-      set: { $1 }
-    )
-  }
-
-  public var centerYAnchor: Lens<Object, NSLayoutYAxisAnchor> {
-    return Lens(
-      view: { $0.centerYAnchor },
-      set: { $1 }
     )
   }
 
@@ -117,13 +84,6 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public var firstBaselineAnchor: Lens<Object, NSLayoutYAxisAnchor> {
-    return Lens(
-      view: { $0.firstBaselineAnchor },
-      set: { $1 }
-    )
-  }
-
   public var frame: Lens<Object, CGRect> {
     return Lens(
       view: { $0.frame },
@@ -131,24 +91,10 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public var heightAnchor: Lens<Object, NSLayoutDimension> {
-    return Lens(
-      view: { $0.heightAnchor },
-      set: { $1 }
-    )
-  }
-
   public var hidden: Lens<Object, Bool> {
     return Lens(
       view: { $0.hidden },
       set: { $1.hidden = $0; return $1 }
-    )
-  }
-
-  public var lastBaselineAnchor: Lens<Object, NSLayoutYAxisAnchor> {
-    return Lens(
-      view: { $0.lastBaselineAnchor },
-      set: { $1 }
     )
   }
 
@@ -187,13 +133,6 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public var topAnchor: Lens<Object, NSLayoutYAxisAnchor> {
-    return Lens(
-      view: { $0.topAnchor },
-      set: { $1 }
-    )
-  }
-
   public var translatesAutoresizingMaskIntoConstraints: Lens<Object, Bool> {
     return Lens(
       view: { $0.translatesAutoresizingMaskIntoConstraints },
@@ -205,13 +144,6 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.userInteractionEnabled },
       set: { $1.userInteractionEnabled = $0; return $1 }
-    )
-  }
-
-  public var widthAnchor: Lens<Object, NSLayoutDimension> {
-    return Lens(
-      view: { $0.widthAnchor },
-      set: { $1 }
     )
   }
 }
