@@ -61,17 +61,10 @@ public extension LensHolder where Object: UIBarButtonItem {
     )
   }
 
-  public var action: Lens<Object, Selector> {
+  public var targetAction: Lens<Object, (AnyObject, Selector)?> {
     return Lens(
-      view: { $0.action },
-      set: { $1.action = $0; return $1 }
-    )
-  }
-
-  public var target: Lens<Object, AnyObject?> {
-    return Lens(
-      view: { $0.target },
-      set: { $1.target = $0; return $1 }
+      view: { item in item.target.map { ($0, item.action) } },
+      set: { $1.target = $0?.0; $1.action = $0?.1 ?? $1.action; return $1 }
     )
   }
 
