@@ -2,8 +2,11 @@ import Prelude
 import UIKit
 
 public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
+  func addConstraints(constraints: [NSLayoutConstraint])
   var alpha: CGFloat { get set }
   var backgroundColor: UIColor? { get set }
+  var clipsToBounds: Bool { get set }
+  var constraints: [NSLayoutConstraint] { get }
   func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
   var contentMode: UIViewContentMode { get set }
@@ -12,6 +15,7 @@ public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, Le
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
+  func removeConstraints(constraints: [NSLayoutConstraint])
   func setContentCompressionResistancePriority(priority: UILayoutPriority,
                                                forAxis axis: UILayoutConstraintAxis)
   func setContentHuggingPriority(priority: UILayoutPriority,
@@ -36,6 +40,24 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.backgroundColor ?? .clearColor() },
       set: { $1.backgroundColor = $0; return $1 }
+    )
+  }
+
+  public var clipsToBounds: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.clipsToBounds },
+      set: { $1.clipsToBounds = $0; return $1 }
+    )
+  }
+
+  public var constraints: Lens<Object, [NSLayoutConstraint]> {
+    return Lens(
+      view: { $0.constraints },
+      set: {
+        $1.removeConstraints($1.constraints)
+        $1.addConstraints($0)
+        return $1
+      }
     )
   }
 

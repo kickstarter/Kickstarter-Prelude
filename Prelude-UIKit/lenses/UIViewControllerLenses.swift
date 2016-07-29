@@ -44,4 +44,8 @@ extension LensType where Whole: UIViewControllerProtocol, Part == UIView {
   public var backgroundColor: Lens<Whole, UIColor> {
     return Whole.lens.view • Part.lens.backgroundColor
   }
+
+  public var tintColor: Lens<Whole, UIColor> {
+    return Whole.lens.view • Part.lens.tintColor
+  }
 }
