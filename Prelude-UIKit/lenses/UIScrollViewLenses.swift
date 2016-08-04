@@ -3,6 +3,7 @@ import Prelude
 import UIKit
 
 public protocol UIScrollViewProtocol: UIViewProtocol {
+  var delaysContentTouches: Bool { get set }
   var scrollEnabled: Bool { get set }
   var scrollIndicatorInsets: UIEdgeInsets { get set }
   var showsHorizontalScrollIndicator: Bool { get set }
@@ -12,6 +13,14 @@ public protocol UIScrollViewProtocol: UIViewProtocol {
 extension UIScrollView: UIScrollViewProtocol {}
 
 public extension LensHolder where Object: UIScrollViewProtocol {
+
+  public var delaysContentTouches: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.delaysContentTouches },
+      set: { $1.delaysContentTouches = $0; return $1 }
+    )
+  }
+
   public var scrollEnabled: Lens<Object, Bool> {
     return Lens(
       view: { $0.scrollEnabled },
