@@ -3,6 +3,7 @@ import Prelude
 import UIKit
 
 public protocol UIScrollViewProtocol: UIViewProtocol {
+  var canCancelContentTouches: Bool { get set }
   var delaysContentTouches: Bool { get set }
   var scrollEnabled: Bool { get set }
   var scrollIndicatorInsets: UIEdgeInsets { get set }
@@ -13,6 +14,13 @@ public protocol UIScrollViewProtocol: UIViewProtocol {
 extension UIScrollView: UIScrollViewProtocol {}
 
 public extension LensHolder where Object: UIScrollViewProtocol {
+
+  public var canCancelContentTouches: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.canCancelContentTouches },
+      set: { $1.canCancelContentTouches = $0; return $1 }
+    )
+  }
 
   public var delaysContentTouches: Lens<Object, Bool> {
     return Lens(
