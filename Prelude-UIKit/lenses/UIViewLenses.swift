@@ -208,4 +208,8 @@ public extension LensType where Whole: UIViewProtocol, Part == CALayer {
   public var shadowRadius: Lens<Whole, CGFloat> {
     return Whole.lens.layer • CALayer.lens.shadowRadius
   }
+
+  public var shouldRasterize: Lens<Whole, Bool> {
+    return Whole.lens.layer • CALayer.lens.shouldRasterize
+  }
 }

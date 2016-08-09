@@ -11,6 +11,7 @@ public protocol CALayerProtocol: KSObjectProtocol {
   var shadowOffset: CGSize { get set }
   var shadowOpacity: Float { get set }
   var shadowRadius: CGFloat { get set }
+  var shouldRasterize: Bool { get set }
 }
 
 extension CALayer: CALayerProtocol {}
@@ -68,6 +69,13 @@ extension LensHolder where Object: CALayerProtocol {
     return Lens(
       view: { $0.shadowRadius },
       set: { $1.shadowRadius = $0; return $1 }
+    )
+  }
+
+  public var shouldRasterize: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.shouldRasterize },
+      set: { $1.shouldRasterize = $0; return $1 }
     )
   }
 }
