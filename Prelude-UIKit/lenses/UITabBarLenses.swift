@@ -2,7 +2,7 @@
 import Prelude
 import UIKit
 
-public protocol UITabBarProtocol: KSObjectProtocol {
+public protocol UITabBarProtocol: UIViewProtocol {
   var barTintColor: UIColor? { get set }
 }
 
