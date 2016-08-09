@@ -192,4 +192,20 @@ public extension LensType where Whole: UIViewProtocol, Part == CALayer {
   public var masksToBounds: Lens<Whole, Bool> {
     return Whole.lens.layer • Part.lens.masksToBounds
   }
+
+  public var shadowColor: Lens<Whole, CGColorRef?> {
+    return Whole.lens.layer • CALayer.lens.shadowColor
+  }
+
+  public var shadowOffset: Lens<Whole, CGSize> {
+    return Whole.lens.layer • CALayer.lens.shadowOffset
+  }
+
+  public var shadowOpacity: Lens<Whole, Float> {
+    return Whole.lens.layer • CALayer.lens.shadowOpacity
+  }
+
+  public var shadowRadius: Lens<Whole, CGFloat> {
+    return Whole.lens.layer • CALayer.lens.shadowRadius
+  }
 }
