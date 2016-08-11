@@ -94,6 +94,8 @@
 		A75EFFE41C0E7BF40002C7D2 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EFFE31C0E7BF40002C7D2 /* Empty.swift */; };
 		A76BAF9D1D5CC48D00BC2483 /* UITraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BAF9C1D5CC48D00BC2483 /* UITraitCollection.swift */; };
 		A76BAF9E1D5CC48D00BC2483 /* UITraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BAF9C1D5CC48D00BC2483 /* UITraitCollection.swift */; };
+		A76BAFA01D5CCC7E00BC2483 /* UITraitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BAF9F1D5CCC7E00BC2483 /* UITraitCollectionTests.swift */; };
+		A76BAFA11D5CCC7E00BC2483 /* UITraitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BAF9F1D5CCC7E00BC2483 /* UITraitCollectionTests.swift */; };
 		A76DDD531C29AEF60073B888 /* VectorTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DDD521C29AEF60073B888 /* VectorTypeTest.swift */; };
 		A77480BC1D08333F00774DEC /* UITextFieldLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */; };
 		A77480BE1D083BC000774DEC /* UITextInputTraitsLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */; };
@@ -251,6 +253,7 @@
 		A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		A75EFFE31C0E7BF40002C7D2 /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		A76BAF9C1D5CC48D00BC2483 /* UITraitCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitCollection.swift; sourceTree = "<group>"; };
+		A76BAF9F1D5CCC7E00BC2483 /* UITraitCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitCollectionTests.swift; sourceTree = "<group>"; };
 		A76DDD521C29AEF60073B888 /* VectorTypeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTypeTest.swift; sourceTree = "<group>"; };
 		A77480BB1D08333F00774DEC /* UITextFieldLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldLenses.swift; sourceTree = "<group>"; };
 		A77480BD1D083BC000774DEC /* UITextInputTraitsLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextInputTraitsLenses.swift; sourceTree = "<group>"; };
@@ -361,8 +364,8 @@
 				A727E0511D07984500D8FE43 /* UIButton.swift */,
 				A7FD55A01D104199007F976D /* UIEdgeInsets.swift */,
 				A727E04F1D0797EB00D8FE43 /* UIImage.swift */,
-				A727E0391D07972F00D8FE43 /* lenses */,
 				A76BAF9C1D5CC48D00BC2483 /* UITraitCollection.swift */,
+				A727E0391D07972F00D8FE43 /* lenses */,
 			);
 			path = "Prelude-UIKit";
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				A7CEAA061D0F9D8C00CE3D8B /* UIButtonTests.swift */,
+				A76BAF9F1D5CCC7E00BC2483 /* UITraitCollectionTests.swift */,
 			);
 			path = "Prelude-UIKitTests";
 			sourceTree = "<group>";
@@ -832,6 +836,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76BAFA11D5CCC7E00BC2483 /* UITraitCollectionTests.swift in Sources */,
 				A70969301D1437B700DB39D3 /* UIButtonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -882,6 +887,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76BAFA01D5CCC7E00BC2483 /* UITraitCollectionTests.swift in Sources */,
 				A7CEAA071D0F9D8C00CE3D8B /* UIButtonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
