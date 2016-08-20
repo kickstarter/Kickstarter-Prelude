@@ -13,7 +13,7 @@ public protocol UINavigationBarProtocol: UIViewProtocol {
 extension UINavigationBar: UINavigationBarProtocol {}
 
 public extension LensHolder where Object: UINavigationBarProtocol {
-  public func backgroundImageForBarMetrics(barMetrics: UIBarMetrics) -> Lens<Object, UIImage?> {
+  public func backgroundImage(forBarMetrics barMetrics: UIBarMetrics) -> Lens<Object, UIImage?> {
     return Lens(
       view: { $0.backgroundImageForBarMetrics(barMetrics) },
       set: { $1.setBackgroundImage($0, forBarMetrics: barMetrics); return $1 }
