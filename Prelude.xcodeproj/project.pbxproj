@@ -469,6 +469,7 @@
 				A75EFFE31C0E7BF40002C7D2 /* Empty.swift */,
 				CA0924361BB629BC00C9EC88 /* Function.swift */,
 				A711FD701CECF7A300659DB4 /* Lens.swift */,
+				A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */,
 				A711FD711CECF7A300659DB4 /* LensType.swift */,
 				9DCD74261D42A43500B238E5 /* Monoid.swift */,
 				A7EFE1511C28B46900F4CFEB /* NumericType.swift */,
@@ -482,7 +483,6 @@
 				A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */,
 				A711FCDC1CECB53A00659DB4 /* Unpack.swift */,
 				A7EFE1531C28B53D00F4CFEB /* VectorType.swift */,
-				A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */,
 			);
 			path = Prelude;
 			sourceTree = "<group>";
