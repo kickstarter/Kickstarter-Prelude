@@ -7,27 +7,27 @@ public protocol UIBarButtonItemProtocol: UIBarItemProtocol {
   var width: CGFloat { get set }
   var possibleTitles: Set<String>? { get set }
   var customView: UIView? { get set }
-  var action: Selector? { get set }
+  var action: Selector { get set }
   var target: AnyObject? { get set }
-  func setBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState, barMetrics: UIBarMetrics)
-  func backgroundImageForState(_ state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
-  func setBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState,
+  func setBackgroundImage(backgroundImage: UIImage?, forState state: UIControlState, barMetrics: UIBarMetrics)
+  func backgroundImageForState(state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
+  func setBackgroundImage(backgroundImage: UIImage?, forState state: UIControlState,
                           style: UIBarButtonItemStyle, barMetrics: UIBarMetrics)
-  func backgroundImageForState(_ state: UIControlState, style: UIBarButtonItemStyle, barMetrics: UIBarMetrics)
+  func backgroundImageForState(state: UIControlState, style: UIBarButtonItemStyle, barMetrics: UIBarMetrics)
     -> UIImage?
   var tintColor: UIColor? { get set }
-  func setBackgroundVerticalPositionAdjustment(_ adjustment: CGFloat, forBarMetrics barMetrics: UIBarMetrics)
-  func backgroundVerticalPositionAdjustmentForBarMetrics(_ barMetrics: UIBarMetrics) -> CGFloat
-  func setTitlePositionAdjustment(_ adjustment: UIOffset, forBarMetrics barMetrics: UIBarMetrics)
-  func titlePositionAdjustmentForBarMetrics(_ barMetrics: UIBarMetrics) -> UIOffset
-  func setBackButtonBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState,
+  func setBackgroundVerticalPositionAdjustment(adjustment: CGFloat, forBarMetrics barMetrics: UIBarMetrics)
+  func backgroundVerticalPositionAdjustmentForBarMetrics(barMetrics: UIBarMetrics) -> CGFloat
+  func setTitlePositionAdjustment(adjustment: UIOffset, forBarMetrics barMetrics: UIBarMetrics)
+  func titlePositionAdjustmentForBarMetrics(barMetrics: UIBarMetrics) -> UIOffset
+  func setBackButtonBackgroundImage(backgroundImage: UIImage?, forState state: UIControlState,
                                     barMetrics: UIBarMetrics)
-  func backButtonBackgroundImageForState(_ state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
-  func setBackButtonTitlePositionAdjustment(_ adjustment: UIOffset, forBarMetrics barMetrics: UIBarMetrics)
-  func backButtonTitlePositionAdjustmentForBarMetrics(_ barMetrics: UIBarMetrics) -> UIOffset
-  func setBackButtonBackgroundVerticalPositionAdjustment(_ adjustment: CGFloat,
+  func backButtonBackgroundImageForState(state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
+  func setBackButtonTitlePositionAdjustment(adjustment: UIOffset, forBarMetrics barMetrics: UIBarMetrics)
+  func backButtonTitlePositionAdjustmentForBarMetrics(barMetrics: UIBarMetrics) -> UIOffset
+  func setBackButtonBackgroundVerticalPositionAdjustment(adjustment: CGFloat,
                                                          forBarMetrics barMetrics: UIBarMetrics)
-  func backButtonBackgroundVerticalPositionAdjustmentForBarMetrics(_ barMetrics: UIBarMetrics) -> CGFloat
+  func backButtonBackgroundVerticalPositionAdjustmentForBarMetrics(barMetrics: UIBarMetrics) -> CGFloat
 }
 
 extension UIBarButtonItem: UIBarButtonItemProtocol {}
@@ -61,17 +61,10 @@ public extension LensHolder where Object: UIBarButtonItem {
     )
   }
 
-  public var action: Lens<Object, Selector?> {
+  public var targetAction: Lens<Object, (AnyObject, Selector)?> {
     return Lens(
-      view: { $0.action },
-      set: { $1.action = $0; return $1 }
-    )
-  }
-
-  public var target: Lens<Object, AnyObject?> {
-    return Lens(
-      view: { $0.target },
-      set: { $1.target = $0; return $1 }
+      view: { item in item.target.map { ($0, item.action) } },
+      set: { $1.target = $0?.0; $1.action = $0?.1 ?? $1.action; return $1 }
     )
   }
 
@@ -79,16 +72,16 @@ public extension LensHolder where Object: UIBarButtonItem {
     -> Lens<Object, UIImage?> {
 
       return Lens(
-        view: { $0.backgroundImage(for: state, barMetrics: barMetrics) },
-        set: { $1.setBackgroundImage($0, for: state, barMetrics: barMetrics); return $1 }
+        view: { $0.backgroundImageForState(state, barMetrics: barMetrics) },
+        set: { $1.setBackgroundImage($0, forState: state, barMetrics: barMetrics); return $1 }
       )
   }
 
   public func backgroundImage(forState state: UIControlState, style: UIBarButtonItemStyle,
                                        barMetrics: UIBarMetrics) -> Lens<Object, UIImage?> {
     return Lens(
-      view: { $0.backgroundImage(for: state, style: style, barMetrics: barMetrics) },
-      set: { $1.setBackgroundImage($0, for: state, style: style, barMetrics: barMetrics); return $1 }
+      view: { $0.backgroundImageForState(state, style: style, barMetrics: barMetrics) },
+      set: { $1.setBackgroundImage($0, forState: state, style: style, barMetrics: barMetrics); return $1 }
     )
   }
 
@@ -103,15 +96,15 @@ public extension LensHolder where Object: UIBarButtonItem {
     -> Lens<Object, CGFloat> {
 
       return Lens(
-        view: { $0.backgroundVerticalPositionAdjustment(for: barMetrics) },
-        set: { $1.setBackgroundVerticalPositionAdjustment($0, for: barMetrics); return $1 }
+        view: { $0.backgroundVerticalPositionAdjustmentForBarMetrics(barMetrics) },
+        set: { $1.setBackgroundVerticalPositionAdjustment($0, forBarMetrics: barMetrics); return $1 }
       )
   }
 
   public func titlePositionAdjustment(forBarMetrics barMetrics: UIBarMetrics) -> Lens<Object, UIOffset> {
     return Lens(
-      view: { $0.titlePositionAdjustment(for: barMetrics) },
-      set: { $1.setTitlePositionAdjustment($0, for: barMetrics); return $1 }
+      view: { $0.titlePositionAdjustmentForBarMetrics(barMetrics) },
+      set: { $1.setTitlePositionAdjustment($0, forBarMetrics: barMetrics); return $1 }
     )
   }
 
@@ -119,8 +112,8 @@ public extension LensHolder where Object: UIBarButtonItem {
     -> Lens<Object, UIImage?> {
 
       return Lens(
-        view: { $0.backButtonBackgroundImage(for: state, barMetrics: barMetrics) },
-        set: { $1.setBackButtonBackgroundImage($0, for: state, barMetrics: barMetrics); return $1 }
+        view: { $0.backButtonBackgroundImageForState(state, barMetrics: barMetrics) },
+        set: { $1.setBackButtonBackgroundImage($0, forState: state, barMetrics: barMetrics); return $1 }
       )
   }
 
@@ -128,8 +121,8 @@ public extension LensHolder where Object: UIBarButtonItem {
     -> Lens<Object, UIOffset> {
 
       return Lens(
-        view: { $0.backButtonTitlePositionAdjustment(for: barMetrics) },
-        set: { $1.setBackButtonTitlePositionAdjustment($0, for: barMetrics); return $1 }
+        view: { $0.backButtonTitlePositionAdjustmentForBarMetrics(barMetrics) },
+        set: { $1.setBackButtonTitlePositionAdjustment($0, forBarMetrics: barMetrics); return $1 }
       )
   }
 
@@ -137,9 +130,9 @@ public extension LensHolder where Object: UIBarButtonItem {
     -> Lens<Object, CGFloat> {
 
       return Lens(
-        view: { $0.backButtonBackgroundVerticalPositionAdjustment(for: barMetrics) },
+        view: { $0.backButtonBackgroundVerticalPositionAdjustmentForBarMetrics(barMetrics) },
         set: {
-          $1.setBackButtonBackgroundVerticalPositionAdjustment($0, for: barMetrics)
+          $1.setBackButtonBackgroundVerticalPositionAdjustment($0, forBarMetrics: barMetrics)
           return $1
         }
       )

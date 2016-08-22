@@ -28,7 +28,7 @@ public func ||> <A, B> (xs: [A], f: (A) -> B) -> [B] {
  - parameter x: An optional value.
  - parameter f: A transformation.
 
- - returns: An array of transformed values.
+ - returns: An optional transformed value.
  */
 public func ?|> <A, B> (x: A?, f: (A) -> B) -> B? {
   return x.map(f)

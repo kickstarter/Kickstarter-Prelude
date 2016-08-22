@@ -3,6 +3,7 @@ import UIKit
 
 public protocol UINavigationControllerProtocol: UIViewControllerProtocol {
   var navigationBar: UINavigationBar { get }
+  var viewControllers: [UIViewController] { get set }
 }
 
 extension UINavigationController: UINavigationControllerProtocol {}
@@ -13,5 +14,19 @@ public extension LensHolder where Object: UINavigationControllerProtocol {
       view: { $0.navigationBar },
       set: { $1 }
     )
+  }
+
+  public var viewControllers: Lens<Object, [UIViewController]> {
+    return Lens(
+      view: { $0.viewControllers },
+      set: { $1.viewControllers = $0; return $1 }
+    )
+  }
+}
+
+extension LensType where Whole: UINavigationControllerProtocol, Part == UINavigationBar {
+
+  public var barTintColor: Lens<Whole, UIColor?> {
+    return Whole.lens.navigationBar • Part.lens.barTintColor
   }
 }

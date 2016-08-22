@@ -2,8 +2,11 @@ import Prelude
 import UIKit
 
 public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
+  func addConstraints(constraints: [NSLayoutConstraint])
   var alpha: CGFloat { get set }
   var backgroundColor: UIColor? { get set }
+  var clipsToBounds: Bool { get set }
+  var constraints: [NSLayoutConstraint] { get }
   func contentCompressionResistancePriorityForAxis(_ axis: UILayoutConstraintAxis) -> UILayoutPriority
   func contentHuggingPriorityForAxis(_ axis: UILayoutConstraintAxis) -> UILayoutPriority
   var contentMode: UIViewContentMode { get set }
@@ -12,6 +15,7 @@ public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, Le
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
+  func removeConstraints(constraints: [NSLayoutConstraint])
   func setContentCompressionResistancePriority(_ priority: UILayoutPriority,
                                                forAxis axis: UILayoutConstraintAxis)
   func setContentHuggingPriority(_ priority: UILayoutPriority,
@@ -36,6 +40,24 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.backgroundColor ?? .clear() },
       set: { $1.backgroundColor = $0; return $1 }
+    )
+  }
+
+  public var clipsToBounds: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.clipsToBounds },
+      set: { $1.clipsToBounds = $0; return $1 }
+    )
+  }
+
+  public var constraints: Lens<Object, [NSLayoutConstraint]> {
+    return Lens(
+      view: { $0.constraints },
+      set: {
+        $1.removeConstraints($1.constraints)
+        $1.addConstraints($0)
+        return $1
+      }
     )
   }
 
@@ -169,5 +191,25 @@ public extension LensType where Whole: UIViewProtocol, Part == CALayer {
 
   public var masksToBounds: Lens<Whole, Bool> {
     return Whole.lens.layer • Part.lens.masksToBounds
+  }
+
+  public var shadowColor: Lens<Whole, CGColorRef?> {
+    return Whole.lens.layer • CALayer.lens.shadowColor
+  }
+
+  public var shadowOffset: Lens<Whole, CGSize> {
+    return Whole.lens.layer • CALayer.lens.shadowOffset
+  }
+
+  public var shadowOpacity: Lens<Whole, Float> {
+    return Whole.lens.layer • CALayer.lens.shadowOpacity
+  }
+
+  public var shadowRadius: Lens<Whole, CGFloat> {
+    return Whole.lens.layer • CALayer.lens.shadowRadius
+  }
+
+  public var shouldRasterize: Lens<Whole, Bool> {
+    return Whole.lens.layer • CALayer.lens.shouldRasterize
   }
 }

@@ -43,6 +43,16 @@ public extension LensType {
   }
 }
 
+public extension LensType where Part : Comparable {
+  public var comparator: Comparator<Whole> {
+    return Comparator { lhs, rhs in
+      self.view(lhs) < self.view(rhs) ? .lt
+        : self.view(lhs) == self.view(rhs) ? .eq
+        : .gt
+    }
+  }
+}
+
 /**
  Infix operator of the `set` function.
 
