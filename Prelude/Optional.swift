@@ -33,7 +33,7 @@ extension OptionalType {
               is returned.
    */
   public func optionalFilter(_ predicate: (Wrapped) -> Bool) -> Wrapped? {
-    if let value = self.optional where predicate(value) {
+    if let value = self.optional, predicate(value) {
       return value
     }
     return nil

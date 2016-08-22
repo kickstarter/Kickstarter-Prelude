@@ -42,7 +42,7 @@ public func ?|> <A, B> (x: A?, f: (A) -> B) -> B? {
 
  - returns: A function that is the composition of `f` and `g`.
  */
-public func • <A, B, C> (g: (B) -> C, f: (A) -> B) -> ((A) -> C) {
+public func • <A, B, C> (g: @escaping (B) -> C, f: @escaping (A) -> B) -> ((A) -> C) {
   return { x in g(f(x)) }
 }
 
@@ -55,7 +55,7 @@ public func • <A, B, C> (g: (B) -> C, f: (A) -> B) -> ((A) -> C) {
 
  - returns: A function that is the composition of `f` and `g`.
  */
-public func <> <A> (f: (A) -> A, g: (A) -> A) -> ((A) -> A) {
+public func <> <A> (f: @escaping (A) -> A, g: @escaping (A) -> A) -> ((A) -> A) {
   return { g(f($0)) }
 }
 

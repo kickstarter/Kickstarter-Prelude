@@ -80,10 +80,10 @@ extension EitherType {
   }
 }
 
-public func == <E: EitherType where E.A: Equatable, E.B: Equatable> (lhs: E, rhs: E) -> Bool {
-  if let lhs = lhs.left, rhs = rhs.left {
+public func == <E: EitherType> (lhs: E, rhs: E) -> Bool where E.A: Equatable, E.B: Equatable {
+  if let lhs = lhs.left, let rhs = rhs.left {
     return lhs == rhs
-  } else if let lhs = lhs.right, rhs = rhs.right {
+  } else if let lhs = lhs.right, let rhs = rhs.right {
     return lhs == rhs
   }
   return false
@@ -137,7 +137,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A new either value.
    */
-  public func map <C> (_ f: @noescape (B) -> C) -> Either<A, C> {
+  public func map <C> (_ f: (B) -> C) -> Either<A, C> {
     switch self {
     case let .left(a):
       return .left(a)
@@ -153,7 +153,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A new either value.
    */
-  public func flatMap <C> (_ f: @noescape (B) -> Either<A, C>) -> Either<A, C> {
+  public func flatMap <C> (_ f: (B) -> Either<A, C>) -> Either<A, C> {
     return self.map(f).flatten()
   }
 
@@ -164,7 +164,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A new either value.
    */
-  public func mapLeft <C> (_ f: @noescape (A) -> C) -> Either<C, B> {
+  public func mapLeft <C> (_ f: (A) -> C) -> Either<C, B> {
     switch self {
     case let .left(a):
       return .left(f(a))
@@ -180,7 +180,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A new either value.
    */
-  public func flatMapLeft <C> (_ f: @noescape (A) -> Either<C, B>) -> Either<C, B> {
+  public func flatMapLeft <C> (_ f: (A) -> Either<C, B>) -> Either<C, B> {
     return self.mapLeft(f).flattenLeft()
   }
 
@@ -192,7 +192,7 @@ public enum Either <A, B>: EitherType {
 
    - returns: A value.
    */
-  public func ifLeft <C> (_ ifLeft: @noescape (A) -> C, ifRight: @noescape (B) -> C) -> C {
+  public func ifLeft <C> (_ ifLeft: (A) -> C, ifRight: (B) -> C) -> C {
     switch self {
     case let .left(left):
       return ifLeft(left)
@@ -245,7 +245,7 @@ extension Either where A: EitherType, A.B == B {
 
  - returns: A function that performs case analysis on an `Either` value.
  */
-public func either <A, B, C> (ifLeft: (A) -> C, ifRight: (B) -> C) -> ((Either<A, B>) -> C) {
+public func either <A, B, C> (_ ifLeft: @escaping (A) -> C, ifRight: @escaping (B) -> C) -> ((Either<A, B>) -> C) {
   return { either in either.ifLeft(ifLeft, ifRight: ifRight) }
 }
 

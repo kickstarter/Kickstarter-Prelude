@@ -17,7 +17,7 @@ public extension Array where Element: Semigroup {
    - returns: The concatenation of all the values.
    */
   public func sconcat(_ initial: Element) -> Element {
-    return self.reduce(initial, combine: <>)
+    return self.reduce(initial, <>)
   }
 }
 
@@ -41,10 +41,10 @@ public extension Array {
 
    - returns: An array of distinct values in the array without changing the order.
    */
-  public func distincts( _ eq: @noescape(Element, Element) -> Bool) -> Array {
+  public func distincts( _ eq: (Element, Element) -> Bool) -> Array {
     var result = Array()
     forEach { x in
-      if !result.contains({ eq(x, $0) }) {
+      if !result.contains(where: { eq(x, $0) }) {
         result.append(x)
       }
     }
@@ -59,7 +59,7 @@ public extension Array {
    - returns: A dictionary where each key contains all the elements of `self` that are mapped to the key
               via the `grouping` function.
    */
-  public func groupedBy <K: Hashable> (_ grouping: @noescape (Element) -> K) -> [K:[Element]] {
+  public func groupedBy <K: Hashable> (_ grouping: (Element) -> K) -> [K:[Element]] {
     var result: [K:[Element]] = [:]
 
     for value in self {
@@ -78,8 +78,8 @@ public extension Array {
 
    - returns: A sorted array.
    */
-  public func sorted(comparator comparator: Comparator<Element>) -> Array {
-    return self.sort(comparator.isOrdered)
+  public func sorted(comparator: Comparator<Element>) -> Array {
+    return self.sorted(by: comparator.isOrdered)
   }
 }
 
