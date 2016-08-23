@@ -110,6 +110,10 @@
 		A782B4521D2C375A0069D10E /* UITextViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094255A1D1463A00021DEEE /* UITextViewLenses.swift */; };
 		A78323AD1CB9615D000B094C /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78323AC1CB9615D000B094C /* Either.swift */; };
 		A78323AE1CB9615D000B094C /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78323AC1CB9615D000B094C /* Either.swift */; };
+		A788518B1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788518A1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift */; };
+		A788518C1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788518A1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift */; };
+		A788518E1D6C8DAC00617930 /* UIWebViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788518D1D6C8DAC00617930 /* UIWebViewLenses.swift */; };
+		A788518F1D6C8DAC00617930 /* UIWebViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788518D1D6C8DAC00617930 /* UIWebViewLenses.swift */; };
 		A7A882F21D31826F00E9046E /* NSMutableParagraphStyleLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A882F11D31826F00E9046E /* NSMutableParagraphStyleLenses.swift */; };
 		A7A882F31D31826F00E9046E /* NSMutableParagraphStyleLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A882F11D31826F00E9046E /* NSMutableParagraphStyleLenses.swift */; };
 		A7AD8BC01C9DCBC200016122 /* Semigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */; };
@@ -268,6 +272,8 @@
 		A77D7A8F1CB980210077586B /* EitherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EitherTests.swift; sourceTree = "<group>"; };
 		A78011DD1D2DBF090027396E /* UITraitEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitEnvironment.swift; sourceTree = "<group>"; };
 		A78323AC1CB9615D000B094C /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		A788518A1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorViewLenses.swift; sourceTree = "<group>"; };
+		A788518D1D6C8DAC00617930 /* UIWebViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewLenses.swift; sourceTree = "<group>"; };
 		A7A882F11D31826F00E9046E /* NSMutableParagraphStyleLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableParagraphStyleLenses.swift; sourceTree = "<group>"; };
 		A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semigroup.swift; sourceTree = "<group>"; };
 		A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
@@ -388,6 +394,7 @@
 				A747D8E01D353A17004B612D /* NSObject.swift */,
 				80904E751D3D461300B897F0 /* NSTextContainerLenses.swift */,
 				A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */,
+				A788518A1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift */,
 				804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */,
 				804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */,
 				A727E03E1D07972F00D8FE43 /* UIButtonLenses.swift */,
@@ -411,6 +418,7 @@
 				A78011DD1D2DBF090027396E /* UITraitEnvironment.swift */,
 				A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */,
 				A727E0421D07972F00D8FE43 /* UIViewLenses.swift */,
+				A788518D1D6C8DAC00617930 /* UIWebViewLenses.swift */,
 				A7013C9D1D538AD100BCEE9C /* WKWebViewLenses.swift */,
 			);
 			path = lenses;
@@ -826,6 +834,7 @@
 				A709692A1D1437B200DB39D3 /* UILabelLenses.swift in Sources */,
 				A70969281D1437B200DB39D3 /* UIControlLenses.swift in Sources */,
 				A709692D1D1437B200DB39D3 /* UITextInputTraitsLenses.swift in Sources */,
+				A788518F1D6C8DAC00617930 /* UIWebViewLenses.swift in Sources */,
 				A78011DF1D2DBF090027396E /* UITraitEnvironment.swift in Sources */,
 				A70969261D1437B200DB39D3 /* CGSizeLenses.swift in Sources */,
 				A782B4521D2C375A0069D10E /* UITextViewLenses.swift in Sources */,
@@ -836,6 +845,7 @@
 				A747D8E21D353A17004B612D /* NSObject.swift in Sources */,
 				A7013C9F1D538AD100BCEE9C /* WKWebViewLenses.swift in Sources */,
 				A709692E1D1437B200DB39D3 /* UIViewControllerLenses.swift in Sources */,
+				A788518C1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift in Sources */,
 				A70969231D1437B200DB39D3 /* CALayerLenses.swift in Sources */,
 				A743813B1D33D49600040A95 /* UIAccessibilityLenses.swift in Sources */,
 				A7D11FCB1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */,
@@ -870,6 +880,7 @@
 				A77480C01D0855C800774DEC /* UIStackViewLenses.swift in Sources */,
 				A727E0431D07972F00D8FE43 /* CALayerLenses.swift in Sources */,
 				8051B93F1D4049B600F653A7 /* UINavigationBarLenses.swift in Sources */,
+				A788518B1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift in Sources */,
 				A727E0501D0797EB00D8FE43 /* UIImage.swift in Sources */,
 				804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */,
 				A7A882F21D31826F00E9046E /* NSMutableParagraphStyleLenses.swift in Sources */,
@@ -886,6 +897,7 @@
 				A727E0521D07984500D8FE43 /* UIButton.swift in Sources */,
 				A7D120231D158A2700F364FD /* UITableViewCellLenses.swift in Sources */,
 				A727E04A1D07972F00D8FE43 /* UILabelLenses.swift in Sources */,
+				A788518E1D6C8DAC00617930 /* UIWebViewLenses.swift in Sources */,
 				A7013C9E1D538AD100BCEE9C /* WKWebViewLenses.swift in Sources */,
 				A727E0481D07972F00D8FE43 /* UIControlLenses.swift in Sources */,
 				804FA7041D2EF7A2001876A7 /* UIBarButtonItemLenses.swift in Sources */,
