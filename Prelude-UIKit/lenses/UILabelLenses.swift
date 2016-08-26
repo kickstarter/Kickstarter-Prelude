@@ -3,6 +3,7 @@ import UIKit
 
 public protocol UILabelProtocol: UIViewProtocol {
   var adjustsFontSizeToFitWidth: Bool { get set }
+  var attributedText: NSAttributedString? { get set }
   var font: UIFont! { get set }
   var lineBreakMode: NSLineBreakMode { get set }
   var minimumScaleFactor: CGFloat { get set }
@@ -19,6 +20,13 @@ public extension LensHolder where Object: UILabelProtocol {
     return Lens(
       view: { $0.adjustsFontSizeToFitWidth },
       set: { $1.adjustsFontSizeToFitWidth = $0; return $1; }
+    )
+  }
+
+  public var attributedText: Lens<Object, NSAttributedString?> {
+    return Lens(
+      view: { $0.attributedText },
+      set: { $1.attributedText = $0; return $1; }
     )
   }
 
