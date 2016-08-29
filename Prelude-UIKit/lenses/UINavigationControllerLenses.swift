@@ -3,6 +3,7 @@ import UIKit
 
 public protocol UINavigationControllerProtocol: UIViewControllerProtocol {
   var navigationBar: UINavigationBar { get }
+  var navigationBarHidden: Bool { get set }
   var viewControllers: [UIViewController] { get set }
 }
 
@@ -13,6 +14,13 @@ public extension LensHolder where Object: UINavigationControllerProtocol {
     return Lens(
       view: { $0.navigationBar },
       set: { $1 }
+    )
+  }
+
+  public var navigationBarHidden: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.navigationBarHidden },
+      set: { $1.navigationBarHidden = $0; return $1 }
     )
   }
 
