@@ -30,6 +30,18 @@ final class OptionalTests: XCTestCase {
     XCTAssertEqual(2, y.optionalFilter(isEven))
   }
 
+  func testIfSome() {
+    var someBodyExecuted = 0
+    let x: Int? = 1
+    x.ifSome { someBodyExecuted = $0 }
+    XCTAssertEqual(x, someBodyExecuted)
+
+    var noneBodyExecuted = false
+    let y: Int? = nil
+    y.ifSome { _ in noneBodyExecuted = true }
+    XCTAssertFalse(noneBodyExecuted)
+  }
+
   func testCoalesceWith() {
     let x: Int? = 1
     XCTAssertEqual(1, x.coalesceWith(2))

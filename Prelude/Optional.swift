@@ -27,6 +27,17 @@ extension OptionalType {
   }
 
   /**
+   Call `body` on wrapped value of `self` if present. An analog to `Sequence.forEach`.
+
+   - parameter body: A procedure to call on the wrapped value of `self` if present.
+   */
+  public func ifSome(body: (Wrapped) throws -> ()) rethrows {
+    if let value = self.optional {
+      try body(value)
+    }
+  }
+
+  /**
    - parameter predicate: A predicate that determines if the wrapped value should be kept or not.
 
    - returns: If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil`
