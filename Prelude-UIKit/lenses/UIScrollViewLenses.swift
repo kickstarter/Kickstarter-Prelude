@@ -6,6 +6,7 @@ public protocol UIScrollViewProtocol: UIViewProtocol {
   var canCancelContentTouches: Bool { get set }
   var decelerationRate: CGFloat { get set }
   var delaysContentTouches: Bool { get set }
+  var keyboardDismissMode: UIScrollViewKeyboardDismissMode { get set }
   var scrollEnabled: Bool { get set }
   var scrollIndicatorInsets: UIEdgeInsets { get set }
   var showsHorizontalScrollIndicator: Bool { get set }
@@ -34,6 +35,13 @@ public extension LensHolder where Object: UIScrollViewProtocol {
     return Lens(
       view: { $0.delaysContentTouches },
       set: { $1.delaysContentTouches = $0; return $1 }
+    )
+  }
+
+  public var keyboardDismissMode: Lens<Object, UIScrollViewKeyboardDismissMode> {
+    return Lens(
+      view: { $0.keyboardDismissMode },
+      set: { $1.keyboardDismissMode = $0; return $1 }
     )
   }
 
