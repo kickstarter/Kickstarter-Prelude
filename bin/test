@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-if [ "$1" == "iOS" ]; then
+if [ "$1" == "iOS" ] || [ "$1" == "UIKit-iOS" ]; then
   DESTINATION='platform=iOS Simulator,name=iPhone 6'
 else
   DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
