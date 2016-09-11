@@ -1,3 +1,4 @@
+#if os(iOS)
 // swiftlint:disable type_name
 import Prelude
 import WebKit
@@ -23,3 +24,4 @@ extension LensType where Whole: WKWebViewProtocol, Part == UIScrollView {
     return Whole.lens.scrollView • Part.lens.delaysContentTouches
   }
 }
+#endif

@@ -1,3 +1,4 @@
+#if os(iOS)
 import Prelude
 import WebKit
 
@@ -34,3 +35,4 @@ extension LensType where Whole: UIWebViewProtocol, Part == UIScrollView {
     return Whole.lens.scrollView • Part.lens.decelerationRate
   }
 }
+#endif
