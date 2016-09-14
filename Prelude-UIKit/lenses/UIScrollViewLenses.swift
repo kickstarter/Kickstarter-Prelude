@@ -9,6 +9,7 @@ public protocol UIScrollViewProtocol: UIViewProtocol {
   var keyboardDismissMode: UIScrollViewKeyboardDismissMode { get set }
   var scrollEnabled: Bool { get set }
   var scrollIndicatorInsets: UIEdgeInsets { get set }
+  var scrollsToTop: Bool { get set }
   var showsHorizontalScrollIndicator: Bool { get set }
   var showsVerticalScrollIndicator: Bool { get set }
 }
@@ -56,6 +57,13 @@ public extension LensHolder where Object: UIScrollViewProtocol {
     return Lens(
       view: { $0.scrollIndicatorInsets },
       set: { $1.scrollIndicatorInsets = $0; return $1 }
+    )
+  }
+
+  public var scrollsToTop: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.scrollsToTop },
+      set: { $1.scrollsToTop = $0; return $1 }
     )
   }
 
