@@ -98,3 +98,17 @@ public func == <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
 public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
   return !(lhs == rhs)
 }
+
+/**
+ Wraps a non-optional value into an optional, and leaves an optional value unchanged.
+ 
+ This can be useful for dealing with Swift API changes, in which methods formally returned non-optional
+ values now return optional values.
+
+ - parameter x: An optional value.
+
+ - returns: A wrapped optional value.
+ */
+public func optionalize<A>(x: A?) -> A? {
+  return x
+}
