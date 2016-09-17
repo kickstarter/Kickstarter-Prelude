@@ -5,6 +5,9 @@ public protocol UIActivityIndicatorViewProtocol: UIViewProtocol {
   var activityIndicatorViewStyle: UIActivityIndicatorViewStyle { get set }
   var color: UIColor? { get set }
   var hidesWhenStopped: Bool { get set }
+  func isAnimating() -> Bool
+  func startAnimating()
+  func stopAnimating()
 }
 
 extension UIActivityIndicatorView: UIActivityIndicatorViewProtocol {}
@@ -15,6 +18,13 @@ public extension LensHolder where Object: UIActivityIndicatorViewProtocol {
     return Lens(
       view: { $0.activityIndicatorViewStyle },
       set: { $1.activityIndicatorViewStyle = $0; return $1 }
+    )
+  }
+
+  public var animating: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.isAnimating() },
+      set: { $0 ? $1.startAnimating() : $1.stopAnimating(); return $1 }
     )
   }
 
