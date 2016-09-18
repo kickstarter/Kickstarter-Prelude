@@ -101,7 +101,7 @@ public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
 
 /**
  Wraps a non-optional value into an optional, and leaves an optional value unchanged.
- 
+
  This can be useful for dealing with Swift API changes, in which methods formally returned non-optional
  values now return optional values.
 
