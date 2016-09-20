@@ -14,6 +14,9 @@ test:
       swiftlint lint --strict --reporter json |
       tee $CIRCLE_ARTIFACTS/swiftlint-report.json
     - bin/test iOS
+    - bin/test UIKit-iOS
+    - bin/test tvOS
+    - bin/test UIKit-tvOS
 experimental:
   notify:
     branches:
