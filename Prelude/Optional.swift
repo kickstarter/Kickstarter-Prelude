@@ -26,13 +26,26 @@ extension OptionalType {
     return self.optional!
   }
 
+  // swiftlint:disable valid_docs
+  /**
+   Call `body` on wrapped value of `self` if present. An analog to `Sequence.forEach`.
+
+   - parameter body: A procedure to call on the wrapped value of `self` if present.
+   */
+  public func doIfSome(body: (Wrapped) throws -> ()) rethrows {
+    if let value = self.optional {
+      try body(value)
+    }
+  }
+  // swiftlint:enable valid_docs
+
   /**
    - parameter predicate: A predicate that determines if the wrapped value should be kept or not.
 
    - returns: If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil`
               is returned.
    */
-  public func optionalFilter(predicate: Wrapped -> Bool) -> Wrapped? {
+  public func filter(predicate: Wrapped -> Bool) -> Wrapped? {
     if let value = self.optional where predicate(value) {
       return value
     }

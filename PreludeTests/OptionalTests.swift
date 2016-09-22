@@ -21,13 +21,25 @@ final class OptionalTests: XCTestCase {
     XCTAssertFalse(isNotNil(y))
   }
 
-  func testOptionalFilter() {
+  func testFilter() {
     func isEven(x: Int) -> Bool { return x % 2 == 0 }
 
     let x: Int? = 1
-    XCTAssertEqual(nil, x.optionalFilter(isEven))
+    XCTAssertEqual(nil, x.filter(isEven))
     let y: Int? = 2
-    XCTAssertEqual(2, y.optionalFilter(isEven))
+    XCTAssertEqual(2, y.filter(isEven))
+  }
+
+  func testDoIfSome() {
+    var someBodyExecuted = 0
+    let x: Int? = 1
+    x.doIfSome { someBodyExecuted = $0 }
+    XCTAssertEqual(x, someBodyExecuted)
+
+    var noneBodyExecuted = false
+    let y: Int? = nil
+    y.doIfSome { _ in noneBodyExecuted = true }
+    XCTAssertFalse(noneBodyExecuted)
   }
 
   func testCoalesceWith() {
