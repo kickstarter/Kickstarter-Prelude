@@ -26,6 +26,7 @@ extension OptionalType {
     return self.optional!
   }
 
+  // swiftlint:disable valid_docs
   /**
    Call `body` on wrapped value of `self` if present. An analog to `Sequence.forEach`.
 
@@ -36,6 +37,7 @@ extension OptionalType {
       try body(value)
     }
   }
+  // swiftlint:enable valid_docs
 
   /**
    - parameter predicate: A predicate that determines if the wrapped value should be kept or not.
