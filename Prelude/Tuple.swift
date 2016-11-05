@@ -38,3 +38,11 @@ public func first<A, B, C>(t: (A, B, C)) -> A {
 public func second<A, B, C>(t: (A, B, C)) -> B {
   return t.1
 }
+
+/**
+ - parameter t: A 3-tuple.
+ - returns: The third value of a 3-tuple.
+ */
+public func third<A, B, C>(t: (A, B, C)) -> C {
+  return t.2
+}
