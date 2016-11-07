@@ -21,7 +21,6 @@ extension UIImage {
     CGContextSetFillColorWithColor(context, color.CGColor)
     CGContextFillRect(context, pixel)
 
-
     #if swift(>=2.3)
       return UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
     #else

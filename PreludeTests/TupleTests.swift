@@ -24,4 +24,9 @@ final class TupleTests: XCTestCase {
     XCTAssertEqual(2, second((1, 2, 3)))
     XCTAssertEqual(3, second((2, 3, 4)))
   }
+
+  func testThird() {
+    XCTAssertEqual(3, third((1, 2, 3)))
+    XCTAssertEqual(4, third((2, 3, 4)))
+  }
 }
