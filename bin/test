@@ -10,7 +10,7 @@ fi
 if [ "$1" == "iOS" ] || [ "$1" == "UIKit-iOS" ]; then
   DESTINATION='platform=iOS Simulator,name=iPhone 6,OS=9.3'
 else
-  DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p,OS=9.1'
+  DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2'
 fi
 
 xcodebuild \
