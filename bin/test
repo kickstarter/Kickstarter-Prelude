@@ -16,6 +16,6 @@ fi
 xcodebuild \
   -destination "$DESTINATION" \
   -scheme Prelude-$1 \
-  clean build test \
+  clean test \
   | tee $CIRCLE_ARTIFACTS/xcode_raw.log \
   | xcpretty
