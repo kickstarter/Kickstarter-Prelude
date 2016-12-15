@@ -1,6 +1,6 @@
 /// An optional protocol for use in type constraints.
 public protocol OptionalType {
-  /// The type contained in the otpional.
+  /// The type contained in the optional.
   associatedtype Wrapped
 
   /// Extracts an optional from the receiver.
