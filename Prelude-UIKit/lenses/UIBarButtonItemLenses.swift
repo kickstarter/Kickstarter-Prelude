@@ -9,7 +9,9 @@ public protocol UIBarButtonItemProtocol: UIBarItemProtocol {
   var customView: UIView? { get set }
   var action: Selector? { get set }
   var target: AnyObject? { get set }
-  func setBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState, barMetrics: UIBarMetrics)
+  func setBackgroundImage(_ backgroundImage: UIImage?,
+                          forState state: UIControlState,
+                          barMetrics: UIBarMetrics)
   func backgroundImageForState(_ state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
   func setBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState,
                           style: UIBarButtonItemStyle, barMetrics: UIBarMetrics)

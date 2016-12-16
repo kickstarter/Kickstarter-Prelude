@@ -70,11 +70,13 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public func contentHuggingPriorityForAxis(_ axis: UILayoutConstraintAxis) -> Lens<Object, UILayoutPriority> {
-    return Lens(
-      view: { $0.contentHuggingPriorityForAxis(axis) },
-      set: { $1.setContentHuggingPriority($0, forAxis: axis); return $1 }
-    )
+  public func contentHuggingPriorityForAxis(_ axis: UILayoutConstraintAxis)
+    -> Lens<Object, UILayoutPriority> {
+
+      return Lens(
+        view: { $0.contentHuggingPriorityForAxis(axis) },
+        set: { $1.setContentHuggingPriority($0, forAxis: axis); return $1 }
+      )
   }
 
   public var contentMode: Lens<Object, UIViewContentMode> {

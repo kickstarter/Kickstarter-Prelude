@@ -86,7 +86,6 @@ private func allTargetsSelectorsAndEvents(forControl control: UIControlProtocol)
         .filter { mask & $0 != 0 }
     }
 
-
     return []
 //    bitComponents(forMask: control.allControlEvents.rawValue)
 //      .map(UIControlEvents.init(rawValue:))
