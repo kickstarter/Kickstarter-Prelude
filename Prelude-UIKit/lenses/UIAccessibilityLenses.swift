@@ -63,7 +63,7 @@ public extension LensHolder where Object: KSObjectProtocol {
 
 // UIAccessibilityContainer
 public extension LensHolder where Object: NSObject {
-  public var accessibilityElements: Lens<Object, [AnyObject]?> {
+  public var accessibilityElements: Lens<Object, [Any]?> {
     return Lens(
       view: { $0.accessibilityElements },
       set: { $1.accessibilityElements = $0; return $1 }

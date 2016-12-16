@@ -723,11 +723,11 @@
 					};
 					A727E0211D0796D600D8FE43 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					A727E02A1D0796D600D8FE43 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					A7FD084C1C81E1DA00332CCB = {
 						LastSwiftMigration = 0820;

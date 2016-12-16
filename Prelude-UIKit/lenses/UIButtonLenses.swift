@@ -5,13 +5,13 @@ import UIKit
 public protocol UIButtonProtocol: UIControlProtocol {
   var adjustsImageWhenDisabled: Bool { get set }
   var adjustsImageWhenHighlighted: Bool { get set }
-  func attributedTitle(for state: UIControlState) -> AttributedString?
+  func attributedTitle(for state: UIControlState) -> NSAttributedString?
   func backgroundImage(for state: UIControlState) -> UIImage?
   var contentEdgeInsets: UIEdgeInsets { get set }
   var imageEdgeInsets: UIEdgeInsets { get set }
   func image(for state: UIControlState) -> UIImage?
   var imageView: UIImageView? { get }
-  func setAttributedTitle(_ title: AttributedString?,
+  func setAttributedTitle(_ title: NSAttributedString?,
                           forState state: UIControlState)
   func setBackgroundColor(_ backgroundColor: UIColor, forState state: UIControlState)
   func setBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState)
@@ -41,16 +41,16 @@ public extension LensHolder where Object: UIButtonProtocol {
     )
   }
 
-  public func attributedTitle(forState state: UIControlState) -> Lens<Object, AttributedString> {
+  public func attributedTitle(forState state: UIControlState) -> Lens<Object, NSAttributedString> {
     return Lens(
-      view: { $0.attributedTitle(for: state) ?? AttributedString(string: "") },
+      view: { $0.attributedTitle(for: state) ?? NSAttributedString(string: "") },
       set: { $1.setAttributedTitle($0, forState: state); return $1 }
     )
   }
 
   public func backgroundColor(forState state: UIControlState) -> Lens<Object, UIColor> {
     return Lens(
-      view: { _ in .clear() },
+      view: { _ in UIColor.clear },
       set: { $1.setBackgroundColor($0, forState: state); return $1 }
     )
   }
@@ -92,7 +92,7 @@ public extension LensHolder where Object: UIButtonProtocol {
 
   public func titleColor(forState state: UIControlState) -> Lens<Object, UIColor> {
     return Lens(
-      view: { $0.titleColor(for: state) ?? .clear() },
+      view: { $0.titleColor(for: state) ?? .clear },
       set: { $1.setTitleColor($0, forState: state); return $1 }
     )
   }

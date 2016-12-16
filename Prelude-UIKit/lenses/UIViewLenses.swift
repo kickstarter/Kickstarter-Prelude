@@ -2,7 +2,7 @@ import Prelude
 import UIKit
 
 public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
-  func addConstraints(constraints: [NSLayoutConstraint])
+  func addConstraints(_ constraints: [NSLayoutConstraint])
   var alpha: CGFloat { get set }
   var backgroundColor: UIColor? { get set }
   var clipsToBounds: Bool { get set }
@@ -15,7 +15,7 @@ public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, Le
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
-  func removeConstraints(constraints: [NSLayoutConstraint])
+  func removeConstraints(_ constraints: [NSLayoutConstraint])
   func setContentCompressionResistancePriority(_ priority: UILayoutPriority,
                                                forAxis axis: UILayoutConstraintAxis)
   func setContentHuggingPriority(_ priority: UILayoutPriority,
@@ -38,7 +38,7 @@ public extension LensHolder where Object: UIViewProtocol {
 
   public var backgroundColor: Lens<Object, UIColor> {
     return Lens(
-      view: { $0.backgroundColor ?? .clear() },
+      view: { $0.backgroundColor ?? .clear },
       set: { $1.backgroundColor = $0; return $1 }
     )
   }
@@ -192,7 +192,7 @@ public extension LensType where Whole: UIViewProtocol, Part == CALayer {
     return Whole.lens.layer • Part.lens.masksToBounds
   }
 
-  public var shadowColor: Lens<Whole, CGColorRef?> {
+  public var shadowColor: Lens<Whole, CGColor?> {
     return Whole.lens.layer • CALayer.lens.shadowColor
   }
 

@@ -18,8 +18,8 @@ extension UIImage {
       let context = UIGraphicsGetCurrentContext()
     #endif
 
-    context?.setFillColor(color.cgColor)
-    context?.fill(pixel)
+    context.setFillColor(color.cgColor)
+    context.fill(pixel)
 
     #if swift(>=2.3)
       return UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()

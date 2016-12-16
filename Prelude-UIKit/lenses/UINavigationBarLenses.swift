@@ -2,11 +2,11 @@ import Prelude
 import UIKit
 
 public protocol UINavigationBarProtocol: UIViewProtocol {
-  func backgroundImageForBarMetrics(barMetrics: UIBarMetrics) -> UIImage?
+  func backgroundImageForBarMetrics(_ barMetrics: UIBarMetrics) -> UIImage?
   var barTintColor: UIColor? { get set }
-  func setBackgroundImage(backgroundImage: UIImage?, forBarMetrics barMetrics: UIBarMetrics)
+  func setBackgroundImage(_ backgroundImage: UIImage?, forBarMetrics barMetrics: UIBarMetrics)
   var shadowImage: UIImage? { get set }
-  var titleTextAttributes: [String: AnyObject]? { get set }
+  var titleTextAttributes: [String: Any]? { get set }
   var translucent: Bool { get set }
 }
 
@@ -34,7 +34,7 @@ public extension LensHolder where Object: UINavigationBarProtocol {
     )
   }
 
-  public var titleTextAttributes: Lens<Object, [String: AnyObject]> {
+  public var titleTextAttributes: Lens<Object, [String: Any]> {
     return Lens(
       view: { $0.titleTextAttributes ?? [:] },
       set: { $1.titleTextAttributes = $0; return $1; }
@@ -47,5 +47,4 @@ public extension LensHolder where Object: UINavigationBarProtocol {
       set: { $1.translucent = $0; return $1; }
     )
   }
-
 }
