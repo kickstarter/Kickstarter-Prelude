@@ -227,8 +227,8 @@ extension LensType where Whole == Project, Part == Location {
 
 let p7 = project
   |> Project.lens.name .~ "Mural in Brooklyn"
-  <> Project.lens.creator.name .~ "Saunders"
-  <> Project.lens.creator.location.name .~ "Greenpoint"
+  |> Project.lens.creator.name .~ "Saunders"
+  |> Project.lens.creator.location.name .~ "Greenpoint"
 p7.name
 p7.creator.name
 p7.creator.location.name
@@ -272,8 +272,8 @@ let moveCreatorToGreenpoint = Project.lens.creator.location.name .~ "Greenpoint"
 
 let p10 = project
   |> Project.lens.name .~ "Mural in Brooklyn"
-  <> changeCreatorToSaunders
-  <> moveCreatorToGreenpoint
+  |> changeCreatorToSaunders
+  |> moveCreatorToGreenpoint
 p10.name
 p10.creator.name
 p10.creator.location.name

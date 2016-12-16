@@ -17,7 +17,7 @@ This is precisely what `compact` does:
 
 let xs: [Int?] = [1, 2, nil, 3, 4, nil, nil, 5, nil]
 xs.compact()
-xs.compact().reduce(0, combine: +)
+xs.compact().reduce(0, +)
 
 /*:
 The following will not compile because `+` does not know how to operate on optional integers:

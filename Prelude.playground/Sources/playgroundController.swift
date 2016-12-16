@@ -101,8 +101,8 @@ public func playgroundControllers(device: Device = .phone4_7inch,
 
     child.view.frame = parent.view.frame
 
-    parent.view.backgroundColor = .white()
-    child.view.backgroundColor = .white()
+    parent.view.backgroundColor = .white
+    child.view.backgroundColor = .white
 
     let allTraits = UITraitCollection.init(traitsFrom: [traits, additionalTraits])
     parent.setOverrideTraitCollection(allTraits, forChildViewController: child)

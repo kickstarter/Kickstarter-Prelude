@@ -27,7 +27,7 @@ infix operator ?|> : LeftApplyPrecendence
 infix operator • : FunctionCompositionPrecedence
 
 /// Semigroup binary operation
-infix operator <> : AdditionPrecedence
+infix operator <> : FunctionCompositionPrecedence
 
 /// Semigroup operation partially applied on right
 prefix operator <>

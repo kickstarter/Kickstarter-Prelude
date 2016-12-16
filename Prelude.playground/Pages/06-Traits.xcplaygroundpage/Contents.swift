@@ -18,15 +18,15 @@ import XCPlayground
 
 let buttonStyle =
   UIButton.lens.contentEdgeInsets %~~ {
-      $1.traitCollection.userInterfaceIdiom == .Phone ? .init(all: 8) : .init(all: 16)
+      $1.traitCollection.userInterfaceIdiom == .phone ? .init(all: 8) : .init(all: 16)
     }
     <> UIButton.lens.titleLabel.font %~~ {
-      $1.traitCollection.userInterfaceIdiom == .Phone ?
-        .preferredFontForTextStyle(UIFontTextStyleCallout) :
-        .preferredFontForTextStyle(UIFontTextStyleTitle2)
+      $1.traitCollection.userInterfaceIdiom == .phone
+        ? .preferredFont(forTextStyle: .callout)
+        : .preferredFont(forTextStyle: .title2)
     }
     <> UIButton.lens.layer.cornerRadius %~~ {
-      if $1.traitCollection.userInterfaceIdiom == .Phone {
+      if $1.traitCollection.userInterfaceIdiom == .phone {
         return 3.0
       }
       return 8.0
@@ -37,7 +37,7 @@ let buttonStyle =
  function called `traitsController` that creates a parent and child controller with a specified set
  of traits. We can then create a button and add it to the child controller's view:
  */
-let (parent, child) = playgroundControllers(device: .phone4inch, orientation: .landscape)
+let (parent, child) = playgroundControllers(device: .phone5_5inch, orientation: .landscape)
 let button = UIButton()
 child.view.addSubview(button)
 
@@ -45,10 +45,10 @@ child.view.addSubview(button)
  With that set up we can now perform a styling for a button:
  */
 button
-  |> UIButton.lens.title(forState: .Normal) .~ "Hello world"
+  |> UIButton.lens.title(forState: .normal) .~ "Hello world"
   |> UIButton.lens.frame.origin .~ .init(x: 50, y: 50)
-  |> UIButton.lens.titleColor(forState: .Normal) .~ .whiteColor()
-  |> UIButton.lens.backgroundColor(forState: .Normal) .~ .redColor()
+  |> UIButton.lens.titleColor(forState: .normal) .~ .white
+  |> UIButton.lens.backgroundColor(forState: .normal) .~ .red
   |> UIButton.lens.layer.masksToBounds .~ true
   |> buttonStyle
 button.sizeToFit()
@@ -56,3 +56,4 @@ button.sizeToFit()
 let frame = parent.view.frame
 XCPlaygroundPage.currentPage.liveView = parent
 parent.view.frame = frame
+
