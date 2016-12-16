@@ -245,7 +245,7 @@ extension Either where A: EitherType, A.B == B {
 
  - returns: A function that performs case analysis on an `Either` value.
  */
-public func either <A, B, C> (_ ifLeft: @escaping (A) -> C, ifRight: @escaping (B) -> C) -> ((Either<A, B>) -> C) {
+public func either <A, B, C> (ifLeft: @escaping (A) -> C, ifRight: @escaping (B) -> C) -> ((Either<A, B>) -> C) {
   return { either in either.ifLeft(ifLeft, ifRight: ifRight) }
 }
 

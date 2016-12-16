@@ -32,7 +32,7 @@ extension OptionalType {
 
    - parameter body: A procedure to call on the wrapped value of `self` if present.
    */
-  public func doIfSome(body: (Wrapped) throws -> ()) rethrows {
+  public func doIfSome(_ body: (Wrapped) throws -> ()) rethrows {
     if let value = self.optional {
       try body(value)
     }
@@ -45,7 +45,7 @@ extension OptionalType {
    - returns: If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil`
               is returned.
    */
-  public func filter(predicate: Wrapped -> Bool) -> Wrapped? {
+  public func filter(_ predicate: (Wrapped) -> Bool) -> Wrapped? {
     if let value = self.optional, predicate(value) {
       return value
     }

@@ -68,7 +68,7 @@ final class EitherTests: XCTest {
     let square: (Int) -> Int = { $0 * $0 }
     let length: (String) -> Int = { $0.characters.count }
 
-    XCTAssertEqual(4, .left(1) |> either(ifLeft: square, ifRight: length))
+    XCTAssertEqual(4, Either<Int, String>.left(1) |> either(ifLeft: square, ifRight: length))
     XCTAssertEqual(5, .right("hello") |> either(ifLeft: square, ifRight: length))
   }
 
