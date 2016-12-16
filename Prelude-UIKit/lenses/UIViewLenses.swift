@@ -166,7 +166,6 @@ public extension LensType where Whole: UIViewProtocol, Part == CGPoint {
   }
 }
 
-
 public extension LensType where Whole: UIViewProtocol, Part == CGSize {
   public var width: Lens<Whole, CGFloat> {
     return Whole.lens.frame.size • CGSize.lens.width

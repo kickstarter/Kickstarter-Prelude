@@ -5,5 +5,6 @@ class UIButtonTests: XCTestCase {
   func testSetBackgroundColor() {
     let button = UIButton()
     button.setBackgroundColor(.white(), forState: [])
+    XCTAssertNotNil(button.backgroundImageForState(.Normal))
   }
 }

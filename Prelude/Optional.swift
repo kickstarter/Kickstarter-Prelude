@@ -1,6 +1,6 @@
 /// An optional protocol for use in type constraints.
 public protocol OptionalType {
-  /// The type contained in the otpional.
+  /// The type contained in the optional.
   associatedtype Wrapped
 
   /// Extracts an optional from the receiver.
@@ -26,13 +26,26 @@ extension OptionalType {
     return self.optional!
   }
 
+  // swiftlint:disable valid_docs
+  /**
+   Call `body` on wrapped value of `self` if present. An analog to `Sequence.forEach`.
+
+   - parameter body: A procedure to call on the wrapped value of `self` if present.
+   */
+  public func doIfSome(body: (Wrapped) throws -> ()) rethrows {
+    if let value = self.optional {
+      try body(value)
+    }
+  }
+  // swiftlint:enable valid_docs
+
   /**
    - parameter predicate: A predicate that determines if the wrapped value should be kept or not.
 
    - returns: If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil`
               is returned.
    */
-  public func optionalFilter(_ predicate: (Wrapped) -> Bool) -> Wrapped? {
+  public func filter(predicate: Wrapped -> Bool) -> Wrapped? {
     if let value = self.optional, predicate(value) {
       return value
     }
@@ -97,4 +110,18 @@ public func == <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
  */
 public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
   return !(lhs == rhs)
+}
+
+/**
+ Wraps a non-optional value into an optional, and leaves an optional value unchanged.
+
+ This can be useful for dealing with Swift API changes, in which methods formally returned non-optional
+ values now return optional values.
+
+ - parameter x: An optional value.
+
+ - returns: A wrapped optional value.
+ */
+public func optionalize<A>(x: A?) -> A? {
+  return x
 }

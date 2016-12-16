@@ -284,7 +284,6 @@ p10.creator.location.name
 
  */
 
-
 // swiftlint:disable line_length
 
 /*:

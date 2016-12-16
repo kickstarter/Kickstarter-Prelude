@@ -65,8 +65,6 @@ final class EitherTests: XCTest {
   }
 
   func testEitherCaseAnalysis() {
-
-
     let square: (Int) -> Int = { $0 * $0 }
     let length: (String) -> Int = { $0.characters.count }
 
