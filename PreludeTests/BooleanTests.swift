@@ -1,7 +1,7 @@
 import XCTest
 import Prelude
 
-final class BooleanTypeTests: XCTestCase {
+final class BooleanTests: XCTestCase {
 
   func testIsTrue() {
     XCTAssertTrue(isTrue(true))
