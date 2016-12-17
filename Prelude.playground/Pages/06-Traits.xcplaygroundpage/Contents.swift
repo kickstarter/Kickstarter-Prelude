@@ -56,4 +56,3 @@ button.sizeToFit()
 let frame = parent.view.frame
 XCPlaygroundPage.currentPage.liveView = parent
 parent.view.frame = frame
-
