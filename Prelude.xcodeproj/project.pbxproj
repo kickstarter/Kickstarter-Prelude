@@ -737,11 +737,11 @@
 					};
 					CA0923F71BB6291900C9EC88 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					CA0924011BB6291900C9EC88 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -1087,7 +1087,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOS";
 				PRODUCT_NAME = Prelude_UIKit;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1106,7 +1105,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOS";
 				PRODUCT_NAME = Prelude_UIKit;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -1119,7 +1117,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Debug;
@@ -1133,7 +1130,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Release;
@@ -1156,8 +1152,7 @@
 				PRODUCT_NAME = Prelude_UIKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1179,7 +1174,6 @@
 				PRODUCT_NAME = Prelude_UIKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1198,7 +1192,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1215,7 +1208,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Prelude-UIKit-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1235,8 +1227,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1256,7 +1247,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1270,7 +1260,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1284,7 +1273,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1338,7 +1326,7 @@
 				SDKROOT = appletvos;
 				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1388,7 +1376,7 @@
 				SDKROOT = appletvos;
 				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
@@ -1410,7 +1398,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1427,7 +1414,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.Prelude;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -1439,7 +1425,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1451,7 +1436,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kickstarter.PreludeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

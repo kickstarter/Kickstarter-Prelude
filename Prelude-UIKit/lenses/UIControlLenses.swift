@@ -2,7 +2,7 @@
 import Prelude
 import UIKit
 
-public typealias TargetSelectorControlEvent = (NSObject, Selector, UIControlEvents)
+public typealias TargetSelectorControlEvent = (Any, Selector, UIControlEvents)
 
 public protocol UIControlProtocol: UIViewProtocol {
   func actions(forTarget target: Any?, forControlEvent controlEvent: UIControlEvents) -> [String]?
@@ -86,16 +86,15 @@ private func allTargetsSelectorsAndEvents(forControl control: UIControlProtocol)
         .filter { mask & $0 != 0 }
     }
 
-    return []
-//    bitComponents(forMask: control.allControlEvents.rawValue)
-//      .map(UIControlEvents.init(rawValue:))
-//      .flatMap { event in
-//        control.allTargets
-//          .flatMap { target in
-//            (control.actions(forTarget: target, forControlEvent: event) ?? [])
-//              .map { action in
-//                return (target, Selector(action), event)
-//            }
-//        }
-//    }
+    return bitComponents(forMask: control.allControlEvents.rawValue)
+      .map(UIControlEvents.init(rawValue:))
+      .flatMap { event in
+        control.allTargets
+          .flatMap { target in
+            (control.actions(forTarget: target, forControlEvent: event) ?? [])
+              .map { action in
+                return (target as Any, Selector(action), event)
+            }
+        }
+    }
 }
