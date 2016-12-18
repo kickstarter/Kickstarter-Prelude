@@ -9,32 +9,29 @@ public protocol UIBarButtonItemProtocol: UIBarItemProtocol {
   var customView: UIView? { get set }
   var action: Selector? { get set }
   var target: AnyObject? { get set }
-  func setBackgroundImage(_ backgroundImage: UIImage?,
-                          forState state: UIControlState,
+  func setBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState, barMetrics: UIBarMetrics)
+  func backgroundImage(for state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
+  func setBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState, style: UIBarButtonItemStyle,
                           barMetrics: UIBarMetrics)
-  func backgroundImageForState(_ state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
-  func setBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState,
-                          style: UIBarButtonItemStyle, barMetrics: UIBarMetrics)
-  func backgroundImageForState(_ state: UIControlState, style: UIBarButtonItemStyle, barMetrics: UIBarMetrics)
+  func backgroundImage(for state: UIControlState, style: UIBarButtonItemStyle, barMetrics: UIBarMetrics)
     -> UIImage?
   var tintColor: UIColor? { get set }
-  func setBackgroundVerticalPositionAdjustment(_ adjustment: CGFloat, forBarMetrics barMetrics: UIBarMetrics)
-  func backgroundVerticalPositionAdjustmentForBarMetrics(_ barMetrics: UIBarMetrics) -> CGFloat
-  func setTitlePositionAdjustment(_ adjustment: UIOffset, forBarMetrics barMetrics: UIBarMetrics)
-  func titlePositionAdjustmentForBarMetrics(_ barMetrics: UIBarMetrics) -> UIOffset
-  func setBackButtonBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState,
+  func setBackgroundVerticalPositionAdjustment(_ adjustment: CGFloat, for barMetrics: UIBarMetrics)
+  func backgroundVerticalPositionAdjustment(for barMetrics: UIBarMetrics) -> CGFloat
+  func setTitlePositionAdjustment(_ adjustment: UIOffset, for barMetrics: UIBarMetrics)
+  func titlePositionAdjustment(for barMetrics: UIBarMetrics) -> UIOffset
+  func setBackButtonBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState,
                                     barMetrics: UIBarMetrics)
-  func backButtonBackgroundImageForState(_ state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
-  func setBackButtonTitlePositionAdjustment(_ adjustment: UIOffset, forBarMetrics barMetrics: UIBarMetrics)
-  func backButtonTitlePositionAdjustmentForBarMetrics(_ barMetrics: UIBarMetrics) -> UIOffset
-  func setBackButtonBackgroundVerticalPositionAdjustment(_ adjustment: CGFloat,
-                                                         forBarMetrics barMetrics: UIBarMetrics)
-  func backButtonBackgroundVerticalPositionAdjustmentForBarMetrics(_ barMetrics: UIBarMetrics) -> CGFloat
+  func backButtonBackgroundImage(for state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
+  func setBackButtonTitlePositionAdjustment(_ adjustment: UIOffset, for barMetrics: UIBarMetrics)
+  func backButtonTitlePositionAdjustment(for barMetrics: UIBarMetrics) -> UIOffset
+  func setBackButtonBackgroundVerticalPositionAdjustment(_ adjustment: CGFloat, for barMetrics: UIBarMetrics)
+  func backButtonBackgroundVerticalPositionAdjustment(for barMetrics: UIBarMetrics) -> CGFloat
 }
 
 extension UIBarButtonItem: UIBarButtonItemProtocol {}
 
-public extension LensHolder where Object: UIBarButtonItem {
+public extension LensHolder where Object: UIBarButtonItemProtocol {
   public var style: Lens<Object, UIBarButtonItemStyle> {
     return Lens(
       view: { $0.style },
