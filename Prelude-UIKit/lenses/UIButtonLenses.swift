@@ -50,7 +50,7 @@ public extension LensHolder where Object: UIButtonProtocol {
 
   public func backgroundColor(forState state: UIControlState) -> Lens<Object, UIColor> {
     return Lens(
-      view: { _ in UIColor.clear },
+      view: { _ in .clear },
       set: { $1.setBackgroundColor($0, forState: state); return $1 }
     )
   }
