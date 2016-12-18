@@ -63,11 +63,9 @@ public extension LensHolder where Object: UIBarButtonItemProtocol {
   public var targetAction: Lens<Object, (AnyObject, Selector)?> {
     return Lens(
       view: { item in
-        if let target = item.target, let action = item.action {
-          return (target, action)
-        }
-        return nil
-    },
+        guard let target = item.target, let action = item.action else { return nil }
+        return (target, action)
+      },
       set: { $1.target = $0?.0; $1.action = $0?.1 ?? $1.action; return $1 }
     )
   }
