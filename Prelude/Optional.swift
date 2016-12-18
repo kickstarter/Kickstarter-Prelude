@@ -122,6 +122,7 @@ public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
 
  - returns: A wrapped optional value.
  */
+@available(*, deprecated, message: "Don’t use this. It was only necessary for Swift 2.3.")
 public func optionalize<A>(x: A?) -> A? {
   return x
 }
