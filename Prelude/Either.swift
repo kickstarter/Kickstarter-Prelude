@@ -1,7 +1,9 @@
 /// A type representing a choice between two values: left and right.
 public protocol EitherType {
+  // swiftlint:disable type_name
   associatedtype A
   associatedtype B
+  // swiftlint:enable type_name
 
   /**
    Create an `Either` value from a left value.

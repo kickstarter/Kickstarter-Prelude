@@ -10,18 +10,18 @@ class DictionaryTests: XCTestCase {
   }
 
   func testWithAllValuesFrom() {
-    let xs = [1:1, 2:2, 3:3]
-    let ys = [3:4, 4:5, 5:6]
+    let xs = [1: 1, 2: 2, 3: 3]
+    let ys = [3: 4, 4: 5, 5: 6]
 
-    XCTAssertEqual([1:1, 2:2, 3:4, 4:5, 5:6], xs.withAllValuesFrom(ys))
+    XCTAssertEqual([1: 1, 2: 2, 3: 4, 4: 5, 5: 6], xs.withAllValuesFrom(ys))
   }
 
   func test_keyValuePairs() {
     let xs = Dictionary.keyValuePairs([(1, 2), (2, 3), (3, 4)])
-    XCTAssertEqual([1:2, 2:3, 3:4], xs)
+    XCTAssertEqual([1: 2, 2: 3, 3: 4], xs)
 
     let ys = Dictionary.keyValuePairs([(1, 2), (2, 3), (3, 4), (1, 5)])
-    XCTAssertEqual([1:5, 2:3, 3:4], ys)
+    XCTAssertEqual([1: 5, 2: 3, 3: 4], ys)
   }
 
   func test_TransformedKeys() {
