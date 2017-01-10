@@ -1,11 +1,11 @@
 import XCTest
 import Prelude_UIKit
 
-private let sizeClasses: [UIUserInterfaceSizeClass] = [.Compact, .Regular]
+private let sizeClasses: [UIUserInterfaceSizeClass] = [.compact, .regular]
 private let sizeClassMatrix = sizeClasses
   .flatMap { horizontal in
     sizeClasses.map { vertical in
-      UITraitCollection(traitsFromCollections: [
+      UITraitCollection(traitsFrom: [
         .init(horizontalSizeClass: horizontal),
         .init(verticalSizeClass: vertical)
         ]

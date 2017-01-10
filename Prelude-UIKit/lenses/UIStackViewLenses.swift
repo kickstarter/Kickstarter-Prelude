@@ -3,7 +3,7 @@ import Prelude
 import UIKit
 
 public protocol UIStackViewProtocol: UIViewProtocol {
-  func addArrangedSubview(view: UIView)
+  func addArrangedSubview(_ view: UIView)
   var alignment: UIStackViewAlignment { get set }
   var arrangedSubviews: [UIView] { get }
   var axis: UILayoutConstraintAxis { get set }

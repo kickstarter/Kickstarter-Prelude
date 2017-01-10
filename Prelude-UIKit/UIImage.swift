@@ -12,19 +12,11 @@ extension UIImage {
     UIGraphicsBeginImageContext(pixel.size)
     defer { UIGraphicsEndImageContext() }
 
-    #if swift(>=2.3)
-      guard let context = UIGraphicsGetCurrentContext() else { return UIImage() }
-    #else
-      let context = UIGraphicsGetCurrentContext()
-    #endif
+    guard let context = UIGraphicsGetCurrentContext() else { return UIImage() }
 
-    CGContextSetFillColorWithColor(context, color.CGColor)
-    CGContextFillRect(context, pixel)
+    context.setFillColor(color.cgColor)
+    context.fill(pixel)
 
-    #if swift(>=2.3)
-      return UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
-    #else
-      return UIGraphicsGetImageFromCurrentImageContext()
-    #endif
+    return UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
   }
 }

@@ -6,7 +6,7 @@
 
  - returns: The value from apply `f` to `x`.
  */
-public func |> <A, B> (x: A, f: A -> B) -> B {
+public func |> <A, B> (x: A, f: (A) -> B) -> B {
   return f(x)
 }
 
@@ -18,7 +18,7 @@ public func |> <A, B> (x: A, f: A -> B) -> B {
 
  - returns: An array of transformed values.
  */
-public func ||> <A, B> (xs: [A], f: A -> B) -> [B] {
+public func ||> <A, B> (xs: [A], f: (A) -> B) -> [B] {
   return xs.map(f)
 }
 
@@ -30,7 +30,7 @@ public func ||> <A, B> (xs: [A], f: A -> B) -> [B] {
 
  - returns: An optional transformed value.
  */
-public func ?|> <A, B> (x: A?, f: A -> B) -> B? {
+public func ?|> <A, B> (x: A?, f: (A) -> B) -> B? {
   return x.map(f)
 }
 
@@ -42,7 +42,7 @@ public func ?|> <A, B> (x: A?, f: A -> B) -> B? {
 
  - returns: A function that is the composition of `f` and `g`.
  */
-public func • <A, B, C> (g: B -> C, f: A -> B) -> (A -> C) {
+public func • <A, B, C> (g: @escaping (B) -> C, f: @escaping (A) -> B) -> ((A) -> C) {
   return { x in g(f(x)) }
 }
 
@@ -55,7 +55,7 @@ public func • <A, B, C> (g: B -> C, f: A -> B) -> (A -> C) {
 
  - returns: A function that is the composition of `f` and `g`.
  */
-public func <> <A> (f: A -> A, g: A -> A) -> (A -> A) {
+public func <> <A> (f: @escaping (A) -> A, g: @escaping (A) -> A) -> ((A) -> A) {
   return { g(f($0)) }
 }
 
@@ -66,7 +66,7 @@ public func <> <A> (f: A -> A, g: A -> A) -> (A -> A) {
 
  - returns: `x`
  */
-public func id <A> (x: A) -> A {
+public func id <A> (_ x: A) -> A {
   return x
 }
 
@@ -77,6 +77,6 @@ public func id <A> (x: A) -> A {
 
  - returns: A function that returns `b` no matter what it is fed.
  */
-public func const <A, B> (b: B) -> (A -> B) {
+public func const <A, B> (_ b: B) -> ((A) -> B) {
   return { _ in b }
 }

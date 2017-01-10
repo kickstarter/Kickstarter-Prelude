@@ -7,7 +7,7 @@ extension UIButton {
    - parameter backgroundColor: The color to set.
    - parameter state:           The state for the color to take affect.
    */
-  public func setBackgroundColor(backgroundColor: UIColor, forState state: UIControlState) {
-    self.setBackgroundImage(.pixel(ofColor: backgroundColor), forState: state)
+  public func setBackgroundColor(_ backgroundColor: UIColor, forState state: UIControlState) {
+    self.setBackgroundImage(.pixel(ofColor: backgroundColor), for: state)
   }
 }

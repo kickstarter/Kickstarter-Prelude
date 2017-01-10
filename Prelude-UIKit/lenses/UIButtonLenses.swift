@@ -5,22 +5,22 @@ import UIKit
 public protocol UIButtonProtocol: UIControlProtocol {
   var adjustsImageWhenDisabled: Bool { get set }
   var adjustsImageWhenHighlighted: Bool { get set }
-  func attributedTitleForState(state: UIControlState) -> NSAttributedString?
-  func backgroundImageForState(state: UIControlState) -> UIImage?
+  func attributedTitle(for state: UIControlState) -> NSAttributedString?
+  func backgroundImage(for state: UIControlState) -> UIImage?
   var contentEdgeInsets: UIEdgeInsets { get set }
   var imageEdgeInsets: UIEdgeInsets { get set }
-  func imageForState(state: UIControlState) -> UIImage?
+  func image(for state: UIControlState) -> UIImage?
   var imageView: UIImageView? { get }
-  func setAttributedTitle(title: NSAttributedString?,
+  func setAttributedTitle(_ title: NSAttributedString?,
                           forState state: UIControlState)
-  func setBackgroundColor(backgroundColor: UIColor, forState state: UIControlState)
-  func setBackgroundImage(backgroundImage: UIImage?, forState state: UIControlState)
-  func setImage(image: UIImage?, forState: UIControlState)
-  func setTitle(title: String?, forState: UIControlState)
-  func setTitleColor(color: UIColor?, forState: UIControlState)
-  func titleColorForState(state: UIControlState) -> UIColor?
+  func setBackgroundColor(_ backgroundColor: UIColor, forState state: UIControlState)
+  func setBackgroundImage(_ backgroundImage: UIImage?, forState state: UIControlState)
+  func setImage(_ image: UIImage?, forState: UIControlState)
+  func setTitle(_ title: String?, forState: UIControlState)
+  func setTitleColor(_ color: UIColor?, forState: UIControlState)
+  func titleColor(for state: UIControlState) -> UIColor?
   var titleEdgeInsets: UIEdgeInsets { get set }
-  func titleForState(state: UIControlState) -> String?
+  func title(for state: UIControlState) -> String?
   var titleLabel: UILabel? { get }
 }
 
@@ -43,21 +43,21 @@ public extension LensHolder where Object: UIButtonProtocol {
 
   public func attributedTitle(forState state: UIControlState) -> Lens<Object, NSAttributedString> {
     return Lens(
-      view: { $0.attributedTitleForState(state) ?? NSAttributedString(string: "") },
+      view: { $0.attributedTitle(for: state) ?? NSAttributedString(string: "") },
       set: { $1.setAttributedTitle($0, forState: state); return $1 }
     )
   }
 
   public func backgroundColor(forState state: UIControlState) -> Lens<Object, UIColor> {
     return Lens(
-      view: { _ in .clearColor() },
+      view: { _ in .clear },
       set: { $1.setBackgroundColor($0, forState: state); return $1 }
     )
   }
 
   public func backgroundImage(forState state: UIControlState) -> Lens<Object, UIImage?> {
     return Lens(
-      view: { $0.backgroundImageForState(state) },
+      view: { $0.backgroundImage(for: state) },
       set: { $1.setBackgroundImage($0, forState: state); return $1 }
     )
   }
@@ -78,7 +78,7 @@ public extension LensHolder where Object: UIButtonProtocol {
 
   public func image(forState state: UIControlState) -> Lens<Object, UIImage?> {
     return Lens(
-      view: { $0.imageForState(state) },
+      view: { $0.image(for: state) },
       set: { $1.setImage($0, forState: state); return $1 }
     )
   }
@@ -92,7 +92,7 @@ public extension LensHolder where Object: UIButtonProtocol {
 
   public func titleColor(forState state: UIControlState) -> Lens<Object, UIColor> {
     return Lens(
-      view: { $0.titleColorForState(state) ?? .clearColor() },
+      view: { $0.titleColor(for: state) ?? .clear },
       set: { $1.setTitleColor($0, forState: state); return $1 }
     )
   }
@@ -113,7 +113,7 @@ public extension LensHolder where Object: UIButtonProtocol {
 
   public func title(forState state: UIControlState) -> Lens<Object, String?> {
     return Lens(
-      view: { $0.titleForState(state) },
+      view: { $0.title(for: state) },
       set: { $1.setTitle($0, forState: state); return $1 }
     )
   }

@@ -23,7 +23,7 @@ extension Comparator : Monoid {
     return Comparator<A> { _, _ in .eq }
   }
 
-  public func op(other: Comparator) -> Comparator {
+  public func op(_ other: Comparator) -> Comparator {
     return Comparator { lhs, rhs in self.compare(lhs, rhs) <> other.compare(lhs, rhs) }
   }
 }

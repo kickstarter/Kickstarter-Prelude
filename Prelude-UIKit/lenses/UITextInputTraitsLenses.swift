@@ -7,7 +7,7 @@ public protocol UITextInputTraitsProtocol: NSObjectProtocol {
   var keyboardAppearance: UIKeyboardAppearance { get set }
   var keyboardType: UIKeyboardType { get set }
   var returnKeyType: UIReturnKeyType { get set }
-  var secureTextEntry: Bool { get set }
+  var isSecureTextEntry: Bool { get set }
   var spellCheckingType: UITextSpellCheckingType { get set }
 }
 
@@ -49,8 +49,8 @@ public extension LensHolder where Object: UITextInputTraitsProtocol {
 
   public var secureTextEntry: Lens<Object, Bool> {
     return Lens(
-      view: { $0.secureTextEntry },
-      set: { $1.secureTextEntry = $0; return $1 }
+      view: { $0.isSecureTextEntry },
+      set: { $1.isSecureTextEntry = $0; return $1 }
     )
   }
 

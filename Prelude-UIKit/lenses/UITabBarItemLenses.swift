@@ -9,7 +9,7 @@ public protocol UITabBarItemProtocol: UIBarItemProtocol {
 
 extension UITabBarItem: UITabBarItemProtocol {}
 
-public extension LensHolder where Object: UITabBarItem {
+public extension LensHolder where Object: UITabBarItemProtocol {
   public var selectedImage: Lens<Object, UIImage?> {
     return Lens(
       view: { $0.selectedImage },

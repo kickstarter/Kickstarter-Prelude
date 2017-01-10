@@ -1,7 +1,7 @@
 import Prelude
 import UIKit
 
-public protocol UITextViewProtocol: UIViewProtocol, UITextInputTraitsProtocol {
+public protocol UITextViewProtocol: UIScrollViewProtocol, UITextInputTraitsProtocol {
   #if os(iOS)
   var dataDetectorTypes: UIDataDetectorTypes { get set }
   #endif

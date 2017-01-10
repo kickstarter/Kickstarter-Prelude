@@ -1,9 +1,9 @@
 import XCTest
 @testable import Prelude
 
-private let square: Int -> Int = { $0 * $0 }
-private let add: Int -> Int -> Int = { lhs in { lhs + $0 } }
-private let incr: Int -> Int = add(1)
+private let square: (Int) -> Int = { $0 * $0 }
+private let add: (Int) -> (Int) -> Int = { lhs in { lhs + $0 } }
+private let incr: (Int) -> Int = add(1)
 
 final class LensTests: XCTestCase {
   private let user = User(id: 1, location: Location(id: 2, city: City(id: 3)), name: "blob")

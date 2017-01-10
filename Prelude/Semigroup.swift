@@ -1,7 +1,7 @@
 /// A type is a Semigroup if it has an associative, binary operation.
 public protocol Semigroup {
   /// An associative operation, i.e. a.op(b.op(c)) == (a.op(b)).op(c)
-  func op(other: Self) -> Self
+  func op(_ other: Self) -> Self
 }
 
 /**
@@ -24,7 +24,7 @@ public func <> <S: Semigroup> (lhs: S, rhs: S) -> S {
 
  - returns: A semigroup transformation.
  */
-public prefix func <> <S: Semigroup> (b: S) -> (S -> S) {
+public prefix func <> <S: Semigroup> (b: S) -> ((S) -> S) {
   return { $0 <> b }
 }
 
@@ -36,6 +36,6 @@ public prefix func <> <S: Semigroup> (b: S) -> (S -> S) {
 
  - returns: A semigroup transformation.
  */
-public postfix func <> <S: Semigroup> (a: S) -> (S -> S) {
+public postfix func <> <S: Semigroup> (a: S) -> ((S) -> S) {
   return { a <> $0 }
 }

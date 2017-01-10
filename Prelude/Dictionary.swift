@@ -23,7 +23,7 @@ public extension Dictionary {
 
    - returns: A merged dictionary.
    */
-  public func withAllValuesFrom(other: Dictionary) -> Dictionary {
+  public func withAllValuesFrom(_ other: Dictionary) -> Dictionary {
     var result = self
     other.forEach { result[$0] = $1 }
     return result
@@ -37,7 +37,7 @@ public extension Dictionary {
 
    - returns: A dictionary.
    */
-  public static func keyValuePairs(pairs: [(Key, Value)]) -> Dictionary {
+  public static func keyValuePairs(_ pairs: [(Key, Value)]) -> Dictionary {
     var result = Dictionary()
     pairs.forEach { result[$0] = $1 }
     return result
@@ -52,7 +52,7 @@ public extension Dictionary {
 
    - returns: A new dictionary with keys transformed.
    */
-  public func transformedKeys(f: Key -> Key) -> Dictionary {
+  public func transformedKeys(_ f: (Key) -> Key) -> Dictionary {
     return Dictionary.keyValuePairs(self.map { (f($0), $1) })
   }
 }
@@ -66,7 +66,7 @@ extension Dictionary where Key: Semigroup {
 
    - returns: A new dictionary.
    */
-  public func prefixedKeys(prefix: Key) -> Dictionary {
+  public func prefixedKeys(_ prefix: Key) -> Dictionary {
     return transformedKeys(prefix<>)
   }
 }

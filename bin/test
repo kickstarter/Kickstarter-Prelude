@@ -8,13 +8,13 @@ if [ $# -eq 0 ]; then
 fi
 
 if [ "$1" == "iOS" ] || [ "$1" == "UIKit-iOS" ]; then
-  DESTINATION='platform=iOS Simulator,name=iPhone 6,OS=9.3'
+  DESTINATION='platform=iOS Simulator,name=iPhone 6,OS='
 else
-  DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2'
+  DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p,OS='
 fi
 
 xcodebuild \
-  -destination "$DESTINATION" \
+  -destination "$DESTINATION$2" \
   -scheme Prelude-$1 \
   clean test \
   | tee $CIRCLE_ARTIFACTS/xcode_raw.log \

@@ -3,11 +3,11 @@ import Prelude
 import UIKit
 
 public protocol CALayerProtocol: KSObjectProtocol {
-  var borderColor: CGColorRef? { get set }
+  var borderColor: CGColor? { get set }
   var borderWidth: CGFloat { get set }
   var cornerRadius: CGFloat { get set }
   var masksToBounds: Bool { get set }
-  var shadowColor: CGColorRef? { get set }
+  var shadowColor: CGColor? { get set }
   var shadowOffset: CGSize { get set }
   var shadowOpacity: Float { get set }
   var shadowRadius: CGFloat { get set }
@@ -17,7 +17,7 @@ public protocol CALayerProtocol: KSObjectProtocol {
 extension CALayer: CALayerProtocol {}
 
 extension LensHolder where Object: CALayerProtocol {
-  public var borderColor: Lens<Object, CGColorRef?> {
+  public var borderColor: Lens<Object, CGColor?> {
     return Lens(
       view: { $0.borderColor },
       set: { $1.borderColor = $0; return $1 }
@@ -44,7 +44,7 @@ extension LensHolder where Object: CALayerProtocol {
     )
   }
 
-  public var shadowColor: Lens<Object, CGColorRef?> {
+  public var shadowColor: Lens<Object, CGColor?> {
     return Lens(
       view: { $0.shadowColor },
       set: { $1.shadowColor = $0; return $1 }

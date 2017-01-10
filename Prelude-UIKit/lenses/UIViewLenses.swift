@@ -2,23 +2,23 @@ import Prelude
 import UIKit
 
 public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
-  func addConstraints(constraints: [NSLayoutConstraint])
+  func addConstraints(_ constraints: [NSLayoutConstraint])
   var alpha: CGFloat { get set }
   var backgroundColor: UIColor? { get set }
   var clipsToBounds: Bool { get set }
   var constraints: [NSLayoutConstraint] { get }
-  func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
-  func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILayoutPriority
+  func contentCompressionResistancePriorityForAxis(_ axis: UILayoutConstraintAxis) -> UILayoutPriority
+  func contentHuggingPriorityForAxis(_ axis: UILayoutConstraintAxis) -> UILayoutPriority
   var contentMode: UIViewContentMode { get set }
   var frame: CGRect { get set }
   var hidden: Bool { get set }
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
-  func removeConstraints(constraints: [NSLayoutConstraint])
-  func setContentCompressionResistancePriority(priority: UILayoutPriority,
+  func removeConstraints(_ constraints: [NSLayoutConstraint])
+  func setContentCompressionResistancePriority(_ priority: UILayoutPriority,
                                                forAxis axis: UILayoutConstraintAxis)
-  func setContentHuggingPriority(priority: UILayoutPriority,
+  func setContentHuggingPriority(_ priority: UILayoutPriority,
                                  forAxis axis: UILayoutConstraintAxis)
   var tag: Int { get set }
   var tintColor: UIColor! { get set }
@@ -38,7 +38,7 @@ public extension LensHolder where Object: UIViewProtocol {
 
   public var backgroundColor: Lens<Object, UIColor> {
     return Lens(
-      view: { $0.backgroundColor ?? .clearColor() },
+      view: { $0.backgroundColor ?? .clear },
       set: { $1.backgroundColor = $0; return $1 }
     )
   }
@@ -61,7 +61,7 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public func contentCompressionResistancePriorityForAxis(axis: UILayoutConstraintAxis)
+  public func contentCompressionResistancePriorityForAxis(_ axis: UILayoutConstraintAxis)
     -> Lens<Object, UILayoutPriority> {
 
     return Lens(
@@ -70,11 +70,13 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> Lens<Object, UILayoutPriority> {
-    return Lens(
-      view: { $0.contentHuggingPriorityForAxis(axis) },
-      set: { $1.setContentHuggingPriority($0, forAxis: axis); return $1 }
-    )
+  public func contentHuggingPriorityForAxis(_ axis: UILayoutConstraintAxis)
+    -> Lens<Object, UILayoutPriority> {
+
+      return Lens(
+        view: { $0.contentHuggingPriorityForAxis(axis) },
+        set: { $1.setContentHuggingPriority($0, forAxis: axis); return $1 }
+      )
   }
 
   public var contentMode: Lens<Object, UIViewContentMode> {
@@ -176,7 +178,7 @@ public extension LensType where Whole: UIViewProtocol, Part == CGSize {
 }
 
 public extension LensType where Whole: UIViewProtocol, Part == CALayer {
-  public var borderColor: Lens<Whole, CGColorRef?> {
+  public var borderColor: Lens<Whole, CGColor?> {
     return Whole.lens.layer • Part.lens.borderColor
   }
 
@@ -192,7 +194,7 @@ public extension LensType where Whole: UIViewProtocol, Part == CALayer {
     return Whole.lens.layer • Part.lens.masksToBounds
   }
 
-  public var shadowColor: Lens<Whole, CGColorRef?> {
+  public var shadowColor: Lens<Whole, CGColor?> {
     return Whole.lens.layer • CALayer.lens.shadowColor
   }
 

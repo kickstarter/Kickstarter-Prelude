@@ -2,22 +2,23 @@
 import Prelude
 import UIKit
 
-public typealias TargetSelectorControlEvent = (NSObject, Selector, UIControlEvents)
+public typealias TargetSelectorControlEvent = (Any, Selector, UIControlEvents)
 
 public protocol UIControlProtocol: UIViewProtocol {
-  func actionsForTarget(target: AnyObject?, forControlEvent controlEvent: UIControlEvents) -> [String]?
-  func addTarget(target: AnyObject?, action: Selector, forControlEvents controlEvents: UIControlEvents)
-  func allControlEvents() -> UIControlEvents
-  func allTargets() -> Set<NSObject>
+  func actions(forTarget target: Any?, forControlEvent controlEvent: UIControlEvents) -> [String]?
+  func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents)
+  var allControlEvents: UIControlEvents { get }
+  var allTargets: Set<AnyHashable> { get }
   var contentHorizontalAlignment: UIControlContentHorizontalAlignment { get set }
   var contentVerticalAlignment: UIControlContentVerticalAlignment { get set }
   var enabled: Bool { get set }
   var highlighted: Bool { get set }
-  func removeTarget(target: AnyObject?, action: Selector, forControlEvents controlEvents: UIControlEvents)
+  func removeTarget(_ target: Any?, action: Selector?, for controlEvents: UIControlEvents)
   var selected: Bool { get set }
 }
 
-extension UIControl: UIControlProtocol {}
+extension UIControl: UIControlProtocol {
+}
 
 public extension LensHolder where Object: UIControlProtocol {
 
@@ -25,8 +26,8 @@ public extension LensHolder where Object: UIControlProtocol {
     return Lens(
       view: allTargetsSelectorsAndEvents(forControl:),
       set: { targets, control in
-        control.removeTarget(nil, action: nil, forControlEvents: .AllEvents)
-        targets.forEach(control.addTarget(_:action:forControlEvents:))
+        control.removeTarget(nil, action: nil, for: .allEvents)
+        targets.forEach(control.addTarget(_:action:for:))
         return control
       }
     )
@@ -78,27 +79,22 @@ public extension LensHolder where Object: UIControlProtocol {
 private func allTargetsSelectorsAndEvents(forControl control: UIControlProtocol)
   -> [TargetSelectorControlEvent] {
 
-    return control.allControlEvents().rawValue.bitComponents()
+    return bitComponents(forMask: control.allControlEvents.rawValue)
       .map(UIControlEvents.init(rawValue:))
       .flatMap { event in
-        control.allTargets()
+        control.allTargets
           .flatMap { target in
-            (control.actionsForTarget(target, forControlEvent: event) ?? [])
+            (control.actions(forTarget: target, forControlEvent: event) ?? [])
               .map { action in
-                return (target, Selector(action), event)
+                return (target as Any, Selector(action), event)
             }
         }
     }
 }
 
-extension UInt {
-  /**
-   - returns: An array of bitmask values for an integer.
-   */
-  private func bitComponents() -> [UInt] {
-    let range: Range<UInt> = 0 ..< UInt(8 * sizeof(UInt))
-    return range
-      .map { 1 << $0 }
-      .filter { self & $0 != 0 }
-  }
+func bitComponents(forMask mask: UInt) -> [UInt] {
+  let range: CountableRange<UInt> = 0 ..< UInt(8 * MemoryLayout<UInt>.size)
+  return range
+    .map { 1 << $0 }
+    .filter { mask & $0 != 0 }
 }

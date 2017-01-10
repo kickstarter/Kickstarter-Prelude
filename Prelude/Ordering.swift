@@ -21,7 +21,7 @@ extension Ordering : Monoid {
     return .eq
   }
 
-  public func op(other: Ordering) -> Ordering {
+  public func op(_ other: Ordering) -> Ordering {
     switch (self, other) {
     case (.lt, _):
       return .lt

@@ -3,9 +3,9 @@
 public protocol VectorType: Equatable {
   associatedtype Scalar: NumericType
 
-  func scale(c: Scalar) -> Self
-  func add(v: Self) -> Self
-  func subtract(v: Self) -> Self
+  func scale(_ c: Scalar) -> Self
+  func add(_ v: Self) -> Self
+  func subtract(_ v: Self) -> Self
   func negateVector() -> Self
   static func zero() -> Self
 }
@@ -18,13 +18,14 @@ public extension VectorType {
 
    - returns: A function that interpolates between `self` and `b` as `t` varies from `0` to `1`.
    */
-  public func lerp(b: Self) -> (Self.Scalar -> Self) {
+  public func lerp(_ b: Self) -> ((Self.Scalar) -> Self) {
     return { t in self * (Self.Scalar.one() - t) + b * t }
   }
 
-  public func subtract(v: Self) -> Self {
+  public func subtract(_ v: Self) -> Self {
     return self.add(v.negateVector())
   }
+
   public func negateVector() -> Self {
     return self.scale(Self.Scalar.one().negate())
   }
@@ -38,7 +39,7 @@ public extension VectorType {
 
  - returns: A function that interpolates between `a` and `b` as `t` varies from `0` to `1`.
  */
-public func lerp <V: VectorType> (a: V, _ b: V) -> (V.Scalar -> V) {
+public func lerp <V: VectorType> (_ a: V, _ b: V) -> ((V.Scalar) -> V) {
   return { t in a * (V.Scalar.one() - t) + b * t }
 }
 
@@ -53,11 +54,11 @@ public func + <V: VectorType> (v: V, w: V) -> V {
 extension Double : VectorType {
   public typealias Scalar = Double
 
-  public func scale(c: Double) -> Double {
+  public func scale(_ c: Double) -> Double {
     return self * c
   }
 
-  public func add(v: Double) -> Double {
+  public func add(_ v: Double) -> Double {
     return self + v
   }
 
@@ -69,11 +70,11 @@ extension Double : VectorType {
 extension CGFloat : VectorType {
   public typealias Scalar = CGFloat
 
-  public func scale(c: CGFloat) -> CGFloat {
+  public func scale(_ c: CGFloat) -> CGFloat {
     return self * c
   }
 
-  public func add(v: CGFloat) -> CGFloat {
+  public func add(_ v: CGFloat) -> CGFloat {
     return self + v
   }
 }
@@ -81,11 +82,11 @@ extension CGFloat : VectorType {
 extension CGPoint : VectorType {
   public typealias Scalar = CGFloat
 
-  public func scale(c: CGFloat) -> CGPoint {
+  public func scale(_ c: CGFloat) -> CGPoint {
     return CGPoint(x: self.x * c, y: self.y * c)
   }
 
-  public func add(v: CGPoint) -> CGPoint {
+  public func add(_ v: CGPoint) -> CGPoint {
     return CGPoint(x: self.x + v.x, y: self.y + v.y)
   }
 
@@ -97,7 +98,7 @@ extension CGPoint : VectorType {
 extension CGRect : VectorType {
   public typealias Scalar = CGFloat
 
-  public func scale(c: Scalar) -> CGRect {
+  public func scale(_ c: Scalar) -> CGRect {
     return CGRect(
       x: self.origin.x * c,
       y: self.origin.y * c,
@@ -106,7 +107,7 @@ extension CGRect : VectorType {
     )
   }
 
-  public func add(v: CGRect) -> CGRect {
+  public func add(_ v: CGRect) -> CGRect {
     return CGRect(
       x: self.origin.x + v.origin.x,
       y: self.origin.y + v.origin.y,

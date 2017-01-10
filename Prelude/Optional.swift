@@ -32,7 +32,7 @@ extension OptionalType {
 
    - parameter body: A procedure to call on the wrapped value of `self` if present.
    */
-  public func doIfSome(body: (Wrapped) throws -> ()) rethrows {
+  public func doIfSome(_ body: (Wrapped) throws -> Void) rethrows {
     if let value = self.optional {
       try body(value)
     }
@@ -45,8 +45,8 @@ extension OptionalType {
    - returns: If optional is not `nil` and satisfies predicate, it is returned, otherwise `nil`
               is returned.
    */
-  public func filter(predicate: Wrapped -> Bool) -> Wrapped? {
-    if let value = self.optional where predicate(value) {
+  public func filter(_ predicate: (Wrapped) -> Bool) -> Wrapped? {
+    if let value = self.optional, predicate(value) {
       return value
     }
     return nil
@@ -59,7 +59,7 @@ extension OptionalType {
 
    - returns:
    */
-  public func coalesceWith(@autoclosure value: () -> Wrapped) -> Wrapped {
+  public func coalesceWith(_ value: @autoclosure () -> Wrapped) -> Wrapped {
     return self.optional ?? value()
   }
 }
@@ -71,16 +71,16 @@ extension OptionalType {
 
  - returns: An optional.
  */
-public func flattenOptional <A> (x: A??) -> A? {
+public func flattenOptional <A> (_ x: A??) -> A? {
   if let x = x { return x }
   return nil
 }
 
-public func isNil <A> (x: A?) -> Bool {
+public func isNil <A> (_ x: A?) -> Bool {
   return x == nil
 }
 
-public func isNotNil <A> (x: A?) -> Bool {
+public func isNotNil <A> (_ x: A?) -> Bool {
   return x != nil
 }
 
@@ -122,6 +122,7 @@ public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
 
  - returns: A wrapped optional value.
  */
+@available(*, deprecated, message: "Don’t use this. It was only necessary for Swift 2.3.")
 public func optionalize<A>(x: A?) -> A? {
   return x
 }

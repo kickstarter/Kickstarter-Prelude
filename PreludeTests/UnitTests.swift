@@ -4,6 +4,6 @@ import XCTest
 final class UnitTests: XCTestCase {
 
   func testUnitEquality() {
-    XCTAssertEqual(Unit(), Unit())
+    XCTAssertEqual(Prelude.Unit(), Prelude.Unit())
   }
 }

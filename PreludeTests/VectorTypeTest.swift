@@ -48,7 +48,7 @@ class VectorTypeTest: XCTestCase {
 
   func testOperatorPrecedence() {
 
-    func naiveTimesTwoPlusOne <A: NumericType> (x: A) -> A {
+    func naiveTimesTwoPlusOne <A: NumericType> (_ x: A) -> A {
       return x * A.one() + A.one() + A.one()
     }
 
