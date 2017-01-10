@@ -79,13 +79,6 @@ public extension LensHolder where Object: UIControlProtocol {
 private func allTargetsSelectorsAndEvents(forControl control: UIControlProtocol)
   -> [TargetSelectorControlEvent] {
 
-    func bitComponents(forMask mask: UInt) -> [UInt] {
-      let range: CountableRange<UInt> = 0 ..< UInt(8 * MemoryLayout<UInt>.size)
-      return range
-        .map { 1 << $0 }
-        .filter { mask & $0 != 0 }
-    }
-
     return bitComponents(forMask: control.allControlEvents.rawValue)
       .map(UIControlEvents.init(rawValue:))
       .flatMap { event in
@@ -97,4 +90,11 @@ private func allTargetsSelectorsAndEvents(forControl control: UIControlProtocol)
             }
         }
     }
+}
+
+func bitComponents(forMask mask: UInt) -> [UInt] {
+  let range: CountableRange<UInt> = 0 ..< UInt(8 * MemoryLayout<UInt>.size)
+  return range
+    .map { 1 << $0 }
+    .filter { mask & $0 != 0 }
 }

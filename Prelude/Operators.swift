@@ -5,7 +5,7 @@ precedencegroup LeftApplyPrecendence {
 }
 
 precedencegroup FunctionCompositionPrecedence {
-  associativity: left
+  associativity: right
   higherThan: LeftApplyPrecendence
 }
 
