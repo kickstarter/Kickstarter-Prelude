@@ -53,6 +53,14 @@ public extension LensType where Part : Comparable {
   }
 }
 
+public extension LensType {
+  public func lift(comparator: Comparator<Part>) -> Comparator<Whole> {
+    return Comparator<Whole> { lhs, rhs in
+      return comparator.compare(self.view(lhs), self.view(rhs))
+    }
+  }
+}
+
 /**
  Infix operator of the `set` function.
 

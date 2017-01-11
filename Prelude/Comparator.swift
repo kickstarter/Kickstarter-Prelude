@@ -1,6 +1,10 @@
 public struct Comparator<A> {
   public let compare: (A, A) -> Ordering
 
+  public init(compare: @escaping (A, A) -> Ordering) {
+    self.compare = compare
+  }
+
   /**
    Compare if two elements of the same type are ordered.
 
@@ -25,5 +29,15 @@ extension Comparator : Monoid {
 
   public func op(_ other: Comparator) -> Comparator {
     return Comparator { lhs, rhs in self.compare(lhs, rhs) <> other.compare(lhs, rhs) }
+  }
+}
+
+extension Bool {
+  public static let trueLessThanComparator = Comparator<Bool>.init { lhs, rhs in
+    switch (lhs, rhs) {
+    case (true, false):                 return .lt
+    case (false, true):                 return .gt
+    case (true, true), (false, false):  return .eq
+    }
   }
 }
