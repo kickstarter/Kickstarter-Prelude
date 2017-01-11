@@ -31,13 +31,3 @@ extension Comparator : Monoid {
     return Comparator { lhs, rhs in self.compare(lhs, rhs) <> other.compare(lhs, rhs) }
   }
 }
-
-extension Bool {
-  public static let trueLessThanComparator = Comparator<Bool>.init { lhs, rhs in
-    switch (lhs, rhs) {
-    case (true, false):                 return .lt
-    case (false, true):                 return .gt
-    case (true, true), (false, false):  return .eq
-    }
-  }
-}
