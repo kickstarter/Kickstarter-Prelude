@@ -1,6 +1,10 @@
 public struct Comparator<A> {
   public let compare: (A, A) -> Ordering
 
+  public init(compare: @escaping (A, A) -> Ordering) {
+    self.compare = compare
+  }
+
   /**
    Compare if two elements of the same type are ordered.
 
