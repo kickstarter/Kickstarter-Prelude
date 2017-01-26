@@ -1,7 +1,7 @@
 import XCTest
 import Prelude
 
-class EitherTests: XCTestCase {
+final class EitherTests: XCTestCase {
 
   func testInits() {
 
