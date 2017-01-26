@@ -1,7 +1,7 @@
 import XCTest
 import Prelude
 
-final class EitherTests: XCTest {
+class EitherTests: XCTestCase {
 
   func testInits() {
 
@@ -52,7 +52,7 @@ final class EitherTests: XCTest {
   }
 
   func testFlattenLeft() {
-    XCTAssertTrue(Either<Either<Int, String>, String>.left(.left(1)).flattenLeft() == .right("hello"))
+    XCTAssertTrue(Either<Either<Int, String>, String>.left(.left(1)).flattenLeft() == .left(1))
     XCTAssertTrue(Either<Either<Int, String>, String>.right("hello").flattenLeft() == .right("hello"))
   }
 
@@ -60,7 +60,7 @@ final class EitherTests: XCTest {
     let square: (Int) -> Int = { $0 * $0 }
     let length: (String) -> Int = { $0.characters.count }
 
-    XCTAssertEqual(4, Either.left(1).ifLeft(square, ifRight: length))
+    XCTAssertEqual(4, Either.left(2).ifLeft(square, ifRight: length))
     XCTAssertEqual(5, Either.right("hello").ifLeft(square, ifRight: length))
   }
 
@@ -68,7 +68,7 @@ final class EitherTests: XCTest {
     let square: (Int) -> Int = { $0 * $0 }
     let length: (String) -> Int = { $0.characters.count }
 
-    XCTAssertEqual(4, .left(1) |> either(ifLeft: square, ifRight: length))
+    XCTAssertEqual(4, .left(2) |> either(ifLeft: square, ifRight: length))
     XCTAssertEqual(5, .right("hello") |> either(ifLeft: square, ifRight: length))
   }
 
