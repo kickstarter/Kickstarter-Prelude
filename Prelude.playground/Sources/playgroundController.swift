@@ -28,9 +28,9 @@ public enum Orientation {
  controller which should have UI elements added to it
  */
 public func playgroundControllers(device: Device = .phone4_7inch,
-                                         orientation: Orientation = .portrait,
-                                         child: UIViewController = UIViewController(),
-                                         additionalTraits: UITraitCollection = .init())
+                                  orientation: Orientation = .portrait,
+                                  child: UIViewController = UIViewController(),
+                                  additionalTraits: UITraitCollection = .init())
   -> (parent: UIViewController, child: UIViewController) {
 
     let parent = UIViewController()
