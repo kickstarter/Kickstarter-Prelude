@@ -6,6 +6,7 @@
 
  - returns: The value from apply `f` to `x`.
  */
+@discardableResult
 public func |> <A, B> (x: A, f: (A) -> B) -> B {
   return f(x)
 }
@@ -18,6 +19,7 @@ public func |> <A, B> (x: A, f: (A) -> B) -> B {
 
  - returns: An array of transformed values.
  */
+@discardableResult
 public func ||> <A, B> (xs: [A], f: (A) -> B) -> [B] {
   return xs.map(f)
 }
@@ -30,6 +32,7 @@ public func ||> <A, B> (xs: [A], f: (A) -> B) -> [B] {
 
  - returns: An optional transformed value.
  */
+@discardableResult
 public func ?|> <A, B> (x: A?, f: (A) -> B) -> B? {
   return x.map(f)
 }
@@ -42,6 +45,7 @@ public func ?|> <A, B> (x: A?, f: (A) -> B) -> B? {
 
  - returns: A function that is the composition of `f` and `g`.
  */
+@discardableResult
 public func • <A, B, C> (g: @escaping (B) -> C, f: @escaping (A) -> B) -> ((A) -> C) {
   return { x in g(f(x)) }
 }
@@ -55,6 +59,7 @@ public func • <A, B, C> (g: @escaping (B) -> C, f: @escaping (A) -> B) -> ((A)
 
  - returns: A function that is the composition of `f` and `g`.
  */
+@discardableResult
 public func <> <A> (f: @escaping (A) -> A, g: @escaping (A) -> A) -> ((A) -> A) {
   return { g(f($0)) }
 }
