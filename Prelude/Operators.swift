@@ -17,6 +17,9 @@ precedencegroup LensSetPrecedence {
 /// Pipe forward function application.
 infix operator |> : LeftApplyPrecendence
 
+/// Pipe forward function application with discardable result.
+infix operator *|> : LeftApplyPrecendence
+
 /// Infix, flipped version of fmap (for arrays), i.e. `xs ||> f := f <^> xs`
 infix operator ||> : LeftApplyPrecendence
 
