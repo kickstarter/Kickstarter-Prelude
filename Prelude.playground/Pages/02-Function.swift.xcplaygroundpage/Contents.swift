@@ -55,7 +55,6 @@ Alternatively we could have also composed the functions first and then piped a v
 Function composition is done via the `>>>` and `<<<` operators.
 */
 
-
 5 |> (square >>> incr >>> isPrime)
 6 |> (square >>> incr >>> isPrime)
 
