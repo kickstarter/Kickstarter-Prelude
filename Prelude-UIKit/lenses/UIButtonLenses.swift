@@ -119,7 +119,7 @@ public extension LensHolder where Object: UIButtonProtocol {
   }
 }
 
-extension LensType where Whole: UIButtonProtocol, Part == UILabel {
+extension Lens where Whole: UIButtonProtocol, Part == UILabel {
   public var font: Lens<Whole, UIFont> {
     return Whole.lens.titleLabel • Part.lens.font
   }

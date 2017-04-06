@@ -158,7 +158,7 @@ public extension LensHolder where Object: UIViewProtocol {
   }
 }
 
-public extension LensType where Whole: UIViewProtocol, Part == CGRect {
+public extension Lens where Whole: UIViewProtocol, Part == CGRect {
   public var origin: Lens<Whole, CGPoint> {
     return Whole.lens.frame • CGRect.lens.origin
   }
@@ -167,7 +167,7 @@ public extension LensType where Whole: UIViewProtocol, Part == CGRect {
   }
 }
 
-public extension LensType where Whole: UIViewProtocol, Part == CGPoint {
+public extension Lens where Whole: UIViewProtocol, Part == CGPoint {
   public var x: Lens<Whole, CGFloat> {
     return Whole.lens.frame.origin • CGPoint.lens.x
   }
@@ -176,7 +176,7 @@ public extension LensType where Whole: UIViewProtocol, Part == CGPoint {
   }
 }
 
-public extension LensType where Whole: UIViewProtocol, Part == CGSize {
+public extension Lens where Whole: UIViewProtocol, Part == CGSize {
   public var width: Lens<Whole, CGFloat> {
     return Whole.lens.frame.size • CGSize.lens.width
   }
@@ -185,7 +185,7 @@ public extension LensType where Whole: UIViewProtocol, Part == CGSize {
   }
 }
 
-public extension LensType where Whole: UIViewProtocol, Part == CALayer {
+public extension Lens where Whole: UIViewProtocol, Part == CALayer {
   public var borderColor: Lens<Whole, CGColor?> {
     return Whole.lens.layer • Part.lens.borderColor
   }
