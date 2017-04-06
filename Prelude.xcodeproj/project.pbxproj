@@ -138,8 +138,6 @@
 		A7C5B8D01E7F465B001F9E62 /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CD1E7F465B001F9E62 /* UIButtonTests.swift */; };
 		A7C5B8D11E7F465B001F9E62 /* UITraitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CE1E7F465B001F9E62 /* UITraitCollectionTests.swift */; };
 		A7C5B8D21E7F465B001F9E62 /* UITraitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CE1E7F465B001F9E62 /* UITraitCollectionTests.swift */; };
-		A7CBAA6D1D69E9DE009D7B48 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */; };
-		A7CBAA6E1D69E9DE009D7B48 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */; };
 		A7D11FC71D14927400F364FD /* UITableViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC61D14927400F364FD /* UITableViewLenses.swift */; };
 		A7D11FC81D14927400F364FD /* UITableViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC61D14927400F364FD /* UITableViewLenses.swift */; };
 		A7D11FCA1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */; };
@@ -291,7 +289,6 @@
 		A7C5B8B21E7F45F7001F9E62 /* UnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		A7C5B8CD1E7F465B001F9E62 /* UIButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTests.swift; sourceTree = "<group>"; };
 		A7C5B8CE1E7F465B001F9E62 /* UITraitCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitCollectionTests.swift; sourceTree = "<group>"; };
-		A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensHolder.swift; sourceTree = "<group>"; };
 		A7D11FC61D14927400F364FD /* UITableViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewLenses.swift; sourceTree = "<group>"; };
 		A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewControllerLenses.swift; sourceTree = "<group>"; };
 		A7D120221D158A2700F364FD /* UITableViewCellLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellLenses.swift; sourceTree = "<group>"; };
@@ -485,7 +482,6 @@
 				A73515371E96B886009E3E82 /* FunctionM.swift */,
 				A7C5B8AC1E7F45F7001F9E62 /* FunctionTest.swift */,
 				A711FD701CECF7A300659DB4 /* Lens.swift */,
-				A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */,
 				A7C5B8AD1E7F45F7001F9E62 /* LensTests.swift */,
 				9DCD74261D42A43500B238E5 /* Monoid.swift */,
 				A7EFE1511C28B46900F4CFEB /* NumericType.swift */,
@@ -953,7 +949,6 @@
 				A75EC8151CCBEB4F009BEC10 /* Bool.swift in Sources */,
 				A73515381E96B886009E3E82 /* FunctionM.swift in Sources */,
 				A7FD08581C81E1DA00332CCB /* Dictionary.swift in Sources */,
-				A7CBAA6D1D69E9DE009D7B48 /* LensHolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1006,7 +1001,6 @@
 				A75EC8161CCBEB4F009BEC10 /* Bool.swift in Sources */,
 				A73515391E96B886009E3E82 /* FunctionM.swift in Sources */,
 				A7B60BE91BFBF44000B7B7ED /* Dictionary.swift in Sources */,
-				A7CBAA6E1D69E9DE009D7B48 /* LensHolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

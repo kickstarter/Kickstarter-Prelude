@@ -35,7 +35,11 @@ class ArrayTests: XCTestCase {
 
   func testSemigroupOperation() {
     XCTAssertEqual([1, 2, 3, 4], [1, 2] <> [3, 4])
-    XCTAssertEqual([1, 2] <> ([3, 4] <> [5,6]), ([1, 2] <> [3, 4]) <> [5, 6], "Associativity")
+
+    let a = [1, 2]
+    let b = [3, 4]
+    let c = [5, 6]
+    XCTAssertEqual(a <> (b <> c), (a <> b) <> c, "Associativity")
   }
 
   func testGroupBy() {

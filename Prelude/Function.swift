@@ -35,15 +35,27 @@ public func ?|> <A, B> (x: A?, f: (A) -> B) -> B? {
 }
 
 /**
- Composes two functions in right-to-left order, i.e. (g • f)(x) = g(f(x)
+ Composes two functions in left-to-right order, i.e. (f >>> g)(x) = g(f(x)
 
  - parameter g: A function.
  - parameter f: A function.
 
  - returns: A function that is the composition of `f` and `g`.
  */
-public func • <A, B, C> (g: @escaping (B) -> C, f: @escaping (A) -> B) -> ((A) -> C) {
-  return { x in g(f(x)) }
+public func >>> <A, B, C> (f: @escaping (A) -> B, g: @escaping (B) -> C) -> (A) -> C {
+  return { g(f($0)) }
+}
+
+/**
+ Composes two functions in right-to-left order, i.e. (f <<< g)(x) = f(g(x)
+
+ - parameter g: A function.
+ - parameter f: A function.
+
+ - returns: A function that is the composition of `f` and `g`.
+ */
+public func <<< <A, B, C> (g: @escaping (B) -> C, f: @escaping (A) -> B) -> (A) -> C {
+  return { g(f($0)) }
 }
 
 /**

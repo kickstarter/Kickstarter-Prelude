@@ -90,24 +90,3 @@ extension Array: Semigroup {
     return lhs + rhs
   }
 }
-
-extension Array where Element: EitherType {
-
-  /**
-   Extracts the left values from the array.
-
-   - returns: A new array of left values.
-   */
-  func lefts() -> [Element.A] {
-    return Prelude.lefts(self)
-  }
-
-  /**
-   Extracts the right values from the array.
-
-   - returns: A new array of right values.
-   */
-  func rights() -> [Element.B] {
-    return Prelude.rights(self)
-  }
-}

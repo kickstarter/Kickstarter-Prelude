@@ -27,3 +27,7 @@ public prefix func <> <S: Semigroup> (b: S) -> ((S) -> S) {
 public postfix func <> <S: Semigroup> (a: S) -> ((S) -> S) {
   return { a <> $0 }
 }
+
+public func sconcat<S: Semigroup>(_ xs: [S], _ initial: S) -> S {
+  return xs.reduce(initial, <>)
+}

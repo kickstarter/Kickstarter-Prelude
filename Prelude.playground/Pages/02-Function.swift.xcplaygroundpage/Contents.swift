@@ -7,7 +7,7 @@ import Prelude
 
 ## Functional composition operators
 
-The operators `|>` and `•` can be used for function application and composition in a
+The operators `|>`, `>>>` and `<<<` can be used for function application and composition in a
 more expressive manner. Let’s define some simple, pure functions:
 */
 
@@ -52,20 +52,22 @@ Note that `|>` is left-associative, so the above is equivalent to:
 
 /*:
 Alternatively we could have also composed the functions first and then piped a value through.
-Function composition is done via the `•` operator, which can be entered on a keyboard via the
-shortcut `alt+8`. An important property of function composition is that it is expressed
-backwards: `(g • f)(x) == g(f(x))`.
+Function composition is done via the `>>>` and `<<<` operators.
 */
 
-5 |> (isPrime • incr • square)
-6 |> (isPrime • incr • square)
+
+5 |> (square >>> incr >>> isPrime)
+6 |> (square >>> incr >>> isPrime)
+
+5 |> (isPrime <<< incr <<< square)
+6 |> (isPrime <<< incr <<< square)
 
 /*:
  It can also be useful to pipe a whole collection of values into a pipeline, and get the
  resulting collection of transformed values back:
  */
 
-[5, 6, 7, 8, 9, 10] ||> (isPrime • incr • square)
+[5, 6, 7, 8, 9, 10] ||> (square >>> incr >>> isPrime)
 
 /*:
  Or an optional:
@@ -74,8 +76,8 @@ backwards: `(g • f)(x) == g(f(x))`.
 let n: Int? = nil
 let m: Int? = 5
 
-n ?|> (isPrime • incr • square)
-m ?|> (isPrime • incr • square)
+n ?|> (square >>> incr >>> isPrime)
+m ?|> (square >>> incr >>> isPrime)
 
 /*:
 There are two global functions in Function.swift that at first might not seem very useful:
@@ -128,7 +130,7 @@ ever explicitly mentioning values in the stream. This is called
 */
 
 Array(1...100)
-  .map(incr • square)
+  .map(square >>> incr)
   .filter(isPrime)
 
 /*:
