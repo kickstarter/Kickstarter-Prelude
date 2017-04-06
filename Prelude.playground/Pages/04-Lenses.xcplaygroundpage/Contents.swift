@@ -168,7 +168,7 @@ p5.creator.name
  that composes the two lenses for us. This looks like:
  */
 
-extension LensType where Whole == Project, Part == User {
+extension Lens where Whole == Project, Part == User {
   var name: Lens<Project, String> {
     return Project.lens.creator • User.lens.name
   }
@@ -208,13 +208,13 @@ extension Location {
   }
 }
 
-extension LensType where Whole == Project, Part == User {
+extension Lens where Whole == Project, Part == User {
   var location: Lens<Project, Location> {
     return Project.lens.creator • User.lens.location
   }
 }
 
-extension LensType where Whole == Project, Part == Location {
+extension Lens where Whole == Project, Part == Location {
   var name: Lens<Project, String> {
     return Project.lens.creator.location • Location.lens.name
   }
