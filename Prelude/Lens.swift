@@ -6,9 +6,7 @@ public struct Lens <Whole, Part> {
     self.view = view
     self.set = set
   }
-}
 
-public extension Lens {
   /**
    Map a function over a part of a whole.
 
@@ -43,6 +41,7 @@ public extension Lens {
 }
 
 public extension Lens where Part : Comparable {
+  /// Constructs a comparator on `Whole` when `Part` conforms to `Comparable`.
   public var comparator: Comparator<Whole> {
     return Comparator { lhs, rhs in
       self.view(lhs) < self.view(rhs) ? .lt
