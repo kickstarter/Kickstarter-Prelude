@@ -9,3 +9,21 @@ public func isFalse(_ b: Bool) -> Bool {
 public func negate(_ b: Bool) -> Bool {
   return !b
 }
+
+extension Bool: Semiring {
+  public static func + (lhs: Bool, rhs: Bool) -> Bool {
+    return lhs || rhs
+  }
+
+  public static func * (lhs: Bool, rhs: Bool) -> Bool {
+    return lhs && rhs
+  }
+
+  public static var zero: Bool {
+    return false
+  }
+
+  public static var one: Bool {
+    return true
+  }
+}

@@ -66,6 +66,12 @@
 		A733794C1D0E417300C91445 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A733794B1D0E417300C91445 /* LensHolder.swift */; };
 		A73515381E96B886009E3E82 /* FunctionM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73515371E96B886009E3E82 /* FunctionM.swift */; };
 		A73515391E96B886009E3E82 /* FunctionM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73515371E96B886009E3E82 /* FunctionM.swift */; };
+		A735153B1E96BB3C009E3E82 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A735153A1E96BB3C009E3E82 /* Predicate.swift */; };
+		A735153C1E96BB3C009E3E82 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A735153A1E96BB3C009E3E82 /* Predicate.swift */; };
+		A735153E1E96BB88009E3E82 /* Semiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A735153D1E96BB88009E3E82 /* Semiring.swift */; };
+		A735153F1E96BB88009E3E82 /* Semiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A735153D1E96BB88009E3E82 /* Semiring.swift */; };
+		A73515411E96BBF6009E3E82 /* FunctionR.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73515401E96BBF6009E3E82 /* FunctionR.swift */; };
+		A73515421E96BBF6009E3E82 /* FunctionR.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73515401E96BBF6009E3E82 /* FunctionR.swift */; };
 		A743813A1D33D49600040A95 /* UIAccessibilityLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */; };
 		A743813B1D33D49600040A95 /* UIAccessibilityLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */; };
 		A747D8E11D353A17004B612D /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747D8E01D353A17004B612D /* NSObject.swift */; };
@@ -245,6 +251,9 @@
 		A727E0511D07984500D8FE43 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		A733794B1D0E417300C91445 /* LensHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensHolder.swift; sourceTree = "<group>"; };
 		A73515371E96B886009E3E82 /* FunctionM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionM.swift; sourceTree = "<group>"; };
+		A735153A1E96BB3C009E3E82 /* Predicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predicate.swift; sourceTree = "<group>"; };
+		A735153D1E96BB88009E3E82 /* Semiring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semiring.swift; sourceTree = "<group>"; };
+		A73515401E96BBF6009E3E82 /* FunctionR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionR.swift; sourceTree = "<group>"; };
 		A7378CC61C80958000F0A562 /* Prelude.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Prelude.playground; sourceTree = "<group>"; };
 		A74381391D33D49600040A95 /* UIAccessibilityLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAccessibilityLenses.swift; sourceTree = "<group>"; };
 		A747D8E01D353A17004B612D /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
@@ -485,7 +494,9 @@
 				A7C5B8AE1E7F45F7001F9E62 /* OptionalTests.swift */,
 				9DCD741D1D429AA200B238E5 /* Ordering.swift */,
 				A7C5B8AF1E7F45F7001F9E62 /* OrderingTests.swift */,
+				A735153A1E96BB3C009E3E82 /* Predicate.swift */,
 				A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */,
+				A735153D1E96BB88009E3E82 /* Semiring.swift */,
 				A7DBFCF21C5EB661002150A1 /* SomeError.swift */,
 				A74B3C091C9DCC7600F938C4 /* String.swift */,
 				A7C5B8B01E7F45F7001F9E62 /* StringTests.swift */,
@@ -495,6 +506,7 @@
 				A7C5B8B21E7F45F7001F9E62 /* UnitTests.swift */,
 				A711FCDC1CECB53A00659DB4 /* Unpack.swift */,
 				A7EFE1531C28B53D00F4CFEB /* VectorType.swift */,
+				A73515401E96BBF6009E3E82 /* FunctionR.swift */,
 			);
 			path = Prelude;
 			sourceTree = "<group>";
@@ -922,6 +934,7 @@
 				A7FD084F1C81E1DA00332CCB /* Function.swift in Sources */,
 				A7FD08501C81E1DA00332CCB /* SomeError.swift in Sources */,
 				A78323AD1CB9615D000B094C /* Either.swift in Sources */,
+				A735153E1E96BB88009E3E82 /* Semiring.swift in Sources */,
 				A711FCDD1CECB53A00659DB4 /* Unpack.swift in Sources */,
 				9DCD741E1D429AA200B238E5 /* Ordering.swift in Sources */,
 				A7FD08511C81E1DA00332CCB /* VectorType.swift in Sources */,
@@ -931,10 +944,12 @@
 				A7FD08551C81E1DA00332CCB /* Empty.swift in Sources */,
 				A74B3C0D1C9DCD9A00F938C4 /* Operators.swift in Sources */,
 				A711FD721CECF7A300659DB4 /* Lens.swift in Sources */,
+				A73515411E96BBF6009E3E82 /* FunctionR.swift in Sources */,
 				A7FD08561C81E1DA00332CCB /* Tuple.swift in Sources */,
 				A7AD8BC01C9DCBC200016122 /* Semigroup.swift in Sources */,
 				A7FD08571C81E1DA00332CCB /* NumericType.swift in Sources */,
 				9DCD74271D42A43500B238E5 /* Monoid.swift in Sources */,
+				A735153B1E96BB3C009E3E82 /* Predicate.swift in Sources */,
 				A75EC8151CCBEB4F009BEC10 /* Bool.swift in Sources */,
 				A73515381E96B886009E3E82 /* FunctionM.swift in Sources */,
 				A7FD08581C81E1DA00332CCB /* Dictionary.swift in Sources */,
@@ -972,6 +987,7 @@
 				CA0924371BB629BC00C9EC88 /* Function.swift in Sources */,
 				A7DBFCF31C5EB661002150A1 /* SomeError.swift in Sources */,
 				A78323AE1CB9615D000B094C /* Either.swift in Sources */,
+				A735153F1E96BB88009E3E82 /* Semiring.swift in Sources */,
 				A711FCDE1CECB53A00659DB4 /* Unpack.swift in Sources */,
 				9DCD741F1D429AA200B238E5 /* Ordering.swift in Sources */,
 				A7EFE1541C28B53D00F4CFEB /* VectorType.swift in Sources */,
@@ -981,10 +997,12 @@
 				A75EFFE41C0E7BF40002C7D2 /* Empty.swift in Sources */,
 				A74B3C0E1C9DCD9A00F938C4 /* Operators.swift in Sources */,
 				A711FD731CECF7A300659DB4 /* Lens.swift in Sources */,
+				A73515421E96BBF6009E3E82 /* FunctionR.swift in Sources */,
 				CA3DFCD31BDFFB8000D30C27 /* Tuple.swift in Sources */,
 				A7AD8BC11C9DCBC200016122 /* Semigroup.swift in Sources */,
 				A7EFE1521C28B46900F4CFEB /* NumericType.swift in Sources */,
 				9DCD74281D42A43500B238E5 /* Monoid.swift in Sources */,
+				A735153C1E96BB3C009E3E82 /* Predicate.swift in Sources */,
 				A75EC8161CCBEB4F009BEC10 /* Bool.swift in Sources */,
 				A73515391E96B886009E3E82 /* FunctionM.swift in Sources */,
 				A7B60BE91BFBF44000B7B7ED /* Dictionary.swift in Sources */,

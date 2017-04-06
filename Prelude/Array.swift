@@ -70,17 +70,6 @@ public extension Array {
 
     return result
   }
-
-  /**
-   Sorts an array given a comparator.
-
-   - parameter comparator: A comparator.
-
-   - returns: A sorted array.
-   */
-  public func sorted(by comparator: Comparator<Element>) -> Array {
-    return self.sorted { comparator.call($0, $1) == .lt }
-  }
 }
 
 public extension Array where Element: Equatable {
