@@ -19,7 +19,7 @@ public extension LensHolder where Object: WKWebViewProtocol {
   }
 }
 
-extension LensType where Whole: WKWebViewProtocol, Part == UIScrollView {
+extension Lens where Whole: WKWebViewProtocol, Part == UIScrollView {
   public var delaysContentTouches: Lens<Whole, Bool> {
     return Whole.lens.scrollView • Part.lens.delaysContentTouches
   }

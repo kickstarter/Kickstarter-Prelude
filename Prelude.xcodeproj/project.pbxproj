@@ -48,8 +48,6 @@
 		A711FCDE1CECB53A00659DB4 /* Unpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FCDC1CECB53A00659DB4 /* Unpack.swift */; };
 		A711FD721CECF7A300659DB4 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FD701CECF7A300659DB4 /* Lens.swift */; };
 		A711FD731CECF7A300659DB4 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FD701CECF7A300659DB4 /* Lens.swift */; };
-		A711FD741CECF7A300659DB4 /* LensType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FD711CECF7A300659DB4 /* LensType.swift */; };
-		A711FD751CECF7A300659DB4 /* LensType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711FD711CECF7A300659DB4 /* LensType.swift */; };
 		A72549F91D779C1200F07272 /* UIProgressViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72549F81D779C1200F07272 /* UIProgressViewLenses.swift */; };
 		A72549FA1D779C1200F07272 /* UIProgressViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72549F81D779C1200F07272 /* UIProgressViewLenses.swift */; };
 		A727E02C1D0796D700D8FE43 /* Prelude_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A727E0221D0796D600D8FE43 /* Prelude_UIKit.framework */; };
@@ -229,7 +227,6 @@
 		A70969111D14373400DB39D3 /* Prelude-UIKit-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-UIKit-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A711FCDC1CECB53A00659DB4 /* Unpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unpack.swift; sourceTree = "<group>"; };
 		A711FD701CECF7A300659DB4 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
-		A711FD711CECF7A300659DB4 /* LensType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensType.swift; sourceTree = "<group>"; };
 		A72549F81D779C1200F07272 /* UIProgressViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIProgressViewLenses.swift; sourceTree = "<group>"; };
 		A727E0221D0796D600D8FE43 /* Prelude_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Prelude_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A727E02B1D0796D600D8FE43 /* Prelude-UIKit-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Prelude-UIKit-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -477,7 +474,6 @@
 				A711FD701CECF7A300659DB4 /* Lens.swift */,
 				A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */,
 				A7C5B8AD1E7F45F7001F9E62 /* LensTests.swift */,
-				A711FD711CECF7A300659DB4 /* LensType.swift */,
 				9DCD74261D42A43500B238E5 /* Monoid.swift */,
 				A7EFE1511C28B46900F4CFEB /* NumericType.swift */,
 				A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */,
@@ -920,7 +916,6 @@
 				A74B3C0A1C9DCC7600F938C4 /* String.swift in Sources */,
 				9DCD74241D42A42100B238E5 /* Comparator.swift in Sources */,
 				A7FD084F1C81E1DA00332CCB /* Function.swift in Sources */,
-				A711FD741CECF7A300659DB4 /* LensType.swift in Sources */,
 				A7FD08501C81E1DA00332CCB /* SomeError.swift in Sources */,
 				A78323AD1CB9615D000B094C /* Either.swift in Sources */,
 				A711FCDD1CECB53A00659DB4 /* Unpack.swift in Sources */,
@@ -970,7 +965,6 @@
 				A74B3C0B1C9DCC7600F938C4 /* String.swift in Sources */,
 				9DCD74251D42A42100B238E5 /* Comparator.swift in Sources */,
 				CA0924371BB629BC00C9EC88 /* Function.swift in Sources */,
-				A711FD751CECF7A300659DB4 /* LensType.swift in Sources */,
 				A7DBFCF31C5EB661002150A1 /* SomeError.swift in Sources */,
 				A78323AE1CB9615D000B094C /* Either.swift in Sources */,
 				A711FCDE1CECB53A00659DB4 /* Unpack.swift in Sources */,

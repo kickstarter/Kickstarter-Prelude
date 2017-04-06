@@ -21,7 +21,7 @@ extension CGRect {
 private let _x = CGRect.lens.origin • CGPoint.lens.x
 private let _y = CGRect.lens.origin • CGPoint.lens.y
 
-extension LensType where Whole == CGRect, Part == CGPoint {
+extension Lens where Whole == CGRect, Part == CGPoint {
 
   public var x: Lens<CGRect, CGFloat> {
     return _x
@@ -34,7 +34,7 @@ extension LensType where Whole == CGRect, Part == CGPoint {
 private let _width = CGRect.lens.size • CGSize.lens.width
 private let _height = CGRect.lens.size • CGSize.lens.height
 
-extension LensType where Whole == CGRect, Part == CGSize {
+extension Lens where Whole == CGRect, Part == CGSize {
   public var width: Lens<CGRect, CGFloat> {
     return _width
   }

@@ -17,7 +17,7 @@ public extension LensHolder where Object: UITableViewControllerProtocol {
   }
 }
 
-extension LensType where Whole: UITableViewControllerProtocol, Part == UITableView {
+extension Lens where Whole: UITableViewControllerProtocol, Part == UITableView {
 
   public var rowHeight: Lens<Whole, CGFloat> {
     return Whole.lens.tableView • Part.lens.rowHeight

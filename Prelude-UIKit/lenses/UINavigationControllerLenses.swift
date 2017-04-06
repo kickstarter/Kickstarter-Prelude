@@ -40,7 +40,7 @@ public extension LensHolder where Object: UINavigationControllerProtocol {
   }
 }
 
-extension LensType where Whole: UINavigationControllerProtocol, Part == UINavigationBar {
+extension Lens where Whole: UINavigationControllerProtocol, Part == UINavigationBar {
 
   public var barTintColor: Lens<Whole, UIColor?> {
     return Whole.lens.navigationBar • Part.lens.barTintColor

@@ -69,7 +69,7 @@ public extension LensHolder where Object: UITextViewProtocol {
   }
 }
 
-extension LensType where Whole: UITextViewProtocol, Part == NSTextContainer {
+extension Lens where Whole: UITextViewProtocol, Part == NSTextContainer {
   public var lineFragmentPadding: Lens<Whole, CGFloat> {
     return Whole.lens.textContainer • Part.lens.lineFragmentPadding
   }
