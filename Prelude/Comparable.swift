@@ -10,3 +10,9 @@ public func clamp <T: Comparable> (_ min: T, _ max: T) -> ((T) -> T) {
   assert(min <= max)
   return { value in value < min ? min : value > max ? max : value }
 }
+
+extension Comparable {
+  public static var comparator: Comparator<Self> {
+    return Comparator { $0 < $1 ? .lt : $0 > $1 ? .gt : .eq }
+  }
+}

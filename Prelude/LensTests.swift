@@ -39,7 +39,6 @@ final class LensTests: XCTestCase {
     let user2 = user |> User._name .~ "glob"
 
     XCTAssert(user1 < user2)
-    XCTAssert(user1 < user1)
     XCTAssertFalse(user2 < user1)
   }
 
@@ -107,7 +106,7 @@ private func == (lhs: User, rhs: User) -> Bool {
 
 extension User: Comparable {}
 private func < (lhs: User, rhs: User) -> Bool {
-  return User._name.comparator.isOrdered(lhs, rhs)
+  return User._name.comparator.call(lhs, rhs) == .lt
 }
 
 private struct Location: Equatable {

@@ -1,3 +1,3 @@
 public protocol Monoid: Semigroup {
-  static func identity () -> Self
+  static var identity: Self { get }
 }

@@ -78,8 +78,8 @@ public extension Array {
 
    - returns: A sorted array.
    */
-  public func sorted(comparator: Comparator<Element>) -> Array {
-    return self.sorted(by: comparator.isOrdered)
+  public func sorted(by comparator: Comparator<Element>) -> Array {
+    return self.sorted { comparator.call($0, $1) == .lt }
   }
 }
 
@@ -97,8 +97,8 @@ public extension Array where Element: Equatable {
 }
 
 extension Array: Semigroup {
-  public func op(_ other: Array) -> Array {
-    return self + other
+  public static func <>(lhs: Array, rhs: Array) -> Array {
+    return lhs + rhs
   }
 }
 

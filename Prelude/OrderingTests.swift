@@ -3,20 +3,20 @@ import XCTest
 
 final class OrderingTests: XCTestCase {
   func testOp() {
-    XCTAssertEqual(Ordering.lt, Ordering.lt.op(.lt))
-    XCTAssertEqual(Ordering.lt, Ordering.lt.op(.eq))
-    XCTAssertEqual(Ordering.lt, Ordering.lt.op(.gt))
-    XCTAssertEqual(Ordering.lt, Ordering.eq.op(.lt))
-    XCTAssertEqual(Ordering.eq, Ordering.eq.op(.eq))
-    XCTAssertEqual(Ordering.gt, Ordering.eq.op(.gt))
-    XCTAssertEqual(Ordering.gt, Ordering.gt.op(.lt))
-    XCTAssertEqual(Ordering.gt, Ordering.gt.op(.eq))
-    XCTAssertEqual(Ordering.gt, Ordering.gt.op(.gt))
+    XCTAssertEqual(Ordering.lt, .lt <> .lt)
+    XCTAssertEqual(Ordering.lt, .lt <> .eq)
+    XCTAssertEqual(Ordering.lt, .lt <> .gt)
+    XCTAssertEqual(Ordering.lt, .eq <> .lt)
+    XCTAssertEqual(Ordering.eq, .eq <> .eq)
+    XCTAssertEqual(Ordering.gt, .eq <> .gt)
+    XCTAssertEqual(Ordering.gt, .gt <> .lt)
+    XCTAssertEqual(Ordering.gt, .gt <> .eq)
+    XCTAssertEqual(Ordering.gt, .gt <> .gt)
   }
 
   func testReversed() {
-    XCTAssertEqual(Ordering.lt, Ordering.gt.reversed)
-    XCTAssertEqual(Ordering.eq, Ordering.eq.reversed)
-    XCTAssertEqual(Ordering.gt, Ordering.lt.reversed)
+    XCTAssertEqual(.lt, Ordering.gt.reversed())
+    XCTAssertEqual(.eq, Ordering.eq.reversed())
+    XCTAssertEqual(.gt, Ordering.lt.reversed())
   }
 }

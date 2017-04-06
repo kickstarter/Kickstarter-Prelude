@@ -1,19 +1,7 @@
 /// A type is a Semigroup if it has an associative, binary operation.
 public protocol Semigroup {
-  /// An associative operation, i.e. a.op(b.op(c)) == (a.op(b)).op(c)
-  func op(_ other: Self) -> Self
-}
-
-/**
- An infix version of the semigroup operator.
-
- - parameter lhs: A semigroup value.
- - parameter rhs: A semigroup value.
-
- - returns: A semigroup value.
- */
-public func <> <S: Semigroup> (lhs: S, rhs: S) -> S {
-  return lhs.op(rhs)
+  /// An associative operation, i.e. a <> (b <> c) == (a <> b) <> c
+  static func <>(lhs: Self, rhs: Self) -> Self
 }
 
 /**

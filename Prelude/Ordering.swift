@@ -4,7 +4,7 @@ public enum Ordering {
   case eq
   case gt
 
-  public var reversed: Ordering {
+  public func reversed() -> Ordering {
     switch self {
     case .lt:
       return .gt
@@ -17,18 +17,13 @@ public enum Ordering {
 }
 
 extension Ordering : Monoid {
-  public static func identity () -> Ordering {
-    return .eq
-  }
+  public static let identity = Ordering.eq
 
-  public func op(_ other: Ordering) -> Ordering {
-    switch (self, other) {
-    case (.lt, _):
-      return .lt
-    case (.eq, _):
-      return other
-    case (.gt, _):
-      return .gt
+  public static func <>(lhs: Ordering, rhs: Ordering) -> Ordering {
+    switch (lhs, rhs) {
+    case (.lt, _):  return .lt
+    case (.eq, _):  return rhs
+    case (.gt, _):  return .gt
     }
   }
 }
