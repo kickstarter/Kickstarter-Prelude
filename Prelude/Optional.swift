@@ -156,3 +156,15 @@ public func pure<A>(_ x: A) -> A? {
 public func <*> <A, B> (f: ((A) -> B)?, x: A?) -> B? {
   return zip(f, x).map { f, x in f(x) }
 }
+
+public func lift<A, B>(_ f: (A) -> B, _ x: A?) -> B? {
+  return x.map(f)
+}
+
+public func lift<A, B, C>(_ f: (A, B) -> C, _ x: A?, _ y: B?) -> C? {
+  return zip(x, y).map(f)
+}
+
+public func lift<A, B, C, D>(_ f: (A, B, C) -> D, _ x: A?, _ y: B?, _ z: C?) -> D? {
+  return zip(x, y, z).map(f)
+}
