@@ -76,4 +76,32 @@ final class OptionalTests: XCTestCase {
     XCTAssertEqual(flattenOptional(x), Int?.some(1))
     XCTAssertEqual(flattenOptional(y), Int?.none)
   }
+
+  func testZip() {
+    let pair = zip(.some(1), .some(2))
+    XCTAssertEqual(1, pair?.0)
+    XCTAssertEqual(2, pair?.1)
+    let triple = zip(.some(1), .some(2), .some(3))
+    XCTAssertEqual(1, triple?.0)
+    XCTAssertEqual(2, triple?.1)
+    XCTAssertEqual(3, triple?.2)
+
+    let failFirst: (Int, Int)? = zip(.none, .some(1))
+    XCTAssertNil(failFirst)
+    let failLast: (Int, Int)? = zip(.some(1), .none)
+    XCTAssertNil(failLast)
+    let failTriple: (Int, Int, Int)? = zip(.some(1), .some(2), .none)
+    XCTAssertNil(failTriple)
+  }
+
+  func testPure() {
+    XCTAssertEqual(.some(1), pure(1))
+  }
+
+  func testAp() {
+    let add: (Int) -> (Int) -> Int = { x in { y in x + y } }
+
+    XCTAssertEqual(.some(3), pure(add) <*> .some(1) <*> .some(2))
+    XCTAssertNil(pure(add) <*> .none <*> .some(2))
+  }
 }

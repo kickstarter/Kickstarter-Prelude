@@ -1,4 +1,4 @@
-precedencegroup LeftApplyPrecendence {
+precedencegroup LeftApplyPrecedence {
   associativity: left
   higherThan: AssignmentPrecedence
   lowerThan: TernaryPrecedence
@@ -6,7 +6,7 @@ precedencegroup LeftApplyPrecendence {
 
 precedencegroup FunctionCompositionPrecedence {
   associativity: right
-  higherThan: LeftApplyPrecendence
+  higherThan: LeftApplyPrecedence
 }
 
 precedencegroup LensSetPrecedence {
@@ -15,13 +15,13 @@ precedencegroup LensSetPrecedence {
 }
 
 /// Pipe forward function application.
-infix operator |> : LeftApplyPrecendence
+infix operator |> : LeftApplyPrecedence
 
 /// Infix, flipped version of fmap (for arrays), i.e. `xs ||> f := f <^> xs`
-infix operator ||> : LeftApplyPrecendence
+infix operator ||> : LeftApplyPrecedence
 
 /// Infix, flipped version of fmap (for optionals), i.e. `x ?|> f := f <^> x`
-infix operator ?|> : LeftApplyPrecendence
+infix operator ?|> : LeftApplyPrecedence
 
 /// Composition
 infix operator • : FunctionCompositionPrecedence
@@ -36,7 +36,7 @@ prefix operator <>
 postfix operator <>
 
 /// Lens view
-infix operator ^* : LeftApplyPrecendence
+infix operator ^* : LeftApplyPrecedence
 
 /// Lens set
 infix operator .~ : LensSetPrecedence
@@ -52,3 +52,6 @@ infix operator <>~ : LensSetPrecedence
 
 /// Kleisli lens composition
 infix operator >•>
+
+/// Applicative
+infix operator <*> : LeftApplyPrecedence
