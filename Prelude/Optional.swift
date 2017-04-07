@@ -1,3 +1,4 @@
+
 /// An optional protocol for use in type constraints.
 public protocol OptionalType {
   /// The type contained in the optional.
@@ -125,4 +126,33 @@ public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
 @available(*, deprecated, message: "Don’t use this. It was only necessary for Swift 2.3.")
 public func optionalize<A>(x: A?) -> A? {
   return x
+}
+
+public func zip<A, B>(_ a: A?, _ b: B?) -> (A, B)? {
+  return a.flatMap { a in b.map { b in (a, b) } }
+}
+
+public func zip<A, B, C>(_ a: A?, _ b: B?, _ c: C?) -> (A, B, C)? {
+  return zip(a, b).flatMap { a, b in c.map { c in (a, b, c) } }
+}
+
+/**
+ Applicative `pure`. Wraps a value in an optional.
+
+ - parameter x: A value.
+ */
+public func pure<A>(_ x: A) -> A? {
+  return .some(x)
+}
+
+/**
+ Applicative `ap`. Applies an optional value to an optional function.
+
+ - parameter f: An optional function.
+ - parameter x: An optional value.
+
+ - returns: An optional result of `f` applying `x`.
+ */
+public func <*> <A, B> (f: ((A) -> B)?, x: A?) -> B? {
+  return zip(f, x).map { f, x in f(x) }
 }
