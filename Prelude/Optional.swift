@@ -137,27 +137,6 @@ public func zip<A, B, C>(_ a: A?, _ b: B?, _ c: C?) -> (A, B, C)? {
   return zip(a, b).flatMap { a, b in c.map { c in (a, b, c) } }
 }
 
-/**
- Applicative `pure`. Wraps a value in an optional.
-
- - parameter x: A value.
- */
-public func pure<A>(_ x: A) -> A? {
-  return .some(x)
-}
-
-/**
- Applicative `ap`. Applies an optional value to an optional function.
-
- - parameter f: An optional function.
- - parameter x: An optional value.
-
- - returns: An optional result of `f` applying `x`.
- */
-public func <*> <A, B> (f: ((A) -> B)?, x: A?) -> B? {
-  return zip(f, x).map { f, x in f(x) }
-}
-
 public func lift<A, B>(_ f: (A) -> B, _ x: A?) -> B? {
   return x.map(f)
 }
