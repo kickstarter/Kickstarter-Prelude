@@ -1,5 +1,3 @@
-import Runes
-
 /// An optional protocol for use in type constraints.
 public protocol OptionalType {
   /// The type contained in the optional.
