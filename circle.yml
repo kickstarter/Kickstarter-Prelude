@@ -10,6 +10,10 @@ dependencies:
     - security find-identity -p codesigning
     - instruments -s devices
     - xcodebuild -showsdks
+  override:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive || git submodule foreach git fetch origin --tags
+    - git submodule update --init --recursive
 test:
   pre:
     - xcrun instruments -w '547B1B63-3F66-4E5B-8001-F78F2F1CDEA7' || true
