@@ -52,6 +52,3 @@ infix operator <>~ : LensSetPrecedence
 
 /// Kleisli lens composition
 infix operator >•>
-
-/// Applicative
-infix operator <*> : LeftApplyPrecedence
