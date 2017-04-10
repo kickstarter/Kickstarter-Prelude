@@ -94,14 +94,8 @@ final class OptionalTests: XCTestCase {
     XCTAssertNil(failTriple)
   }
 
-  func testPure() {
-    XCTAssertEqual(.some(1), pure(1))
-  }
-
-  func testAp() {
-    let add: (Int) -> (Int) -> Int = { x in { y in x + y } }
-
-    XCTAssertEqual(.some(3), pure(add) <*> .some(1) <*> .some(2))
-    XCTAssertNil(pure(add) <*> .none <*> .some(2))
+  func testLift() {
+    XCTAssertEqual(.some(3), lift(+, .some(1), .some(2)))
+    XCTAssertNil(lift(+, .none, .some(2)))
   }
 }

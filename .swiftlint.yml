@@ -2,6 +2,8 @@ disabled_rules:
   - variable_name
   - large_tuple
   - for_where
+excluded:
+  - Frameworks/
 line_length: 110
 type_body_length:
   warning: 300

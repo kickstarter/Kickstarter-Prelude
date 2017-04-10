@@ -1,0 +1,3 @@
+[submodule "Frameworks/Runes"]
+	path = Frameworks/Runes
+	url = git://github.com/thoughtbot/Runes.git

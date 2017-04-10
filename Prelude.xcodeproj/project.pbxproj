@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01AFE2C11D58FF6E0094C263 /* UITabBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */; };
 		01F547EA1D539636000A98EF /* UITabBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F547E81D539629000A98EF /* UITabBarItemLenses.swift */; };
+		8023ED311E9AC77D0044504B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8023ED201E9AC7560044504B /* Runes.framework */; };
+		8023ED321E9AC7860044504B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8023ED241E9AC7560044504B /* Runes.framework */; };
 		804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */; };
 		804FA7041D2EF7A2001876A7 /* UIBarButtonItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */; };
 		8051B93F1D4049B600F653A7 /* UINavigationBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051B93E1D4049B600F653A7 /* UINavigationBarLenses.swift */; };
@@ -165,6 +167,69 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8023ED1F1E9AC7560044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F802D4D21A5F218E005E236C;
+			remoteInfo = "Runes-iOS";
+		};
+		8023ED211E9AC7560044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F86B2E0B1A5F2B8D00C3B8BD;
+			remoteInfo = "Runes-Mac";
+		};
+		8023ED231E9AC7560044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51DE8A121BAB363500124320;
+			remoteInfo = "Runes-tvOS";
+		};
+		8023ED251E9AC7560044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8624C261A645A9600C883B3;
+			remoteInfo = "Runes-iOS Tests";
+		};
+		8023ED271E9AC7560044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8624C451A645C9500C883B3;
+			remoteInfo = "Runes-Mac Tests";
+		};
+		8023ED291E9AC7560044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51DE8A211BAB36E600124320;
+			remoteInfo = "Runes-tvOS Tests";
+		};
+		8023ED2B1E9AC7560044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EAA6A5101B2F154D0058E9A8;
+			remoteInfo = "Runes-watchOS";
+		};
+		8023ED2D1E9AC7660044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F802D4D11A5F218E005E236C;
+			remoteInfo = "Runes-iOS";
+		};
+		8023ED2F1E9AC76C0044504B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 51DE8A111BAB363500124320;
+			remoteInfo = "Runes-tvOS";
+		};
 		A70969131D14373400DB39D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA0923EF1BB6291800C9EC88 /* Project object */;
@@ -212,6 +277,7 @@
 /* Begin PBXFileReference section */
 		01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarLenses.swift; sourceTree = "<group>"; };
 		01F547E81D539629000A98EF /* UITabBarItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarItemLenses.swift; sourceTree = "<group>"; };
+		8023ED151E9AC7560044504B /* Runes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Runes.xcodeproj; path = Runes/Runes.xcodeproj; sourceTree = "<group>"; };
 		804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemLenses.swift; sourceTree = "<group>"; };
 		804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarItemLenses.swift; sourceTree = "<group>"; };
 		8051B93E1D4049B600F653A7 /* UINavigationBarLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarLenses.swift; sourceTree = "<group>"; };
@@ -337,6 +403,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8023ED311E9AC77D0044504B /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +419,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8023ED321E9AC7860044504B /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +434,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8023ED141E9AC72C0044504B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8023ED151E9AC7560044504B /* Runes.xcodeproj */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		8023ED161E9AC7560044504B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8023ED201E9AC7560044504B /* Runes.framework */,
+				8023ED221E9AC7560044504B /* Runes.framework */,
+				8023ED241E9AC7560044504B /* Runes.framework */,
+				8023ED261E9AC7560044504B /* Runes-iOS Tests.xctest */,
+				8023ED281E9AC7560044504B /* Runes-Mac Tests.xctest */,
+				8023ED2A1E9AC7560044504B /* Runes-tvOS Tests.xctest */,
+				8023ED2C1E9AC7560044504B /* Runes.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A727E0231D0796D600D8FE43 /* Prelude-UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				A7378CC61C80958000F0A562 /* Prelude.playground */,
+				8023ED141E9AC72C0044504B /* Frameworks */,
 				CA0923FA1BB6291900C9EC88 /* Prelude */,
 				A727E0231D0796D600D8FE43 /* Prelude-UIKit */,
 				CA0923F91BB6291900C9EC88 /* Products */,
@@ -617,6 +708,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8023ED2E1E9AC7660044504B /* PBXTargetDependency */,
 			);
 			name = "Prelude-iOS";
 			productName = Prelude;
@@ -653,6 +745,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8023ED301E9AC76C0044504B /* PBXTargetDependency */,
 			);
 			name = "Prelude-tvOS";
 			productName = Prelude;
@@ -729,6 +822,12 @@
 			mainGroup = CA0923EE1BB6291800C9EC88;
 			productRefGroup = CA0923F91BB6291900C9EC88 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8023ED161E9AC7560044504B /* Products */;
+					ProjectRef = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A7FD084C1C81E1DA00332CCB /* Prelude-iOS */,
@@ -742,6 +841,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8023ED201E9AC7560044504B /* Runes.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Runes.framework;
+			remoteRef = 8023ED1F1E9AC7560044504B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8023ED221E9AC7560044504B /* Runes.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Runes.framework;
+			remoteRef = 8023ED211E9AC7560044504B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8023ED241E9AC7560044504B /* Runes.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Runes.framework;
+			remoteRef = 8023ED231E9AC7560044504B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8023ED261E9AC7560044504B /* Runes-iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Runes-iOS Tests.xctest";
+			remoteRef = 8023ED251E9AC7560044504B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8023ED281E9AC7560044504B /* Runes-Mac Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Runes-Mac Tests.xctest";
+			remoteRef = 8023ED271E9AC7560044504B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8023ED2A1E9AC7560044504B /* Runes-tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Runes-tvOS Tests.xctest";
+			remoteRef = 8023ED291E9AC7560044504B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8023ED2C1E9AC7560044504B /* Runes.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Runes.framework;
+			remoteRef = 8023ED2B1E9AC7560044504B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A70969061D14373400DB39D3 /* Resources */ = {
@@ -1009,6 +1160,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8023ED2E1E9AC7660044504B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Runes-iOS";
+			targetProxy = 8023ED2D1E9AC7660044504B /* PBXContainerItemProxy */;
+		};
+		8023ED301E9AC76C0044504B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Runes-tvOS";
+			targetProxy = 8023ED2F1E9AC76C0044504B /* PBXContainerItemProxy */;
+		};
 		A70969141D14373400DB39D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A70969071D14373400DB39D3 /* Prelude-UIKit-tvOS */;
