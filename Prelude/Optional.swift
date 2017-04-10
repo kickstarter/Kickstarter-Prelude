@@ -126,3 +126,23 @@ public func != <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
 public func optionalize<A>(x: A?) -> A? {
   return x
 }
+
+public func zip<A, B>(_ a: A?, _ b: B?) -> (A, B)? {
+  return a.flatMap { a in b.map { b in (a, b) } }
+}
+
+public func zip<A, B, C>(_ a: A?, _ b: B?, _ c: C?) -> (A, B, C)? {
+  return zip(a, b).flatMap { a, b in c.map { c in (a, b, c) } }
+}
+
+public func lift<A, B>(_ f: (A) -> B, _ x: A?) -> B? {
+  return x.map(f)
+}
+
+public func lift<A, B, C>(_ f: (A, B) -> C, _ x: A?, _ y: B?) -> C? {
+  return zip(x, y).map(f)
+}
+
+public func lift<A, B, C, D>(_ f: (A, B, C) -> D, _ x: A?, _ y: B?, _ z: C?) -> D? {
+  return zip(x, y, z).map(f)
+}
