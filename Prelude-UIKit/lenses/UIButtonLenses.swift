@@ -121,10 +121,10 @@ public extension LensHolder where Object: UIButtonProtocol {
 
 extension Lens where Whole: UIButtonProtocol, Part == UILabel {
   public var font: Lens<Whole, UIFont> {
-    return Whole.lens.titleLabel • Part.lens.font
+    return Whole.lens.titleLabel..Part.lens.font
   }
 
   public var textAlignment: Lens<Whole, NSTextAlignment> {
-    return Whole.lens.titleLabel • Part.lens.textAlignment
+    return Whole.lens.titleLabel..Part.lens.textAlignment
   }
 }

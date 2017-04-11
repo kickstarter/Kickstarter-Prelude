@@ -160,65 +160,65 @@ public extension LensHolder where Object: UIViewProtocol {
 
 public extension Lens where Whole: UIViewProtocol, Part == CGRect {
   public var origin: Lens<Whole, CGPoint> {
-    return Whole.lens.frame • CGRect.lens.origin
+    return Whole.lens.frame..CGRect.lens.origin
   }
   public var size: Lens<Whole, CGSize> {
-    return Whole.lens.frame • CGRect.lens.size
+    return Whole.lens.frame..CGRect.lens.size
   }
 }
 
 public extension Lens where Whole: UIViewProtocol, Part == CGPoint {
   public var x: Lens<Whole, CGFloat> {
-    return Whole.lens.frame.origin • CGPoint.lens.x
+    return Whole.lens.frame.origin..CGPoint.lens.x
   }
   public var y: Lens<Whole, CGFloat> {
-    return Whole.lens.frame.origin • CGPoint.lens.y
+    return Whole.lens.frame.origin..CGPoint.lens.y
   }
 }
 
 public extension Lens where Whole: UIViewProtocol, Part == CGSize {
   public var width: Lens<Whole, CGFloat> {
-    return Whole.lens.frame.size • CGSize.lens.width
+    return Whole.lens.frame.size..CGSize.lens.width
   }
   public var height: Lens<Whole, CGFloat> {
-    return Whole.lens.frame.size • CGSize.lens.height
+    return Whole.lens.frame.size..CGSize.lens.height
   }
 }
 
 public extension Lens where Whole: UIViewProtocol, Part == CALayer {
   public var borderColor: Lens<Whole, CGColor?> {
-    return Whole.lens.layer • Part.lens.borderColor
+    return Whole.lens.layer..Part.lens.borderColor
   }
 
   public var borderWidth: Lens<Whole, CGFloat> {
-    return Whole.lens.layer • Part.lens.borderWidth
+    return Whole.lens.layer..Part.lens.borderWidth
   }
 
   public var cornerRadius: Lens<Whole, CGFloat> {
-    return Whole.lens.layer • Part.lens.cornerRadius
+    return Whole.lens.layer..Part.lens.cornerRadius
   }
 
   public var masksToBounds: Lens<Whole, Bool> {
-    return Whole.lens.layer • Part.lens.masksToBounds
+    return Whole.lens.layer..Part.lens.masksToBounds
   }
 
   public var shadowColor: Lens<Whole, CGColor?> {
-    return Whole.lens.layer • CALayer.lens.shadowColor
+    return Whole.lens.layer..CALayer.lens.shadowColor
   }
 
   public var shadowOffset: Lens<Whole, CGSize> {
-    return Whole.lens.layer • CALayer.lens.shadowOffset
+    return Whole.lens.layer..CALayer.lens.shadowOffset
   }
 
   public var shadowOpacity: Lens<Whole, Float> {
-    return Whole.lens.layer • CALayer.lens.shadowOpacity
+    return Whole.lens.layer..CALayer.lens.shadowOpacity
   }
 
   public var shadowRadius: Lens<Whole, CGFloat> {
-    return Whole.lens.layer • CALayer.lens.shadowRadius
+    return Whole.lens.layer..CALayer.lens.shadowRadius
   }
 
   public var shouldRasterize: Lens<Whole, Bool> {
-    return Whole.lens.layer • CALayer.lens.shouldRasterize
+    return Whole.lens.layer..CALayer.lens.shouldRasterize
   }
 }
