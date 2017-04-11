@@ -20,16 +20,16 @@ public extension LensHolder where Object: UITableViewControllerProtocol {
 extension Lens where Whole: UITableViewControllerProtocol, Part == UITableView {
 
   public var rowHeight: Lens<Whole, CGFloat> {
-    return Whole.lens.tableView • Part.lens.rowHeight
+    return Whole.lens.tableView..Part.lens.rowHeight
   }
 
   public var estimatedRowHeight: Lens<Whole, CGFloat> {
-    return Whole.lens.tableView • Part.lens.estimatedRowHeight
+    return Whole.lens.tableView..Part.lens.estimatedRowHeight
   }
 
   #if os(iOS)
   public var separatorStyle: Lens<Whole, UITableViewCellSeparatorStyle> {
-    return Whole.lens.tableView • Part.lens.separatorStyle
+    return Whole.lens.tableView..Part.lens.separatorStyle
   }
   #endif
 }

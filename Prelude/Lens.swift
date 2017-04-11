@@ -83,7 +83,20 @@ public func ^* <Whole, Part> (whole: Whole, lens: Lens<Whole, Part>) -> Part {
 
  - returns: The composed lens.
  */
+@available(*, deprecated)
 public func • <A, B, C> (lhs: Lens<A, B>, rhs: Lens<B, C>) -> Lens<A, C> {
+  return lhs.compose(rhs)
+}
+
+/**
+ Infix operator of `compose`, which composes two lenses.
+
+ - parameter lhs: A lens.
+ - parameter rhs: A lens.
+
+ - returns: The composed lens.
+ */
+public func .. <A, B, C> (lhs: Lens<A, B>, rhs: Lens<B, C>) -> Lens<A, C> {
   return lhs.compose(rhs)
 }
 
