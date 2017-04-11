@@ -17,7 +17,7 @@ final class ComparatorTests: XCTestCase {
 
 extension Int {
   static var comparator: Prelude.Comparator<Int> {
-    return Comparator { lhs, rhs in
+    return Prelude.Comparator<Int> { lhs, rhs in
       lhs < rhs ? .lt
       : lhs == rhs ? .eq
       : .gt

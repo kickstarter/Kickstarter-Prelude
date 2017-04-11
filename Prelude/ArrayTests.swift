@@ -50,7 +50,8 @@ class ArrayTests: XCTestCase {
 
   func testSortedByComparator() {
     let xs = [3, 6, 1, 2]
-    let sorted = xs.sorted(comparator: Comparator { $0 < $1 ? .lt : $0 == $1 ? .eq : .gt })
+    let comparator = Prelude.Comparator<Int> { $0 < $1 ? .lt : $0 == $1 ? .eq : .gt }
+    let sorted = xs.sorted(comparator: comparator)
     XCTAssertEqual([1, 2, 3, 6], sorted)
   }
 }
