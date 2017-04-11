@@ -31,7 +31,7 @@ public struct Lens <Whole, Part> {
    */
   public func compose<Subpart>(_ rhs: Lens<Part, Subpart>) -> Lens<Whole, Subpart> {
     return Lens<Whole, Subpart>(
-      view: rhs.view • self.view,
+      view: self.view >>> rhs.view,
       set: { subPart, whole in
         let part = self.view(whole)
         let newPart = rhs.set(subPart, part)

@@ -22,12 +22,20 @@ class FunctionTest: XCTestCase {
     XCTAssertNil(nil ?|> square)
   }
 
-  func testCompose() {
+  func testForwardCompose() {
     func square(_ x: Int) -> Int { return x * x }
     func incr(_ x: Int) -> Int { return x + 1 }
 
-    XCTAssertEqual(16, (square • incr)(3))
-    XCTAssertEqual(10, (incr • square)(3))
+    XCTAssertEqual(16, (incr >>> square)(3))
+    XCTAssertEqual(10, (square >>> incr)(3))
+  }
+
+  func testBackwardCompose() {
+    func square(_ x: Int) -> Int { return x * x }
+    func incr(_ x: Int) -> Int { return x + 1 }
+
+    XCTAssertEqual(16, (square <<< incr)(3))
+    XCTAssertEqual(10, (incr <<< square)(3))
   }
 
   func testSemigroupOperation() {
