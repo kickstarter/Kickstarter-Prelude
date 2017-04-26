@@ -18,6 +18,10 @@ final class NonEmptyTests: XCTestCase {
     XCTAssertEqual(1, NonEmptySet(1, 1, 2, 3).first)
   }
 
+  func testLast() {
+    XCTAssertEqual(3, NonEmptyArray(1, 2, 3).last)
+  }
+
   func testEquality() {
     XCTAssert(NonEmptyArray(1, 2, 3) == NonEmptyArray(1, 2, 3))
     XCTAssert(NonEmptyArray(1, 2, 3) != NonEmptyArray(2, 3, 4))

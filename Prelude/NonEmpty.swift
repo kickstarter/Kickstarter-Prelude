@@ -20,6 +20,12 @@ extension NonEmpty {
   }
 }
 
+extension NonEmpty where Collection: RandomAccessCollection {
+  public var last: Element {
+    return tail.last ?? head
+  }
+}
+
 extension Array {
   public init<C: Collection>(_ nonEmpty: NonEmpty<C>) where C.Iterator.Element == Element {
     self = [nonEmpty.head] + Array(nonEmpty.tail)
