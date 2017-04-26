@@ -6,7 +6,7 @@ public struct NonEmpty<Collection: Swift.Collection> {
 
 infix operator >|: AdditionPrecedence
 
-public func >| <C: Collection>(head: C.Iterator.Element, tail: C) -> NonEmpty<C> {
+public func >| <C>(head: C.Iterator.Element, tail: C) -> NonEmpty<C> where C: Collection {
   return NonEmpty<C>(head: head, tail: tail)
 }
 
@@ -27,7 +27,7 @@ extension NonEmpty where Collection: RandomAccessCollection {
 }
 
 extension Array {
-  public init<C: Collection>(_ nonEmpty: NonEmpty<C>) where C.Iterator.Element == Element {
+  public init<C>(_ nonEmpty: NonEmpty<C>) where C: Collection, C.Iterator.Element == Element {
     self = [nonEmpty.head] + Array(nonEmpty.tail)
   }
 }
@@ -80,7 +80,7 @@ public func != <T>(lhs: NonEmptySet<T>, rhs: NonEmptySet<T>) -> Bool {
 public protocol SetType {
   associatedtype Iterator: IteratorProtocol
   init(array: [Iterator.Element])
-  func subtracting<S>(_ other: S) -> Self where S : Sequence, S.Iterator.Element == Iterator.Element
+  func subtracting<S>(_ other: S) -> Self where S: Sequence, S.Iterator.Element == Iterator.Element
 }
 
 extension Set: SetType {
@@ -90,7 +90,7 @@ extension Set: SetType {
 }
 
 public func >| <T>(head: T, tail: Set<T>) -> NonEmptySet<T> {
-  return NonEmpty<Set<T>>(head: head, tail: tail.subtracting([head]))
+  return NonEmptySet<T>(head: head, tail: tail.subtracting([head]))
 }
 
 extension NonEmpty where Collection: SetType, Collection.Iterator.Element: Hashable {
