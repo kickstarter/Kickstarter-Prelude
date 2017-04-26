@@ -19,6 +19,7 @@ final class NonEmptyTests: XCTestCase {
   }
 
   func testLast() {
+    XCTAssertEqual(1, NonEmptyArray(1).last)
     XCTAssertEqual(3, NonEmptyArray(1, 2, 3).last)
   }
 
@@ -35,6 +36,6 @@ final class NonEmptyTests: XCTestCase {
   }
 
   func testArraySemigroup() {
-    XCTAssert(NonEmptyArray(1, 2, 3) == (NonEmptyArray(1) <> NonEmptyArray(2, 3)))
+    XCTAssert(NonEmptyArray(1, 2, 3, 4) == (NonEmptyArray(1, 2) <> NonEmptyArray(3, 4)))
   }
 }
