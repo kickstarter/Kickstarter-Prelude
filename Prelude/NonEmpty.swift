@@ -34,7 +34,7 @@ extension Array {
 
 // MARK: Array
 
-public typealias NonEmptyArray<Element> = NonEmpty<Array<Element>>
+public typealias NonEmptyArray<Element> = NonEmpty<[Element]>
 
 public func == <T>(lhs: NonEmptyArray<T>, rhs: NonEmptyArray<T>) -> Bool where T: Equatable {
   return lhs.head == rhs.head && lhs.tail == rhs.tail
