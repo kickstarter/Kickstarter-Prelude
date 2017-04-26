@@ -61,6 +61,10 @@ extension NonEmpty where Collection: ArrayType {
   }
 }
 
+public func <> <T>(lhs: NonEmptyArray<T>, rhs: NonEmptyArray<T>) -> NonEmptyArray<T> {
+  return lhs.head >| (lhs.tail <> [rhs.head] <> rhs.tail)
+}
+
 // MARK: Set
 
 public typealias NonEmptySet<Element: Hashable> = NonEmpty<Set<Element>>
