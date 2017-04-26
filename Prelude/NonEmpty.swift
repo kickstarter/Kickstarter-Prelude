@@ -1,4 +1,4 @@
-public struct NonEmpty<Collection: Swift.Collection> {
+public struct NonEmpty<Collection> where Collection: Swift.Collection {
   public typealias Element = Collection.Iterator.Element
   public let head: Element
   public let tail: Collection
@@ -67,7 +67,7 @@ public func <> <T>(lhs: NonEmptyArray<T>, rhs: NonEmptyArray<T>) -> NonEmptyArra
 
 // MARK: Set
 
-public typealias NonEmptySet<Element: Hashable> = NonEmpty<Set<Element>>
+public typealias NonEmptySet<Element> = NonEmpty<Set<Element>> where Element: Hashable
 
 public func == <T>(lhs: NonEmptySet<T>, rhs: NonEmptySet<T>) -> Bool {
   return lhs.head == rhs.head && lhs.tail == rhs.tail
