@@ -1,6 +1,6 @@
 public struct NonEmpty<Collection: Swift.Collection> {
   public typealias Element = Collection.Iterator.Element
-  public let head: Collection.Iterator.Element
+  public let head: Element
   public let tail: Collection
 }
 
