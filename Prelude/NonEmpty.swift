@@ -20,8 +20,6 @@ extension NonEmpty where Collection: RandomAccessCollection {
   }
 }
 
-infix operator >|: AdditionPrecedence
-
 // MARK: Array
 
 public struct NonEmptyArray<Element>: NonEmpty {
@@ -49,7 +47,7 @@ public func != <T>(lhs: NonEmptyArray<T>, rhs: NonEmptyArray<T>) -> Bool where T
   return !(lhs == rhs)
 }
 
-public func >| <T>(head: T, tail: [T]) -> NonEmptyArray<T> {
+public func +| <T>(head: T, tail: [T]) -> NonEmptyArray<T> {
   return NonEmptyArray<T>(head: head, tail: tail)
 }
 
@@ -88,7 +86,7 @@ public func != <T>(lhs: NonEmptySet<T>, rhs: NonEmptySet<T>) -> Bool {
   return lhs.head != rhs.head || lhs.tail != rhs.tail
 }
 
-public func >| <T>(head: T, tail: Set<T>) -> NonEmptySet<T> {
+public func +| <T>(head: T, tail: Set<T>) -> NonEmptySet<T> {
   return NonEmptySet<T>(head: head, tail: tail.subtracting([head]))
 }
 

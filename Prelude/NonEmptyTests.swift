@@ -31,10 +31,10 @@ final class NonEmptyTests: XCTestCase {
     XCTAssert(NonEmptySet(1, 2, 3) != NonEmptySet(1, 2, 3, 4))
     XCTAssert(NonEmptySet(1, 2) != NonEmptySet(2, 2))
 
-    XCTAssert(1 >| [2, 3] == NonEmptyArray(1, 2, 3))
-    XCTAssert(1 >| [2, 3] != NonEmptyArray(2, 3, 4))
-    XCTAssert(1 >| [1, 2, 3] == NonEmptySet(1, 2, 3))
-    XCTAssert(1 >| [2, 3] != NonEmptySet(1, 2, 3, 4))
+    XCTAssert(1 +| [2, 3] == NonEmptyArray(1, 2, 3))
+    XCTAssert(1 +| [2, 3] != NonEmptyArray(2, 3, 4))
+    XCTAssert(1 +| [1, 2, 3] == NonEmptySet(1, 2, 3))
+    XCTAssert(1 +| [2, 3] != NonEmptySet(1, 2, 3, 4))
   }
 
   func testArraySemigroup() {
