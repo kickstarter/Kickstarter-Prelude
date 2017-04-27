@@ -18,8 +18,8 @@ extension CGRect {
   }
 }
 
-private let _x = CGRect.lens.origin • CGPoint.lens.x
-private let _y = CGRect.lens.origin • CGPoint.lens.y
+private let _x = CGRect.lens.origin..CGPoint.lens.x
+private let _y = CGRect.lens.origin..CGPoint.lens.y
 
 extension Lens where Whole == CGRect, Part == CGPoint {
 
@@ -31,8 +31,8 @@ extension Lens where Whole == CGRect, Part == CGPoint {
   }
 }
 
-private let _width = CGRect.lens.size • CGSize.lens.width
-private let _height = CGRect.lens.size • CGSize.lens.height
+private let _width = CGRect.lens.size..CGSize.lens.width
+private let _height = CGRect.lens.size..CGSize.lens.height
 
 extension Lens where Whole == CGRect, Part == CGSize {
   public var width: Lens<CGRect, CGFloat> {

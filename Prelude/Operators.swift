@@ -26,6 +26,9 @@ infix operator ?|> : LeftApplyPrecedence
 /// Composition
 infix operator • : FunctionCompositionPrecedence
 
+/// Lens composition
+infix operator .. : FunctionCompositionPrecedence
+
 /// Semigroup binary operation
 infix operator <> : FunctionCompositionPrecedence
 
@@ -53,5 +56,8 @@ infix operator <>~ : LensSetPrecedence
 /// Kleisli lens composition
 infix operator >•>
 
+/// Compose forward operator
 infix operator >>> : FunctionCompositionPrecedence
+
+/// Compose backward operator
 infix operator <<< : FunctionCompositionPrecedence

@@ -28,11 +28,11 @@ public extension LensHolder where Object: UIWebViewProtocol {
 
 extension Lens where Whole: UIWebViewProtocol, Part == UIScrollView {
   public var delaysContentTouches: Lens<Whole, Bool> {
-    return Whole.lens.scrollView • Part.lens.delaysContentTouches
+    return Whole.lens.scrollView..Part.lens.delaysContentTouches
   }
 
   public var decelerationRate: Lens<Whole, CGFloat> {
-    return Whole.lens.scrollView • Part.lens.decelerationRate
+    return Whole.lens.scrollView..Part.lens.decelerationRate
   }
 }
 #endif

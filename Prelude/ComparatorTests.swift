@@ -14,3 +14,13 @@ final class ComparatorTests: XCTestCase {
     XCTAssertEqual(.lt, Int.comparator.reversed().call(2, 1))
   }
 }
+
+extension Int {
+  static var comparator: Prelude.Comparator<Int> {
+    return Prelude.Comparator<Int> { lhs, rhs in
+      lhs < rhs ? .lt
+      : lhs == rhs ? .eq
+      : .gt
+    }
+  }
+}
