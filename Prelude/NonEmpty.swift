@@ -31,7 +31,7 @@ public struct NonEmptyArray<Element>: NonEmpty {
 
 extension NonEmptyArray {
   public init(_ head: Element, _ tail: Element...) {
-    self.init(head: self.head, tail: self.tail)
+    self.init(head: head, tail: tail)
   }
 }
 
