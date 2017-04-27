@@ -61,3 +61,6 @@ infix operator >>> : FunctionCompositionPrecedence
 
 /// Compose backward operator
 infix operator <<< : FunctionCompositionPrecedence
+
+/// Cons of an element with a non-empty collection.
+infix operator +|: AdditionPrecedence
