@@ -33,12 +33,6 @@ extension NonEmptyArray {
   }
 }
 
-extension NonEmptyArray: Semigroup {
-  public func op(_ other: NonEmptyArray) -> NonEmptyArray {
-    return NonEmptyArray(head: self.head, tail: self.tail <> [other.head] <> other.tail)
-  }
-}
-
 public func == <T>(lhs: NonEmptyArray<T>, rhs: NonEmptyArray<T>) -> Bool where T: Equatable {
   return lhs.head == rhs.head && lhs.tail == rhs.tail
 }
@@ -57,6 +51,12 @@ extension Array {
   }
 }
 
+extension NonEmptyArray: Semigroup {
+  public func op(_ other: NonEmptyArray) -> NonEmptyArray {
+    return self.head +| (self.tail <> [other.head] <> other.tail)
+  }
+}
+
 // MARK: Set
 
 public struct NonEmptySet<Element>: NonEmpty where Element: Hashable {
@@ -67,14 +67,6 @@ public struct NonEmptySet<Element>: NonEmpty where Element: Hashable {
 extension NonEmptySet {
   public init(_ head: Element, _ tail: Element...) {
     self.init(head: head, tail: Set(tail).subtracting([head]))
-  }
-}
-
-extension NonEmptySet: Semigroup {
-  public func op(_ other: NonEmptySet) -> NonEmptySet {
-    return NonEmptySet(
-      head: self.head, tail: (self.tail <> [other.head] <> other.tail).subtracting([self.head])
-    )
   }
 }
 
@@ -93,5 +85,11 @@ public func +| <T>(head: T, tail: Set<T>) -> NonEmptySet<T> {
 extension Array where Element: Hashable {
   public init(_ nonEmpty: NonEmptySet<Element>) {
     self = [nonEmpty.head] + Array(nonEmpty.tail)
+  }
+}
+
+extension NonEmptySet: Semigroup {
+  public func op(_ other: NonEmptySet) -> NonEmptySet {
+    return self.head +| (self.tail <> [other.head] <> other.tail)
   }
 }
