@@ -6,12 +6,12 @@ precedencegroup LeftApplyPrecedence {
 
 precedencegroup FunctionCompositionPrecedence {
   associativity: right
-  higherThan: LeftApplyPrecedence
+  higherThan: LensSetPrecedence
 }
 
 precedencegroup LensSetPrecedence {
   associativity: left
-  higherThan: FunctionCompositionPrecedence
+  higherThan: LeftApplyPrecedence
 }
 
 /// Pipe forward function application.
