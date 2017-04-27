@@ -6,17 +6,17 @@ public protocol NonEmpty {
 
 extension NonEmpty {
   public var count: Collection.IndexDistance {
-    return tail.count.advanced(by: 1)
+    return self.tail.count.advanced(by: 1)
   }
 
   public var first: Collection.Iterator.Element {
-    return head
+    return self.head
   }
 }
 
 extension NonEmpty where Collection: RandomAccessCollection {
   public var last: Collection.Iterator.Element {
-    return tail.last ?? head
+    return self.tail.last ?? self.head
   }
 }
 
@@ -31,7 +31,7 @@ public struct NonEmptyArray<Element>: NonEmpty {
 
 extension NonEmptyArray {
   public init(_ head: Element, _ tail: Element...) {
-    self.init(head: head, tail: tail)
+    self.init(head: self.head, tail: self.tail)
   }
 }
 
@@ -46,7 +46,7 @@ public func == <T>(lhs: NonEmptyArray<T>, rhs: NonEmptyArray<T>) -> Bool where T
 }
 
 public func != <T>(lhs: NonEmptyArray<T>, rhs: NonEmptyArray<T>) -> Bool where T: Equatable {
-  return lhs.head != rhs.head && lhs.tail != rhs.tail
+  return !(lhs == rhs)
 }
 
 public func >| <T>(head: T, tail: [T]) -> NonEmptyArray<T> {
