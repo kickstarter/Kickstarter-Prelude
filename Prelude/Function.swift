@@ -101,3 +101,17 @@ public func id <A> (_ x: A) -> A {
 public func const <A, B> (_ b: B) -> ((A) -> B) {
   return { _ in b }
 }
+
+public func |> <A> (x: A, f: (inout A) -> ()) -> A {
+  var r = x
+  f(&r)
+  return r
+}
+
+public func <> <A> (f: @escaping (inout A) -> (), g: @escaping (inout A) -> ()) -> (inout A) -> () {
+  return { a in
+    f(&a);
+    g(&a);
+  }
+}
+
