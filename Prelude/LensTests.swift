@@ -69,13 +69,11 @@ final class LensTests: XCTestCase {
     XCTAssertEqual(
       User(id: 11, location: Location(id: 12, city: City(id: 13)), name: "brando"),
       user
-        |> (
-          User._id %~ add(10)
-            <> User._location..Location._id %~ square
-            <> User._location..Location._id %~ add(8)
-            <> User._location..Location._city..City._id .~ 13
-            <> User._name .~ "brando"
-      )
+        |> User._id %~ add(10)
+        <> User._location..Location._id %~ square
+        <> User._location..Location._id %~ add(8)
+        <> User._location..Location._city..City._id .~ 13
+        <> User._name .~ "brando"
     )
 
     XCTAssertEqual(13,
