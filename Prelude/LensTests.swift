@@ -56,10 +56,8 @@ final class LensTests: XCTestCase {
   }
 
   func testOperatorPrecedences() {
-    let user = User(id: 11, location: Location(id: 12, city: City(id: 13)), name: "brando")
-
     XCTAssertEqual(
-      "brando",
+      User(id: 11, location: Location(id: 12, city: City(id: 13)), name: "brando"),
       user
         |> User._id %~ add(10)
         |> User._location..Location._id %~ square
@@ -69,7 +67,7 @@ final class LensTests: XCTestCase {
     )
 
     XCTAssertEqual(
-      "brando",
+      User(id: 11, location: Location(id: 12, city: City(id: 13)), name: "brando"),
       user
         |> (
           User._id %~ add(10)
