@@ -6,13 +6,20 @@ precedencegroup LeftApplyPrecedence {
 
 precedencegroup FunctionCompositionPrecedence {
   associativity: right
+  higherThan: LeftApplyPrecedence
+}
+
+precedencegroup LensCompositionPrecedence {
+  associativity: right
   higherThan: LensSetPrecedence
 }
 
 precedencegroup LensSetPrecedence {
   associativity: left
-  higherThan: LeftApplyPrecedence
+  higherThan: FunctionCompositionPrecedence
 }
+
+//  `..` > `.~` > `<>` > `|>`
 
 /// Pipe forward function application.
 infix operator |> : LeftApplyPrecedence
@@ -27,7 +34,7 @@ infix operator ?|> : LeftApplyPrecedence
 infix operator • : FunctionCompositionPrecedence
 
 /// Lens composition
-infix operator .. : FunctionCompositionPrecedence
+infix operator .. : LensCompositionPrecedence
 
 /// Semigroup binary operation
 infix operator <> : FunctionCompositionPrecedence
