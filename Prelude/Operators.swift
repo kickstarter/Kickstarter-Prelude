@@ -19,8 +19,6 @@ precedencegroup LensSetPrecedence {
   higherThan: FunctionCompositionPrecedence
 }
 
-//  `..` > `.~` > `<>` > `|>`
-
 /// Pipe forward function application.
 infix operator |> : LeftApplyPrecedence
 
