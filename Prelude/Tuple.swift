@@ -48,3 +48,17 @@ public func second<A, B, C>(_ t: (A, B, C)) -> B {
 public func third<A, B, C>(_ t: (A, B, C)) -> C {
   return t.2
 }
+
+public func _1<A, B>() -> Lens<(A, B), A> {
+  return Lens(
+    view: { $0.0 },
+    set: { ($0, $1.1) }
+  )
+}
+
+public func _2<A, B>() -> Lens<(A, B), B> {
+  return Lens(
+    view: { $0.1 },
+    set: { ($1.0, $0) }
+  )
+}

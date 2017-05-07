@@ -58,6 +58,8 @@ infix operator %~~ : LensSetPrecedence
 /// Lens semigroup
 infix operator <>~ : LensSetPrecedence
 
+infix operator ^? : LeftApplyPrecedence
+
 /// Kleisli lens composition
 infix operator >•>
 

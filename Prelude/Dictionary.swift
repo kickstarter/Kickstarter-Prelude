@@ -70,3 +70,14 @@ extension Dictionary where Key: Semigroup {
     return transformedKeys(prefix<>)
   }
 }
+
+public func dictionaryLens<K: Hashable, V>(key: K) -> Lens<[K:V], V?> {
+  return Lens(
+    view: { $0[key] },
+    set: { part, whole in
+      var result = whole
+      result[key] = part
+      return result
+    }
+  )
+}

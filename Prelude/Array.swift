@@ -122,3 +122,17 @@ extension Array where Element: EitherType {
     return Prelude.rights(self)
   }
 }
+
+public func ix<A>(_ idx: Int) -> Lens<[A], A?> {
+  return Lens(
+    view: { xs in idx >= 0 && idx < xs.count ? xs[idx] : nil },
+    set: { x, xs in
+      if let x = x, idx >= 0 && idx < xs.count {
+        var ys = xs
+        ys[idx] = x
+        return ys
+      }
+      return xs
+  }
+  )
+}

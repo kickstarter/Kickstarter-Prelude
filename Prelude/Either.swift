@@ -296,3 +296,26 @@ public func lefts <E: EitherType> (_ eithers: [E]) -> [E.A] {
 public func rights <E: EitherType> (_ eithers: [E]) -> [E.B] {
   return eithers.map { $0.right }.compact()
 }
+
+
+
+
+extension Either {
+  public static var prism: EitherPrism<A, B>.Type { return EitherPrism<A, B>.self }
+}
+
+public enum EitherPrism<A, B> {
+  public static func left() -> Prism<Either<A, B>, A> {
+    return Prism(
+      preview: { $0.left },
+      review: Either.left
+    )
+  }
+  public static func right() -> Prism<Either<A, B>, B> {
+    return Prism(
+      preview: { $0.right },
+      review: Either.right
+    )
+  }
+}
+

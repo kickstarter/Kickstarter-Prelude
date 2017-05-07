@@ -99,6 +99,8 @@
 		A782B4521D2C375A0069D10E /* UITextViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094255A1D1463A00021DEEE /* UITextViewLenses.swift */; };
 		A78323AD1CB9615D000B094C /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78323AC1CB9615D000B094C /* Either.swift */; };
 		A78323AE1CB9615D000B094C /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78323AC1CB9615D000B094C /* Either.swift */; };
+		A786CFD31EBDF3020058BBFC /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786CFD21EBDF3020058BBFC /* Prism.swift */; };
+		A786CFD41EBDF3020058BBFC /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786CFD21EBDF3020058BBFC /* Prism.swift */; };
 		A788518B1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788518A1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift */; };
 		A788518C1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788518A1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift */; };
 		A788518E1D6C8DAC00617930 /* UIWebViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788518D1D6C8DAC00617930 /* UIWebViewLenses.swift */; };
@@ -334,6 +336,7 @@
 		A77480C11D089AF100774DEC /* UIViewControllerLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerLenses.swift; sourceTree = "<group>"; };
 		A78011DD1D2DBF090027396E /* UITraitEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITraitEnvironment.swift; sourceTree = "<group>"; };
 		A78323AC1CB9615D000B094C /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		A786CFD21EBDF3020058BBFC /* Prism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prism.swift; sourceTree = "<group>"; };
 		A788518A1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorViewLenses.swift; sourceTree = "<group>"; };
 		A788518D1D6C8DAC00617930 /* UIWebViewLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWebViewLenses.swift; sourceTree = "<group>"; };
 		A7A882F11D31826F00E9046E /* NSMutableParagraphStyleLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableParagraphStyleLenses.swift; sourceTree = "<group>"; };
@@ -583,6 +586,7 @@
 				A7C5B8AE1E7F45F7001F9E62 /* OptionalTests.swift */,
 				9DCD741D1D429AA200B238E5 /* Ordering.swift */,
 				A7C5B8AF1E7F45F7001F9E62 /* OrderingTests.swift */,
+				A786CFD21EBDF3020058BBFC /* Prism.swift */,
 				A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */,
 				80A9DF3A1EB1A9AE00CEF5CC /* Set.swift */,
 				A7DBFCF21C5EB661002150A1 /* SomeError.swift */,
@@ -1089,6 +1093,7 @@
 				A7FD08521C81E1DA00332CCB /* Comparable.swift in Sources */,
 				A7FD08531C81E1DA00332CCB /* Unit.swift in Sources */,
 				A7FD08541C81E1DA00332CCB /* Optional.swift in Sources */,
+				A786CFD31EBDF3020058BBFC /* Prism.swift in Sources */,
 				A7FD08551C81E1DA00332CCB /* Empty.swift in Sources */,
 				A74B3C0D1C9DCD9A00F938C4 /* Operators.swift in Sources */,
 				A711FD721CECF7A300659DB4 /* Lens.swift in Sources */,
@@ -1141,6 +1146,7 @@
 				A7F7ADE81C53D27300E39792 /* Comparable.swift in Sources */,
 				A75EFFE21C0E7B8E0002C7D2 /* Unit.swift in Sources */,
 				CAC0795F1BBDC00200AFDBF0 /* Optional.swift in Sources */,
+				A786CFD41EBDF3020058BBFC /* Prism.swift in Sources */,
 				A75EFFE41C0E7BF40002C7D2 /* Empty.swift in Sources */,
 				A74B3C0E1C9DCD9A00F938C4 /* Operators.swift in Sources */,
 				A711FD731CECF7A300659DB4 /* Lens.swift in Sources */,

@@ -146,3 +146,22 @@ public func lift<A, B, C>(_ f: (A, B) -> C, _ x: A?, _ y: B?) -> C? {
 public func lift<A, B, C, D>(_ f: (A, B, C) -> D, _ x: A?, _ y: B?, _ z: C?) -> D? {
   return zip(x, y, z).map(f)
 }
+
+
+
+
+
+extension Optional {
+  public static var prism: OptionalPrism<Wrapped>.Type { return OptionalPrism<Wrapped>.self }
+}
+
+public enum OptionalPrism<A> {
+  public static func some() -> Prism<Optional<A>, A> {
+    return Prism(
+      preview: { $0 },
+      review: Optional.init
+    )
+  }
+}
+
+

@@ -106,21 +106,21 @@ p2.creator.name
  We can also some operators to make this more expressive:
  */
 
-let p3 = project |> (creatorLens • nameLens) .~ "BLOB"
+let p3 = project |> (creatorLens..nameLens) .~ "BLOB"
 p3.creator.name
 
 /*:
- Let's break that down into smaller pieces. First, the `•` operator composes lenses:
+ Let's break that down into smaller pieces. First, the `..` operator composes lenses:
  */
 
-creatorLens • nameLens
+creatorLens..nameLens
 
 /*:
  The above is a lens from `Project` to `String` which focuses on the creator's name.
  Next, the `.~` operator is an infix operator version of `set`:
  */
 
-(creatorLens • nameLens) .~ "BLOB"
+(creatorLens..nameLens) .~ "BLOB"
 
 /*:
  The above is now a function `Project -> Project` that will will focus on the creator's
@@ -128,7 +128,7 @@ creatorLens • nameLens
  get the transformed project:
  */
 
-let p4 = project |> (creatorLens • nameLens) .~ "BLOB"
+let p4 = project |> (creatorLens..nameLens) .~ "BLOB"
 p4.creator.name
 
 /*:
@@ -143,6 +143,10 @@ extension Project {
     static let creator = Lens<Project, User>(
       view: { $0.creator },
       set: { Project(creator: $0, id: $1.id, name: $1.name) }
+    )
+    static let id = Lens<Project, Int>(
+      view: { $0.id },
+      set: { Project(creator: $1.creator, id: $0, name: $1.name) }
     )
   }
 }
@@ -160,7 +164,7 @@ extension User {
  Now we can do:
  */
 
-let p5 = project |> (Project.lens.creator • User.lens.name) .~ "BLORG"
+let p5 = project |> (Project.lens.creator..User.lens.name) .~ "BLORG"
 p5.creator.name
 
 /*:
@@ -170,7 +174,7 @@ p5.creator.name
 
 extension Lens where Whole == Project, Part == User {
   var name: Lens<Project, String> {
-    return Project.lens.creator • User.lens.name
+    return Project.lens.creator..User.lens.name
   }
 }
 
@@ -210,13 +214,13 @@ extension Location {
 
 extension Lens where Whole == Project, Part == User {
   var location: Lens<Project, Location> {
-    return Project.lens.creator • User.lens.location
+    return Project.lens.creator..User.lens.location
   }
 }
 
 extension Lens where Whole == Project, Part == Location {
   var name: Lens<Project, String> {
-    return Project.lens.creator.location • Location.lens.name
+    return Project.lens.creator.location..Location.lens.name
   }
 }
 
@@ -293,3 +297,80 @@ p10.creator.location.name
  * [Chris Eidhof - Lenses in Swift](http://chris.eidhof.nl/post/lenses-in-swift/)
  * [A Little Lens Tutorial](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/a-little-lens-starter-tutorial)
  */
+
+
+func add(_ x: Int) -> (Int) -> Int {
+  return { y in x + y }
+}
+
+Either<Int, Either<String, Bool>>.right(.right(true))
+  |> Either.prism.right()..Either.prism.right() %~ negate
+
+
+func map <A, B> (_ f: @escaping (A) -> B) -> (A?) -> B? {
+  return { a in a.map(f) }
+}
+
+let prism = Either<Int, Project>.prism.right()..Project.lens.creator
+
+dump(
+  Either<Int, Project>.right(project)
+    |> Either.prism.left() %~ add(2)
+    |> Either.prism.right()..Project.lens.creator..User.lens.name %~ map({ $0 + "!" })
+)
+
+["one": 1, "two": 2, "three": 3]
+  |> dictionaryLens(key: "four") .~ 4
+  |> dictionaryLens(key: "three") .~ nil
+
+([1, 2, 3] as Set<Int>)
+  |> setLens(value: 4) .~ true
+  |> setLens(value: 2) .~ false
+
+
+//func ix<A>(_ idx: Int) -> Prism<[A], A> {
+//  return Prism<[A], A>(
+//    preview: { xs in idx >= 0 && idx < xs.count ? xs[idx] : nil },
+//    review: { x in
+//      (0..<idx).map { _ in x }
+//    }
+//  )
+//}
+
+//[1, 2, 3, 4] ^? ix(3)
+
+//ix(2)..Optional.prism.some()
+
+func _int<A>() -> Lens<A, Int?> {
+  return Lens<A, Int?>(
+    view: { $0 as? Int },
+    set: { part, whole in (part as? A) ?? whole }
+  )
+}
+
+func fuse<A, B, C>(_ lhs: Lens<A, B>, _ rhs: Lens<A, C>) -> Lens<A, (B, C)> {
+  return Lens(
+    view: { (lhs.view($0), rhs.view($0)) },
+    set: { part, whole in rhs.set(part.1, lhs.set(part.0, whole)) }
+  )
+}
+
+fuse(Project.lens.id, Project.lens.name)
+
+let result =
+  (1...3)
+    .map { p10 |> Project.lens.id %~ add($0) }
+    |> ix(2)..Optional.prism.some()..Project.lens.id.._int() .~ .some(10)
+
+type(of: result)
+
+([0, 1, 2] |> ix(3) .~ 3) ^* ix(3)
+
+// (v |> lens .~ b) ^* lens == b
+
+dump(result)
+
+1
+
+
+
