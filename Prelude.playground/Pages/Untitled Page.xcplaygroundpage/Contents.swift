@@ -19,8 +19,8 @@ struct Getting<B, A> {
 }
 
 struct SetterLens<S, T, A, B> {
-  let f: (@escaping (A) -> Setting<B>) -> (S) -> Setting<T>
-  init(_ f: @escaping (@escaping (A) -> Setting<B>) -> (S) -> Setting<T>) {
+  let f: (@escaping (A) -> B) -> (S) -> T
+  init(_ f: @escaping (@escaping (A) -> B) -> (S) -> T) {
     self.f = f
   }
 }
@@ -48,13 +48,13 @@ func .. <U, V, S, T, A, B, G>(lhs: GetterLens<U, V, S, T, G>, rhs: GetterLens<S,
 
 let setRealLens = SetterLens<Complex<Double>, Complex<Double>, Double, Double> { f in
   return { z in
-    Setting(Complex(real: f(z.real).unsetting, imag: z.imag))
+    Complex(real: f(z.real), imag: z.imag)
   }
 }
 
 let setImagLens = SetterLens<Complex<Double>, Complex<Double>, Double, Double> { f in
   return { z in
-    Setting(Complex(real: z.real, imag: f(z.imag).unsetting))
+    Complex(real: z.real, imag: f(z.imag))
   }
 }
 
@@ -76,7 +76,7 @@ struct Project {
 }
 let setCreatorLens = SetterLens<Project, Project, User, User> { f in
   return { project in
-    Setting(Project(id: project.id, creator: f(project.creator).unsetting))
+    Project(id: project.id, creator: f(project.creator))
   }
 }
 struct User {
@@ -85,21 +85,22 @@ struct User {
 }
 let setNameLens = SetterLens<User, User, String, String> { f in
   return { user in
-    Setting(User(id: user.id, name: f(user.name).unsetting))
+    User(id: user.id, name: f(user.name))
   }
 }
 let z = Complex(real: 3.0, imag: -3.0)
-dump(setRealLens.f({ x in Setting(x + 2.0) })(z))
+dump(setRealLens.f({ x in x + 2.0 })(z))
 
-dump(getRealLens.f({z in Getting(z)})(z))
-dump(getImagLens.f({z in Getting(z)})(z))
+dump(getRealLens.f(Getting.init)(z))
+dump(getImagLens.f(Getting.init)(z))
 
 // <Project, Project, User, User> .. <User, User, String, String>
 let project = Project(id: 2, creator: User(id: 5, name: "Blob"))
 
 
 dump(
-  (setCreatorLens..setNameLens).f(<>"!!!" >>> Setting.init)(project)
+  project
+    |> (setCreatorLens..setNameLens).f(<>"!!!")
 )
 
 
