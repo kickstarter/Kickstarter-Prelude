@@ -92,7 +92,7 @@ public extension Array where Element: Equatable {
    - returns: An array of distinct values in the array without changing the order.
    */
   public func distincts() -> Array {
-    return self.distincts(==)
+    return reduce([]){ $0.contains($1) ? $0 : $0 + [$1] }
   }
 }
 
