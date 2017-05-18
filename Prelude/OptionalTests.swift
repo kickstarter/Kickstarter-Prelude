@@ -95,7 +95,7 @@ final class OptionalTests: XCTestCase {
   }
 
   func testLift() {
-    XCTAssertEqual(.some(3), lift(+, .some(1), .some(2)))
-    XCTAssertNil(lift(+, .none, .some(2)))
+    XCTAssertEqual(.some(3), lift({ xy in xy.0 + xy.1 }, .some(1), .some(2)))
+    XCTAssertNil(lift({ xy in xy.0 + xy.1 }, .none, .some(2)))
   }
 }

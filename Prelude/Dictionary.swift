@@ -25,7 +25,7 @@ public extension Dictionary {
    */
   public func withAllValuesFrom(_ other: Dictionary) -> Dictionary {
     var result = self
-    other.forEach { result[$0] = $1 }
+    other.forEach { keyValue in result[keyValue.0] = keyValue.1 }
     return result
   }
 
@@ -39,7 +39,7 @@ public extension Dictionary {
    */
   public static func keyValuePairs(_ pairs: [(Key, Value)]) -> Dictionary {
     var result = Dictionary()
-    pairs.forEach { result[$0] = $1 }
+    pairs.forEach { keyValue in result[keyValue.0] = keyValue.1 }
     return result
   }
 
@@ -53,7 +53,7 @@ public extension Dictionary {
    - returns: A new dictionary with keys transformed.
    */
   public func transformedKeys(_ f: (Key) -> Key) -> Dictionary {
-    return Dictionary.keyValuePairs(self.map { (f($0), $1) })
+    return Dictionary.keyValuePairs(self.map { keyValue in (f(keyValue.0), keyValue.1) })
   }
 }
 

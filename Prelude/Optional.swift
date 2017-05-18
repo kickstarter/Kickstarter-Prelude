@@ -132,17 +132,17 @@ public func zip<A, B>(_ a: A?, _ b: B?) -> (A, B)? {
 }
 
 public func zip<A, B, C>(_ a: A?, _ b: B?, _ c: C?) -> (A, B, C)? {
-  return zip(a, b).flatMap { a, b in c.map { c in (a, b, c) } }
+  return zip(a, b).flatMap { ab in c.map { c in (ab.0, ab.1, c) } }
 }
 
 public func lift<A, B>(_ f: (A) -> B, _ x: A?) -> B? {
   return x.map(f)
 }
 
-public func lift<A, B, C>(_ f: (A, B) -> C, _ x: A?, _ y: B?) -> C? {
+public func lift<A, B, C>(_ f: ((A, B)) -> C, _ x: A?, _ y: B?) -> C? {
   return zip(x, y).map(f)
 }
 
-public func lift<A, B, C, D>(_ f: (A, B, C) -> D, _ x: A?, _ y: B?, _ z: C?) -> D? {
+public func lift<A, B, C, D>(_ f: ((A, B, C)) -> D, _ x: A?, _ y: B?, _ z: C?) -> D? {
   return zip(x, y, z).map(f)
 }

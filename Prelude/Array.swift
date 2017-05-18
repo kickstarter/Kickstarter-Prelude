@@ -59,7 +59,7 @@ public extension Array {
    - returns: A dictionary where each key contains all the elements of `self` that are mapped to the key
               via the `grouping` function.
    */
-  public func groupedBy <K: Hashable> (_ grouping: (Element) -> K) -> [K:[Element]] {
+  public func groupedBy<K: Hashable> (_ grouping: (Element) -> K) -> [K:[Element]] {
     var result: [K:[Element]] = [:]
 
     for value in self {
