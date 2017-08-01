@@ -101,14 +101,3 @@ public func id <A> (_ x: A) -> A {
 public func const <A, B> (_ b: B) -> ((A) -> B) {
   return { _ in b }
 }
-
-/**
- A function that lifts a value into a NonEmptySet<A> container type.
-
- - parameter a: A value.
-
- - returns: A NonEmptySet<A> containing `a`.
- */
-public func pure<A>(_ a: A) -> NonEmptySet<A> {
-  return a +| []
-}
