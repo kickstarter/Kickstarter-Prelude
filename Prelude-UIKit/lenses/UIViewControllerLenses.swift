@@ -1,7 +1,7 @@
 import Prelude
 import UIKit
 
-public protocol UIViewControllerProtocol: NSObjectProtocol, UITraitEnvironmentProtocol, LensObject {
+public protocol UIViewControllerProtocol: UITraitEnvironmentProtocol, LensObject {
   var navigationController: UINavigationController? { get }
   var navigationItem: UINavigationItem { get }
   var title: String? { get set }
