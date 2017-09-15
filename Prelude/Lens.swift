@@ -182,7 +182,6 @@ public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, part: Part)
   return lens(keyPath) .~ part
 }
 
-
 /**
  Infix operator of the `over` function.
 

@@ -2,8 +2,8 @@ import XCTest
 @testable import Prelude
 
 private let square: (Int) -> Int = { $0 * $0 }
-private let add: (Int) -> (Int) -> Int = { lhs in { lhs + $0 } }
-private let incr: (Int) -> Int = add(1)
+private let plus: (Int) -> (Int) -> Int = { lhs in { lhs + $0 } }
+private let incr: (Int) -> Int = plus(1)
 
 final class LensTests: XCTestCase {
   private let user = User(id: 1, location: Location(id: 2, city: City(id: 3)), name: "blob")
@@ -59,9 +59,9 @@ final class LensTests: XCTestCase {
     XCTAssertEqual(
       User(id: 11, location: Location(id: 12, city: City(id: 13)), name: "brando"),
       user
-        |> User._id %~ add(10)
+        |> User._id %~ plus(10)
         |> User._location..Location._id %~ square
-        |> User._location..Location._id %~ add(8)
+        |> User._location..Location._id %~ plus(8)
         |> User._location..Location._city..City._id .~ 13
         |> User._name .~ "brando"
     )
@@ -69,18 +69,18 @@ final class LensTests: XCTestCase {
     XCTAssertEqual(
       User(id: 11, location: Location(id: 12, city: City(id: 13)), name: "brando"),
       user
-        |> User._id %~ add(10)
+        |> User._id %~ plus(10)
         <> User._location..Location._id %~ square
-        <> User._location..Location._id %~ add(8)
+        <> User._location..Location._id %~ plus(8)
         <> User._location..Location._city..City._id .~ 13
         <> User._name .~ "brando"
     )
 
     XCTAssertEqual(13,
       user
-        |> User._id %~ add(10)
+        |> User._id %~ plus(10)
         |> User._location..Location._id %~ square
-        |> User._location..Location._id %~ add(8)
+        |> User._location..Location._id %~ plus(8)
         |> User._location..Location._city..City._id .~ 13
         ^* User._location..Location._city..City._id
     )

@@ -1,5 +1,4 @@
 #if os(iOS)
-// swiftlint:disable type_name
 import Prelude
 import WebKit
 
