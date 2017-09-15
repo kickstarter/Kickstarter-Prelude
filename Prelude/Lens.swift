@@ -156,3 +156,71 @@ public func %~~ <Whole, Part> (lens: Lens<Whole, Part>,
 public func <>~ <Whole, Part: Semigroup> (lens: Lens<Whole, Part>, a: Part) -> ((Whole) -> Whole) {
   return lens.over(<>a)
 }
+
+// MARK: - KeyPath lenses
+
+public func lens<Whole, Part>(_ keyPath: WritableKeyPath<Whole, Part>) -> Lens<Whole, Part> {
+  return Lens<Whole, Part>(
+    view: { $0[keyPath: keyPath] },
+    set: { part, whole in
+      var copy = whole
+      copy[keyPath: keyPath] = part
+      return copy
+  }
+  )
+}
+
+/**
+ Infix operator of the `set` function.
+
+ - parameter keyPath: A key path.
+ - parameter part:    A part.
+
+ - returns: A function that transforms a whole into a new whole with a part replaced.
+ */
+public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, part: Part) -> ((Whole) -> Whole) {
+  return lens(keyPath) .~ part
+}
+
+
+/**
+ Infix operator of the `over` function.
+
+ - parameter keyPath: A key path.
+ - parameter f:       A function for transforming a part of a whole.
+
+ - returns: A function that transforms a whole into a new whole with its part transformed by `f`.
+ */
+public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, f: @escaping (Part) -> Part)
+  -> ((Whole) -> Whole) {
+
+    return lens(keyPath) %~ f
+}
+
+/**
+ Variation of the infix operator %~.
+
+ - parameter keyPath: A key path.
+ - parameter f:       A function for transforming a part and whole into a new part.
+
+ - returns: A function that transforms a whole into a new whole with its part transformed by `f`.
+ */
+public func %~~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>,
+                               f: @escaping (Part, Whole) -> Part) -> ((Whole) -> Whole) {
+
+  return lens(keyPath) %~~ f
+}
+
+/**
+ Infix operator to transform a part of a whole with a semigroup operation.
+
+ - parameter keyPath: A key path whose part is a semigroup.
+ - parameter a:       A part value that is concatenated to the part of a whole.
+
+ - returns: A function that transform a whole into a new whole with its part concatenated to `a`.
+ */
+public func <>~ <Whole, Part: Semigroup> (keyPath: WritableKeyPath<Whole, Part>, a: Part)
+  -> ((Whole) -> Whole) {
+
+    return lens(keyPath) <>~ a
+}
