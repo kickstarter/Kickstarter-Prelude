@@ -26,8 +26,6 @@ test:
     - bin/test iOS 10.3.1
     - bin/test UIKit-iOS 11.0
     - bin/test UIKit-iOS 10.3.1
-    - bin/test tvOS 10.2
-    - bin/test UIKit-tvOS 10.2
 experimental:
   notify:
     branches:
