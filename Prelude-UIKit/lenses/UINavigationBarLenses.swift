@@ -2,21 +2,19 @@ import Prelude
 import UIKit
 
 public protocol UINavigationBarProtocol: UIViewProtocol {
-  func backgroundImageForBarMetrics(_ barMetrics: UIBarMetrics) -> UIImage?
+  func backgroundImage(for barMetrics: UIBarMetrics) -> UIImage?
   var barTintColor: UIColor? { get set }
-  func setBackgroundImage(_ backgroundImage: UIImage?, forBarMetrics barMetrics: UIBarMetrics)
+  func setBackgroundImage(_ backgroundImage: UIImage?, for barMetrics: UIBarMetrics)
   var shadowImage: UIImage? { get set }
-  var titleTextAttributes: [String: Any]? { get set }
-  var translucent: Bool { get set }
+  var titleTextAttributes: [NSAttributedStringKey: Any]? { get set }
+  var isTranslucent: Bool { get set }
 }
 
-extension UINavigationBar: UINavigationBarProtocol {}
-
 public extension LensHolder where Object: UINavigationBarProtocol {
-  public func backgroundImage(forBarMetrics barMetrics: UIBarMetrics) -> Lens<Object, UIImage?> {
+  public func backgroundImage(for barMetrics: UIBarMetrics) -> Lens<Object, UIImage?> {
     return Lens(
-      view: { $0.backgroundImageForBarMetrics(barMetrics) },
-      set: { $1.setBackgroundImage($0, forBarMetrics: barMetrics); return $1 }
+      view: { $0.backgroundImage(for: barMetrics) },
+      set: { $1.setBackgroundImage($0, for: barMetrics); return $1 }
     )
   }
 
@@ -27,6 +25,13 @@ public extension LensHolder where Object: UINavigationBarProtocol {
     )
   }
 
+  public var isTranslucent: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.isTranslucent },
+      set: { $1.isTranslucent = $0; return $1; }
+    )
+  }
+
   public var shadowImage: Lens<Object, UIImage?> {
     return Lens(
       view: { $0.shadowImage },
@@ -34,17 +39,10 @@ public extension LensHolder where Object: UINavigationBarProtocol {
     )
   }
 
-  public var titleTextAttributes: Lens<Object, [String: Any]> {
+  public var titleTextAttributes: Lens<Object, [NSAttributedStringKey: Any]> {
     return Lens(
       view: { $0.titleTextAttributes ?? [:] },
       set: { $1.titleTextAttributes = $0; return $1; }
-    )
-  }
-
-  public var translucent: Lens<Object, Bool> {
-    return Lens(
-      view: { $0.translucent },
-      set: { $1.translucent = $0; return $1; }
     )
   }
 }

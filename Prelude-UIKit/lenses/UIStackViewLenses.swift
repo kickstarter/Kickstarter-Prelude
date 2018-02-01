@@ -6,9 +6,9 @@ public protocol UIStackViewProtocol: UIViewProtocol {
   var alignment: UIStackViewAlignment { get set }
   var arrangedSubviews: [UIView] { get }
   var axis: UILayoutConstraintAxis { get set }
-  var baselineRelativeArrangement: Bool { get set }
+  var isBaselineRelativeArrangement: Bool { get set }
   var distribution: UIStackViewDistribution { get set }
-  var layoutMarginsRelativeArrangement: Bool { get set }
+  var isLayoutMarginsRelativeArrangement: Bool { get set }
   var spacing: CGFloat { get set }
 }
 
@@ -40,10 +40,10 @@ public extension LensHolder where Object: UIStackViewProtocol {
     )
   }
 
-  public var baselineRelativeArrangement: Lens<Object, Bool> {
+  public var isBaselineRelativeArrangement: Lens<Object, Bool> {
     return Lens(
-      view: { $0.baselineRelativeArrangement },
-      set: { $1.baselineRelativeArrangement = $0; return $1 }
+      view: { $0.isBaselineRelativeArrangement },
+      set: { $1.isBaselineRelativeArrangement = $0; return $1 }
     )
   }
 
@@ -54,10 +54,10 @@ public extension LensHolder where Object: UIStackViewProtocol {
     )
   }
 
-  public var layoutMarginsRelativeArrangement: Lens<Object, Bool> {
+  public var isLayoutMarginsRelativeArrangement: Lens<Object, Bool> {
     return Lens(
-      view: { $0.layoutMarginsRelativeArrangement },
-      set: { $1.layoutMarginsRelativeArrangement = $0; return $1 }
+      view: { $0.isLayoutMarginsRelativeArrangement },
+      set: { $1.isLayoutMarginsRelativeArrangement = $0; return $1 }
     )
   }
 
