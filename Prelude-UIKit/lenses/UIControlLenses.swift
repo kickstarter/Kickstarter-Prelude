@@ -4,7 +4,7 @@ import UIKit
 public typealias TargetSelectorControlEvent = (Any, Selector, UIControlEvents)
 
 public protocol UIControlProtocol: UIViewProtocol {
-  func actions(for target: Any?, for controlEvent: UIControlEvents) -> [String]?
+  func actions(forTarget target: Any?, forControlEvent controlEvent: UIControlEvents) -> [String]?
   func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents)
   var allControlEvents: UIControlEvents { get }
   var allTargets: Set<AnyHashable> { get }
@@ -16,8 +16,7 @@ public protocol UIControlProtocol: UIViewProtocol {
   var isSelected: Bool { get set }
 }
 
-extension UIControl: UIControlProtocol {
-}
+extension UIControl: UIControlProtocol {}
 
 public extension LensHolder where Object: UIControlProtocol {
 
@@ -83,7 +82,7 @@ private func allTargetsSelectorsAndEvents(for control: UIControlProtocol)
       .flatMap { event in
         control.allTargets
           .flatMap { target in
-            (control.actions(for: target, for: event) ?? [])
+            (control.actions(forTarget: target, forControlEvent: event) ?? [])
               .map { action in
                 return (target as Any, Selector(action), event)
             }

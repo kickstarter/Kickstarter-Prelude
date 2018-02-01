@@ -3,7 +3,7 @@ import UIKit
 
 public protocol UINavigationControllerProtocol: UIViewControllerProtocol {
   var navigationBar: UINavigationBar { get }
-  var navigationBarHidden: Bool { get set }
+  var isNavigationBarHidden: Bool { get set }
   func setNavigationBarHidden(_ hidden: Bool, animated: Bool)
   var viewControllers: [UIViewController] { get set }
 }
@@ -11,6 +11,14 @@ public protocol UINavigationControllerProtocol: UIViewControllerProtocol {
 extension UINavigationController: UINavigationControllerProtocol {}
 
 public extension LensHolder where Object: UINavigationControllerProtocol {
+
+  public var isNavigationBarHidden: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.isNavigationBarHidden },
+      set: { $1.isNavigationBarHidden = $0; return $1 }
+    )
+  }
+
   public var navigationBar: Lens<Object, UINavigationBar> {
     return Lens(
       view: { $0.navigationBar },
@@ -18,16 +26,9 @@ public extension LensHolder where Object: UINavigationControllerProtocol {
     )
   }
 
-  public var navigationBarHidden: Lens<Object, Bool> {
-    return Lens(
-      view: { $0.navigationBarHidden },
-      set: { $1.navigationBarHidden = $0; return $1 }
-    )
-  }
-
   public func setNavigationBarHidden(animated: Bool) -> Lens<Object, Bool> {
     return Lens(
-      view: { $0.navigationBarHidden },
+      view: { $0.isNavigationBarHidden },
       set: { $1.setNavigationBarHidden($0, animated: animated); return $1 }
     )
   }
