@@ -1,6 +1,6 @@
 machine:
   xcode:
-    version: 9.0
+    version: 9.2
 dependencies:
   pre:
     - brew update || brew update
@@ -22,7 +22,7 @@ test:
     - set -o pipefail &&
       swiftlint lint --strict --reporter json |
       tee $CIRCLE_ARTIFACTS/swiftlint-report.json
-    - bin/test iOS 11.0
+    - bin/test iOS 11.2
     - bin/test iOS 10.3.1
     - bin/test UIKit-iOS 11.0
     - bin/test UIKit-iOS 10.3.1
