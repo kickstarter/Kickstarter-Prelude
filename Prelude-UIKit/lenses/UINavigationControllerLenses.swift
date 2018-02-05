@@ -9,6 +9,7 @@ public protocol UINavigationControllerProtocol: UIViewControllerProtocol {
 }
 
 extension UINavigationController: UINavigationControllerProtocol {}
+extension UINavigationBar: UINavigationBarProtocol {}
 
 public extension LensHolder where Object: UINavigationControllerProtocol {
 
