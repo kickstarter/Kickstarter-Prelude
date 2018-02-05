@@ -27,7 +27,7 @@ extension NumericType where Self: Comparable {
   }
 }
 
-extension CGFloat : NumericType {
+extension CGFloat: NumericType {
   public static func zero() -> CGFloat {
     return 0.0
   }
@@ -36,7 +36,7 @@ extension CGFloat : NumericType {
   }
 }
 
-extension Double : NumericType {
+extension Double: NumericType {
   public static func zero() -> Double {
     return 0.0
   }

@@ -51,7 +51,7 @@ public func + <V: VectorType> (v: V, w: V) -> V {
   return v.add(w)
 }
 
-extension Double : VectorType {
+extension Double: VectorType {
   public typealias Scalar = Double
 
   public func scale(_ c: Double) -> Double {
@@ -67,7 +67,7 @@ extension Double : VectorType {
   }
 }
 
-extension CGFloat : VectorType {
+extension CGFloat: VectorType {
   public typealias Scalar = CGFloat
 
   public func scale(_ c: CGFloat) -> CGFloat {
@@ -79,7 +79,7 @@ extension CGFloat : VectorType {
   }
 }
 
-extension CGPoint : VectorType {
+extension CGPoint: VectorType {
   public typealias Scalar = CGFloat
 
   public func scale(_ c: CGFloat) -> CGPoint {
@@ -95,7 +95,7 @@ extension CGPoint : VectorType {
   }
 }
 
-extension CGRect : VectorType {
+extension CGRect: VectorType {
   public typealias Scalar = CGFloat
 
   public func scale(_ c: Scalar) -> CGRect {

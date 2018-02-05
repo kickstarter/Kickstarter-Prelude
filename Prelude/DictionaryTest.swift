@@ -4,7 +4,7 @@ import XCTest
 class DictionaryTests: XCTestCase {
 
   func testCompact() {
-    let values: [Int:String?] = [1: "1", 2: "2", 3: nil, 4: "4"]
+    let values: [Int: String?] = [1: "1", 2: "2", 3: nil, 4: "4"]
 
     XCTAssertEqual([1: "1", 2: "2", 4: "4"], values.compact())
   }

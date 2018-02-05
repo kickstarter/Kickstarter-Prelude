@@ -22,7 +22,7 @@ public struct Comparator<A> {
   }
 }
 
-extension Comparator : Monoid {
+extension Comparator: Monoid {
   public static func identity () -> Comparator {
     return Comparator<A> { _, _ in .eq }
   }
