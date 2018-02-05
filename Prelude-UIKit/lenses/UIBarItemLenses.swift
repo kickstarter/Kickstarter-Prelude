@@ -10,10 +10,14 @@ public protocol UIBarItemProtocol: KSObjectProtocol {
   var landscapeImagePhoneInsets: UIEdgeInsets { get set }
   var tag: Int { get set }
   func titleTextAttributes(for state: UIControlState) -> [String : Any]?
-  func setTitleTextAttributes(_ attributes: [NSAttributedStringKey : Any]?,
-                              for state: UIControlState)}
+  func setTitleTextAttributes(_ attributes: [String : Any]?, for state: UIControlState)
+}
 
-extension UIBarItem: UIBarItemProtocol {}
+extension UIBarItem: UIBarItemProtocol {
+  public func setTitleTextAttributes(_ attributes: [String : Any]?, for state: UIControlState) {
+        self.setTitleTextAttributes(attributes, for: state)
+  }
+}
 
 public extension LensHolder where Object: UIBarItemProtocol {
 
@@ -21,6 +25,13 @@ public extension LensHolder where Object: UIBarItemProtocol {
     return Lens(
       view: { $0.image },
       set: { $1.image = $0; return $1 }
+    )
+  }
+
+  public func titleTextAttributes(for state: UIControlState) -> Lens<Object, [String : Any]?> {
+    return Lens(
+      view: { $0.titleTextAttributes(for: state) },
+      set: { $1.setTitleTextAttributes($0, for: state); return $1 }
     )
   }
 
@@ -63,13 +74,6 @@ public extension LensHolder where Object: UIBarItemProtocol {
     return Lens(
       view: { $0.title },
       set: { $1.title = $0; return $1 }
-    )
-  }
-
-  public func titleTextAttributes(for state: UIControlState) -> Lens<Object, [String : Any]?> {
-    return Lens(
-      view: { $0.titleTextAttributes(for: state) },
-      set: { $1.setTitleTextAttributes($0?.values.first, for: state) }
     )
   }
 }
