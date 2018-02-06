@@ -35,14 +35,14 @@ let labels = ["Hello", "UIKit", "Lenses"]
 labels
 
 let button = UIButton()
-  |> UIButton.lens.title(forState: .normal) .~ "To lens"
-  |> UIButton.lens.titleColor(forState: .normal) .~ .white
-  |> UIButton.lens.title(forState: .disabled) .~ "Or not to lens"
-  |> UIButton.lens.titleColor(forState: .disabled) .~ .init(white: 1.0, alpha: 0.5)
+  |> UIButton.lens.title(for: .normal) .~ "To lens"
+  |> UIButton.lens.titleColor(for: .normal) .~ .white
+  |> UIButton.lens.title(for: .disabled) .~ "Or not to lens"
+  |> UIButton.lens.titleColor(for: .disabled) .~ .init(white: 1.0, alpha: 0.5)
   |> UIButton.lens.titleLabel.font .~ .preferredFont(forTextStyle: .headline)
   |> UIButton.lens.frame.size .~ .init(width: 200, height: 40)
   |> UIButton.lens.contentHorizontalAlignment .~ .left
   |> UIButton.lens.contentEdgeInsets .~ UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-  |> UIButton.lens.backgroundColor(forState: .normal) .~ .blue
-  |> UIButton.lens.backgroundColor(forState: .disabled) .~ .gray
+  |> UIButton.lens.backgroundColor(for: .normal) .~ .blue
+  |> UIButton.lens.backgroundColor(for: .disabled) .~ .gray
   |> rounded(radius: 6)

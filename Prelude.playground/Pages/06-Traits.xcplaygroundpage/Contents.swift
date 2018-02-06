@@ -45,10 +45,10 @@ child.view.addSubview(button)
  With that set up we can now perform a styling for a button:
  */
 button
-  |> UIButton.lens.title(forState: .normal) .~ "Hello world"
+  |> UIButton.lens.title(for: .normal) .~ "Hello world"
   |> UIButton.lens.frame.origin .~ .init(x: 50, y: 50)
-  |> UIButton.lens.titleColor(forState: .normal) .~ .white
-  |> UIButton.lens.backgroundColor(forState: .normal) .~ .red
+  |> UIButton.lens.titleColor(for: .normal) .~ .white
+  |> UIButton.lens.backgroundColor(for: .normal) .~ .red
   |> UIButton.lens.layer.masksToBounds .~ true
   |> buttonStyle
 button.sizeToFit()
