@@ -15,7 +15,7 @@ public protocol UIBarItemProtocol: KSObjectProtocol {
 }
 
 extension UIBarItem: UIBarItemProtocol {
-  public func titleTextAttributes(for state: UIControlState) -> [NSAttributedStringKey : Any]? {
+  public func titleTextAttributes(for state: UIControlState) -> [NSAttributedStringKey: Any]? {
     return self.titleTextAttributes(for: state)
   }
 }
