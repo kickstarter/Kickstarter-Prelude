@@ -7,24 +7,24 @@ public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, Le
   var backgroundColor: UIColor? { get set }
   var clipsToBounds: Bool { get set }
   var constraints: [NSLayoutConstraint] { get }
-  func contentCompressionResistancePriorityForAxis(_ axis: UILayoutConstraintAxis) -> UILayoutPriority
-  func contentHuggingPriorityForAxis(_ axis: UILayoutConstraintAxis) -> UILayoutPriority
+  func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority
+  func contentHuggingPriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority
   var contentMode: UIViewContentMode { get set }
   var frame: CGRect { get set }
-  var hidden: Bool { get set }
+  var isHidden: Bool { get set }
   var layer: CALayer { get }
   var layoutMargins: UIEdgeInsets { get set }
   var preservesSuperviewLayoutMargins: Bool { get set }
   func removeConstraints(_ constraints: [NSLayoutConstraint])
   var semanticContentAttribute: UISemanticContentAttribute { get set }
   func setContentCompressionResistancePriority(_ priority: UILayoutPriority,
-                                               forAxis axis: UILayoutConstraintAxis)
+                                               for axis: UILayoutConstraintAxis)
   func setContentHuggingPriority(_ priority: UILayoutPriority,
-                                 forAxis axis: UILayoutConstraintAxis)
+                                 for axis: UILayoutConstraintAxis)
   var tag: Int { get set }
   var tintColor: UIColor! { get set }
   var translatesAutoresizingMaskIntoConstraints: Bool { get set }
-  var userInteractionEnabled: Bool { get set }
+  var isUserInteractionEnabled: Bool { get set }
 }
 
 extension UIView: UIViewProtocol {}
@@ -62,21 +62,21 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public func contentCompressionResistancePriorityForAxis(_ axis: UILayoutConstraintAxis)
+  public func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis)
     -> Lens<Object, UILayoutPriority> {
 
     return Lens(
-      view: { $0.contentCompressionResistancePriorityForAxis(axis) },
-      set: { $1.setContentCompressionResistancePriority($0, forAxis: axis); return $1 }
+      view: { $0.contentCompressionResistancePriority(for: axis) },
+      set: { $1.setContentCompressionResistancePriority($0, for: axis); return $1 }
     )
   }
 
-  public func contentHuggingPriorityForAxis(_ axis: UILayoutConstraintAxis)
+  public func contentHuggingPriority(for axis: UILayoutConstraintAxis)
     -> Lens<Object, UILayoutPriority> {
 
       return Lens(
-        view: { $0.contentHuggingPriorityForAxis(axis) },
-        set: { $1.setContentHuggingPriority($0, forAxis: axis); return $1 }
+        view: { $0.contentHuggingPriority(for: axis) },
+        set: { $1.setContentHuggingPriority($0, for: axis); return $1 }
       )
   }
 
@@ -94,10 +94,17 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public var hidden: Lens<Object, Bool> {
+  public var isHidden: Lens<Object, Bool> {
     return Lens(
-      view: { $0.hidden },
-      set: { $1.hidden = $0; return $1 }
+      view: { $0.isHidden },
+      set: { $1.isHidden = $0; return $1 }
+    )
+  }
+
+  public var isUserInteractionEnabled: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.isUserInteractionEnabled },
+      set: { $1.isUserInteractionEnabled = $0; return $1 }
     )
   }
 
@@ -147,13 +154,6 @@ public extension LensHolder where Object: UIViewProtocol {
     return Lens(
       view: { $0.translatesAutoresizingMaskIntoConstraints },
       set: { $1.translatesAutoresizingMaskIntoConstraints = $0; return $1 }
-    )
-  }
-
-  public var userInteractionEnabled: Lens<Object, Bool> {
-    return Lens(
-      view: { $0.userInteractionEnabled },
-      set: { $1.userInteractionEnabled = $0; return $1 }
     )
   }
 }

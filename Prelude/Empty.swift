@@ -2,7 +2,7 @@
 public enum Empty {
 }
 
-extension Empty : Equatable {}
+extension Empty: Equatable {}
 public func == (lhs: Empty, rhs: Empty) -> Bool {
   return true
 }

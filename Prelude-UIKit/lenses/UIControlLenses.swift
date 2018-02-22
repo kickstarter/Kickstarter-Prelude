@@ -10,20 +10,19 @@ public protocol UIControlProtocol: UIViewProtocol {
   var allTargets: Set<AnyHashable> { get }
   var contentHorizontalAlignment: UIControlContentHorizontalAlignment { get set }
   var contentVerticalAlignment: UIControlContentVerticalAlignment { get set }
-  var enabled: Bool { get set }
-  var highlighted: Bool { get set }
+  var isEnabled: Bool { get set }
+  var isHighlighted: Bool { get set }
   func removeTarget(_ target: Any?, action: Selector?, for controlEvents: UIControlEvents)
-  var selected: Bool { get set }
+  var isSelected: Bool { get set }
 }
 
-extension UIControl: UIControlProtocol {
-}
+extension UIControl: UIControlProtocol {}
 
 public extension LensHolder where Object: UIControlProtocol {
 
   public var targets: Lens<Object, [TargetSelectorControlEvent]> {
     return Lens(
-      view: allTargetsSelectorsAndEvents(forControl:),
+      view: allTargetsSelectorsAndEvents(for:),
       set: { targets, control in
         control.removeTarget(nil, action: nil, for: .allEvents)
         targets.forEach(control.addTarget(_:action:for:))
@@ -46,24 +45,24 @@ public extension LensHolder where Object: UIControlProtocol {
     )
   }
 
-  public var enabled: Lens<Object, Bool> {
+  public var isEnabled: Lens<Object, Bool> {
     return Lens(
-      view: { $0.enabled },
-      set: { $1.enabled = $0; return $1 }
+      view: { $0.isEnabled },
+      set: { $1.isEnabled = $0; return $1 }
     )
   }
 
-  public var highlighted: Lens<Object, Bool> {
+  public var isHighlighted: Lens<Object, Bool> {
     return Lens(
-      view: { $0.highlighted },
-      set: { $1.highlighted = $0; return $1 }
+      view: { $0.isHighlighted },
+      set: { $1.isHighlighted = $0; return $1 }
     )
   }
 
-  public var selected: Lens<Object, Bool> {
+  public var isSelected: Lens<Object, Bool> {
     return Lens(
-      view: { $0.selected },
-      set: { $1.selected = $0; return $1 }
+      view: { $0.isSelected },
+      set: { $1.isSelected = $0; return $1 }
     )
   }
 }
@@ -75,7 +74,7 @@ public extension LensHolder where Object: UIControlProtocol {
 
  - returns: An array of a tuple of target, selector and event.
  */
-private func allTargetsSelectorsAndEvents(forControl control: UIControlProtocol)
+private func allTargetsSelectorsAndEvents(for control: UIControlProtocol)
   -> [TargetSelectorControlEvent] {
 
     return bitComponents(forMask: control.allControlEvents.rawValue)

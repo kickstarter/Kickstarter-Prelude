@@ -16,7 +16,7 @@ public enum Ordering {
   }
 }
 
-extension Ordering : Monoid {
+extension Ordering: Monoid {
   public static func identity () -> Ordering {
     return .eq
   }

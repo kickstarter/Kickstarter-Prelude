@@ -2,34 +2,25 @@ import Prelude
 import UIKit
 
 public protocol UIBarItemProtocol: KSObjectProtocol {
-  var enabled: Bool { get set }
+  var isEnabled: Bool { get set }
   var title: String? { get set }
   var image: UIImage? { get set }
   var imageInsets: UIEdgeInsets { get set }
   var landscapeImagePhone: UIImage? { get set }
   var landscapeImagePhoneInsets: UIEdgeInsets { get set }
   var tag: Int { get set }
-  func titleTextAttributes(for state: UIControlState) -> [String : Any]?
-  func setTitleTextAttributes(_ attributes: [String : Any]?, for state: UIControlState)
+  func titleTextAttributes(for state: UIControlState) -> [String: Any]?
+  func titleTextAttributes(for state: UIControlState) -> [NSAttributedStringKey: Any]?
+  func setTitleTextAttributes(_ attributes: [NSAttributedStringKey: Any]?, for state: UIControlState)
 }
 
-extension UIBarItem: UIBarItemProtocol {}
+extension UIBarItem: UIBarItemProtocol {
+  public func titleTextAttributes(for state: UIControlState) -> [NSAttributedStringKey: Any]? {
+    return self.titleTextAttributes(for: state)
+  }
+}
 
 public extension LensHolder where Object: UIBarItemProtocol {
-
-  public var enabled: Lens<Object, Bool> {
-    return Lens(
-      view: { $0.enabled },
-      set: { $1.enabled = $0; return $1 }
-    )
-  }
-
-  public var title: Lens<Object, String?> {
-    return Lens(
-      view: { $0.title },
-      set: { $1.title = $0; return $1 }
-    )
-  }
 
   public var image: Lens<Object, UIImage?> {
     return Lens(
@@ -38,10 +29,24 @@ public extension LensHolder where Object: UIBarItemProtocol {
     )
   }
 
+  public func titleTextAttributes(for state: UIControlState) -> Lens<Object, [NSAttributedStringKey: Any]?> {
+    return Lens(
+      view: { $0.titleTextAttributes(for: state) },
+      set: { $1.setTitleTextAttributes($0, for: state); return $1 }
+    )
+  }
+
   public var imageInsets: Lens<Object, UIEdgeInsets> {
     return Lens(
       view: { $0.imageInsets },
       set: { $1.imageInsets = $0; return $1 }
+    )
+  }
+
+  public var isEnabled: Lens<Object, Bool> {
+    return Lens(
+      view: { $0.isEnabled },
+      set: { $1.isEnabled = $0; return $1 }
     )
   }
 
@@ -66,10 +71,10 @@ public extension LensHolder where Object: UIBarItemProtocol {
     )
   }
 
-  public func titleTextAttributes(forState state: UIControlState) -> Lens<Object, [String:Any]?> {
+  public var title: Lens<Object, String?> {
     return Lens(
-      view: { $0.titleTextAttributes(for: state) },
-      set: { $1.setTitleTextAttributes($0, for: state); return $1 }
+      view: { $0.title },
+      set: { $1.title = $0; return $1 }
     )
   }
 }

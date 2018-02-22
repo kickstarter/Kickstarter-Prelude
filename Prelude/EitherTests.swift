@@ -58,7 +58,7 @@ final class EitherTests: XCTestCase {
 
   func testIfLeftIfRight() {
     let square: (Int) -> Int = { $0 * $0 }
-    let length: (String) -> Int = { $0.characters.count }
+    let length: (String) -> Int = { $0.count }
 
     XCTAssertEqual(4, Either.left(2).ifLeft(square, ifRight: length))
     XCTAssertEqual(5, Either.right("hello").ifLeft(square, ifRight: length))
@@ -66,7 +66,7 @@ final class EitherTests: XCTestCase {
 
   func testEitherCaseAnalysis() {
     let square: (Int) -> Int = { $0 * $0 }
-    let length: (String) -> Int = { $0.characters.count }
+    let length: (String) -> Int = { $0.count }
 
     XCTAssertEqual(4, .left(2) |> either(ifLeft: square, ifRight: length))
     XCTAssertEqual(5, .right("hello") |> either(ifLeft: square, ifRight: length))

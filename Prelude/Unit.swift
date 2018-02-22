@@ -4,7 +4,7 @@ public struct Unit {
   }
 }
 
-extension Unit : Equatable {}
+extension Unit: Equatable {}
 public func == (lhs: Unit, rhs: Unit) -> Bool {
   return true
 }
