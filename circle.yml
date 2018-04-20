@@ -5,7 +5,7 @@ jobs:
   build:
     macos:
       xcode: "9.3.0"
-    working_directory: ~/ReactiveExtensions
+    working_directory: ~/Kickstarter-Prelude
     environment:
       CIRCLE_ARTIFACTS: /tmp
 
