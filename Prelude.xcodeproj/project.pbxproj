@@ -170,7 +170,7 @@
 		CAC0795D1BBDBF8F00AFDBF0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0795C1BBDBF8F00AFDBF0 /* Array.swift */; };
 		CAC0795F1BBDC00200AFDBF0 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0795E1BBDC00200AFDBF0 /* Optional.swift */; };
 		D6089DC5208A3F660032CC99 /* UISwitchLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6089DC4208A3F660032CC99 /* UISwitchLenses.swift */; };
-		D6089DC6208A3F660032CC99 /* UISwitchLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6089DC4208A3F660032CC99 /* UISwitchLenses.swift */; };
+		D6089DC7208A43590032CC99 /* UISwitchLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6089DC4208A3F660032CC99 /* UISwitchLenses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -991,7 +991,7 @@
 				A70969281D1437B200DB39D3 /* UIControlLenses.swift in Sources */,
 				A709692D1D1437B200DB39D3 /* UITextInputTraitsLenses.swift in Sources */,
 				A788518F1D6C8DAC00617930 /* UIWebViewLenses.swift in Sources */,
-				D6089DC6208A3F660032CC99 /* UISwitchLenses.swift in Sources */,
+				D6089DC7208A43590032CC99 /* UISwitchLenses.swift in Sources */,
 				A78011DF1D2DBF090027396E /* UITraitEnvironment.swift in Sources */,
 				A70969261D1437B200DB39D3 /* CGSizeLenses.swift in Sources */,
 				A782B4521D2C375A0069D10E /* UITextViewLenses.swift in Sources */,
