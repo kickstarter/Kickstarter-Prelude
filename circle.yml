@@ -1,33 +1,31 @@
-machine:
-  xcode:
-    version: 9.2
-dependencies:
-  pre:
-    - brew update || brew update
-    - brew install swiftlint
-    - system_profiler SPSoftwareDataType
-    - security list-keychains
-    - security find-identity -p codesigning
-    - instruments -s devices
-    - xcodebuild -showsdks
-  override:
-    - git submodule sync --recursive
-    - git submodule update --init --recursive || git submodule foreach git fetch origin --tags
-    - git submodule update --init --recursive
-test:
-  pre:
-    - xcrun instruments -w '547B1B63-3F66-4E5B-8001-F78F2F1CDEA7' || true
-    - sleep 15
-  override:
-    - set -o pipefail &&
-      swiftlint lint --strict --reporter json |
-      tee $CIRCLE_ARTIFACTS/swiftlint-report.json
-    - bin/test iOS 11.2
-    - bin/test iOS 10.3.1
-    - bin/test UIKit-iOS 11.2
-    - bin/test UIKit-iOS 10.3.1
-experimental:
-  notify:
-    branches:
-      only:
-        - master
+# CircleCI version
+version: 2
+
+jobs:
+  build:
+    macos:
+      xcode: "9.3.0"
+    working_directory: ~/Kickstarter-Prelude
+    environment:
+      CIRCLE_ARTIFACTS: /tmp
+
+    steps:
+      - checkout
+      - run: git submodule sync --recursive
+      - run: git submodule update --init --recursive
+
+      - run: xcrun instruments -w 'iPhone 8 (11.3) [5FEDB80B-4688-4334-8B56-77D413CF00DC]' || true
+
+      - run: HOMEBREW_NO_AUTO_UPDATE=1 brew install swiftlint
+      - run: set -o pipefail &&
+             swiftlint lint --strict --reporter json |
+             tee $CIRCLE_ARTIFACTS/swiftlint-report.json
+      - run: bin/test iOS 10.3.1
+      - run: bin/test iOS 11.3
+      - run: bin/test UIKit-iOS 10.3.1
+      - run: bin/test UIKit-iOS 11.3
+
+      - store_artifacts:
+          path: /tmp/swiftlint-report.json
+      - store_artifacts:
+          path: /tmp/xcode_raw.log
