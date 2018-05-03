@@ -1,11 +1,3 @@
-//
-//  UnpackTests.swift
-//  Prelude-iOSTests
-//
-//  Created by Isabel Barrera on 5/3/18.
-//  Copyright © 2018 Kickstarter. All rights reserved.
-//
-
 import XCTest
 @testable import Prelude
 
