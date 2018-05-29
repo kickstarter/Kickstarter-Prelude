@@ -48,7 +48,7 @@ public extension LensHolder where Object: UITextFieldProtocol {
       set: { $1.textColor = $0; return $1 }
     )
   }
-  
+
   public var text: Lens<Object, String?> {
     return Lens(
       view: { $0.text },
