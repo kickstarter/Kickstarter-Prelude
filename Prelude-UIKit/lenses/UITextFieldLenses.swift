@@ -7,6 +7,7 @@ public protocol UITextFieldProtocol: UIControlProtocol, UITextInputTraitsProtoco
   var placeholder: String? { get set }
   var textAlignment: NSTextAlignment { get set }
   var textColor: UIColor? { get set }
+  var text: String? { get set }
 }
 
 extension UITextField: UITextFieldProtocol {}
@@ -45,6 +46,13 @@ public extension LensHolder where Object: UITextFieldProtocol {
     return Lens(
       view: { $0.textColor },
       set: { $1.textColor = $0; return $1 }
+    )
+  }
+  
+  public var text: Lens<Object, String?> {
+    return Lens(
+      view: { $0.text },
+      set: { $1.text = $0; return $1 }
     )
   }
 }
