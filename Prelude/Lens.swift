@@ -223,3 +223,17 @@ public func <>~ <Whole, Part: Semigroup> (keyPath: WritableKeyPath<Whole, Part>,
 
     return lens(keyPath) <>~ a
 }
+
+/**
+  Returns a getter function with the value of a keyPath.
+
+ - parameter keyPath: A key path.
+
+ - returns: A function with a keyPath value.
+ */
+public func get<Whole, Part>(_ keyPath: KeyPath<Whole, Part>) -> (Whole) -> Part {
+
+  return { whole in
+    whole[keyPath: keyPath]
+  }
+}
