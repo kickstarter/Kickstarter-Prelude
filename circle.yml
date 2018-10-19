@@ -4,7 +4,7 @@ version: 2
 jobs:
   build:
     macos:
-      xcode: "9.3.0"
+      xcode: "10.0.0"
     working_directory: ~/Kickstarter-Prelude
     environment:
       CIRCLE_ARTIFACTS: /tmp
@@ -14,16 +14,16 @@ jobs:
       - run: git submodule sync --recursive
       - run: git submodule update --init --recursive
 
-      - run: xcrun instruments -w 'iPhone 8 (11.3) [5FEDB80B-4688-4334-8B56-77D413CF00DC]' || true
-
       - run: HOMEBREW_NO_AUTO_UPDATE=1 brew install swiftlint
       - run: set -o pipefail &&
              swiftlint lint --strict --reporter json |
              tee $CIRCLE_ARTIFACTS/swiftlint-report.json
       - run: bin/test iOS 10.3.1
       - run: bin/test iOS 11.3
+      - run: bin/test iOS 12.0
       - run: bin/test UIKit-iOS 10.3.1
       - run: bin/test UIKit-iOS 11.3
+      - run: bin/test UIKit-iOS 12.0
 
       - store_artifacts:
           path: /tmp/swiftlint-report.json

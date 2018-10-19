@@ -28,8 +28,6 @@ public protocol UIBarButtonItemProtocol: UIBarItemProtocol {
   func backButtonBackgroundVerticalPositionAdjustment(for barMetrics: UIBarMetrics) -> CGFloat
 }
 
-extension UIBarButtonItem: UIBarButtonItemProtocol {}
-
 public extension LensHolder where Object: UIBarButtonItemProtocol {
   public var style: Lens<Object, UIBarButtonItemStyle> {
     return Lens(

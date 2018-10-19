@@ -6,8 +6,6 @@ public protocol UITabBarItemProtocol: UIBarItemProtocol {
   var titlePositionAdjustment: UIOffset { get set }
 }
 
-extension UITabBarItem: UITabBarItemProtocol {}
-
 public extension LensHolder where Object: UITabBarItemProtocol {
   public var selectedImage: Lens<Object, UIImage?> {
     return Lens(
