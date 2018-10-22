@@ -92,9 +92,9 @@ final class LensTests: XCTestCase {
   }
 
   func testKeyPathGetter() {
-    let newUser = user |> User._name .~ "blob"
-    let view = user |> (\User.name).view
-    XCTAssertEqual(newUser.name, view)
+    let newUser = user |> User._name .~ "new blob"
+    let name = newUser |> (\User.name).view
+    XCTAssertEqual(newUser.name, name)
   }
 }
 
