@@ -1,5 +1,6 @@
 import XCTest
 @testable import Prelude
+import Foundation
 
 private let square: (Int) -> Int = { $0 * $0 }
 private let plus: (Int) -> (Int) -> Int = { lhs in { lhs + $0 } }
@@ -89,12 +90,18 @@ final class LensTests: XCTestCase {
   func testSemigroupOperator() {
     XCTAssertEqual(user.name + "!", (user |> User._name <>~ "!").name)
   }
+
+  func testKeyPathGetter() {
+    let newUser = user |> User._name .~ "blob"
+    let view = user |> (\User.name).view
+    XCTAssertEqual(newUser.name, view)
+  }
 }
 
 private struct User: Equatable {
-  let id: Int
-  let location: Location
-  let name: String
+  private(set) var id: Int
+  private(set) var location: Location
+  private(set) var name: String
 
   static let _id = Lens<User, Int>(
     view: { $0.id },

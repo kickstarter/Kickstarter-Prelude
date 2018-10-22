@@ -224,16 +224,16 @@ public func <>~ <Whole, Part: Semigroup> (keyPath: WritableKeyPath<Whole, Part>,
     return lens(keyPath) <>~ a
 }
 
+public extension KeyPath {
+
 /**
-  Returns a getter function with the value of a keyPath.
+  Computed property that returns a getter function with the value of a given keyPath.
+  It's similar to the `view` property of Lenses.
+*/
 
- - parameter keyPath: A key path.
-
- - returns: A function with a keyPath value.
- */
-public func get<Whole, Part>(_ keyPath: KeyPath<Whole, Part>) -> (Whole) -> Part {
-
-  return { whole in
-    whole[keyPath: keyPath]
+  public var view: (Root) -> Value {
+    return { whole in
+      whole[keyPath: self]
+    }
   }
 }
