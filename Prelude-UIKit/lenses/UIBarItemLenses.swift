@@ -14,13 +14,13 @@ public protocol UIBarItemProtocol: KSObjectProtocol {
 }
 
 extension UIBarItem: UIBarItemProtocol {
-  public func titleTextAttributes(for state: UIControl.State) -> [NSAttributedString.Key : Any]? {
+  public func titleTextAttributes(for state: UIControl.State) -> [NSAttributedString.Key: Any]? {
     return ksr_titleTextAttributes(from: self, for: state)
   }
 
   // Workaround required to solve ambiguity between two variants of `titleTextAttributes(for:)`
   private func ksr_titleTextAttributes(from: UIBarItem,
-                                       for state: UIControl.State) -> [NSAttributedString.Key : Any]? {
+                                       for state: UIControl.State) -> [NSAttributedString.Key: Any]? {
     return from.titleTextAttributes(for: state)
   }
 }
@@ -35,7 +35,7 @@ public extension LensHolder where Object: UIBarItemProtocol {
   }
 
   public func titleTextAttributes(for state: UIControl.State)
-    -> Lens<Object, [NSAttributedString.Key : Any]?> {
+    -> Lens<Object, [NSAttributedString.Key: Any]?> {
       return Lens(
         view: { $0.titleTextAttributes(for: state) },
         set: { $1.setTitleTextAttributes($0, for: state); return $1 }
