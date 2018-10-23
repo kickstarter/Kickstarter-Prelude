@@ -43,7 +43,7 @@ class ArrayTests: XCTestCase {
     let xs = Array(1...10)
     let grouped = xs.groupedBy { $0 % 2 == 0 }
 
-    XCTAssertEqual([false, true], Array(grouped.keys))
+    XCTAssertEqual([false, true], Array(grouped.keys).sorted(by: { b1, b2 in !b1 && b2 }))
     XCTAssertEqual([1, 3, 5, 7, 9], grouped[false]!)
     XCTAssertEqual([2, 4, 6, 8, 10], grouped[true]!)
   }
