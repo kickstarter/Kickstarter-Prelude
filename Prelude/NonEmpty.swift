@@ -5,7 +5,7 @@ public protocol NonEmpty {
 }
 
 extension NonEmpty {
-  public var count: Collection.IndexDistance {
+  public var count: Int {
     return self.tail.count.advanced(by: 1)
   }
 
