@@ -3,7 +3,7 @@ import UIKit
 
 public protocol UITableViewCellProtocol: UIViewProtocol {
   var contentView: UIView { get }
-  var selectionStyle: UITableViewCellSelectionStyle { get set }
+  var selectionStyle: UITableViewCell.SelectionStyle { get set }
 }
 
 extension UITableViewCell: UITableViewCellProtocol {}
@@ -16,7 +16,7 @@ public extension LensHolder where Object: UITableViewCellProtocol {
     )
   }
 
-  public var selectionStyle: Lens<Object, UITableViewCellSelectionStyle> {
+  public var selectionStyle: Lens<Object, UITableViewCell.SelectionStyle> {
     return Lens(
       view: { $0.selectionStyle },
       set: { $1.selectionStyle = $0; return $1 }

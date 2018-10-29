@@ -3,12 +3,14 @@ import UIKit
 
 public protocol UIScrollViewProtocol: UIViewProtocol {
   var canCancelContentTouches: Bool { get set }
-  var decelerationRate: CGFloat { get set }
+  var decelerationRate: UIScrollView.DecelerationRate { get set }
   var delaysContentTouches: Bool { get set }
-  var keyboardDismissMode: UIScrollViewKeyboardDismissMode { get set }
+  var keyboardDismissMode: UIScrollView.KeyboardDismissMode { get set }
   var isScrollEnabled: Bool { get set }
   var scrollIndicatorInsets: UIEdgeInsets { get set }
+  #if os(iOS)
   var scrollsToTop: Bool { get set }
+  #endif
   var showsHorizontalScrollIndicator: Bool { get set }
   var showsVerticalScrollIndicator: Bool { get set }
 }
@@ -24,7 +26,7 @@ public extension LensHolder where Object: UIScrollViewProtocol {
     )
   }
 
-  public var decelerationRate: Lens<Object, CGFloat> {
+  public var decelerationRate: Lens<Object, UIScrollView.DecelerationRate> {
     return Lens(
       view: { $0.decelerationRate },
       set: { $1.decelerationRate = $0; return $1 }
@@ -45,7 +47,7 @@ public extension LensHolder where Object: UIScrollViewProtocol {
     )
   }
 
-  public var keyboardDismissMode: Lens<Object, UIScrollViewKeyboardDismissMode> {
+  public var keyboardDismissMode: Lens<Object, UIScrollView.KeyboardDismissMode> {
     return Lens(
       view: { $0.keyboardDismissMode },
       set: { $1.keyboardDismissMode = $0; return $1 }
@@ -59,12 +61,14 @@ public extension LensHolder where Object: UIScrollViewProtocol {
     )
   }
 
+  #if os(iOS)
   public var scrollsToTop: Lens<Object, Bool> {
     return Lens(
       view: { $0.scrollsToTop },
       set: { $1.scrollsToTop = $0; return $1 }
     )
   }
+  #endif
 
   public var showsHorizontalScrollIndicator: Lens<Object, Bool> {
     return Lens(

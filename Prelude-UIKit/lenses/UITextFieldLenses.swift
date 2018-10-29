@@ -2,7 +2,7 @@ import Prelude
 import UIKit
 
 public protocol UITextFieldProtocol: UIControlProtocol, UITextInputTraitsProtocol {
-  var borderStyle: UITextBorderStyle { get set }
+  var borderStyle: UITextField.BorderStyle { get set }
   var font: UIFont? { get set }
   var placeholder: String? { get set }
   var textAlignment: NSTextAlignment { get set }
@@ -14,7 +14,7 @@ extension UITextField: UITextFieldProtocol {}
 
 public extension LensHolder where Object: UITextFieldProtocol {
 
-  public var borderStyle: Lens<Object, UITextBorderStyle> {
+  public var borderStyle: Lens<Object, UITextField.BorderStyle> {
     return Lens(
       view: { $0.borderStyle },
       set: { $1.borderStyle = $0; return $1 }
