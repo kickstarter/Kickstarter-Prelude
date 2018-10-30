@@ -8,7 +8,9 @@ public protocol UISwitchProtocol: UIControlProtocol {
   var tintColor: UIColor! { get set }
 }
 
+#if os(iOS)
 extension UISwitch: UISwitchProtocol {}
+#endif
 
 public extension LensHolder where Object: UISwitchProtocol {
 

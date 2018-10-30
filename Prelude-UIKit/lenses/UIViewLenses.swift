@@ -7,9 +7,9 @@ public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, Le
   var backgroundColor: UIColor? { get set }
   var clipsToBounds: Bool { get set }
   var constraints: [NSLayoutConstraint] { get }
-  func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority
-  func contentHuggingPriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority
-  var contentMode: UIViewContentMode { get set }
+  func contentCompressionResistancePriority(for axis: NSLayoutConstraint.Axis) -> UILayoutPriority
+  func contentHuggingPriority(for axis: NSLayoutConstraint.Axis) -> UILayoutPriority
+  var contentMode: UIView.ContentMode { get set }
   var frame: CGRect { get set }
   var isHidden: Bool { get set }
   var layer: CALayer { get }
@@ -18,9 +18,9 @@ public protocol UIViewProtocol: KSObjectProtocol, UITraitEnvironmentProtocol, Le
   func removeConstraints(_ constraints: [NSLayoutConstraint])
   var semanticContentAttribute: UISemanticContentAttribute { get set }
   func setContentCompressionResistancePriority(_ priority: UILayoutPriority,
-                                               for axis: UILayoutConstraintAxis)
+                                               for axis: NSLayoutConstraint.Axis)
   func setContentHuggingPriority(_ priority: UILayoutPriority,
-                                 for axis: UILayoutConstraintAxis)
+                                 for axis: NSLayoutConstraint.Axis)
   var tag: Int { get set }
   var tintColor: UIColor! { get set }
   var translatesAutoresizingMaskIntoConstraints: Bool { get set }
@@ -62,7 +62,7 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis)
+  public func contentCompressionResistancePriority(for axis: NSLayoutConstraint.Axis)
     -> Lens<Object, UILayoutPriority> {
 
     return Lens(
@@ -71,7 +71,7 @@ public extension LensHolder where Object: UIViewProtocol {
     )
   }
 
-  public func contentHuggingPriority(for axis: UILayoutConstraintAxis)
+  public func contentHuggingPriority(for axis: NSLayoutConstraint.Axis)
     -> Lens<Object, UILayoutPriority> {
 
       return Lens(
@@ -80,7 +80,7 @@ public extension LensHolder where Object: UIViewProtocol {
       )
   }
 
-  public var contentMode: Lens<Object, UIViewContentMode> {
+  public var contentMode: Lens<Object, UIView.ContentMode> {
     return Lens(
       view: { $0.contentMode },
       set: { $1.contentMode = $0; return $1 }
