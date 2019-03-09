@@ -1,7 +1,7 @@
 import Prelude
 import Prelude_UIKit
 import UIKit
-import XCPlayground
+import PlaygroundSupport
 
 /*:
  The prelude provides special functions for tapping into a UI transformation pipeline and providing
@@ -37,7 +37,7 @@ let buttonStyle =
  function called `traitsController` that creates a parent and child controller with a specified set
  of traits. We can then create a button and add it to the child controller's view:
  */
-let (parent, child) = playgroundControllers(device: .phone5_5inch, orientation: .landscape)
+let (parent, child) = playgroundControllers(device: .phone5_5inch, orientation: .portrait)
 let button = UIButton()
 child.view.addSubview(button)
 
@@ -54,5 +54,5 @@ button
 button.sizeToFit()
 
 let frame = parent.view.frame
-XCPlaygroundPage.currentPage.liveView = parent
+PlaygroundPage.current.liveView = parent.view
 parent.view.frame = frame
