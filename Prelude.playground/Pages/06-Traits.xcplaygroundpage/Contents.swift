@@ -37,9 +37,11 @@ let buttonStyle =
  function called `traitsController` that creates a parent and child controller with a specified set
  of traits. We can then create a button and add it to the child controller's view:
  */
-let (parent, child) = playgroundControllers(device: .phone5_5inch, orientation: .portrait)
+let (parent, child) = playgroundControllers(device: .phone4inch, orientation: .portrait)
+
+//PlaygroundPage.current.liveView = parent.view
+
 let button = UIButton()
-child.view.addSubview(button)
 
 /*:
  With that set up we can now perform a styling for a button:
@@ -53,6 +55,6 @@ button
   |> buttonStyle
 button.sizeToFit()
 
-let frame = parent.view.frame
 PlaygroundPage.current.liveView = parent.view
-parent.view.frame = frame
+
+child.view.addSubview(button)
