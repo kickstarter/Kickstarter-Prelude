@@ -34,21 +34,16 @@ public func playgroundControllers(device: Device = .phone4_7inch,
   -> (parent: UIViewController, child: UIViewController) {
 
     let parent = UIViewController()
+    parent.view.backgroundColor = .white
 
-    child.view.translatesAutoresizingMaskIntoConstraints = false
+    child.view.backgroundColor = .white
+    child.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
     parent.addChild(child)
     parent.view.addSubview(child.view)
     child.didMove(toParent: parent)
 
-    NSLayoutConstraint.activate(
-      [
-        parent.view.topAnchor.constraint(equalTo: child.view.topAnchor),
-        parent.view.trailingAnchor.constraint(equalTo: child.view.trailingAnchor),
-        parent.view.bottomAnchor.constraint(equalTo: child.view.bottomAnchor),
-        parent.view.leadingAnchor.constraint(equalTo: child.view.leadingAnchor)
-      ]
-    )
+    child.view.frame = parent.view.frame
 
     let traits: UITraitCollection
     switch (device, orientation) {
@@ -109,9 +104,6 @@ public func playgroundControllers(device: Device = .phone4_7inch,
         .init(userInterfaceIdiom: .pad)
         ])
     }
-
-    parent.view.backgroundColor = .white
-    child.view.backgroundColor = .white
 
     let allTraits = UITraitCollection.init(traitsFrom: [traits, additionalTraits])
     parent.setOverrideTraitCollection(allTraits, forChild: child)
