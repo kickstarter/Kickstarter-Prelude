@@ -39,7 +39,7 @@ let buttonStyle =
  */
 let (parent, child) = playgroundControllers(device: .phone4inch, orientation: .portrait)
 
-//PlaygroundPage.current.liveView = parent.view
+PlaygroundPage.current.liveView = parent.view
 
 let button = UIButton()
 
@@ -54,7 +54,5 @@ button
   |> UIButton.lens.layer.masksToBounds .~ true
   |> buttonStyle
 button.sizeToFit()
-
-PlaygroundPage.current.liveView = parent.view
 
 child.view.addSubview(button)
