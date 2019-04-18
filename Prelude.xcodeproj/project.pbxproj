@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01AFE2C11D58FF6E0094C263 /* UITabBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */; };
 		01F547EA1D539636000A98EF /* UITabBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F547E81D539629000A98EF /* UITabBarItemLenses.swift */; };
+		37E54B7E22658F0E00F1A2F7 /* UIStepperLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E54B7D22658F0E00F1A2F7 /* UIStepperLenses.swift */; };
+		37E54B7F22658F0E00F1A2F7 /* UIStepperLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E54B7D22658F0E00F1A2F7 /* UIStepperLenses.swift */; };
 		7758A83B209B926F0018B96D /* UnpackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7758A83A209B926F0018B96D /* UnpackTests.swift */; };
 		8023ED321E9AC7860044504B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8023ED241E9AC7560044504B /* Runes.framework */; };
 		804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */; };
@@ -285,6 +287,7 @@
 /* Begin PBXFileReference section */
 		01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarLenses.swift; sourceTree = "<group>"; };
 		01F547E81D539629000A98EF /* UITabBarItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarItemLenses.swift; sourceTree = "<group>"; };
+		37E54B7D22658F0E00F1A2F7 /* UIStepperLenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStepperLenses.swift; sourceTree = "<group>"; };
 		7758A83A209B926F0018B96D /* UnpackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnpackTests.swift; sourceTree = "<group>"; };
 		8023ED151E9AC7560044504B /* Runes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Runes.xcodeproj; path = Runes/Runes.xcodeproj; sourceTree = "<group>"; };
 		804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemLenses.swift; sourceTree = "<group>"; };
@@ -508,6 +511,7 @@
 				A72549F81D779C1200F07272 /* UIProgressViewLenses.swift */,
 				A747D9371D35654D004B612D /* UIScrollViewLenses.swift */,
 				A77480BF1D0855C800774DEC /* UIStackViewLenses.swift */,
+				37E54B7D22658F0E00F1A2F7 /* UIStepperLenses.swift */,
 				D6089DC4208A3F660032CC99 /* UISwitchLenses.swift */,
 				01F547E81D539629000A98EF /* UITabBarItemLenses.swift */,
 				01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */,
@@ -987,6 +991,7 @@
 				A70969291D1437B200DB39D3 /* UIEdgeInsetsLenses.swift in Sources */,
 				A70969221D1437AD00DB39D3 /* UIImage.swift in Sources */,
 				A70969271D1437B200DB39D3 /* UIButtonLenses.swift in Sources */,
+				37E54B7F22658F0E00F1A2F7 /* UIStepperLenses.swift in Sources */,
 				A757EBEE1D1B134B00A5C978 /* UIImageViewLenses.swift in Sources */,
 				A709692C1D1437B200DB39D3 /* UITextFieldLenses.swift in Sources */,
 				80904E771D3D48F200B897F0 /* NSTextContainerLenses.swift in Sources */,
@@ -1044,6 +1049,7 @@
 				A788518B1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift in Sources */,
 				A727E0501D0797EB00D8FE43 /* UIImage.swift in Sources */,
 				804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */,
+				37E54B7E22658F0E00F1A2F7 /* UIStepperLenses.swift in Sources */,
 				A7A882F21D31826F00E9046E /* NSMutableParagraphStyleLenses.swift in Sources */,
 				A727E0451D07972F00D8FE43 /* CGRectLenses.swift in Sources */,
 				A77480BC1D08333F00774DEC /* UITextFieldLenses.swift in Sources */,
