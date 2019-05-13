@@ -1,3 +1,4 @@
+#if os(iOS)
 import Prelude
 import UIKit
 
@@ -25,3 +26,4 @@ public extension LensHolder where Object: UIStepperProtocol {
     )
   }
 }
+#endif
