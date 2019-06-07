@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "Kickstarter-Prelude",
+    name: "Prelude",
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "Kickstarter-Prelude",
+            name: "Prelude",
             targets: ["Kickstarter-Prelude"]),
     ],
     dependencies: [
