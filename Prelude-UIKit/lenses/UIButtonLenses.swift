@@ -123,6 +123,14 @@ extension Lens where Whole: UIButtonProtocol, Part == UILabel {
     return Whole.lens.titleLabel..Part.lens.font
   }
 
+  public var lineBreakMode: Lens<Whole, NSLineBreakMode> {
+    return Whole.lens.titleLabel..Part.lens.lineBreakMode
+  }
+
+  public var numberOfLines: Lens<Whole, Int> {
+    return Whole.lens.titleLabel..Part.lens.numberOfLines
+  }
+
   public var textAlignment: Lens<Whole, NSTextAlignment> {
     return Whole.lens.titleLabel..Part.lens.textAlignment
   }
