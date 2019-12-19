@@ -28,7 +28,7 @@ extension Lens where Whole: UITableViewControllerProtocol, Part == UITableView {
   }
 
   #if os(iOS)
-  public var separatorStyle: Lens<Whole, UITableViewCellSeparatorStyle> {
+  public var separatorStyle: Lens<Whole, UITableViewCell.SeparatorStyle> {
     return Whole.lens.tableView..Part.lens.separatorStyle
   }
   #endif
