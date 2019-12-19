@@ -178,7 +178,8 @@ public func lens<Whole, Part>(_ keyPath: WritableKeyPath<Whole, Part>) -> Lens<W
 
  - returns: A function that transforms a whole into a new whole with a part replaced.
  */
-public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, part: Part) -> ((Whole) -> Whole) {
+public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>?, part: Part) -> ((Whole) -> Whole) {
+  guard let keyPath = keyPath else { return { $0 } }
   return lens(keyPath) .~ part
 }
 
@@ -190,9 +191,9 @@ public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, part: Part)
 
  - returns: A function that transforms a whole into a new whole with its part transformed by `f`.
  */
-public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, f: @escaping (Part) -> Part)
+public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>?, f: @escaping (Part) -> Part)
   -> ((Whole) -> Whole) {
-
+    guard let keyPath = keyPath else { return { $0 } }
     return lens(keyPath) %~ f
 }
 
@@ -204,9 +205,9 @@ public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, f: @escapin
 
  - returns: A function that transforms a whole into a new whole with its part transformed by `f`.
  */
-public func %~~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>,
+public func %~~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>?,
                                f: @escaping (Part, Whole) -> Part) -> ((Whole) -> Whole) {
-
+  guard let keyPath = keyPath else { return { $0 } }
   return lens(keyPath) %~~ f
 }
 
@@ -218,9 +219,9 @@ public func %~~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>,
 
  - returns: A function that transform a whole into a new whole with its part concatenated to `a`.
  */
-public func <>~ <Whole, Part: Semigroup> (keyPath: WritableKeyPath<Whole, Part>, a: Part)
+public func <>~ <Whole, Part: Semigroup> (keyPath: WritableKeyPath<Whole, Part>?, a: Part)
   -> ((Whole) -> Whole) {
-
+    guard let keyPath = keyPath else { return { $0 } }
     return lens(keyPath) <>~ a
 }
 
@@ -231,7 +232,7 @@ public extension KeyPath {
   It's similar to the `view` property of Lenses.
 */
 
-  public var view: (Root) -> Value {
+  var view: (Root) -> Value {
     return { whole in
       whole[keyPath: self]
     }
