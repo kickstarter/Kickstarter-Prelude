@@ -93,8 +93,8 @@ public func isNotNil <A> (_ x: A?) -> Bool {
 public func == <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
   guard lhs.count == rhs.count else { return false }
 
+  // swiftlint:disable:next reduce_boolean
   return zip(lhs, rhs).reduce(true) { (accum, lr) in
-    // swiftlint:disable:next reduce_boolean
     return accum && lr.0 == lr.1
   }
 }
