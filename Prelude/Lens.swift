@@ -166,7 +166,7 @@ public func lens<Whole, Part>(_ keyPath: WritableKeyPath<Whole, Part>) -> Lens<W
       var copy = whole
       copy[keyPath: keyPath] = part
       return copy
-  }
+    }
   )
 }
 
@@ -183,6 +183,13 @@ public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, part: Part)
 }
 
 /**
+* Overload for .~ with an optional Part
+*/
+public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part?>, part: Part) -> ((Whole) -> Whole) {
+  return lens(keyPath) .~ part
+}
+
+/**
  Infix operator of the `over` function.
 
  - parameter keyPath: A key path.
@@ -191,6 +198,14 @@ public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, part: Part)
  - returns: A function that transforms a whole into a new whole with its part transformed by `f`.
  */
 public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, f: @escaping (Part) -> Part)
+  -> ((Whole) -> Whole) {
+    return lens(keyPath) %~ f
+}
+
+/**
+ * Overload for ~% with an optional Part
+ */
+public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part?>, f: @escaping (Part?) -> Part)
   -> ((Whole) -> Whole) {
     return lens(keyPath) %~ f
 }
