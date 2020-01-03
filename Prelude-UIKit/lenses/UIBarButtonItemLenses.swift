@@ -2,26 +2,26 @@ import Prelude
 import UIKit
 
 public protocol UIBarButtonItemProtocol: UIBarItemProtocol {
-  var style: UIBarButtonItemStyle { get set }
+  var style: UIBarButtonItem.Style { get set }
   var width: CGFloat { get set }
   var possibleTitles: Set<String>? { get set }
   var customView: UIView? { get set }
   var action: Selector? { get set }
   var target: AnyObject? { get set }
-  func setBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState, barMetrics: UIBarMetrics)
-  func backgroundImage(for state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
-  func setBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState, style: UIBarButtonItemStyle,
-                          barMetrics: UIBarMetrics)
-  func backgroundImage(for state: UIControlState, style: UIBarButtonItemStyle, barMetrics: UIBarMetrics)
+  func setBackgroundImage(_ backgroundImage: UIImage?, for state: UIControl.State, barMetrics: UIBarMetrics)
+  func backgroundImage(for state: UIControl.State, barMetrics: UIBarMetrics) -> UIImage?
+  func setBackgroundImage(_ backgroundImage: UIImage?, for state: UIControl.State,
+                          style: UIBarButtonItem.Style, barMetrics: UIBarMetrics)
+  func backgroundImage(for state: UIControl.State, style: UIBarButtonItem.Style, barMetrics: UIBarMetrics)
     -> UIImage?
   var tintColor: UIColor? { get set }
   func setBackgroundVerticalPositionAdjustment(_ adjustment: CGFloat, for barMetrics: UIBarMetrics)
   func backgroundVerticalPositionAdjustment(for barMetrics: UIBarMetrics) -> CGFloat
   func setTitlePositionAdjustment(_ adjustment: UIOffset, for barMetrics: UIBarMetrics)
   func titlePositionAdjustment(for barMetrics: UIBarMetrics) -> UIOffset
-  func setBackButtonBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState,
+  func setBackButtonBackgroundImage(_ backgroundImage: UIImage?, for state: UIControl.State,
                                     barMetrics: UIBarMetrics)
-  func backButtonBackgroundImage(for state: UIControlState, barMetrics: UIBarMetrics) -> UIImage?
+  func backButtonBackgroundImage(for state: UIControl.State, barMetrics: UIBarMetrics) -> UIImage?
   func setBackButtonTitlePositionAdjustment(_ adjustment: UIOffset, for barMetrics: UIBarMetrics)
   func backButtonTitlePositionAdjustment(for barMetrics: UIBarMetrics) -> UIOffset
   func setBackButtonBackgroundVerticalPositionAdjustment(_ adjustment: CGFloat, for barMetrics: UIBarMetrics)
@@ -31,7 +31,7 @@ public protocol UIBarButtonItemProtocol: UIBarItemProtocol {
 extension UIBarButtonItem: UIBarButtonItemProtocol {}
 
 public extension LensHolder where Object: UIBarButtonItemProtocol {
-  public var style: Lens<Object, UIBarButtonItemStyle> {
+  public var style: Lens<Object, UIBarButtonItem.Style> {
     return Lens(
       view: { $0.style },
       set: { $1.style = $0; return $1 }
@@ -69,7 +69,7 @@ public extension LensHolder where Object: UIBarButtonItemProtocol {
     )
   }
 
-  public func backgroundImage(forState state: UIControlState, barMetrics: UIBarMetrics)
+  public func backgroundImage(forState state: UIControl.State, barMetrics: UIBarMetrics)
     -> Lens<Object, UIImage?> {
 
       return Lens(
@@ -78,8 +78,8 @@ public extension LensHolder where Object: UIBarButtonItemProtocol {
       )
   }
 
-  public func backgroundImage(forState state: UIControlState,
-                              style: UIBarButtonItemStyle,
+  public func backgroundImage(forState state: UIControl.State,
+                              style: UIBarButtonItem.Style,
                               barMetrics: UIBarMetrics) -> Lens<Object, UIImage?> {
     return Lens(
       view: { $0.backgroundImage(for: state, style: style, barMetrics: barMetrics) },
@@ -110,7 +110,7 @@ public extension LensHolder where Object: UIBarButtonItemProtocol {
     )
   }
 
-  public func backButtonBackgroundImage(forState state: UIControlState, barMetrics: UIBarMetrics)
+  public func backButtonBackgroundImage(forState state: UIControl.State, barMetrics: UIBarMetrics)
     -> Lens<Object, UIImage?> {
 
       return Lens(

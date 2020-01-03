@@ -31,7 +31,7 @@ extension Lens where Whole: UIWebViewProtocol, Part == UIScrollView {
     return Whole.lens.scrollView..Part.lens.delaysContentTouches
   }
 
-  public var decelerationRate: Lens<Whole, CGFloat> {
+  public var decelerationRate: Lens<Whole, UIScrollView.DecelerationRate> {
     return Whole.lens.scrollView..Part.lens.decelerationRate
   }
 }

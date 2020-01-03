@@ -26,7 +26,6 @@ extension OptionalType {
     return self.optional!
   }
 
-  // swiftlint:disable valid_docs
   /**
    Call `body` on wrapped value of `self` if present. An analog to `Sequence.forEach`.
 
@@ -37,7 +36,6 @@ extension OptionalType {
       try body(value)
     }
   }
-  // swiftlint:enable valid_docs
 
   /**
    - parameter predicate: A predicate that determines if the wrapped value should be kept or not.
@@ -95,6 +93,7 @@ public func isNotNil <A> (_ x: A?) -> Bool {
 public func == <A: Equatable> (lhs: [A?], rhs: [A?]) -> Bool {
   guard lhs.count == rhs.count else { return false }
 
+  // swiftlint:disable:next reduce_boolean
   return zip(lhs, rhs).reduce(true) { (accum, lr) in
     return accum && lr.0 == lr.1
   }

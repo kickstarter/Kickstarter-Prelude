@@ -166,7 +166,7 @@ public func lens<Whole, Part>(_ keyPath: WritableKeyPath<Whole, Part>) -> Lens<W
       var copy = whole
       copy[keyPath: keyPath] = part
       return copy
-  }
+    }
   )
 }
 
@@ -183,6 +183,13 @@ public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, part: Part)
 }
 
 /**
+* Overload for .~ with an optional Part
+*/
+public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part?>, part: Part) -> ((Whole) -> Whole) {
+  return lens(keyPath) .~ part
+}
+
+/**
  Infix operator of the `over` function.
 
  - parameter keyPath: A key path.
@@ -192,7 +199,14 @@ public func .~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, part: Part)
  */
 public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, f: @escaping (Part) -> Part)
   -> ((Whole) -> Whole) {
+    return lens(keyPath) %~ f
+}
 
+/**
+ * Overload for ~% with an optional Part
+ */
+public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part?>, f: @escaping (Part?) -> Part)
+  -> ((Whole) -> Whole) {
     return lens(keyPath) %~ f
 }
 
@@ -206,7 +220,6 @@ public func %~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>, f: @escapin
  */
 public func %~~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>,
                                f: @escaping (Part, Whole) -> Part) -> ((Whole) -> Whole) {
-
   return lens(keyPath) %~~ f
 }
 
@@ -220,7 +233,6 @@ public func %~~ <Whole, Part> (keyPath: WritableKeyPath<Whole, Part>,
  */
 public func <>~ <Whole, Part: Semigroup> (keyPath: WritableKeyPath<Whole, Part>, a: Part)
   -> ((Whole) -> Whole) {
-
     return lens(keyPath) <>~ a
 }
 
@@ -231,7 +243,7 @@ public extension KeyPath {
   It's similar to the `view` property of Lenses.
 */
 
-  public var view: (Root) -> Value {
+  var view: (Root) -> Value {
     return { whole in
       whole[keyPath: self]
     }

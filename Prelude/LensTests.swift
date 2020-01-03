@@ -96,12 +96,19 @@ final class LensTests: XCTestCase {
     let name = newUser |> (\User.name).view
     XCTAssertEqual(newUser.name, name)
   }
+
+  func testOptionalKeyPathSetter() {
+    let newUser = user
+      |> \.title .~ "King"
+    XCTAssertEqual(newUser.title, "King")
+  }
 }
 
 private struct User: Equatable {
   private(set) var id: Int
   private(set) var location: Location
   private(set) var name: String
+  public var title: String?
 
   static let _id = Lens<User, Int>(
     view: { $0.id },
