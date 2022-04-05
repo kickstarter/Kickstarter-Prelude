@@ -247,6 +247,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06D9B15E27FCEE1A003C8A92 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CA0923FA1BB6291900C9EC88 /* Prelude */,
+				A727E0231D0796D600D8FE43 /* Prelude-UIKit */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		A727E0231D0796D600D8FE43 /* Prelude-UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,8 +320,7 @@
 			children = (
 				066C915827FCE50B00EDAEEA /* Package.swift */,
 				A7378CC61C80958000F0A562 /* Prelude.playground */,
-				CA0923FA1BB6291900C9EC88 /* Prelude */,
-				A727E0231D0796D600D8FE43 /* Prelude-UIKit */,
+				06D9B15E27FCEE1A003C8A92 /* Sources */,
 				CA0923F91BB6291900C9EC88 /* Products */,
 			);
 			indentWidth = 2;
