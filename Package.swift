@@ -10,7 +10,7 @@ let package = Package(
     ),
     .library(
       name: "Prelude_UIKit",
-      targets: ["Prelude_UIKit"]
+      targets: ["Prelude-UIKit"]
     )
   ]
   targets: [
