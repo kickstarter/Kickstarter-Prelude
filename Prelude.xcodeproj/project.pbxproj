@@ -122,6 +122,7 @@
 /* Begin PBXFileReference section */
 		01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarLenses.swift; sourceTree = "<group>"; };
 		01F547E81D539629000A98EF /* UITabBarItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarItemLenses.swift; sourceTree = "<group>"; };
+		066C915827FCE50B00EDAEEA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		37E54B7D22658F0E00F1A2F7 /* UIStepperLenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStepperLenses.swift; sourceTree = "<group>"; };
 		7758A83A209B926F0018B96D /* UnpackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnpackTests.swift; sourceTree = "<group>"; };
 		804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemLenses.swift; sourceTree = "<group>"; };
@@ -308,6 +309,7 @@
 		CA0923EE1BB6291800C9EC88 = {
 			isa = PBXGroup;
 			children = (
+				066C915827FCE50B00EDAEEA /* Package.swift */,
 				A7378CC61C80958000F0A562 /* Prelude.playground */,
 				CA0923FA1BB6291900C9EC88 /* Prelude */,
 				A727E0231D0796D600D8FE43 /* Prelude-UIKit */,
