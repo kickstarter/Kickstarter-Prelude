@@ -3,7 +3,6 @@ import PackageDescription
 
 let package = Package(
   name: "Prelude",
-  exclude: ["Info.plist"],
   products: [
     .library(
       name: "Prelude",
