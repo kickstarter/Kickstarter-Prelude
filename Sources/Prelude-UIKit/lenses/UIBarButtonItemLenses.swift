@@ -79,8 +79,8 @@ public extension LensHolder where Object: UIBarButtonItemProtocol {
   }
 
   func backgroundImage(forState state: UIControl.State,
-                              style: UIBarButtonItem.Style,
-                              barMetrics: UIBarMetrics) -> Lens<Object, UIImage?> {
+                       style: UIBarButtonItem.Style,
+                       barMetrics: UIBarMetrics) -> Lens<Object, UIImage?> {
     return Lens(
       view: { $0.backgroundImage(for: state, style: style, barMetrics: barMetrics) },
       set: { $1.setBackgroundImage($0, for: state, style: style, barMetrics: barMetrics); return $1 }

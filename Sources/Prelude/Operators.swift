@@ -19,53 +19,53 @@ precedencegroup LensSetPrecedence {
   higherThan: FunctionCompositionPrecedence
 }
 
-/// Pipe forward function application.
+// Pipe forward function application.
 infix operator |> : LeftApplyPrecedence
 
-/// Infix, flipped version of fmap (for arrays), i.e. `xs ||> f := f <^> xs`
+// Infix, flipped version of fmap (for arrays), i.e. `xs ||> f := f <^> xs`
 infix operator ||> : LeftApplyPrecedence
 
-/// Infix, flipped version of fmap (for optionals), i.e. `x ?|> f := f <^> x`
+// Infix, flipped version of fmap (for optionals), i.e. `x ?|> f := f <^> x`
 infix operator ?|> : LeftApplyPrecedence
 
-/// Composition
+// Composition
 infix operator • : FunctionCompositionPrecedence
 
-/// Lens composition
+// Lens composition
 infix operator .. : LensCompositionPrecedence
 
-/// Semigroup binary operation
+// Semigroup binary operation
 infix operator <> : FunctionCompositionPrecedence
 
-/// Semigroup operation partially applied on right
+// Semigroup operation partially applied on right
 prefix operator <>
 
-/// Semigroup operation partially applied on left
+// Semigroup operation partially applied on left
 postfix operator <>
 
-/// Lens view
+// Lens view
 infix operator ^* : LeftApplyPrecedence
 
-/// Lens set
+// Lens set
 infix operator .~ : LensSetPrecedence
 
-/// Lens over
+// Lens over
 infix operator %~ : LensSetPrecedence
 
-/// Lens over with both part and whole.
+// Lens over with both part and whole.
 infix operator %~~ : LensSetPrecedence
 
-/// Lens semigroup
+// Lens semigroup
 infix operator <>~ : LensSetPrecedence
 
-/// Kleisli lens composition
+// Kleisli lens composition
 infix operator >•>
 
-/// Compose forward operator
+// Compose forward operator
 infix operator >>> : FunctionCompositionPrecedence
 
-/// Compose backward operator
+// Compose backward operator
 infix operator <<< : FunctionCompositionPrecedence
 
-/// Cons of an element with a non-empty collection.
+// Cons of an element with a non-empty collection.
 infix operator +|: AdditionPrecedence

@@ -29,7 +29,7 @@ public extension Array {
   var randomElement: Element? {
     guard !self.isEmpty else { return nil }
 
-    let idx = Int(arc4random_uniform(UInt32(self.count)))
+    let idx = Int.random(in: 0..<self.count)
     return self[idx]
   }
 
