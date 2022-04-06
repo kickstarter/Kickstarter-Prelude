@@ -13,28 +13,28 @@ extension UINavigationBar: UINavigationBarProtocol {}
 
 public extension LensHolder where Object: UINavigationControllerProtocol {
 
-  public var isNavigationBarHidden: Lens<Object, Bool> {
+  var isNavigationBarHidden: Lens<Object, Bool> {
     return Lens(
       view: { $0.isNavigationBarHidden },
       set: { $1.isNavigationBarHidden = $0; return $1 }
     )
   }
 
-  public var navigationBar: Lens<Object, UINavigationBar> {
+  var navigationBar: Lens<Object, UINavigationBar> {
     return Lens(
       view: { $0.navigationBar },
       set: { $1 }
     )
   }
 
-  public func setNavigationBarHidden(animated: Bool) -> Lens<Object, Bool> {
+  func setNavigationBarHidden(animated: Bool) -> Lens<Object, Bool> {
     return Lens(
       view: { $0.isNavigationBarHidden },
       set: { $1.setNavigationBarHidden($0, animated: animated); return $1 }
     )
   }
 
-  public var viewControllers: Lens<Object, [UIViewController]> {
+  var viewControllers: Lens<Object, [UIViewController]> {
     return Lens(
       view: { $0.viewControllers },
       set: { $1.viewControllers = $0; return $1 }

@@ -10,7 +10,7 @@ extension WKWebView: WKWebViewProtocol {}
 
 public extension LensHolder where Object: WKWebViewProtocol {
 
-  public var scrollView: Lens<Object, UIScrollView> {
+  var scrollView: Lens<Object, UIScrollView> {
     return Lens(
       view: { $0.scrollView },
       set: { $1 }

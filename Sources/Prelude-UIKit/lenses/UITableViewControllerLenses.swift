@@ -9,7 +9,7 @@ extension UITableViewController: UITableViewControllerProtocol {}
 
 public extension LensHolder where Object: UITableViewControllerProtocol {
 
-  public var tableView: Lens<Object, UITableView> {
+  var tableView: Lens<Object, UITableView> {
     return Lens(
       view: { $0.tableView },
       set: { $1.tableView = $0; return $1 }

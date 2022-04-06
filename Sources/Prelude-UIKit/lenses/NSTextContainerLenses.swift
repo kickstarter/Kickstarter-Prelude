@@ -8,7 +8,7 @@ public protocol NSTextContainerProtocol: KSObjectProtocol {
 extension NSTextContainer: NSTextContainerProtocol {}
 
 public extension LensHolder where Object: NSTextContainerProtocol {
-  public var lineFragmentPadding: Lens<Object, CGFloat> {
+  var lineFragmentPadding: Lens<Object, CGFloat> {
     return Lens(
       view: { $0.lineFragmentPadding },
       set: { $1.lineFragmentPadding = $0; return $1 }

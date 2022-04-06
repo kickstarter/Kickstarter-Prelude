@@ -19,42 +19,42 @@ extension UIScrollView: UIScrollViewProtocol {}
 
 public extension LensHolder where Object: UIScrollViewProtocol {
 
-  public var canCancelContentTouches: Lens<Object, Bool> {
+  var canCancelContentTouches: Lens<Object, Bool> {
     return Lens(
       view: { $0.canCancelContentTouches },
       set: { $1.canCancelContentTouches = $0; return $1 }
     )
   }
 
-  public var decelerationRate: Lens<Object, UIScrollView.DecelerationRate> {
+  var decelerationRate: Lens<Object, UIScrollView.DecelerationRate> {
     return Lens(
       view: { $0.decelerationRate },
       set: { $1.decelerationRate = $0; return $1 }
     )
   }
 
-  public var delaysContentTouches: Lens<Object, Bool> {
+  var delaysContentTouches: Lens<Object, Bool> {
     return Lens(
       view: { $0.delaysContentTouches },
       set: { $1.delaysContentTouches = $0; return $1 }
     )
   }
 
-  public var isScrollEnabled: Lens<Object, Bool> {
+  var isScrollEnabled: Lens<Object, Bool> {
     return Lens(
       view: { $0.isScrollEnabled },
       set: { $1.isScrollEnabled = $0; return $1 }
     )
   }
 
-  public var keyboardDismissMode: Lens<Object, UIScrollView.KeyboardDismissMode> {
+  var keyboardDismissMode: Lens<Object, UIScrollView.KeyboardDismissMode> {
     return Lens(
       view: { $0.keyboardDismissMode },
       set: { $1.keyboardDismissMode = $0; return $1 }
     )
   }
 
-  public var scrollIndicatorInsets: Lens<Object, UIEdgeInsets> {
+  var scrollIndicatorInsets: Lens<Object, UIEdgeInsets> {
     return Lens(
       view: { $0.scrollIndicatorInsets },
       set: { $1.scrollIndicatorInsets = $0; return $1 }
@@ -62,7 +62,7 @@ public extension LensHolder where Object: UIScrollViewProtocol {
   }
 
   #if os(iOS)
-  public var scrollsToTop: Lens<Object, Bool> {
+  var scrollsToTop: Lens<Object, Bool> {
     return Lens(
       view: { $0.scrollsToTop },
       set: { $1.scrollsToTop = $0; return $1 }
@@ -70,14 +70,14 @@ public extension LensHolder where Object: UIScrollViewProtocol {
   }
   #endif
 
-  public var showsHorizontalScrollIndicator: Lens<Object, Bool> {
+  var showsHorizontalScrollIndicator: Lens<Object, Bool> {
     return Lens(
       view: { $0.showsHorizontalScrollIndicator },
       set: { $1.showsHorizontalScrollIndicator = $0; return $1 }
     )
   }
 
-  public var showsVerticalScrollIndicator: Lens<Object, Bool> {
+  var showsVerticalScrollIndicator: Lens<Object, Bool> {
     return Lens(
       view: { $0.showsVerticalScrollIndicator },
       set: { $1.showsVerticalScrollIndicator = $0; return $1 }

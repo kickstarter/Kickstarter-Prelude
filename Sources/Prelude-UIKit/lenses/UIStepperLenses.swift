@@ -12,14 +12,14 @@ public protocol UIStepperProtocol: UIControlProtocol {
 extension UIStepper: UIStepperProtocol { }
 
 public extension LensHolder where Object: UIStepperProtocol {
-  public func decrementImage(for state: UIControl.State) -> Lens<Object, UIImage?> {
+  func decrementImage(for state: UIControl.State) -> Lens<Object, UIImage?> {
     return Lens(
       view: { $0.decrementImage(for: state) },
       set: { $1.setDecrementImage($0, for: state); return $1 }
     )
   }
 
-  public func incrementImage(for state: UIControl.State) -> Lens<Object, UIImage?> {
+  func incrementImage(for state: UIControl.State) -> Lens<Object, UIImage?> {
     return Lens(
       view: { $0.incrementImage(for: state) },
       set: { $1.setIncrementImage($0, for: state); return $1 }

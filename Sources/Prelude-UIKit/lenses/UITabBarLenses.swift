@@ -8,7 +8,7 @@ public protocol UITabBarProtocol: UIViewProtocol {
 extension UITabBar: UITabBarProtocol {}
 
 public extension LensHolder where Object: UITabBarProtocol {
-  public var barTintColor: Lens<Object, UIColor?> {
+  var barTintColor: Lens<Object, UIColor?> {
     return Lens(
       view: { $0.barTintColor },
       set: { $1.barTintColor = $0; return $1 }

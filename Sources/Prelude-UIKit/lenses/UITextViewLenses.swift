@@ -18,7 +18,7 @@ extension UITextView: UITextViewProtocol {}
 public extension LensHolder where Object: UITextViewProtocol {
 
   #if os(iOS)
-  public var dataDetectorTypes: Lens<Object, UIDataDetectorTypes> {
+  var dataDetectorTypes: Lens<Object, UIDataDetectorTypes> {
     return Lens(
       view: { $0.dataDetectorTypes },
       set: { $1.dataDetectorTypes = $0; return $1 }
@@ -26,42 +26,42 @@ public extension LensHolder where Object: UITextViewProtocol {
   }
   #endif
 
-  public var font: Lens<Object, UIFont?> {
+  var font: Lens<Object, UIFont?> {
     return Lens(
       view: { $0.font },
       set: { $1.font = $0; return $1 }
     )
   }
 
-  public var text: Lens<Object, String> {
+  var text: Lens<Object, String> {
     return Lens(
       view: { $0.text ?? "" },
       set: { $1.text = $0; return $1 }
     )
   }
 
-  public var textAlignment: Lens<Object, NSTextAlignment> {
+  var textAlignment: Lens<Object, NSTextAlignment> {
     return Lens(
       view: { $0.textAlignment },
       set: { $1.textAlignment = $0; return $1 }
     )
   }
 
-  public var textColor: Lens<Object, UIColor?> {
+  var textColor: Lens<Object, UIColor?> {
     return Lens(
       view: { $0.textColor },
       set: { $1.textColor = $0; return $1 }
     )
   }
 
-  public var textContainer: Lens<Object, NSTextContainer> {
+  var textContainer: Lens<Object, NSTextContainer> {
     return Lens(
       view: { $0.textContainer },
       set: { $1 }
     )
   }
 
-  public var textContainerInset: Lens<Object, UIEdgeInsets> {
+  var textContainerInset: Lens<Object, UIEdgeInsets> {
     return Lens(
       view: { $0.textContainerInset },
       set: { $1.textContainerInset = $0; return $1 }

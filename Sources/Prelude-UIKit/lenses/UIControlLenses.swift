@@ -20,7 +20,7 @@ extension UIControl: UIControlProtocol {}
 
 public extension LensHolder where Object: UIControlProtocol {
 
-  public var targets: Lens<Object, [TargetSelectorControlEvent]> {
+  var targets: Lens<Object, [TargetSelectorControlEvent]> {
     return Lens(
       view: allTargetsSelectorsAndEvents(for:),
       set: { targets, control in
@@ -31,35 +31,35 @@ public extension LensHolder where Object: UIControlProtocol {
     )
   }
 
-  public var contentHorizontalAlignment: Lens<Object, UIControl.ContentHorizontalAlignment> {
+  var contentHorizontalAlignment: Lens<Object, UIControl.ContentHorizontalAlignment> {
     return Lens(
       view: { $0.contentHorizontalAlignment },
       set: { $1.contentHorizontalAlignment = $0; return $1 }
     )
   }
 
-  public var contentVerticalAlignment: Lens<Object, UIControl.ContentVerticalAlignment> {
+  var contentVerticalAlignment: Lens<Object, UIControl.ContentVerticalAlignment> {
     return Lens(
       view: { $0.contentVerticalAlignment },
       set: { $1.contentVerticalAlignment = $0; return $1 }
     )
   }
 
-  public var isEnabled: Lens<Object, Bool> {
+  var isEnabled: Lens<Object, Bool> {
     return Lens(
       view: { $0.isEnabled },
       set: { $1.isEnabled = $0; return $1 }
     )
   }
 
-  public var isHighlighted: Lens<Object, Bool> {
+  var isHighlighted: Lens<Object, Bool> {
     return Lens(
       view: { $0.isHighlighted },
       set: { $1.isHighlighted = $0; return $1 }
     )
   }
 
-  public var isSelected: Lens<Object, Bool> {
+  var isSelected: Lens<Object, Bool> {
     return Lens(
       view: { $0.isSelected },
       set: { $1.isSelected = $0; return $1 }

@@ -11,14 +11,14 @@ extension UIWebView: UIWebViewProtocol {}
 
 public extension LensHolder where Object: UIWebViewProtocol {
 
-  public var scrollView: Lens<Object, UIScrollView> {
+  var scrollView: Lens<Object, UIScrollView> {
     return Lens(
       view: { $0.scrollView },
       set: { $1 }
     )
   }
 
-  public var suppressesIncrementalRendering: Lens<Object, Bool> {
+  var suppressesIncrementalRendering: Lens<Object, Bool> {
     return Lens(
       view: { $0.suppressesIncrementalRendering },
       set: { $1.suppressesIncrementalRendering = $0; return $1 }

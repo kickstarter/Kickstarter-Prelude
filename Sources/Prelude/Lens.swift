@@ -42,7 +42,7 @@ public struct Lens <Whole, Part> {
 
 public extension Lens where Part: Comparable {
   /// Constructs a comparator on `Whole` when `Part` conforms to `Comparable`.
-  public var comparator: Comparator<Whole> {
+  var comparator: Comparator<Whole> {
     return Comparator { lhs, rhs in
       self.view(lhs) < self.view(rhs) ? .lt
         : self.view(lhs) == self.view(rhs) ? .eq
