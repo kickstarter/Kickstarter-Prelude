@@ -20,6 +20,7 @@ let package = Package(
       dependencies: ["Prelude"]
     ),
     .target(name: "Prelude-UIKit"),
+    .dependencies: ["Prelude"],
     .testTarget(
       name: "Prelude-UIKitTests",
       dependencies: ["Prelude-UIKit"]
