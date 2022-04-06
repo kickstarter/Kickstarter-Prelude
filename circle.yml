@@ -4,7 +4,7 @@ version: 2
 jobs:
   build:
     macos:
-      xcode: "11.3.0"
+      xcode: "13.3.0"
     working_directory: ~/Kickstarter-Prelude
     environment:
       CIRCLE_ARTIFACTS: /tmp
@@ -18,10 +18,10 @@ jobs:
       - run: set -o pipefail &&
              swiftlint lint --strict --reporter json |
              tee $CIRCLE_ARTIFACTS/swiftlint-report.json
-      - run: bin/test iOS 12.4
-      - run: bin/test iOS 13.3
-      - run: bin/test UIKit-iOS 12.4
-      - run: bin/test UIKit-iOS 13.3
+      - run: bin/test iOS 13.6
+      - run: bin/test iOS 15.4
+      - run: bin/test UIKit-iOS 13.6
+      - run: bin/test UIKit-iOS 15.4
 
       - store_artifacts:
           path: /tmp/swiftlint-report.json
