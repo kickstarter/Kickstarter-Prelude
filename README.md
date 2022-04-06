@@ -4,6 +4,6 @@
 
 A collection of useful Swift tools that are used in the Kickstarter apps.
 
-### SPM Support:
+### Swift Package Manager:
 
 Use the `feature/swift-package` branch through SPM.
