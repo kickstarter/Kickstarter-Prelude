@@ -4,7 +4,7 @@ version: 2
 jobs:
   build:
     macos:
-      xcode: "11.3.0"
+      xcode: "12.5.1"
     working_directory: ~/Kickstarter-Prelude
     environment:
       CIRCLE_ARTIFACTS: /tmp
