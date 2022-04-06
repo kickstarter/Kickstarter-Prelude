@@ -19,8 +19,8 @@ let package = Package(
       name: "PreludeTests",
       dependencies: ["Prelude"]
     ),
-    .target(name: "Prelude-UIKit"),
-    .dependencies: ["Prelude"],
+    .target(name: "Prelude-UIKit",
+            dependencies: ["Prelude"]),
     .testTarget(
       name: "Prelude-UIKitTests",
       dependencies: ["Prelude-UIKit"]
