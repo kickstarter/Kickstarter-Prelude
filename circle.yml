@@ -18,10 +18,10 @@ jobs:
       - run: set -o pipefail &&
              swiftlint lint --strict --reporter json |
              tee $CIRCLE_ARTIFACTS/swiftlint-report.json
-      - run: bin/test iOS 13.6
-      - run: bin/test iOS 15.4
-      - run: bin/test UIKit-iOS 13.6
-      - run: bin/test UIKit-iOS 15.4
+      - run: bin/test 13.6
+      - run: bin/test 15.4
+      - run: bin/test UIKit 13.6
+      - run: bin/test UIKit 15.4
 
       - store_artifacts:
           path: /tmp/swiftlint-report.json
