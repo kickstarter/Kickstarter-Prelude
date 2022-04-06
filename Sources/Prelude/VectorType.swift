@@ -1,3 +1,4 @@
+import CoreGraphics
 /// A `VectorType` instance is something that behaves like a linear vector does, i.e. it can be
 /// scaled with numeric values and added to other vectors.
 public protocol VectorType: Equatable {
