@@ -22,7 +22,6 @@ jobs:
       - run: bin/test iOS 15.4
       - run: bin/test UIKit-iOS 14.5
       - run: bin/test UIKit-iOS 15.4
-
       - store_artifacts:
           path: /tmp/swiftlint-report.json
       - store_artifacts:
