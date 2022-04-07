@@ -40,7 +40,7 @@ public extension LensHolder where Object: UIViewControllerProtocol {
   }
 }
 
-extension Lens where Whole: UIViewControllerProtocol, Part == UIView {
+public extension Lens where Whole: UIViewControllerProtocol, Part == UIView {
   var backgroundColor: Lens<Whole, UIColor> {
     return Whole.lens.view..Part.lens.backgroundColor
   }
