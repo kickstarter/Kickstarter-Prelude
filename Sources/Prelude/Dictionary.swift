@@ -57,7 +57,7 @@ public extension Dictionary {
   }
 }
 
-extension Dictionary where Key: Semigroup {
+public extension Dictionary where Key: Semigroup {
 
   /**
    Use the semigroup operation on Key to prefix keys with a value.
