@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01AFE2C11D58FF6E0094C263 /* UITabBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */; };
 		01F547EA1D539636000A98EF /* UITabBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F547E81D539629000A98EF /* UITabBarItemLenses.swift */; };
+		06EA2D3D280F2A4E00F4DE2E /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CD1E7F465B001F9E62 /* UIButtonTests.swift */; };
+		06EA2D3E280F2A5000F4DE2E /* UITraitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CE1E7F465B001F9E62 /* UITraitCollectionTests.swift */; };
 		37E54B7E22658F0E00F1A2F7 /* UIStepperLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E54B7D22658F0E00F1A2F7 /* UIStepperLenses.swift */; };
 		7758A83B209B926F0018B96D /* UnpackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7758A83A209B926F0018B96D /* UnpackTests.swift */; };
 		804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */; };
@@ -73,8 +75,6 @@
 		A7C5B8C71E7F45F7001F9E62 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8B01E7F45F7001F9E62 /* StringTests.swift */; };
 		A7C5B8C91E7F45F7001F9E62 /* TupleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8B11E7F45F7001F9E62 /* TupleTests.swift */; };
 		A7C5B8CB1E7F45F7001F9E62 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8B21E7F45F7001F9E62 /* UnitTests.swift */; };
-		A7C5B8CF1E7F465B001F9E62 /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CD1E7F465B001F9E62 /* UIButtonTests.swift */; };
-		A7C5B8D11E7F465B001F9E62 /* UITraitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CE1E7F465B001F9E62 /* UITraitCollectionTests.swift */; };
 		A7CBAA6D1D69E9DE009D7B48 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */; };
 		A7D11FC71D14927400F364FD /* UITableViewLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC61D14927400F364FD /* UITableViewLenses.swift */; };
 		A7D11FCA1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D11FC91D14936700F364FD /* UITableViewControllerLenses.swift */; };
@@ -256,16 +256,54 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		06EA2D38280F293B00F4DE2E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				06EA2D3A280F297100F4DE2E /* Prelude-UIKitTests */,
+				06EA2D39280F294800F4DE2E /* PreludeTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		06EA2D39280F294800F4DE2E /* PreludeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7C5B8A61E7F45F7001F9E62 /* ArrayTests.swift */,
+				A7C5B8A71E7F45F7001F9E62 /* BooleanTests.swift */,
+				A7C5B8A81E7F45F7001F9E62 /* ComparableTests.swift */,
+				A7C5B8A91E7F45F7001F9E62 /* ComparatorTests.swift */,
+				A7C5B8AA1E7F45F7001F9E62 /* DictionaryTest.swift */,
+				A7C5B8AB1E7F45F7001F9E62 /* EitherTests.swift */,
+				A7C5B8AC1E7F45F7001F9E62 /* FunctionTest.swift */,
+				A7C5B8AD1E7F45F7001F9E62 /* LensTests.swift */,
+				80A0E1AD1EB02D4A00D69242 /* NonEmptyTests.swift */,
+				A7C5B8AE1E7F45F7001F9E62 /* OptionalTests.swift */,
+				A7C5B8AF1E7F45F7001F9E62 /* OrderingTests.swift */,
+				A7C5B8B01E7F45F7001F9E62 /* StringTests.swift */,
+				A7C5B8B11E7F45F7001F9E62 /* TupleTests.swift */,
+				A7C5B8B21E7F45F7001F9E62 /* UnitTests.swift */,
+				7758A83A209B926F0018B96D /* UnpackTests.swift */,
+			);
+			path = PreludeTests;
+			sourceTree = "<group>";
+		};
+		06EA2D3A280F297100F4DE2E /* Prelude-UIKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7C5B8CD1E7F465B001F9E62 /* UIButtonTests.swift */,
+				A7C5B8CE1E7F465B001F9E62 /* UITraitCollectionTests.swift */,
+			);
+			path = "Prelude-UIKitTests";
+			sourceTree = "<group>";
+		};
 		A727E0231D0796D600D8FE43 /* Prelude-UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				A733794B1D0E417300C91445 /* LensHolder.swift */,
 				A727E0511D07984500D8FE43 /* UIButton.swift */,
-				A7C5B8CD1E7F465B001F9E62 /* UIButtonTests.swift */,
 				A7FD55A01D104199007F976D /* UIEdgeInsets.swift */,
 				A727E04F1D0797EB00D8FE43 /* UIImage.swift */,
 				A76BAF9C1D5CC48D00BC2483 /* UITraitCollection.swift */,
-				A7C5B8CE1E7F465B001F9E62 /* UITraitCollectionTests.swift */,
 				A727E0391D07972F00D8FE43 /* lenses */,
 			);
 			path = "Prelude-UIKit";
@@ -320,6 +358,7 @@
 			children = (
 				066C915827FCE50B00EDAEEA /* Package.swift */,
 				A7378CC61C80958000F0A562 /* Prelude.playground */,
+				06EA2D38280F293B00F4DE2E /* Tests */,
 				06D9B15E27FCEE1A003C8A92 /* Sources */,
 				CA0923F91BB6291900C9EC88 /* Products */,
 			);
@@ -345,43 +384,28 @@
 				CA0923FB1BB6291900C9EC88 /* Prelude.h */,
 				CA0923FD1BB6291900C9EC88 /* Info.plist */,
 				CAC0795C1BBDBF8F00AFDBF0 /* Array.swift */,
-				A7C5B8A61E7F45F7001F9E62 /* ArrayTests.swift */,
 				A75EC8141CCBEB4F009BEC10 /* Bool.swift */,
-				A7C5B8A71E7F45F7001F9E62 /* BooleanTests.swift */,
 				A7F7ADE71C53D27300E39792 /* Comparable.swift */,
-				A7C5B8A81E7F45F7001F9E62 /* ComparableTests.swift */,
 				9DCD74231D42A42100B238E5 /* Comparator.swift */,
-				A7C5B8A91E7F45F7001F9E62 /* ComparatorTests.swift */,
 				A7B60BE81BFBF44000B7B7ED /* Dictionary.swift */,
-				A7C5B8AA1E7F45F7001F9E62 /* DictionaryTest.swift */,
 				A78323AC1CB9615D000B094C /* Either.swift */,
-				A7C5B8AB1E7F45F7001F9E62 /* EitherTests.swift */,
 				A75EFFE31C0E7BF40002C7D2 /* Empty.swift */,
 				CA0924361BB629BC00C9EC88 /* Function.swift */,
-				A7C5B8AC1E7F45F7001F9E62 /* FunctionTest.swift */,
 				A711FD701CECF7A300659DB4 /* Lens.swift */,
 				A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */,
-				A7C5B8AD1E7F45F7001F9E62 /* LensTests.swift */,
 				9DCD74261D42A43500B238E5 /* Monoid.swift */,
 				80A0E1A51EB0076A00D69242 /* NonEmpty.swift */,
-				80A0E1AD1EB02D4A00D69242 /* NonEmptyTests.swift */,
 				A7EFE1511C28B46900F4CFEB /* NumericType.swift */,
 				A74B3C0C1C9DCD9A00F938C4 /* Operators.swift */,
 				CAC0795E1BBDC00200AFDBF0 /* Optional.swift */,
-				A7C5B8AE1E7F45F7001F9E62 /* OptionalTests.swift */,
 				9DCD741D1D429AA200B238E5 /* Ordering.swift */,
-				A7C5B8AF1E7F45F7001F9E62 /* OrderingTests.swift */,
 				A7AD8BBF1C9DCBC200016122 /* Semigroup.swift */,
 				80A9DF3A1EB1A9AE00CEF5CC /* Set.swift */,
 				A7DBFCF21C5EB661002150A1 /* SomeError.swift */,
 				A74B3C091C9DCC7600F938C4 /* String.swift */,
-				A7C5B8B01E7F45F7001F9E62 /* StringTests.swift */,
 				CA3DFCD21BDFFB8000D30C27 /* Tuple.swift */,
-				A7C5B8B11E7F45F7001F9E62 /* TupleTests.swift */,
 				A75EFFE11C0E7B8E0002C7D2 /* Unit.swift */,
-				A7C5B8B21E7F45F7001F9E62 /* UnitTests.swift */,
 				A711FCDC1CECB53A00659DB4 /* Unpack.swift */,
-				7758A83A209B926F0018B96D /* UnpackTests.swift */,
 				A7EFE1531C28B53D00F4CFEB /* VectorType.swift */,
 			);
 			path = Prelude;
@@ -613,8 +637,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7C5B8D11E7F465B001F9E62 /* UITraitCollectionTests.swift in Sources */,
-				A7C5B8CF1E7F465B001F9E62 /* UIButtonTests.swift in Sources */,
+				06EA2D3E280F2A5000F4DE2E /* UITraitCollectionTests.swift in Sources */,
+				06EA2D3D280F2A4E00F4DE2E /* UIButtonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

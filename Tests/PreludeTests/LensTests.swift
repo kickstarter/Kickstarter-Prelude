@@ -1,6 +1,5 @@
 import XCTest
-@testable import Prelude
-import Foundation
+import Prelude
 
 private let square: (Int) -> Int = { $0 * $0 }
 private let plus: (Int) -> (Int) -> Int = { lhs in { lhs + $0 } }

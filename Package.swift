@@ -17,13 +17,15 @@ let package = Package(
     .target(name: "Prelude"),
     .testTarget(
       name: "PreludeTests",
-      dependencies: ["Prelude"]
+      dependencies: ["Prelude"],
+      path: "Tests/PreludeTests"
     ),
     .target(name: "Prelude-UIKit",
             dependencies: ["Prelude"]),
     .testTarget(
       name: "Prelude-UIKitTests",
-      dependencies: ["Prelude-UIKit"]
+      dependencies: ["Prelude-UIKit"],
+      path: "Tests/Prelude-UIKitTests"
     )
   ]
 )

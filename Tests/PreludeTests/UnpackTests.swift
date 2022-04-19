@@ -1,5 +1,5 @@
 import XCTest
-@testable import Prelude
+import Prelude
 
 class UnpackTests: XCTestCase {
   func testABUnpack() {

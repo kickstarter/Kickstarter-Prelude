@@ -1,5 +1,5 @@
 import XCTest
-@testable import Prelude
+import Prelude
 
 public final class StringTests: XCTestCase {
 
