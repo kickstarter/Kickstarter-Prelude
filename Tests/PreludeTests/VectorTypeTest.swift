@@ -1,5 +1,5 @@
 import XCTest
-@testable import Prelude
+import Prelude
 
 class VectorTypeTest: XCTestCase {
 
@@ -31,19 +31,19 @@ class VectorTypeTest: XCTestCase {
   }
 
   func testLerp() {
-    XCTAssertEqualWithAccuracy(0.0, 0.0.lerp(4.0)(0.00), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(1.0, 0.0.lerp(4.0)(0.25), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(2.0, 0.0.lerp(4.0)(0.50), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(3.0, 0.0.lerp(4.0)(0.75), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(4.0, 0.0.lerp(4.0)(1.00), accuracy: 0.0)
+    XCTAssertEqual(0.0, 0.0.lerp(4.0)(0.00), accuracy: 0.0)
+    XCTAssertEqual(1.0, 0.0.lerp(4.0)(0.25), accuracy: 0.0)
+    XCTAssertEqual(2.0, 0.0.lerp(4.0)(0.50), accuracy: 0.0)
+    XCTAssertEqual(3.0, 0.0.lerp(4.0)(0.75), accuracy: 0.0)
+    XCTAssertEqual(4.0, 0.0.lerp(4.0)(1.00), accuracy: 0.0)
   }
 
   func testLerpFreeFunction() {
-    XCTAssertEqualWithAccuracy(0.0, lerp(0.0, 4.0)(0.00), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(1.0, lerp(0.0, 4.0)(0.25), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(2.0, lerp(0.0, 4.0)(0.50), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(3.0, lerp(0.0, 4.0)(0.75), accuracy: 0.0)
-    XCTAssertEqualWithAccuracy(4.0, lerp(0.0, 4.0)(1.00), accuracy: 0.0)
+    XCTAssertEqual(0.0, lerp(0.0, 4.0)(0.00), accuracy: 0.0)
+    XCTAssertEqual(1.0, lerp(0.0, 4.0)(0.25), accuracy: 0.0)
+    XCTAssertEqual(2.0, lerp(0.0, 4.0)(0.50), accuracy: 0.0)
+    XCTAssertEqual(3.0, lerp(0.0, 4.0)(0.75), accuracy: 0.0)
+    XCTAssertEqual(4.0, lerp(0.0, 4.0)(1.00), accuracy: 0.0)
   }
 
   func testOperatorPrecedence() {
@@ -52,6 +52,6 @@ class VectorTypeTest: XCTestCase {
       return x * A.one() + A.one() + A.one()
     }
 
-    XCTAssertEqualWithAccuracy(4.0, naiveTimesTwoPlusOne(2.0), accuracy: 0.0)
+    XCTAssertEqual(4.0, naiveTimesTwoPlusOne(2.0), accuracy: 0.0)
   }
 }

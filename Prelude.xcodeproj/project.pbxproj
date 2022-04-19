@@ -11,7 +11,7 @@
 		01F547EA1D539636000A98EF /* UITabBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F547E81D539629000A98EF /* UITabBarItemLenses.swift */; };
 		06EA2D3D280F2A4E00F4DE2E /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CD1E7F465B001F9E62 /* UIButtonTests.swift */; };
 		06EA2D3E280F2A5000F4DE2E /* UITraitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5B8CE1E7F465B001F9E62 /* UITraitCollectionTests.swift */; };
-		06EA2D40280F2E2400F4DE2E /* VectorTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EA2D3F280F2E2400F4DE2E /* VectorTypeTest.swift */; };
+		06EA2D42280F35EA00F4DE2E /* VectorTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EA2D41280F35EA00F4DE2E /* VectorTypeTest.swift */; };
 		37E54B7E22658F0E00F1A2F7 /* UIStepperLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E54B7D22658F0E00F1A2F7 /* UIStepperLenses.swift */; };
 		7758A83B209B926F0018B96D /* UnpackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7758A83A209B926F0018B96D /* UnpackTests.swift */; };
 		804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */; };
@@ -124,7 +124,7 @@
 		01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarLenses.swift; sourceTree = "<group>"; };
 		01F547E81D539629000A98EF /* UITabBarItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarItemLenses.swift; sourceTree = "<group>"; };
 		066C915827FCE50B00EDAEEA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		06EA2D3F280F2E2400F4DE2E /* VectorTypeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VectorTypeTest.swift; path = Sources/Prelude/VectorTypeTest.swift; sourceTree = SOURCE_ROOT; };
+		06EA2D41280F35EA00F4DE2E /* VectorTypeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTypeTest.swift; sourceTree = "<group>"; };
 		37E54B7D22658F0E00F1A2F7 /* UIStepperLenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStepperLenses.swift; sourceTree = "<group>"; };
 		7758A83A209B926F0018B96D /* UnpackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnpackTests.swift; sourceTree = "<group>"; };
 		804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemLenses.swift; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 				A7C5B8B11E7F45F7001F9E62 /* TupleTests.swift */,
 				A7C5B8B21E7F45F7001F9E62 /* UnitTests.swift */,
 				7758A83A209B926F0018B96D /* UnpackTests.swift */,
-				06EA2D3F280F2E2400F4DE2E /* VectorTypeTest.swift */,
+				06EA2D41280F35EA00F4DE2E /* VectorTypeTest.swift */,
 			);
 			path = PreludeTests;
 			sourceTree = "<group>";
@@ -684,7 +684,7 @@
 				A7C5B8BD1E7F45F7001F9E62 /* EitherTests.swift in Sources */,
 				A7C5B8B51E7F45F7001F9E62 /* BooleanTests.swift in Sources */,
 				A7C5B8B71E7F45F7001F9E62 /* ComparableTests.swift in Sources */,
-				06EA2D40280F2E2400F4DE2E /* VectorTypeTest.swift in Sources */,
+				06EA2D42280F35EA00F4DE2E /* VectorTypeTest.swift in Sources */,
 				A7C5B8C51E7F45F7001F9E62 /* OrderingTests.swift in Sources */,
 				A7C5B8C71E7F45F7001F9E62 /* StringTests.swift in Sources */,
 				A7C5B8B31E7F45F7001F9E62 /* ArrayTests.swift in Sources */,
