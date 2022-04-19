@@ -6,10 +6,12 @@ let package = Package(
   products: [
     .library(
       name: "Prelude",
+      type: .dynamic,
       targets: ["Prelude"]
     ),
     .library(
       name: "Prelude_UIKit",
+      type: .dynamic,
       targets: ["Prelude-UIKit"]
     )
   ],
