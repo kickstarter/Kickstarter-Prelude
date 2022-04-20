@@ -8,6 +8,8 @@ public protocol UINavigationBarProtocol: UIViewProtocol {
   var shadowImage: UIImage? { get set }
   var titleTextAttributes: [NSAttributedString.Key: Any]? { get set }
   var isTranslucent: Bool { get set }
+  var standardAppearance: UINavigationBarAppearance { get set }
+  var scrollEdgeAppearance: UINavigationBarAppearance? { get set }
 }
 
 public extension LensHolder where Object: UINavigationBarProtocol {
@@ -43,6 +45,20 @@ public extension LensHolder where Object: UINavigationBarProtocol {
     return Lens(
       view: { $0.titleTextAttributes ?? [:] },
       set: { $1.titleTextAttributes = $0; return $1; }
+    )
+  }
+  
+  var standardAppearance: Lens<Object, UINavigationBarAppearance> {
+    return Lens(
+      view: { $0.standardAppearance },
+      set: { $1.standardAppearance = $0; return $1; }
+    )
+  }
+  
+  var scrollEdgeAppearance: Lens<Object, UINavigationBarAppearance?> {
+    return Lens(
+      view: { $0.scrollEdgeAppearance },
+      set: { $1.scrollEdgeAppearance = $0; return $1; }
     )
   }
 }
