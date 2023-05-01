@@ -8,7 +8,7 @@ preload_ipad_simulator: &preload_ipad_simulator xcrun instruments -w "iPad Air (
 
 # Templates
 
-iphone_default_environment: &ios_default_environment
+iphone_default_environment: &iphone_default_environment
   CIRCLE_ARTIFACTS: /tmp
   BUNDLE_PATH: vendor/bundle
   FL_OUTPUT_DIR: output
