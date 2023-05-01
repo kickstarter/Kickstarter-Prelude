@@ -22,7 +22,7 @@ ios_default_environment: &ios_default_environment
 base_job: &base_job
   macos:
     xcode: *xcode_version
-  working_directory: ~/ReactiveExtensions
+  working_directory: ~/Prelude
 
 test_ios_setup_job: &test_ios_setup_job
   steps:
@@ -40,7 +40,7 @@ test_ios_setup_job: &test_ios_setup_job
     - restore_cache:
         name: Restore SPM Cache
         keys:
-          - spm-cache-v1-{{ checksum "./ReactiveExtensions.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved" }}-{{ checksum "xcode_version.txt" }}
+          - spm-cache-v1-{{ checksum "./Prelude.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved" }}-{{ checksum "xcode_version.txt" }}
     - run:
         name: Bootstrap SPM
         command: xcodebuild -resolvePackageDependencies -clonedSourcePackagesDirPath SourcePackages
