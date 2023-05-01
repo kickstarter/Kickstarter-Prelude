@@ -95,9 +95,9 @@ jobs:
   # Prelude-UIKit-iOS tests
   prelude-uikit-ios-tests:
     <<: *base_job
-    <<: *ipad_default_environment
+    <<: *test_prelude_uikit_setup_job
     environment:
-      - *ios_default_environment
+      - *ipad_default_environment
       - SCHEME=Prelude-UIKit-iOS
 
 # Workflows
