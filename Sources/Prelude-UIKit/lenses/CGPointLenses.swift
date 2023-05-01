@@ -15,3 +15,4 @@ extension CGPoint {
     )
   }
 }
+// swiftlint:enable type_name

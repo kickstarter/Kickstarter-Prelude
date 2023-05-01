@@ -24,7 +24,9 @@ public extension LensHolder where Object: UIActivityIndicatorViewProtocol {
   var animating: Lens<Object, Bool> {
     return Lens(
       view: { $0.isAnimating },
-      set: { $0 ? $1.startAnimating() : $1.stopAnimating(); return $1 }
+      set: { if $0 { $1.startAnimating() } else { $1.stopAnimating(); }
+        return $1
+      }
     )
   }
 

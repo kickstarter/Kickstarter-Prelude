@@ -35,3 +35,4 @@ extension UIEdgeInsets {
     )
   }
 }
+// swiftlint:enable type_name

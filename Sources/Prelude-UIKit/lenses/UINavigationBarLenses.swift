@@ -49,7 +49,7 @@ public extension LensHolder where Object: UINavigationBarProtocol {
       set: { $1.titleTextAttributes = $0; return $1; }
     )
   }
-  
+
   @available(iOS 13.0, *)
   var standardAppearance: Lens<Object, UINavigationBarAppearance> {
     return Lens(
@@ -57,7 +57,7 @@ public extension LensHolder where Object: UINavigationBarProtocol {
       set: { $1.standardAppearance = $0; return $1; }
     )
   }
-  
+
   @available(iOS 13.0, *)
   var scrollEdgeAppearance: Lens<Object, UINavigationBarAppearance?> {
     return Lens(

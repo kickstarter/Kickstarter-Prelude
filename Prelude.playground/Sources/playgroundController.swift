@@ -110,3 +110,4 @@ public func playgroundControllers(device: Device = .phone4_7inch,
 
     return (parent, child)
 }
+// swiftlint:enable function_body_length

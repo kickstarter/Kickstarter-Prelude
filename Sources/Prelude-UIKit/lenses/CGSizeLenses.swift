@@ -15,3 +15,4 @@ extension CGSize {
     )
   }
 }
+// swiftlint:enable type_name

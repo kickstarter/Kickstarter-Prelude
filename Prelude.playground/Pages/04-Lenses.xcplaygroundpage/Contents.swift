@@ -293,3 +293,5 @@ p10.creator.location.name
  * [Chris Eidhof - Lenses in Swift](http://chris.eidhof.nl/post/lenses-in-swift/)
  * [A Little Lens Tutorial](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/a-little-lens-starter-tutorial)
  */
+// swiftlint:enable line_length
+// swiftlint:enable type_name

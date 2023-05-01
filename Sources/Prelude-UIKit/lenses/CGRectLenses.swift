@@ -42,3 +42,4 @@ extension Lens where Whole == CGRect, Part == CGSize {
     return _height
   }
 }
+// swiftlint:enable type_name
