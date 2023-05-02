@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "1330"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,21 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A7FD084C1C81E1DA00332CCB"
                BuildableName = "Prelude.framework"
-               BlueprintName = "Prelude-iOS"
-               ReferencedContainer = "container:Prelude.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A7FD08661C81E24A00332CCB"
-               BuildableName = "Prelude-iOSTests.xctest"
-               BlueprintName = "Prelude-iOSTests"
+               BlueprintName = "Prelude"
                ReferencedContainer = "container:Prelude.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -48,23 +33,12 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A7FD08661C81E24A00332CCB"
-               BuildableName = "Prelude-iOSTests.xctest"
-               BlueprintName = "Prelude-iOSTests"
+               BuildableName = "PreludeTests.xctest"
+               BlueprintName = "PreludeTests"
                ReferencedContainer = "container:Prelude.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A7FD084C1C81E1DA00332CCB"
-            BuildableName = "Prelude.framework"
-            BlueprintName = "Prelude-iOS"
-            ReferencedContainer = "container:Prelude.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -76,17 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A7FD084C1C81E1DA00332CCB"
-            BuildableName = "Prelude.framework"
-            BlueprintName = "Prelude-iOS"
-            ReferencedContainer = "container:Prelude.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -99,7 +62,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A7FD084C1C81E1DA00332CCB"
             BuildableName = "Prelude.framework"
-            BlueprintName = "Prelude-iOS"
+            BlueprintName = "Prelude"
             ReferencedContainer = "container:Prelude.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

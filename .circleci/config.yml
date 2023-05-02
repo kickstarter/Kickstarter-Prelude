@@ -1,0 +1,115 @@
+version: 2.1
+
+xcode_version: &xcode_version 14.2.0
+iphone_name: &iphone_name iPhone 14 Pro Max
+preload_iphone_simulator: &preload_iphone_simulator xcrun instruments -w "iPhone 14 Pro Max (16.2) [" || true
+ipad_name: &ipad_name iPad Air (5th generation)
+preload_ipad_simulator: &preload_ipad_simulator xcrun instruments -w "iPad Air (5th generation) (16.2) [" || true
+
+# Templates
+
+iphone_default_environment: &iphone_default_environment
+  CIRCLE_ARTIFACTS: /tmp
+  BUNDLE_PATH: vendor/bundle
+  FL_OUTPUT_DIR: output
+  LC_ALL: en_US.UTF-8
+  LANG: en_US.UTF-8
+  IPHONE_NAME: *iphone_name
+  XCODE_VERSION: *xcode_version
+  PLATFORM: iOS
+
+ipad_default_environment: &ipad_default_environment
+  CIRCLE_ARTIFACTS: /tmp
+  BUNDLE_PATH: vendor/bundle
+  FL_OUTPUT_DIR: output
+  LC_ALL: en_US.UTF-8
+  LANG: en_US.UTF-8
+  IPHONE_NAME: *ipad_name
+  XCODE_VERSION: *xcode_version
+  PLATFORM: iOS
+
+base_job: &base_job
+  macos:
+    xcode: *xcode_version
+  working_directory: ~/Prelude
+
+test_prelude_setup_job: &test_prelude_setup_job
+  steps:
+    - checkout
+    - run: HOMEBREW_NO_AUTO_UPDATE=1 brew install swiftlint
+    - run: set -o pipefail &&
+        swiftlint lint --strict --reporter json |
+        tee $CIRCLE_ARTIFACTS/swiftlint-report.json
+    - run:
+        name: Store Xcode Version
+        command: xcodebuild -version > xcode_version.txt
+    - run:
+        name: Pre-load iOS simulator
+        command: *preload_iphone_simulator
+    - run:
+        name: Run Prelude-iOS Tests
+        command: make test-prelude
+        no_output_timeout: "20m" # 20 minutes
+    - store_artifacts:
+        name: Swiftlint Artifacts
+        path: /tmp/swiftlint-report.json
+    - store_artifacts:
+        name: Xcode Artifacts
+        path: /tmp/xcode_raw.log
+
+test_prelude_uikit_setup_job: &test_prelude_uikit_setup_job
+  steps:
+    - checkout
+    - run: HOMEBREW_NO_AUTO_UPDATE=1 brew install swiftlint
+    - run: set -o pipefail &&
+        swiftlint lint --strict --reporter json |
+        tee $CIRCLE_ARTIFACTS/swiftlint-report.json
+    - run:
+        name: Store Xcode Version
+        command: xcodebuild -version > xcode_version.txt
+    - run:
+        name: Pre-load iOS simulator
+        command: *preload_ipad_simulator
+    - run:
+        name: Run Prelude-UIKit-iOS Tests
+        command: make test-prelude-uikit
+        no_output_timeout: "20m" # 20 minutes
+    - store_artifacts:
+        name: Swiftlint Artifacts
+        path: /tmp/swiftlint-report.json
+    - store_artifacts:
+        name: Xcode Artifacts
+        path: /tmp/xcode_raw.log
+
+# Jobs
+
+jobs:
+  # Prelude-iOS tests
+  prelude-ios-tests:
+    <<: *base_job
+    <<: *test_prelude_setup_job
+    environment:
+      - *iphone_default_environment
+      - SCHEME=Prelude-iOS
+
+  # Prelude-UIKit-iOS tests
+  prelude-uikit-ios-tests:
+    <<: *base_job
+    <<: *test_prelude_uikit_setup_job
+    environment:
+      - *ipad_default_environment
+      - SCHEME=Prelude-UIKit-iOS
+
+# Workflows
+workflows:
+  version: 2
+  build:
+    jobs:
+      - prelude-ios-tests
+      - prelude-uikit-ios-tests
+
+experimental:
+  notify:
+    branches:
+      only:
+        - master
